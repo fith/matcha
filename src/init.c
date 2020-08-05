@@ -17,7 +17,7 @@ void initSDL(void)
     exit(1);
   }
 
-  app.window = SDL_CreateWindow("SHMUP", 
+  app.window = SDL_CreateWindow("MATCHA", 
     SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
     WINDOW_WIDTH, WINDOW_HEIGHT, windowFlags);
 
