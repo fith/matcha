@@ -10,6 +10,7 @@ extern void drawText(int font, int x, int y, char *format, ...);
 extern SDL_Texture* textTexture(int font, char *format, ...);
 
 extern void initOptions(void);
+extern void initLevel1(void);
 
 extern Stage stage;
 extern App app;

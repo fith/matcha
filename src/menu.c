@@ -9,10 +9,18 @@ static void drawButtons(void);
 static void drawDots(void);
 // button
 static void createButton(char *str, int x, int y, void (*onClick)());
-void moused(void);
+void buttonOptions(void);
+void buttonStart(void);
 
 static void deinitMenu(void);
 
+
+
+enum Transitions {
+  NONE,
+  OPTIONS
+};
+static int transition;
 
 static SDL_Texture *dotRedTexture;
 static SDL_Texture *dotYellowTexture;
@@ -36,8 +44,10 @@ void initMenu(void)
     dotGreenTexture = loadTexture("gfx/dotGreen.png");
   }
 
-  createButton("START", 345, 476, moused);
-  createButton("?", 16, 540, moused);
+  transition = NONE;
+
+  createButton("START", 345, 476, buttonStart);
+  createButton("?", 16, 540, buttonOptions);
 }
 
 static void logic(void)
@@ -68,6 +78,7 @@ void doButtons() {
       b->isHover = 1;
       if(app.clicked) {
         b->onClick();
+        return;
       }
     } else {
       b->isHover = 0;
@@ -99,12 +110,14 @@ static void drawDots(void)
   blit(dotGreenTexture, 448, 382);
 }
 
-
-
-void moused(void) {
-  printf("Moused!\n");
+void buttonOptions(void) {
   deinitMenu();
-  initOption();
+  initOptions();
+}
+
+void buttonStart(void) {
+  deinitMenu();
+  initLevel1();
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {

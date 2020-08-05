@@ -1,4 +1,4 @@
-PROG = shmup
+PROG = matcha
 CC = gcc
 
 include common.mk

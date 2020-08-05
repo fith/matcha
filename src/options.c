@@ -9,7 +9,7 @@ static void doButtons(void);
 static void backButton(void);
 static void drawButtons(void) ;
 
-void initOption(void)
+void initOptions(void)
 {
   app.delegate.logic = logic;
   app.delegate.draw = draw;
