@@ -84,7 +84,6 @@ static void drawGoals(void)
 
 static void drawDottedLine(int x1, int y1, int x2, int y2) {
   float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
-
   float dy = y2 - y1;
   float dx = x2 - x1;
   float theta = atan(dy/dx);
@@ -123,11 +122,24 @@ static void initDots()
   int x,y;
   Dot *d;
     
+  int x1, y1, x2, y2;
+  float distance;
+  float minDistance = 3.0;
+  float maxDistance = 4.0;
+  do {
+    x1 = rand() % GRID_SIZE;
+    y1 = rand() % GRID_SIZE;
+    x2 = rand() % GRID_SIZE;
+    y2 = rand() % GRID_SIZE;
+    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
+  } while (distance < minDistance || distance > maxDistance);
+  printf("DISTANCE %f\n", distance);
+
   // Food
   d = malloc(sizeof(Dot));
   memset(d, 0, sizeof(Dot));
-  d->row = rand() % GRID_SIZE;
-  d->col = rand() % GRID_SIZE;
+  d->row = x1;
+  d->col = y1;
   d->x = startX + d->row * TILE_SIZE + (d->row * TILE_MARGIN) + TILE_MARGIN;
   d->y = startY + d->col * TILE_SIZE + (d->col * TILE_MARGIN) + TILE_MARGIN;
   d->texture = foodTexture;
@@ -142,8 +154,8 @@ static void initDots()
   d = malloc(sizeof(Dot));
   memset(d, 0, sizeof(Dot));
   do {
-  x = rand() % GRID_SIZE;
-  y = rand() % GRID_SIZE;
+  x = x2;
+  y = y2;
   } while (grid[x][y] != NULL);
   d->row = x;
   d->col = y;
@@ -177,6 +189,7 @@ static void initDots()
       stage.dotsTail = d;
     }
   }
+  d = NULL;
 }
 
 static void logic(void)
