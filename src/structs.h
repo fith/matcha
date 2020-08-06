@@ -1,7 +1,7 @@
-typedef struct Entity Entity;
+// typedef struct Entity Entity;
+typedef struct Dot Dot;
+typedef struct Font Font;
 typedef struct Button Button;
-typedef struct Explosion Explosion;
-typedef struct Debris Debris;
 
 typedef struct {
   void (*logic)(void);
@@ -18,14 +18,16 @@ typedef struct {
   int enableFilm;
 } App;
 
-struct Entity {
+struct Dot {
+  SDL_Texture *texture;
+  SDL_Color *color;
   float x;
   float y;
-  int w;
-  int h;
-  SDL_Texture *texture;
-  Entity *next;
-  int color;
+  int row;
+  int col;
+  int locked;
+  Dot *goal;
+  Dot *next;
 };
 
 struct Button {
@@ -41,13 +43,12 @@ struct Button {
 
 typedef struct {
   Button buttonsHead, *buttonsTail;
+  Dot dotsHead, *dotsTail;
 } Stage;
 
-
-
-typedef struct {
+struct Font {
   int index;
   int size;
   TTF_Font *font;
   int r, g, b, a;
-} Font;
+};

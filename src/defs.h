@@ -18,6 +18,16 @@
 #define MIN(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
+#ifndef degToRad
+#define degToRad(angleInDegrees) ((angleInDegrees) * M_PI / 180.0)
+#endif
+
+#ifndef radToDeg
+#define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M_PI)
+#endif
+
+#define PI 3.14159265
+
 #define FPS 60
 
 #define ENEMY_BELLET_SPEED 8

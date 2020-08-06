@@ -29,6 +29,7 @@ void initSDL(void)
   SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
   app.renderer = SDL_CreateRenderer(app.window, -1, renderFlags);
+  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
 
   if(!app.renderer) {
     printf("Failed to create renderer: %s\n", SDL_GetError());
