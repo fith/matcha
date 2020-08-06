@@ -18,6 +18,8 @@ static SDL_Texture *dottedLineTexture;
 static SDL_Texture *animalTexture;
 static SDL_Texture *foodTexture;
 
+static Dot *dragging;
+
 // grid
 #define GRID_SIZE 7
 #define TILE_SIZE 64
@@ -78,6 +80,16 @@ static void drawGoals(void)
   }
 }
 
+static void doDrag() {
+  if(app.dragging == 1) {
+
+  } else {
+    if(dragging != NULL) {
+      gridToScreen(dragging->row, dragging->col, &dragging->x, &dragging->y);
+    }
+  }
+}
+
 static void drawDottedLine(int x1, int y1, int x2, int y2) {
   float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
   float dy = y2 - y1;
@@ -112,6 +124,8 @@ static void drawDottedLine(int x1, int y1, int x2, int y2) {
                     &center,
                     SDL_FLIP_NONE);
 }
+
+
 
 static void initDots()
 {

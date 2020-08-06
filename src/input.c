@@ -19,17 +19,19 @@ void doMouseUp(SDL_MouseButtonEvent *event)
   if(event->clicks == 1) {
     app.clicked = 1;
   }
-  app.mouse[1] = event;
+  app.dragging = 0;
+  app.mouseUpEvent = event;
 }
 
 void doMouseDown(SDL_MouseButtonEvent *event) 
 {
-  app.mouse[0] = event;
-  app.mouse[1] = NULL;
+  app.dragging = 1;
+  app.mouseDownEvent = event;
+  app.mouseUpEvent = NULL;
 }
 
 int isMouseDown() {
-  return (app.mouse[0] != NULL && app.mouse[1] == NULL) ? 1 : 0;
+  return (app.mouseDownEvent != NULL && app.mouseUpEvent == NULL) ? 1 : 0;
 }
 
 void doInput(void) {
