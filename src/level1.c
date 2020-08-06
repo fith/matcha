@@ -11,6 +11,7 @@ static void initDots(void);
 static void drawDots(void);
 static void drawGoals(void);
 static void drawDottedLine(int x1, int y1, int x2, int y2);
+static void gridToScreen(int row, int col, float *x, float *y);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -18,21 +19,19 @@ static SDL_Texture *animalTexture;
 static SDL_Texture *foodTexture;
 
 // grid
-static int startX, startY;
-
 #define GRID_SIZE 7
 #define TILE_SIZE 64
 #define TILE_MARGIN 16
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
 
 #define MAX_COLORS 7
-SDL_Color colorRed = {211, 44, 44}; // red
-SDL_Color colorOrange = {211, 136, 44}; // orange
-SDL_Color colorYellow = {229, 229, 26}; // yellow
-SDL_Color colorGreen = {51, 204, 51}; // green
-SDL_Color colorBlue = {44, 210, 211}; // blue
-SDL_Color colorIndigo = {44, 90, 211}; // indigo
-SDL_Color colorViolet = {183, 44, 211}; // violet
+static SDL_Color colorRed = {211, 44, 44}; // red
+static SDL_Color colorOrange = {211, 136, 44}; // orange
+static SDL_Color colorYellow = {229, 229, 26}; // yellow
+static SDL_Color colorGreen = {51, 204, 51}; // green
+static SDL_Color colorBlue = {44, 210, 211}; // blue
+static SDL_Color colorIndigo = {44, 90, 211}; // indigo
+static SDL_Color colorViolet = {183, 44, 211}; // violet
 static SDL_Color *colors[] = {&colorRed,
                               &colorOrange,
                               &colorYellow,
@@ -65,9 +64,6 @@ void initLevel1(void)
   }
 
   createButton("<", 16, 540, backButton);
-
-  startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
-  startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
 
   initDots();
 }
@@ -140,8 +136,7 @@ static void initDots()
   memset(d, 0, sizeof(Dot));
   d->row = x1;
   d->col = y1;
-  d->x = startX + d->row * TILE_SIZE + (d->row * TILE_MARGIN) + TILE_MARGIN;
-  d->y = startY + d->col * TILE_SIZE + (d->col * TILE_MARGIN) + TILE_MARGIN;
+  gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = foodTexture;
   d->color = colors[MAX_COLORS-1];
   d->locked = 0;
@@ -159,8 +154,7 @@ static void initDots()
   } while (grid[x][y] != NULL);
   d->row = x;
   d->col = y;
-  d->x = startX + d->row * TILE_SIZE + (d->row * TILE_MARGIN) + TILE_MARGIN;
-  d->y = startY + d->col * TILE_SIZE + (d->col * TILE_MARGIN) + TILE_MARGIN;
+  gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = animalTexture;
   d->color = colors[MAX_COLORS-1];
   d->locked = 0;
@@ -179,8 +173,7 @@ static void initDots()
       memset(d, 0, sizeof(Dot));
       d->row = x;
       d->col = y;
-      d->x = startX + d->row * TILE_SIZE + (d->row * TILE_MARGIN) + TILE_MARGIN;
-      d->y = startY + d->col * TILE_SIZE + (d->col * TILE_MARGIN) + TILE_MARGIN;
+      gridToScreen(d->row, d->col, &d->x, &d->y);
       d->texture = dotTexture;
       d->color = colors[rand() % (MAX_COLORS - 1)];
       d->locked = 0;
@@ -190,6 +183,13 @@ static void initDots()
     }
   }
   d = NULL;
+}
+
+static void gridToScreen(int row, int col, float *x, float *y) {
+  static int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
+  static int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
+  *x = startX + row * TILE_SIZE + (row * TILE_MARGIN) + TILE_MARGIN;
+  *y = startY + col * TILE_SIZE + (col * TILE_MARGIN) + TILE_MARGIN;
 }
 
 static void logic(void)

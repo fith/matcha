@@ -14,6 +14,24 @@ void doKeyUp(SDL_KeyboardEvent *event)
   }
 }
 
+void doMouseUp(SDL_MouseButtonEvent *event) 
+{
+  if(event->clicks == 1) {
+    app.clicked = 1;
+  }
+  app.mouse[1] = event;
+}
+
+void doMouseDown(SDL_MouseButtonEvent *event) 
+{
+  app.mouse[0] = event;
+  app.mouse[1] = NULL;
+}
+
+int isMouseDown() {
+  return (app.mouse[0] != NULL && app.mouse[1] == NULL) ? 1 : 0;
+}
+
 void doInput(void) {
   SDL_Event event;
   app.clicked = 0;
@@ -33,9 +51,11 @@ void doInput(void) {
         break;
       
       case SDL_MOUSEBUTTONUP:
-        if(event.button.clicks == 1) {
-          app.clicked = 1;
-        }
+        doMouseUp(&event.button);
+        break;
+
+      case SDL_MOUSEBUTTONDOWN:
+        doMouseDown(&event.button);
         break;
 
       default:

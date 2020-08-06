@@ -13,6 +13,7 @@ typedef struct {
   SDL_Window *window;
   Delegate delegate;
   int keyboard[MAX_KEYBOARD_KEYS];
+  SDL_MouseButtonEvent mouse[2];
   int clicked;
   int enableMusic;
   int enableFilm;
