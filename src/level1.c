@@ -17,6 +17,7 @@ static void swapDots(int row1, int col1, int row2, int col2);
 static float lerp(float v0, float v1, float t);
 static void doAnimateMove(void);
 static void animateMoveTo(Dot *dot, float endX, float endY);
+static int isValidMove(Dot *from, Dot *to);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -94,6 +95,7 @@ static void doDrag(void) {
   screenToGrid(mouse.x, mouse.y, &row, &col);
 
   if(app.mouseDown == 1) {
+    // button down
     if (dragging == NULL && grid[row][col]->locked == 0) {
       // pick it up
       dragging = grid[row][col];
@@ -107,11 +109,14 @@ static void doDrag(void) {
       dragging->y = mouse.y - dragOffsetY;
     }
   } else {
+    // button is now up
     if(dragging != NULL) {
-      if(grid[row][col]->locked == 0) {
+      if( grid[row][col]->locked == 0 && isValidMove(dragging, grid[row][col]) == 1 ) {
         swapDots(row, col, dragging->row, dragging->col);
       } else {
-        gridToScreen(dragging->row, dragging->col, &dragging->x, &dragging->y);
+        float x, y;
+        gridToScreen(dragging->row, dragging->col, &x, &y);
+        animateMoveTo(dragging, x, y);
         dragging->locked = 0;
       }
       dragging = NULL;
@@ -207,7 +212,7 @@ static void drawDottedLine(int x1, int y1, int x2, int y2) {
 
 
 
-static void initDots()
+static void initDots(void)
 {
   int x,y;
   Dot *d;
@@ -320,8 +325,11 @@ static void draw(void)
 
 static void backButton(void)
 {
+  printf("A\n");
   deinitLevel1();
+  printf("B\n");
   initMenu();
+  printf("C\n");
 }
 
 static void doAnimateMove(void) {
@@ -361,10 +369,6 @@ static void doAnimateMove(void) {
 static float lerp(float v0, float v1, float t) {
   return v0 + t * (v1 - v0);
 }
-
-// static void DestroyAnimateMove(AnimateMove *am) {
-
-// }
 
 void doButtons() {
   Button *b, *prev;
@@ -464,6 +468,16 @@ static void deinitLevel1(void)
       b->hover = NULL;
     }
     free(b);
+  }
+
+  
+  AnimateMove *a;	
+  while (stage.animateMoveHead.next)
+  {
+    a = stage.animateMoveHead.next;
+    stage.animateMoveHead.next = a->next;
+    a->dot = NULL;
+    free(a);
   }
 
   // dots and their textures
