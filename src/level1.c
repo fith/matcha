@@ -12,6 +12,8 @@ static void drawDots(void);
 static void drawGoals(void);
 static void drawDottedLine(int x1, int y1, int x2, int y2);
 static void gridToScreen(int row, int col, float *x, float *y);
+static void screenToGrid(float x, float y, int *row, int *col);
+static void swapDots(int row1, int col1, int row2, int col2);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -19,6 +21,7 @@ static SDL_Texture *animalTexture;
 static SDL_Texture *foodTexture;
 
 static Dot *dragging;
+static int dragOffsetX, dragOffsetY;
 
 // grid
 #define GRID_SIZE 7
@@ -81,13 +84,49 @@ static void drawGoals(void)
 }
 
 static void doDrag() {
-  if(app.dragging == 1) {
+  SDL_Point mouse;
+  SDL_GetMouseState(&mouse.x, &mouse.y);
+  int row, col;
+  screenToGrid(mouse.x, mouse.y, &row, &col);
 
+  if(app.mouseDown == 1) {
+    if (dragging == NULL) {
+      dragging = grid[row][col];
+      dragOffsetX = mouse.x - dragging->x;
+      dragOffsetY = mouse.y - dragging->y;
+    }
+    if (dragging != NULL) {
+      dragging->x = mouse.x - dragOffsetX;
+      dragging->y = mouse.y - dragOffsetY;
+    }
   } else {
     if(dragging != NULL) {
+      if(grid[row][col]->locked == 0) {
+        swapDots(row, col, dragging->row, dragging->col);
+      }
       gridToScreen(dragging->row, dragging->col, &dragging->x, &dragging->y);
+      dragging = NULL;
     }
   }
+}
+
+static void swapDots(int row1, int col1, int row2, int col2) {
+  if (row1 == row2 && col1 == col2) {
+    return;
+  }
+  // move 1 to temp
+  Dot *dot = grid[row1][col1];
+  // move 2 to 1
+  grid[row1][col1] = grid[row2][col2];
+  grid[row1][col1]->row = row1;
+  grid[row1][col1]->col = col1;
+  // move temp to 2
+  grid[row2][col2] = dot;
+  grid[row2][col2]->row = row2;
+  grid[row2][col2]->col = col2;
+  // update locations
+  gridToScreen(row1, col1, &grid[row1][col1]->x, &grid[row1][col1]->y);
+  gridToScreen(row2, col2, &grid[row2][col2]->x, &grid[row2][col2]->y);
 }
 
 static void drawDottedLine(int x1, int y1, int x2, int y2) {
@@ -206,9 +245,25 @@ static void gridToScreen(int row, int col, float *x, float *y) {
   *y = startY + col * TILE_SIZE + (col * TILE_MARGIN) + TILE_MARGIN;
 }
 
+static void screenToGrid(float x, float y, int *row, int *col) {
+  static int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
+  static int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
+
+  int gridWidth = (TILE_SIZE + TILE_MARGIN) * GRID_SIZE + TILE_MARGIN;
+  int offsetX = x - startX; // the x inside the gride
+  int offsetY = y - startY; // the x inside the gride
+  if (offsetX < 0 || offsetX > gridWidth) {
+    return;
+  }
+  *row = offsetX / (TILE_SIZE + TILE_MARGIN);
+  *col = offsetY / (TILE_SIZE + TILE_MARGIN);
+}
+
 static void logic(void)
 {
   doButtons();
+
+  doDrag();
 }
 
 static void draw(void)
@@ -294,6 +349,14 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
 
 static void deinitLevel1(void)
 {
+  // state variables
+  dragging = NULL;
+  SDL_DestroyTexture(dotTexture);
+  SDL_DestroyTexture(dottedLineTexture);
+  SDL_DestroyTexture(animalTexture);
+  SDL_DestroyTexture(foodTexture);
+
+  // zero the grid
   int x,y;
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
@@ -301,6 +364,7 @@ static void deinitLevel1(void)
     }
   }
 
+  // buttons and their textures
   Button *b;	
   while (stage.buttonsHead.next)
   {
@@ -317,11 +381,14 @@ static void deinitLevel1(void)
     free(b);
   }
 
+  // dots and their textures
   Dot *d;
   while (stage.dotsHead.next)
   {
     d = stage.dotsHead.next;
     stage.dotsHead.next = d->next;
+    d->texture = NULL;
+    d->color = NULL;
     free(d);
   }
 }

@@ -1,6 +1,6 @@
 #include "common.h"
 
- #include <tgmath.h>
+#include <tgmath.h>
 
 // draw.c
 extern void blit(SDL_Texture *texture, int x, int y);

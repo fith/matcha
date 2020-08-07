@@ -2,6 +2,7 @@
 typedef struct Dot Dot;
 typedef struct Font Font;
 typedef struct Button Button;
+typedef struct AnimateMove AnimateMove;
 
 typedef struct {
   void (*logic)(void);
@@ -16,7 +17,7 @@ typedef struct {
   SDL_MouseButtonEvent *mouseDownEvent;
   SDL_MouseButtonEvent *mouseUpEvent;
   int clicked;
-  int dragging;
+  int mouseDown;
   int enableMusic;
   int enableFilm;
 } App;
@@ -32,6 +33,19 @@ struct Dot {
   Dot *goal;
   Dot *next;
 };
+
+struct AnimateMove {
+  int startX;
+  int startY;
+  int endX;
+  int endY
+  int *x;
+  int *y;
+  float startTime;
+  float duration;
+  float progress;
+  AnimateMove next*;
+}
 
 struct Button {
   SDL_Texture *normal;

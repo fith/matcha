@@ -19,13 +19,13 @@ void doMouseUp(SDL_MouseButtonEvent *event)
   if(event->clicks == 1) {
     app.clicked = 1;
   }
-  app.dragging = 0;
+  app.mouseDown = 0;
   app.mouseUpEvent = event;
 }
 
 void doMouseDown(SDL_MouseButtonEvent *event) 
 {
-  app.dragging = 1;
+  app.mouseDown = 1;
   app.mouseDownEvent = event;
   app.mouseUpEvent = NULL;
 }
