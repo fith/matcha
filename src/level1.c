@@ -3,7 +3,7 @@
 static void logic(void);
 static void draw(void);
 static void createButton(char *str, int x, int y, void (*onClick)());
-static void backButton(void);
+void backButton(void);
 static void deinitLevel1(void);
 static void drawButtons(void);
 static void doButtons(void);
@@ -274,7 +274,7 @@ static void initDots(void)
       d->col = y;
       gridToScreen(d->row, d->col, &d->x, &d->y);
       d->texture = dotTexture;
-      d->color = colors[rand() % (MAX_COLORS - 1)];
+      d->color = colors[rand() % MAX_COLORS];
       d->locked = 0;
       grid[x][y] = d;
       stage.dotsTail->next = d;
@@ -323,13 +323,13 @@ static void draw(void)
   drawButtons();
 }
 
-static void backButton(void)
+void backButton(void)
 {
   printf("A\n");
-  deinitLevel1();
-  printf("B\n");
-  initMenu();
-  printf("C\n");
+  // deinitLevel1();
+  // printf("B\n");
+  // initMenu();
+  // printf("C\n");
 }
 
 static void doAnimateMove(void) {
