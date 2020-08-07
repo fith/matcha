@@ -3,7 +3,7 @@
 static void logic(void);
 static void draw(void);
 static void createButton(char *str, int x, int y, void (*onClick)());
-void backButton(void);
+static void backButton(void);
 static void deinitLevel1(void);
 static void drawButtons(void);
 static void doButtons(void);
@@ -32,6 +32,7 @@ static int dragOffsetX, dragOffsetY;
 #define TILE_SIZE 64
 #define TILE_MARGIN 16
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
+static SDL_Rect gridRect;
 
 #define MAX_COLORS 7
 static SDL_Color colorRed = {211, 44, 44}; // red
@@ -93,25 +94,21 @@ static void doDrag(void) {
   SDL_GetMouseState(&mouse.x, &mouse.y);
   int row, col;
   screenToGrid(mouse.x, mouse.y, &row, &col);
+  int inGrid = (SDL_PointInRect(&mouse, &gridRect) == SDL_TRUE) ? 1 : 0;
 
   if(app.mouseDown == 1) {
     // button down
-    if (dragging == NULL && grid[row][col]->locked == 0) {
+    if (inGrid == 1 && dragging == NULL && grid[row][col]->locked == 0) {
       // pick it up
       dragging = grid[row][col];
       dragging->locked = 1;
       dragOffsetX = mouse.x - dragging->x;
       dragOffsetY = mouse.y - dragging->y;
     }
-    if (dragging != NULL) {
-      // track to mouse
-      dragging->x = mouse.x - dragOffsetX;
-      dragging->y = mouse.y - dragOffsetY;
-    }
   } else {
     // button is now up
     if(dragging != NULL) {
-      if( grid[row][col]->locked == 0 && isValidMove(dragging, grid[row][col]) == 1 ) {
+      if(inGrid == 1 && grid[row][col]->locked == 0 && isValidMove(dragging, grid[row][col]) == 1 ) {
         swapDots(row, col, dragging->row, dragging->col);
       } else {
         float x, y;
@@ -121,6 +118,12 @@ static void doDrag(void) {
       }
       dragging = NULL;
     }
+  }
+
+  if (dragging != NULL) {
+    // track to mouse
+    dragging->x = mouse.x - dragOffsetX;
+    dragging->y = mouse.y - dragOffsetY;
   }
 }
 
@@ -216,6 +219,12 @@ static void initDots(void)
 {
   int x,y;
   Dot *d;
+
+  int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int width = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
+  int height = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
+  gridRect = (SDL_Rect){ startX, startY, width, height};
     
   int x1, y1, x2, y2;
   float distance;
@@ -228,7 +237,6 @@ static void initDots(void)
     y2 = rand() % GRID_SIZE;
     distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
   } while (distance < minDistance || distance > maxDistance);
-  printf("DISTANCE %f\n", distance);
 
   // Food
   d = malloc(sizeof(Dot));
@@ -285,20 +293,14 @@ static void initDots(void)
 }
 
 static void gridToScreen(int row, int col, float *x, float *y) {
-  static int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
-  static int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
-  *x = startX + row * TILE_SIZE + (row * TILE_MARGIN) + TILE_MARGIN;
-  *y = startY + col * TILE_SIZE + (col * TILE_MARGIN) + TILE_MARGIN;
+  *x = gridRect.x + row * TILE_SIZE + (row * TILE_MARGIN) + TILE_MARGIN;
+  *y = gridRect.y + col * TILE_SIZE + (col * TILE_MARGIN) + TILE_MARGIN;
 }
 
 static void screenToGrid(float x, float y, int *row, int *col) {
-  static int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
-  static int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (16 * GRID_SIZE)) / 2);
-
-  int gridWidth = (TILE_SIZE + TILE_MARGIN) * GRID_SIZE + TILE_MARGIN;
-  int offsetX = x - startX; // the x inside the gride
-  int offsetY = y - startY; // the x inside the gride
-  if (offsetX < 0 || offsetX > gridWidth) {
+  int offsetX = x - gridRect.x; // the x inside the gride
+  int offsetY = y - gridRect.y; // the x inside the gride
+  if (offsetX < 0 || offsetX > gridRect.w) {
     return;
   }
   *row = offsetX / (TILE_SIZE + TILE_MARGIN);
@@ -323,13 +325,10 @@ static void draw(void)
   drawButtons();
 }
 
-void backButton(void)
+static void backButton(void)
 {
-  printf("A\n");
-  // deinitLevel1();
-  // printf("B\n");
-  // initMenu();
-  // printf("C\n");
+  deinitLevel1();
+  initMenu();
 }
 
 static void doAnimateMove(void) {
@@ -370,9 +369,8 @@ static float lerp(float v0, float v1, float t) {
   return v0 + t * (v1 - v0);
 }
 
-void doButtons() {
+static void doButtons() {
   Button *b, *prev;
-
   prev = &stage.buttonsHead;
   SDL_Point mouse;
   SDL_GetMouseState(&mouse.x, &mouse.y);
@@ -382,15 +380,16 @@ void doButtons() {
     SDL_Rect rect = { b->x, b->y, b->w, b->h };
     if(SDL_PointInRect(&mouse, &rect) == SDL_TRUE) {
       b->isHover = 1;
-      if(app.clicked) {
+      printf("App clicked: %i\n", app.clicked);
+      if(app.clicked == 1) {
         b->onClick();
         return;
       }
     } else {
       b->isHover = 0;
     }
-
     prev = b;
+
   }
 }
 
@@ -444,6 +443,10 @@ static void deinitLevel1(void)
   SDL_DestroyTexture(dottedLineTexture);
   SDL_DestroyTexture(animalTexture);
   SDL_DestroyTexture(foodTexture);
+  dotTexture = NULL;
+  dottedLineTexture = NULL;
+  animalTexture = NULL;
+  foodTexture = NULL;
 
   // zero the grid
   int x,y;
