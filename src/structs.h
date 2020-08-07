@@ -35,17 +35,16 @@ struct Dot {
 };
 
 struct AnimateMove {
-  int startX;
-  int startY;
-  int endX;
-  int endY
-  int *x;
-  int *y;
-  float startTime;
+  float startX;
+  float startY;
+  float endX;
+  float endY;
+  double startTime;
   float duration;
   float progress;
-  AnimateMove next*;
-}
+  Dot *dot;
+  AnimateMove *next;
+};
 
 struct Button {
   SDL_Texture *normal;
@@ -61,6 +60,7 @@ struct Button {
 typedef struct {
   Button buttonsHead, *buttonsTail;
   Dot dotsHead, *dotsTail;
+  AnimateMove animateMoveHead, *animateMoveTail;
 } Stage;
 
 struct Font {

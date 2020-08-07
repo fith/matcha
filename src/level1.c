@@ -14,6 +14,9 @@ static void drawDottedLine(int x1, int y1, int x2, int y2);
 static void gridToScreen(int row, int col, float *x, float *y);
 static void screenToGrid(float x, float y, int *row, int *col);
 static void swapDots(int row1, int col1, int row2, int col2);
+static float lerp(float v0, float v1, float t);
+static void doAnimateMove(void);
+static void animateMoveTo(Dot *dot, float endX, float endY);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -53,6 +56,7 @@ void initLevel1(void)
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
   stage.dotsTail = &stage.dotsHead;
+  stage.animateMoveTail = &stage.animateMoveHead;
 
   if(dotTexture == NULL) {
     dotTexture = loadTexture("gfx/dot.png");
@@ -83,19 +87,22 @@ static void drawGoals(void)
   }
 }
 
-static void doDrag() {
+static void doDrag(void) {
   SDL_Point mouse;
   SDL_GetMouseState(&mouse.x, &mouse.y);
   int row, col;
   screenToGrid(mouse.x, mouse.y, &row, &col);
 
   if(app.mouseDown == 1) {
-    if (dragging == NULL) {
+    if (dragging == NULL && grid[row][col]->locked == 0) {
+      // pick it up
       dragging = grid[row][col];
+      dragging->locked = 1;
       dragOffsetX = mouse.x - dragging->x;
       dragOffsetY = mouse.y - dragging->y;
     }
     if (dragging != NULL) {
+      // track to mouse
       dragging->x = mouse.x - dragOffsetX;
       dragging->y = mouse.y - dragOffsetY;
     }
@@ -103,8 +110,10 @@ static void doDrag() {
     if(dragging != NULL) {
       if(grid[row][col]->locked == 0) {
         swapDots(row, col, dragging->row, dragging->col);
+      } else {
+        gridToScreen(dragging->row, dragging->col, &dragging->x, &dragging->y);
+        dragging->locked = 0;
       }
-      gridToScreen(dragging->row, dragging->col, &dragging->x, &dragging->y);
       dragging = NULL;
     }
   }
@@ -114,8 +123,16 @@ static void swapDots(int row1, int col1, int row2, int col2) {
   if (row1 == row2 && col1 == col2) {
     return;
   }
+  // create animations
+  float endX, endY;
+  gridToScreen(row2, col2, &endX, &endY);
+  animateMoveTo(grid[row1][col1], endX, endY);
+  // // dot 2
+  gridToScreen(row1, col1, &endX, &endY);
+  animateMoveTo(grid[row2][col2], endX, endY);
+
   // move 1 to temp
-  Dot *dot = grid[row1][col1];
+  Dot* dot = grid[row1][col1];
   // move 2 to 1
   grid[row1][col1] = grid[row2][col2];
   grid[row1][col1]->row = row1;
@@ -124,9 +141,33 @@ static void swapDots(int row1, int col1, int row2, int col2) {
   grid[row2][col2] = dot;
   grid[row2][col2]->row = row2;
   grid[row2][col2]->col = col2;
-  // update locations
-  gridToScreen(row1, col1, &grid[row1][col1]->x, &grid[row1][col1]->y);
-  gridToScreen(row2, col2, &grid[row2][col2]->x, &grid[row2][col2]->y);
+}
+
+static void animateMoveTo(Dot *dot, float endX, float endY) {
+  AnimateMove *am;
+  double ticks = SDL_GetTicks();
+
+  am = malloc(sizeof(AnimateMove));
+  memset(am, 0, sizeof(AnimateMove));
+  am->dot = dot;
+  am->startX = dot->x;
+  am->startY = dot->y;
+  am->endX = endX;
+  am->endY = endY;
+  am->duration = 100;
+  am->startTime = ticks;
+  stage.animateMoveTail->next = am;
+  stage.animateMoveTail = am;
+}
+
+static int isValidMove(Dot *from, Dot *to) {
+  if (from->row == to->row) {
+    return (abs(from->col - to->col) == 1) ? 1 : 0;
+  }
+  if (from->col == to->col) {
+    return (abs(from->row - to->row) == 1) ? 1 : 0;
+  }
+  return 0;
 }
 
 static void drawDottedLine(int x1, int y1, int x2, int y2) {
@@ -264,6 +305,8 @@ static void logic(void)
   doButtons();
 
   doDrag();
+
+  doAnimateMove();
 }
 
 static void draw(void)
@@ -280,6 +323,48 @@ static void backButton(void)
   deinitLevel1();
   initMenu();
 }
+
+static void doAnimateMove(void) {
+  AnimateMove *am, *prev;
+
+  prev = &stage.animateMoveHead;
+  double ticks = SDL_GetTicks();
+
+  for (am = stage.animateMoveHead.next; am != NULL; am = am->next)
+  {
+    Dot *dot = am->dot;
+
+    double elapsed = ticks - am->startTime;
+    am->progress = elapsed / am->duration;
+
+    dot->x = lerp(am->startX, am->endX, am->progress);
+    dot->y = lerp(am->startY, am->endY, am->progress);
+
+    if (elapsed > am->duration) {
+      dot->x = am->endX;
+      dot->y = am->endY;
+      dot->locked = 0;
+      
+      if (am == stage.animateMoveTail) {
+        stage.animateMoveTail = prev;
+      }
+
+      dot = NULL;
+      prev->next = am->next;
+      free(am);
+      am = prev;
+    }
+    prev = am;
+  }
+}
+
+static float lerp(float v0, float v1, float t) {
+  return v0 + t * (v1 - v0);
+}
+
+// static void DestroyAnimateMove(AnimateMove *am) {
+
+// }
 
 void doButtons() {
   Button *b, *prev;
