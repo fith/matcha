@@ -78,6 +78,8 @@ int main()
 
 static void drawDust(void)
 {
+  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_ADD);
+  SDL_SetTextureBlendMode(dustTexture, SDL_BLENDMODE_ADD);
   if (dustTexture == NULL) {
     return;
   }
@@ -94,4 +96,5 @@ static void drawDust(void)
     }
     offset = 0;
   }
+  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_NONE);
 }

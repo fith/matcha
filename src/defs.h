@@ -43,11 +43,29 @@
 
 #define MAX_DUST 20
 
+#define MATCH 3
+
 enum
 {
     FNT_HEAD,
     FNT_BODY,
     FNT_BUTT
+};
+
+enum DotTypes {
+    DOT_DOT,
+    DOT_ANIMAL,
+    DOT_FOOD
+};
+
+enum DotColors {
+    COL_RED,
+    COL_ORANGE,
+    COL_YELLOW,
+    COL_GREEN,
+    COL_BLUE,
+    COL_INDIGO,
+    COL_VIOLET
 };
 
 enum

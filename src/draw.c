@@ -70,3 +70,37 @@ void blitRect(SDL_Texture *texture, SDL_Rect *src, int x, int y)
   SDL_RenderCopy(app.renderer, texture, src, &dest);
 }
 
+void drawLine(SDL_Texture *texture, int x1, int y1, int x2, int y2) {
+  float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
+  float dy = y2 - y1;
+  float dx = x2 - x1;
+  float theta = atan(dy/dx);
+  theta *= 180/PI; // rads to degs
+  if(x1 > x2) {
+    theta += 180;
+  }
+
+  SDL_Rect srcRect;
+  srcRect.x = 0;
+  srcRect.y = 0;
+  srcRect.w = distance;
+  SDL_QueryTexture(texture, NULL, NULL, NULL, &srcRect.h);
+
+  SDL_Rect dstRect;
+  dstRect.x = x1 - srcRect.h/2.0;
+  dstRect.y = y1 - srcRect.h/2.0;
+  dstRect.w = distance;
+  dstRect.h = srcRect.h;
+
+  SDL_Point center;
+  center.x = srcRect.h/2.0;
+  center.y = srcRect.h/2.0;
+  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+  SDL_RenderCopyEx(app.renderer,
+                    texture,
+                    &srcRect,
+                    &dstRect,
+                    theta,
+                    &center,
+                    SDL_FLIP_NONE);
+}

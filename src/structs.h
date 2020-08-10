@@ -30,6 +30,8 @@ struct Dot {
   int row;
   int col;
   int locked;
+  int type;
+  int health;
   Dot *goal;
   Dot *next;
 };

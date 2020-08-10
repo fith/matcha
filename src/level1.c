@@ -10,7 +10,6 @@ static void doButtons(void);
 static void initDots(void);
 static void drawDots(void);
 static void drawGoals(void);
-static void drawDottedLine(int x1, int y1, int x2, int y2);
 static void gridToScreen(int row, int col, float *x, float *y);
 static void screenToGrid(float x, float y, int *row, int *col);
 static void swapDots(int row1, int col1, int row2, int col2);
@@ -18,6 +17,13 @@ static float lerp(float v0, float v1, float t);
 static void doAnimateMove(void);
 static void animateMoveTo(Dot *dot, float endX, float endY);
 static int isValidMove(Dot *from, Dot *to);
+static void checkMatches(void);
+static void createMatch(Dot *dot);
+static void doMatches(void);
+static void checkMatchesRight(int x, int y);
+static void checkMatchesDown(int x, int y);
+static void removeDot(Dot *dot);
+static int alreadyMatched(Dot *Dot);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -42,6 +48,8 @@ static SDL_Color colorGreen = {51, 204, 51}; // green
 static SDL_Color colorBlue = {44, 210, 211}; // blue
 static SDL_Color colorIndigo = {44, 90, 211}; // indigo
 static SDL_Color colorViolet = {183, 44, 211}; // violet
+static SDL_Color colorWhite = {255, 240, 220}; // white
+static SDL_Color colorBlack = {26, 26, 26}; // white
 static SDL_Color *colors[] = {&colorRed,
                               &colorOrange,
                               &colorYellow,
@@ -84,7 +92,7 @@ static void drawGoals(void)
   Dot *d, *prev;
   for (d = stage.dotsHead.next; d != NULL; d = d->next) {
     if (d->goal != NULL) {
-      drawDottedLine(d->x + TILE_SIZE/2.0, d->y + TILE_SIZE/2.0, d->goal->x + TILE_SIZE/2.0, d->goal->y + TILE_SIZE/2.0);
+      drawLine(dottedLineTexture, d->x + TILE_SIZE/2.0, d->y + TILE_SIZE/2.0, d->goal->x + TILE_SIZE/2.0, d->goal->y + TILE_SIZE/2.0);
     }
   }
 }
@@ -178,43 +186,6 @@ static int isValidMove(Dot *from, Dot *to) {
   return 0;
 }
 
-static void drawDottedLine(int x1, int y1, int x2, int y2) {
-  float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
-  float dy = y2 - y1;
-  float dx = x2 - x1;
-  float theta = atan(dy/dx);
-  theta *= 180/PI; // rads to degs
-  if(x1 > x2) {
-    theta += 180;
-  }
-
-  SDL_Rect srcRect;
-  srcRect.x = 0;
-  srcRect.y = 0;
-  srcRect.w = distance;
-  srcRect.h = 12;
-
-  SDL_Rect dstRect;
-  dstRect.x = x1 - srcRect.h/2.0;
-  dstRect.y = y1 - srcRect.h/2.0;
-  dstRect.w = distance;
-  dstRect.h = srcRect.h;
-
-  SDL_Point center;
-  center.x = srcRect.h/2.0;
-  center.y = srcRect.h/2.0;
-  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
-  SDL_RenderCopyEx(app.renderer,
-                    dottedLineTexture,
-                    &srcRect,
-                    &dstRect,
-                    theta,
-                    &center,
-                    SDL_FLIP_NONE);
-}
-
-
-
 static void initDots(void)
 {
   int x,y;
@@ -245,8 +216,10 @@ static void initDots(void)
   d->col = y1;
   gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = foodTexture;
-  d->color = colors[MAX_COLORS-1];
+  d->color = colors[COL_VIOLET];
   d->locked = 0;
+  d->health = 1;
+  d->type = DOT_ANIMAL;
   grid[d->row][d->col] = d;
   stage.dotsTail->next = d;
   stage.dotsTail = d;
@@ -263,8 +236,10 @@ static void initDots(void)
   d->col = y;
   gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = animalTexture;
-  d->color = colors[MAX_COLORS-1];
+  d->color = colors[COL_VIOLET];
   d->locked = 0;
+  d->health = 1;
+  d->type = DOT_FOOD;
   d->goal = stage.dotsTail;
   grid[d->row][d->col] = d;
   stage.dotsTail->next = d;
@@ -284,6 +259,8 @@ static void initDots(void)
       d->texture = dotTexture;
       d->color = colors[rand() % MAX_COLORS];
       d->locked = 0;
+      d->health = 1;
+      d->type = DOT_DOT;
       grid[x][y] = d;
       stage.dotsTail->next = d;
       stage.dotsTail = d;
@@ -310,6 +287,10 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 static void logic(void)
 {
   doButtons();
+
+  checkMatches();
+
+  doMatches();
 
   doDrag();
 
@@ -339,8 +320,16 @@ static void doAnimateMove(void) {
 
   for (am = stage.animateMoveHead.next; am != NULL; am = am->next)
   {
-    Dot *dot = am->dot;
+    if(!am->dot) {
+      if (am == stage.animateMoveTail) {
+        stage.animateMoveTail = prev;
+      }
+      prev->next = am->next;
+      free(am);
+      am = prev;
+    }
 
+    Dot *dot = am->dot;
     double elapsed = ticks - am->startTime;
     am->progress = elapsed / am->duration;
 
@@ -397,6 +386,9 @@ static void drawDots(void) {
   Dot *d, *prev;
   for (d = stage.dotsHead.next; d != NULL; d = d->next)
   {
+    if (!d) {
+      continue;
+    }
     SDL_SetTextureColorMod(d->texture, d->color->r, d->color->g, d->color->b);
     blit(d->texture, d->x, d->y);
   }
@@ -415,6 +407,107 @@ static void drawButtons(void) {
       blit(b->normal, b->x, b->y);
     }
   }
+}
+
+static void checkMatches() {
+  int x, y;
+  for(x = 0; x < GRID_SIZE; x++) {
+    for(y = 0; y < GRID_SIZE; y++) {
+      checkMatchesRight( x, y);
+      checkMatchesDown(x, y);
+    }
+  }
+}
+
+static void checkMatchesRight(int x, int y) {
+  if (!grid[x][y]) {
+    return;
+  }
+  int next = x;
+  int matches = 1; // current dot matches itself.
+  Dot* dots[(MATCH * 2)] = { NULL };
+  dots[0] = grid[x][y];
+  
+  while (++next < GRID_SIZE) {
+    if (grid[next][y] == NULL) {
+      break;
+    }
+    if (grid[next][y]->color == grid[x][y]->color) {
+      dots[matches] = grid[next][y];
+      matches++;
+    } else {
+      break;
+    }
+  }
+
+  if (matches >= MATCH) {
+    for(int i = 0; i < (MATCH * 2) - 1; i++) {
+      if (dots[i] != NULL) {
+        if (dots[i]->goal == NULL){
+          dots[i]->health = 0;
+        }
+      }
+    }
+  }
+}
+
+static void checkMatchesDown(int x, int y) {
+  if (!grid[x][y]) {
+    return;
+  }
+  int next = y;
+  int matches = 1; // current dot matches itself.
+  Dot *dots[(MATCH * 2) - 1] = { NULL };
+  dots[0] = grid[x][y];
+  
+  while (++next < GRID_SIZE) {
+    if (!grid[x][next]) {
+      break;
+    }
+    if (grid[x][next]->color == grid[x][y]->color) {
+      dots[matches] = grid[x][next];
+      matches++;
+    } else {
+      break;
+    }
+  }
+
+  if (matches >= MATCH) {
+    for(int i = 0; i < (MATCH * 2) - 1; i++) {
+      if (dots[i] != NULL) {
+        if (dots[i]->type == DOT_DOT){
+          dots[i]->health = 0;
+        }
+      }
+    }
+  }
+}
+
+static void doMatches() {
+  Dot *d, *prev;
+  for (d = stage.dotsHead.next; d != NULL; d = d->next)
+  {
+    if (d->health == 0) {
+      removeDot(d);
+    }
+  }
+}
+
+static void removeDot(Dot *dot) {
+    Dot *d, *prev;
+    prev = &stage.dotsHead;
+    for (d = stage.dotsHead.next; d != NULL; d = d->next) {
+      if(d == dot) {
+        if (d == stage.dotsTail) 
+        {
+          stage.dotsTail = prev;
+        }
+        prev->next = d->next;
+        free(d);
+        d = prev;
+      }
+      prev = d;
+    }
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {
@@ -494,3 +587,4 @@ static void deinitLevel1(void)
     free(d);
   }
 }
+
