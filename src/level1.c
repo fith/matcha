@@ -13,17 +13,17 @@ static void drawGoals(void);
 static void gridToScreen(int row, int col, float *x, float *y);
 static void screenToGrid(float x, float y, int *row, int *col);
 static void swapDots(int row1, int col1, int row2, int col2);
-static float lerp(float v0, float v1, float t);
+static void doDrag(void);
 static void doAnimateMove(void);
 static void animateMoveTo(Dot *dot, float endX, float endY);
 static int isValidMove(Dot *from, Dot *to);
 static void checkMatches(void);
-static void createMatch(Dot *dot);
-static void doMatches(void);
 static void checkMatchesRight(int x, int y);
 static void checkMatchesDown(int x, int y);
+static void doFalling(void);
 static void removeDot(Dot *dot);
-static int alreadyMatched(Dot *Dot);
+static Dot* createDot(int row, int col);
+static void removeDeadDots(void);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -65,8 +65,6 @@ void initLevel1(void)
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
-  stage.dotsTail = &stage.dotsHead;
-  stage.animateMoveTail = &stage.animateMoveHead;
 
   if(dotTexture == NULL) {
     dotTexture = loadTexture("gfx/dot.png");
@@ -89,10 +87,52 @@ void initLevel1(void)
 
 static void drawGoals(void)
 {
-  Dot *d, *prev;
-  for (d = stage.dotsHead.next; d != NULL; d = d->next) {
-    if (d->goal != NULL) {
-      drawLine(dottedLineTexture, d->x + TILE_SIZE/2.0, d->y + TILE_SIZE/2.0, d->goal->x + TILE_SIZE/2.0, d->goal->y + TILE_SIZE/2.0);
+  for (int x = 0; x < GRID_SIZE; x++) {
+    for (int y = 0; y < GRID_SIZE; y++) {
+      if (!grid[x][y]) {
+        continue;
+      }
+      if (grid[x][y]->goal != NULL) {
+        drawLine(dottedLineTexture, 
+                  grid[x][y]->x + TILE_SIZE/2.0, 
+                  grid[x][y]->y + TILE_SIZE/2.0, 
+                  grid[x][y]->goal->x + TILE_SIZE/2.0, 
+                  grid[x][y]->goal->y + TILE_SIZE/2.0);
+      }
+    }
+  }
+}
+
+static void doFalling(void) {
+  int x, y;
+  for (x = (GRID_SIZE-1); x > 0; x--) {
+    for (y = (GRID_SIZE-1); y > 0; y--) {
+      if (!grid[x][y]) { // if this cell is empty
+        if(grid[x][y-1]) { // check the above cell
+          // move its contents down a space
+          printf("This animate\n");
+          swapDots(x, y-1, x, y);
+          // Dot *dot = grid[x][y-1];
+          // float endX, endY;
+          // gridToScreen(x, y, &endX, &endY);
+          // grid[x][y] = dot;
+          // animateMoveTo(grid[x][y], endX, endY);
+          // grid[x][y-1] = NULL;
+        }
+      }
+    }
+  }
+
+  // top row
+  y = 0;
+  for (x = 0; x < GRID_SIZE; x++) {
+    if (!grid[x][y]) {
+      Dot *dot = createDot(x, y);
+      int endY = dot->y;
+      dot->y -= TILE_SIZE + TILE_MARGIN;
+      printf("That animate\n");
+      animateMoveTo(dot, dot->x, endY);
+      grid[x][y] = dot;
     }
   }
 }
@@ -106,29 +146,33 @@ static void doDrag(void) {
 
   if(app.mouseDown == 1) {
     // button down
-    if (inGrid == 1 && dragging == NULL && grid[row][col]->locked == 0) {
+    if (grid[row][col] && inGrid && !dragging) {
       // pick it up
       dragging = grid[row][col];
-      dragging->locked = 1;
       dragOffsetX = mouse.x - dragging->x;
       dragOffsetY = mouse.y - dragging->y;
     }
   } else {
     // button is now up
-    if(dragging != NULL) {
-      if(inGrid == 1 && grid[row][col]->locked == 0 && isValidMove(dragging, grid[row][col]) == 1 ) {
-        swapDots(row, col, dragging->row, dragging->col);
+    float x, y;
+    if(dragging) {
+      if(grid[row][col]) {
+        if(inGrid == 1 && isValidMove(dragging, grid[row][col]) == 1 ) {
+          // hit on a swappable dot
+          swapDots(row, col, dragging->row, dragging->col);
+        } else {
+          gridToScreen(dragging->row, dragging->col, &x, &y);
+          animateMoveTo(dragging, x, y);
+        }
       } else {
-        float x, y;
         gridToScreen(dragging->row, dragging->col, &x, &y);
         animateMoveTo(dragging, x, y);
-        dragging->locked = 0;
       }
       dragging = NULL;
     }
   }
 
-  if (dragging != NULL) {
+  if (dragging) {
     // track to mouse
     dragging->x = mouse.x - dragOffsetX;
     dragging->y = mouse.y - dragOffsetY;
@@ -142,21 +186,29 @@ static void swapDots(int row1, int col1, int row2, int col2) {
   // create animations
   float endX, endY;
   gridToScreen(row2, col2, &endX, &endY);
-  animateMoveTo(grid[row1][col1], endX, endY);
+  if (grid[row1][col1]) {
+    animateMoveTo(grid[row1][col1], endX, endY);
+  }
   // // dot 2
   gridToScreen(row1, col1, &endX, &endY);
-  animateMoveTo(grid[row2][col2], endX, endY);
+  if (grid[row2][col2]) {
+    animateMoveTo(grid[row2][col2], endX, endY);
+  }
 
   // move 1 to temp
   Dot* dot = grid[row1][col1];
   // move 2 to 1
   grid[row1][col1] = grid[row2][col2];
-  grid[row1][col1]->row = row1;
-  grid[row1][col1]->col = col1;
+  if (grid[row1][col1]) {
+    grid[row1][col1]->row = row1;
+    grid[row1][col1]->col = col1;
+  }
   // move temp to 2
   grid[row2][col2] = dot;
-  grid[row2][col2]->row = row2;
-  grid[row2][col2]->col = col2;
+  if (grid[row2][col2]) {
+    grid[row2][col2]->row = row2;
+    grid[row2][col2]->col = col2;
+  }
 }
 
 static void animateMoveTo(Dot *dot, float endX, float endY) {
@@ -165,15 +217,14 @@ static void animateMoveTo(Dot *dot, float endX, float endY) {
 
   am = malloc(sizeof(AnimateMove));
   memset(am, 0, sizeof(AnimateMove));
-  am->dot = dot;
   am->startX = dot->x;
   am->startY = dot->y;
   am->endX = endX;
   am->endY = endY;
   am->duration = 100;
   am->startTime = ticks;
-  stage.animateMoveTail->next = am;
-  stage.animateMoveTail = am;
+
+  dot->animateMove = am;
 }
 
 static int isValidMove(Dot *from, Dot *to) {
@@ -189,7 +240,7 @@ static int isValidMove(Dot *from, Dot *to) {
 static void initDots(void)
 {
   int x,y;
-  Dot *d;
+  Dot *animal, *food;
 
   int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
   int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
@@ -197,76 +248,72 @@ static void initDots(void)
   int height = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
   gridRect = (SDL_Rect){ startX, startY, width, height};
     
-  int x1, y1, x2, y2;
+  int ax, ay, fx, fy;
   float distance;
   float minDistance = 3.0;
   float maxDistance = 4.0;
   do {
-    x1 = rand() % GRID_SIZE;
-    y1 = rand() % GRID_SIZE;
-    x2 = rand() % GRID_SIZE;
-    y2 = rand() % GRID_SIZE;
-    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
+    ax = rand() % GRID_SIZE;
+    ay = rand() % GRID_SIZE;
+    fx = rand() % GRID_SIZE;
+    fy = rand() % GRID_SIZE;
+    distance = sqrt(pow(fx - ax, 2) + pow(fy - ay, 2) * 1.0);
   } while (distance < minDistance || distance > maxDistance);
 
   // Food
-  d = malloc(sizeof(Dot));
-  memset(d, 0, sizeof(Dot));
-  d->row = x1;
-  d->col = y1;
-  gridToScreen(d->row, d->col, &d->x, &d->y);
-  d->texture = foodTexture;
-  d->color = colors[COL_VIOLET];
-  d->locked = 0;
-  d->health = 1;
-  d->type = DOT_ANIMAL;
-  grid[d->row][d->col] = d;
-  stage.dotsTail->next = d;
-  stage.dotsTail = d;
+  animal = malloc(sizeof(Dot));
+  memset(animal, 0, sizeof(Dot));
+  animal->row = ax;
+  animal->col = ay;
+  gridToScreen(animal->row, animal->col, &animal->x, &animal->y);
+  animal->texture = dotTexture;
+  animal->icon = animalTexture;
+  animal->color = colors[rand() % MAX_COLORS];
+  animal->animateMove = NULL;
+  animal->type = DOT_ANIMAL;
+  animal->health = 1;
+  grid[animal->row][animal->col] = animal;
 
   // Animal
-  d = NULL;
-  d = malloc(sizeof(Dot));
-  memset(d, 0, sizeof(Dot));
-  do {
-  x = x2;
-  y = y2;
-  } while (grid[x][y] != NULL);
-  d->row = x;
-  d->col = y;
-  gridToScreen(d->row, d->col, &d->x, &d->y);
-  d->texture = animalTexture;
-  d->color = colors[COL_VIOLET];
-  d->locked = 0;
-  d->health = 1;
-  d->type = DOT_FOOD;
-  d->goal = stage.dotsTail;
-  grid[d->row][d->col] = d;
-  stage.dotsTail->next = d;
-  stage.dotsTail = d;
+  food = malloc(sizeof(Dot));
+  memset(food, 0, sizeof(Dot));
+  food->row = fx;
+  food->col = fy;
+  gridToScreen(food->row, food->col, &food->x, &food->y);
+  food->texture = dotTexture;
+  food->icon = foodTexture;
+  food->color = colors[rand() % MAX_COLORS];
+  food->animateMove = NULL;
+  food->type = DOT_FOOD;
+  food->health = 1;
+  grid[food->row][food->col] = food;
+
+  animal->goal = food;
 
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
-      if (grid[x][y] != NULL) {
-        continue;
+      if (!grid[x][y]) {
+        grid[x][y] = createDot(x, y);
       }
-      d = NULL;
-      d = malloc(sizeof(Dot));
-      memset(d, 0, sizeof(Dot));
-      d->row = x;
-      d->col = y;
-      gridToScreen(d->row, d->col, &d->x, &d->y);
-      d->texture = dotTexture;
-      d->color = colors[rand() % MAX_COLORS];
-      d->locked = 0;
-      d->health = 1;
-      d->type = DOT_DOT;
-      grid[x][y] = d;
-      stage.dotsTail->next = d;
-      stage.dotsTail = d;
+      
     }
   }
-  d = NULL;
+}
+
+static Dot* createDot(int row, int col) {
+  Dot *d;
+  d = malloc(sizeof(Dot));
+  memset(d, 0, sizeof(Dot));
+  d->row = row;
+  d->col = col;
+  gridToScreen(d->row, d->col, &d->x, &d->y);
+  d->texture = dotTexture;
+  d->icon = NULL;
+  d->color = colors[rand() % MAX_COLORS];
+  d->animateMove = NULL;
+  d->health = 1;
+  d->type = DOT_DOT;
+  return d;
 }
 
 static void gridToScreen(int row, int col, float *x, float *y) {
@@ -286,23 +333,33 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 
 static void logic(void)
 {
+  printf("DoButtons\n");
   doButtons();
-
+  
+  printf("checkMatches\n");
   checkMatches();
 
-  doMatches();
+  removeDeadDots();
 
+  printf("doFalling\n");
+  doFalling();
+
+  printf("doDrag\n");
   doDrag();
 
+  printf("doAnimateMove\n");
   doAnimateMove();
 }
 
 static void draw(void)
 {
+  printf("drawGoals\n");
   drawGoals();
   
+  printf("drawDots\n");
   drawDots();
 
+  printf("drawButtons\n");
   drawButtons();
 }
 
@@ -313,50 +370,37 @@ static void backButton(void)
 }
 
 static void doAnimateMove(void) {
-  AnimateMove *am, *prev;
-
-  prev = &stage.animateMoveHead;
   double ticks = SDL_GetTicks();
-
-  for (am = stage.animateMoveHead.next; am != NULL; am = am->next)
-  {
-    if(!am->dot) {
-      if (am == stage.animateMoveTail) {
-        stage.animateMoveTail = prev;
+  Dot *dot;
+  AnimateMove *am;
+  for (int x = 0; x < GRID_SIZE; x++) {
+    for (int y = 0; y < GRID_SIZE; y++) {
+      if (!grid[x][y]) {
+        continue;
       }
-      prev->next = am->next;
-      free(am);
-      am = prev;
-    }
+      if (!grid[x][y]->animateMove) {
+        continue;
+      }
+      dot = grid[x][y];
+      am = grid[x][y]->animateMove;
+      double elapsed = ticks - am->startTime;
+      am->progress = elapsed / am->duration;
 
-    Dot *dot = am->dot;
-    double elapsed = ticks - am->startTime;
-    am->progress = elapsed / am->duration;
+      dot->x = lerp(am->startX, am->endX, am->progress);
+      dot->y = lerp(am->startY, am->endY, am->progress);
 
-    dot->x = lerp(am->startX, am->endX, am->progress);
-    dot->y = lerp(am->startY, am->endY, am->progress);
-
-    if (elapsed > am->duration) {
-      dot->x = am->endX;
-      dot->y = am->endY;
-      dot->locked = 0;
+      if (elapsed > am->duration) {
+        dot->x = am->endX;
+        dot->y = am->endY;
+        dot->animateMove = NULL;
+        free(am);
+      }
       
-      if (am == stage.animateMoveTail) {
-        stage.animateMoveTail = prev;
-      }
-
-      dot = NULL;
-      prev->next = am->next;
-      free(am);
-      am = prev;
     }
-    prev = am;
   }
 }
 
-static float lerp(float v0, float v1, float t) {
-  return v0 + t * (v1 - v0);
-}
+
 
 static void doButtons() {
   Button *b, *prev;
@@ -383,14 +427,23 @@ static void doButtons() {
 }
 
 static void drawDots(void) {
-  Dot *d, *prev;
-  for (d = stage.dotsHead.next; d != NULL; d = d->next)
-  {
-    if (!d) {
-      continue;
+  for (int x = 0; x < GRID_SIZE; x++) {
+    for (int y = 0; y < GRID_SIZE; y++) {
+      if (!grid[x][y]) {
+        continue;
+      }
+      if (grid[x][y]->icon) {
+        SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
+        blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
+
+        SDL_SetTextureColorMod(grid[x][y]->icon, colorWhite.r, colorWhite.g, colorWhite.b);
+        // SDL_SetTextureColorMod(grid[x][y]->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+        blit(grid[x][y]->icon, grid[x][y]->x, grid[x][y]->y);
+      } else {
+        SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
+        blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
+      }
     }
-    SDL_SetTextureColorMod(d->texture, d->color->r, d->color->g, d->color->b);
-    blit(d->texture, d->x, d->y);
   }
 }
 
@@ -413,7 +466,7 @@ static void checkMatches() {
   int x, y;
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
-      checkMatchesRight( x, y);
+      checkMatchesRight(x, y);
       checkMatchesDown(x, y);
     }
   }
@@ -483,31 +536,26 @@ static void checkMatchesDown(int x, int y) {
   }
 }
 
-static void doMatches() {
-  Dot *d, *prev;
-  for (d = stage.dotsHead.next; d != NULL; d = d->next)
-  {
-    if (d->health == 0) {
-      removeDot(d);
+static void removeDeadDots(void) {
+  for (int x = 0; x < GRID_SIZE; x++) {
+    for (int y = 0; y < GRID_SIZE; y++) {
+      if (grid[x][y]) {
+        if (grid[x][y]->health == 0) {
+          removeDot(grid[x][y]);
+        }
+      }
     }
   }
 }
 
 static void removeDot(Dot *dot) {
-    Dot *d, *prev;
-    prev = &stage.dotsHead;
-    for (d = stage.dotsHead.next; d != NULL; d = d->next) {
-      if(d == dot) {
-        if (d == stage.dotsTail) 
-        {
-          stage.dotsTail = prev;
-        }
-        prev->next = d->next;
-        free(d);
-        d = prev;
-      }
-      prev = d;
-    }
+  if(dot) {
+    grid[dot->row][dot->col] = NULL;
+    dot->texture = NULL;
+    dot->color = NULL;
+    free(dot->animateMove);
+    free(dot);
+  }
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {
@@ -530,6 +578,14 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
 
 static void deinitLevel1(void)
 {
+  // zero the grid
+  int x,y;
+  for(x = 0; x < GRID_SIZE; x++) {
+    for(y = 0; y < GRID_SIZE; y++) {
+      removeDot(grid[x][y]);
+    }
+  }
+
   // state variables
   dragging = NULL;
   SDL_DestroyTexture(dotTexture);
@@ -540,14 +596,6 @@ static void deinitLevel1(void)
   dottedLineTexture = NULL;
   animalTexture = NULL;
   foodTexture = NULL;
-
-  // zero the grid
-  int x,y;
-  for(x = 0; x < GRID_SIZE; x++) {
-    for(y = 0; y < GRID_SIZE; y++) {
-      grid[x][y] = NULL;
-    }
-  }
 
   // buttons and their textures
   Button *b;	
@@ -564,27 +612,6 @@ static void deinitLevel1(void)
       b->hover = NULL;
     }
     free(b);
-  }
-
-  
-  AnimateMove *a;	
-  while (stage.animateMoveHead.next)
-  {
-    a = stage.animateMoveHead.next;
-    stage.animateMoveHead.next = a->next;
-    a->dot = NULL;
-    free(a);
-  }
-
-  // dots and their textures
-  Dot *d;
-  while (stage.dotsHead.next)
-  {
-    d = stage.dotsHead.next;
-    stage.dotsHead.next = d->next;
-    d->texture = NULL;
-    d->color = NULL;
-    free(d);
   }
 }
 

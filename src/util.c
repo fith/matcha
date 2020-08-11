@@ -21,3 +21,7 @@ void calcSlope(int x1, int y1, int x2, int y2, float *dx, float *dy)
 	*dy = (y1 - y2);
 	*dy /= steps;
 }
+
+float lerp(float v0, float v1, float t) {
+  return v0 + t * (v1 - v0);
+}

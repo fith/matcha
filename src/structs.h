@@ -24,16 +24,16 @@ typedef struct {
 
 struct Dot {
   SDL_Texture *texture;
+  SDL_Texture *icon;
   SDL_Color *color;
   float x;
   float y;
   int row;
   int col;
-  int locked;
   int type;
   int health;
+  AnimateMove *animateMove;
   Dot *goal;
-  Dot *next;
 };
 
 struct AnimateMove {
@@ -44,7 +44,6 @@ struct AnimateMove {
   double startTime;
   float duration;
   float progress;
-  Dot *dot;
   AnimateMove *next;
 };
 
@@ -61,7 +60,6 @@ struct Button {
 
 typedef struct {
   Button buttonsHead, *buttonsTail;
-  Dot dotsHead, *dotsTail;
   AnimateMove animateMoveHead, *animateMoveTail;
 } Stage;
 
