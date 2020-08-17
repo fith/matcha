@@ -66,6 +66,8 @@ void initLevel1(void)
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
 
+  memset(grid, 0, sizeof(grid[0][0]) * GRID_SIZE * GRID_SIZE);
+
   if(dotTexture == NULL) {
     dotTexture = loadTexture("gfx/dot.png");
   }
