@@ -21,7 +21,7 @@ static void checkMatches(void);
 static void checkMatchesRight(int x, int y);
 static void checkMatchesDown(int x, int y);
 static void doFalling(void);
-static void removeDot(Dot *dot);
+static void removeDot(int x, int y);
 static Dot* createDot(int row, int col);
 static void removeDeadDots(void);
 
@@ -105,7 +105,7 @@ static void drawGoals(void)
 
 static void doFalling(void) {
   int x, y;
-  for (x = (GRID_SIZE-1); x > 0; x--) {
+  for (x = 0; x < GRID_SIZE; x++) {
     for (y = (GRID_SIZE-1); y > 0; y--) {
       if (!grid[x][y]) { // if this cell is empty
         if(grid[x][y-1]) { // check the above cell
@@ -185,18 +185,21 @@ static void swapDots(int row1, int col1, int row2, int col2) {
   }
   // create animations
   float endX, endY;
-  gridToScreen(row2, col2, &endX, &endY);
   if (grid[row1][col1]) {
+    gridToScreen(row2, col2, &endX, &endY);
     animateMoveTo(grid[row1][col1], endX, endY);
   }
   // // dot 2
-  gridToScreen(row1, col1, &endX, &endY);
   if (grid[row2][col2]) {
+    gridToScreen(row1, col1, &endX, &endY);
     animateMoveTo(grid[row2][col2], endX, endY);
   }
 
   // move 1 to temp
-  Dot* dot = grid[row1][col1];
+  Dot* dot = NULL;
+  if (grid[row1][col1]) {
+    dot = grid[row1][col1];
+  }
   // move 2 to 1
   grid[row1][col1] = grid[row2][col2];
   if (grid[row1][col1]) {
@@ -540,23 +543,20 @@ static void removeDeadDots(void) {
     for (int y = 0; y < GRID_SIZE; y++) {
       if (grid[x][y]) {
         if (grid[x][y]->health == 0) {
-          removeDot(grid[x][y]);
+          removeDot(x, y);
         }
       }
     }
   }
 }
 
-static void removeDot(Dot *dot) {
-  if(dot) {
-    grid[dot->row][dot->col] = NULL;
-    dot->texture = NULL;
-    dot->color = NULL;
-    if (dot->animateMove) {
-      free(dot->animateMove);
-    }
-    free(dot);
+static void removeDot(int x, int y) {
+  Dot *dot = grid[x][y];
+  grid[x][y] = NULL;
+  if (dot->animateMove) {
+    free(dot->animateMove);
   }
+  free(dot);
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {
@@ -583,7 +583,10 @@ static void deinitLevel1(void)
   int x,y;
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
-      removeDot(grid[x][y]);
+      if (grid[x][y]) {
+        removeDot(x, y);
+      }
+      grid[x][y] = NULL;
     }
   }
 
