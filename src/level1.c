@@ -24,6 +24,7 @@ static void doFalling(void);
 static void removeDot(int x, int y);
 static Dot* createDot(int row, int col);
 static void removeDeadDots(void);
+static void drawDot(Dot *dot);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -40,7 +41,7 @@ static int dragOffsetX, dragOffsetY;
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
 static SDL_Rect gridRect;
 
-#define MAX_COLORS 7
+#define MAX_COLORS 6
 static SDL_Color colorRed = {211, 44, 44}; // red
 static SDL_Color colorOrange = {211, 136, 44}; // orange
 static SDL_Color colorYellow = {229, 229, 26}; // yellow
@@ -338,33 +339,33 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 
 static void logic(void)
 {
-  printf("DoButtons\n");
+  // printf("DoButtons\n");
   doButtons();
   
-  printf("checkMatches\n");
   checkMatches();
 
+  // printf("checkMatches\n");
   removeDeadDots();
 
-  printf("doFalling\n");
+  // printf("doFalling\n");
   doFalling();
 
-  printf("doDrag\n");
+  // printf("doDrag\n");
   doDrag();
 
-  printf("doAnimateMove\n");
+  // printf("doAnimateMove\n");
   doAnimateMove();
 }
 
 static void draw(void)
 {
-  printf("drawGoals\n");
+  // printf("drawGoals\n");
   drawGoals();
   
-  printf("drawDots\n");
+  // printf("drawDots\n");
   drawDots();
 
-  printf("drawButtons\n");
+  // printf("drawButtons\n");
   drawButtons();
 }
 
@@ -434,20 +435,46 @@ static void doButtons() {
 static void drawDots(void) {
   for (int x = 0; x < GRID_SIZE; x++) {
     for (int y = 0; y < GRID_SIZE; y++) {
-      if (!grid[x][y]) {
-        continue;
-      }
-      SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
-      blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
-      if (grid[x][y]->icon) {
-        if (grid[x][y]->type == DOT_FOOD) {
-          SDL_SetTextureColorMod(grid[x][y]->icon, colorWhite.r, colorWhite.g, colorWhite.b);
-        } else if (grid[x][y]->type == DOT_ANIMAL) {
-          SDL_SetTextureColorMod(grid[x][y]->icon, colorBlack.r, colorBlack.g, colorBlack.b);
-        }
-        blit(grid[x][y]->icon, grid[x][y]->x, grid[x][y]->y);
+      if (grid[x][y]) {
+        drawDot(grid[x][y]);
       }
     }
+  }
+  // draw again, so always on top
+  if (dragging) {
+    drawDot(dragging);
+  }
+}
+
+static void drawDot(Dot *dot) {
+  // draw rect
+  SDL_Rect dst;
+  dst.x = dot->x;
+  dst.y = dot->y;
+  SDL_QueryTexture(dot->texture, NULL, NULL, &dst.w, &dst.h);
+  
+  // change scale if dragging
+  if (dot == dragging) {
+    float scale = 1.1;
+    // calculate new x and y
+    dst.x = (dst.x + dst.w/2) - (dst.w/2 * scale);
+    dst.y = (dst.y + dst.h/2) - (dst.h/2 * scale);
+    dst.w *= scale;
+    dst.h *= scale;
+  }
+
+  // color and draw texture
+  SDL_SetTextureColorMod(dot->texture, dot->color->r, dot->color->g, dot->color->b);
+  blitFit(dot->texture, &dst);
+
+  // draw icon if needed
+  if (dot->icon) {
+    if (dot->type == DOT_FOOD) {
+      SDL_SetTextureColorMod(dot->icon, colorWhite.r, colorWhite.g, colorWhite.b);
+    } else if (dot->type == DOT_ANIMAL) {
+      SDL_SetTextureColorMod(dot->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+    }
+    blitFit(dot->icon, &dst);
   }
 }
 
