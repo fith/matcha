@@ -432,16 +432,15 @@ static void drawDots(void) {
       if (!grid[x][y]) {
         continue;
       }
+      SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
+      blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
       if (grid[x][y]->icon) {
-        SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
-        blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
-
-        SDL_SetTextureColorMod(grid[x][y]->icon, colorWhite.r, colorWhite.g, colorWhite.b);
-        // SDL_SetTextureColorMod(grid[x][y]->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+        if (grid[x][y]->type == DOT_FOOD) {
+          SDL_SetTextureColorMod(grid[x][y]->icon, colorWhite.r, colorWhite.g, colorWhite.b);
+        } else if (grid[x][y]->type == DOT_ANIMAL) {
+          SDL_SetTextureColorMod(grid[x][y]->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+        }
         blit(grid[x][y]->icon, grid[x][y]->x, grid[x][y]->y);
-      } else {
-        SDL_SetTextureColorMod(grid[x][y]->texture, grid[x][y]->color->r, grid[x][y]->color->g, grid[x][y]->color->b);
-        blit(grid[x][y]->texture, grid[x][y]->x, grid[x][y]->y);
       }
     }
   }
@@ -496,7 +495,7 @@ static void checkMatchesRight(int x, int y) {
   if (matches >= MATCH) {
     for(int i = 0; i < (MATCH * 2) - 1; i++) {
       if (dots[i] != NULL) {
-        if (dots[i]->goal == NULL){
+        if (dots[i]->type == DOT_DOT){
           dots[i]->health = 0;
         }
       }
@@ -553,7 +552,9 @@ static void removeDot(Dot *dot) {
     grid[dot->row][dot->col] = NULL;
     dot->texture = NULL;
     dot->color = NULL;
-    free(dot->animateMove);
+    if (dot->animateMove) {
+      free(dot->animateMove);
+    }
     free(dot);
   }
 }
