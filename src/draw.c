@@ -49,7 +49,10 @@ void drawSprite(Sprite* sprite) {
   
   // figure out current frame
   if (frameTime > sprite->frameDelay) {
-    sprite->currentFrame = (sprite->currentFrame < sprite->frameCount-1) ? sprite->currentFrame+1 : 0;
+    sprite->currentFrame++;
+    if (sprite->currentFrame > sprite->frameCount-1) {
+      sprite->currentFrame = 0;
+    }
     sprite->lastFrameTime = time;
     printf("Changed Frame: %i\n", sprite->currentFrame);
   }

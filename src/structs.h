@@ -25,7 +25,7 @@ typedef struct {
 
 struct Dot {
   SDL_Texture *texture;
-  SDL_Texture *icon;
+  Sprite *icon;
   SDL_Color *color;
   float x;
   float y;
@@ -47,8 +47,6 @@ struct AnimateMove {
   float progress;
   AnimateMove *next;
 };
-
-
 
 struct Sprite {
   SDL_Rect rect;

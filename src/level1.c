@@ -59,13 +59,16 @@ static SDL_Color *colors[] = {&colorRed,
                               &colorIndigo,
                               &colorViolet};
 
-static Sprite *sprite;
+static Sprite *hogSprite;
+static Sprite *foodSprite;
 static SDL_Texture *spriteTexture;
 
 void initLevel1(void)
 {
   app.delegate.logic = logic;
   app.delegate.draw = draw;
+
+  dragging = NULL;
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
@@ -89,24 +92,45 @@ void initLevel1(void)
   if(spriteTexture == NULL) {
     spriteTexture = loadTexture("gfx/animal-hedgehog-sheet.png");
   }
-  if(!sprite) {
-    sprite = malloc(sizeof(Sprite));
-    memset(sprite, 0, sizeof(Sprite));
-    sprite->rect.x = 0;
-    sprite->rect.y = 0;
-    sprite->rotation = 0.0;
-    sprite->scale = 1.0;
-    sprite->texture = spriteTexture;
-    SDL_QueryTexture(sprite->texture, NULL, NULL, &sprite->rect.w, &sprite->rect.h);
-    sprite->currentFrame = 0;
-    sprite->frameCount = 2;
-    sprite->rect.w = sprite->rect.w / sprite->frameCount;
-    sprite->frameDelay = 500;
-    sprite->startTime = SDL_GetTicks();
-    sprite->lastFrameTime = sprite->startTime;
-    sprite->blendMode = SDL_BLENDMODE_NONE;
-    sprite->flip = 0;
-    sprite->loop = 1;
+  
+  if(!hogSprite) {
+    hogSprite = malloc(sizeof(Sprite));
+    memset(hogSprite, 0, sizeof(Sprite));
+    hogSprite->rect.x = 0;
+    hogSprite->rect.y = 0;
+    hogSprite->rotation = 0.0;
+    hogSprite->scale = 1.0;
+    hogSprite->texture = spriteTexture;
+    SDL_QueryTexture(hogSprite->texture, NULL, NULL, &hogSprite->rect.w, &hogSprite->rect.h);
+    hogSprite->currentFrame = 0;
+    hogSprite->frameCount = 2;
+    hogSprite->rect.w = hogSprite->rect.w / hogSprite->frameCount;
+    hogSprite->frameDelay = 500;
+    hogSprite->startTime = SDL_GetTicks();
+    hogSprite->lastFrameTime = hogSprite->startTime;
+    hogSprite->blendMode = SDL_BLENDMODE_NONE;
+    hogSprite->flip = 0;
+    hogSprite->loop = 1;
+  }
+
+  if(!foodSprite) {
+    foodSprite = malloc(sizeof(Sprite));
+    memset(foodSprite, 0, sizeof(Sprite));
+    foodSprite->rect.x = 0;
+    foodSprite->rect.y = 0;
+    foodSprite->rotation = 0.0;
+    foodSprite->scale = 1.0;
+    foodSprite->texture = foodTexture;
+    SDL_QueryTexture(foodSprite->texture, NULL, NULL, &foodSprite->rect.w, &foodSprite->rect.h);
+    foodSprite->currentFrame = 0;
+    foodSprite->frameCount = 1;
+    foodSprite->rect.w = foodSprite->rect.w / foodSprite->frameCount;
+    foodSprite->frameDelay = 500;
+    foodSprite->startTime = SDL_GetTicks();
+    foodSprite->lastFrameTime = foodSprite->startTime;
+    foodSprite->blendMode = SDL_BLENDMODE_NONE;
+    foodSprite->flip = 0;
+    foodSprite->loop = 1;
   }
 
   createButton("<", 16, 540, backButton);
@@ -173,22 +197,26 @@ static void doDrag(void) {
   screenToGrid(mouse.x, mouse.y, &row, &col);
   int inGrid = (SDL_PointInRect(&mouse, &gridRect) == SDL_TRUE) ? 1 : 0;
 
-  if(app.mouseDown == 1) {
+  if(app.mouseDown) {
     // button down
-    if (grid[row][col] && inGrid && !dragging) {
-      // pick it up
-      dragging = grid[row][col];
-      dragOffsetX = mouse.x - dragging->x;
-      dragOffsetY = mouse.y - dragging->y;
+    if (inGrid) {
+      if (grid[row][col] && !dragging) {
+        // pick it up
+        dragging = grid[row][col];
+        dragOffsetX = mouse.x - dragging->x;
+        dragOffsetY = mouse.y - dragging->y;
+      }
     }
   } else {
     // button is now up
     float x, y;
     if(dragging) {
       if(grid[row][col]) {
-        if(inGrid == 1 && isValidMove(dragging, grid[row][col]) == 1 ) {
+        if(inGrid) {
           // hit on a swappable dot
-          swapDots(row, col, dragging->row, dragging->col);
+          if (isValidMove(dragging, grid[row][col])) {
+            swapDots(row, col, dragging->row, dragging->col);
+          }
         } else {
           gridToScreen(dragging->row, dragging->col, &x, &y);
           animateMoveTo(dragging, x, y);
@@ -299,7 +327,7 @@ static void initDots(void)
   animal->col = ay;
   gridToScreen(animal->row, animal->col, &animal->x, &animal->y);
   animal->texture = dotTexture;
-  animal->icon = animalTexture;
+  animal->icon = hogSprite;
   animal->color = colors[rand() % MAX_COLORS];
   animal->animateMove = NULL;
   animal->type = DOT_ANIMAL;
@@ -313,7 +341,7 @@ static void initDots(void)
   food->col = fy;
   gridToScreen(food->row, food->col, &food->x, &food->y);
   food->texture = dotTexture;
-  food->icon = foodTexture;
+  food->icon = foodSprite;
   food->color = colors[rand() % MAX_COLORS];
   food->animateMove = NULL;
   food->type = DOT_FOOD;
@@ -354,8 +382,8 @@ static void gridToScreen(int row, int col, float *x, float *y) {
 }
 
 static void screenToGrid(float x, float y, int *row, int *col) {
-  int offsetX = x - gridRect.x; // the x inside the gride
-  int offsetY = y - gridRect.y; // the x inside the gride
+  int offsetX = x - gridRect.x; // the x inside the grid
+  int offsetY = y - gridRect.y; // the x inside the grid
   if (offsetX < 0 || offsetX > gridRect.w) {
     return;
   }
@@ -381,6 +409,12 @@ static void logic(void)
 
   // printf("doAnimateMove\n");
   doAnimateMove();
+
+  if (hogSprite->rect.x <= foodSprite->rect.x) {
+    hogSprite->flip = 0;
+  } else {
+    hogSprite->flip = 1;
+  }
 }
 
 static void draw(void)
@@ -393,8 +427,6 @@ static void draw(void)
 
   // printf("drawButtons\n");
   drawButtons();
-
-  drawSprite(sprite);
 }
 
 static void backButton(void)
@@ -497,12 +529,20 @@ static void drawDot(Dot *dot) {
 
   // draw icon if needed
   if (dot->icon) {
-    if (dot->type == DOT_FOOD) {
-      SDL_SetTextureColorMod(dot->icon, colorWhite.r, colorWhite.g, colorWhite.b);
-    } else if (dot->type == DOT_ANIMAL) {
-      SDL_SetTextureColorMod(dot->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+    // if (dot->type == DOT_FOOD) {
+    //   SDL_SetTextureColorMod(dot->icon, colorWhite.r, colorWhite.g, colorWhite.b);
+    // } else if (dot->type == DOT_ANIMAL) {
+    //   SDL_SetTextureColorMod(dot->icon, colorBlack.r, colorBlack.g, colorBlack.b);
+    // }  
+    if (dot == dragging) {
+      dot->icon->scale = 1.1;
+    } else {
+      dot->icon->scale = 1.0;
     }
-    blitFit(dot->icon, &dst);
+    dot->icon->rect.x = dot->x;
+    dot->icon->rect.y = dot->y;
+    drawSprite(dot->icon);
+    // blitFit(dot->icon, &dst);
   }
 }
 
@@ -613,6 +653,7 @@ static void removeDot(int x, int y) {
   if (dot->animateMove) {
     free(dot->animateMove);
   }
+  dot->icon = NULL;
   free(dot);
 }
 
@@ -634,8 +675,7 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
   stage.buttonsTail = button;
 }
 
-static void deinitLevel1(void)
-{
+static void deinitLevel1(void) {
   // zero the grid
   int x,y;
   for(x = 0; x < GRID_SIZE; x++) {
@@ -653,10 +693,17 @@ static void deinitLevel1(void)
   SDL_DestroyTexture(dottedLineTexture);
   SDL_DestroyTexture(animalTexture);
   SDL_DestroyTexture(foodTexture);
+  SDL_DestroyTexture(spriteTexture);
   dotTexture = NULL;
   dottedLineTexture = NULL;
   animalTexture = NULL;
   foodTexture = NULL;
+  spriteTexture = NULL;
+
+  free(hogSprite);
+  hogSprite = NULL;
+  free(foodSprite);
+  foodSprite = NULL;
 
   // buttons and their textures
   Button *b;	
