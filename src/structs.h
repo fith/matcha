@@ -3,6 +3,7 @@ typedef struct Dot Dot;
 typedef struct Font Font;
 typedef struct Button Button;
 typedef struct AnimateMove AnimateMove;
+typedef struct Sprite Sprite;
 
 typedef struct {
   void (*logic)(void);
@@ -45,6 +46,23 @@ struct AnimateMove {
   float duration;
   float progress;
   AnimateMove *next;
+};
+
+
+
+struct Sprite {
+  SDL_Rect rect;
+  float rotation;
+  float scale;
+  SDL_Texture *texture;
+  int currentFrame;
+  int frameCount;
+  int frameDelay;
+  double startTime;
+  double lastFrameTime;
+  int blendMode;
+  int flip;
+  int loop;
 };
 
 struct Button {

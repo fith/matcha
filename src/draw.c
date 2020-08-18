@@ -42,6 +42,56 @@ SDL_Surface *loadSurface(char *filename)
   return surface;
 }
 
+void drawSprite(Sprite* sprite) {
+  // get time
+  double time = SDL_GetTicks();
+  double frameTime = time - sprite->lastFrameTime;
+  
+  // figure out current frame
+  if (frameTime > sprite->frameDelay) {
+    sprite->currentFrame = (sprite->currentFrame < sprite->frameCount-1) ? sprite->currentFrame+1 : 0;
+    sprite->lastFrameTime = time;
+    printf("Changed Frame: %i\n", sprite->currentFrame);
+  }
+  
+
+  // create source rect for frame
+  SDL_Rect srcRect;
+  // figure out current frame rect
+  srcRect.x = (sprite->rect.w * sprite->currentFrame);
+  srcRect.y = 0; // only supporting single row animations for now
+  srcRect.w = sprite->rect.w;
+  srcRect.h = sprite->rect.h;
+
+  // create draw rect
+  SDL_Rect dst;
+  dst.x = sprite->rect.x;
+  dst.y = sprite->rect.y;
+  dst.w = sprite->rect.w;
+  dst.h = sprite->rect.h;  
+
+  // scale draw rect
+  dst.x = (dst.x + dst.w/2) - (dst.w/2 * sprite->scale);
+  dst.y = (dst.y + dst.h/2) - (dst.h/2 * sprite->scale);
+  dst.w *= sprite->scale;
+  dst.h *= sprite->scale;
+
+  // calc center
+  SDL_Point center;
+  center.x = srcRect.w/2.0;
+  center.y = srcRect.h/2.0;
+
+  // render cope
+  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+  SDL_RenderCopyEx(app.renderer,
+                    sprite->texture,
+                    &srcRect,
+                    &dst,
+                    sprite->rotation,
+                    &center,
+                    sprite->flip);
+}
+
 void blit(SDL_Texture *texture, int x, int y)
 {
   SDL_Rect dest;

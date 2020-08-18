@@ -59,6 +59,9 @@ static SDL_Color *colors[] = {&colorRed,
                               &colorIndigo,
                               &colorViolet};
 
+static Sprite *sprite;
+static SDL_Texture *spriteTexture;
+
 void initLevel1(void)
 {
   app.delegate.logic = logic;
@@ -81,6 +84,29 @@ void initLevel1(void)
   }
   if(foodTexture == NULL) {
     foodTexture = loadTexture("gfx/food-sandwich.png");
+  }
+
+  if(spriteTexture == NULL) {
+    spriteTexture = loadTexture("gfx/animal-hedgehog-sheet.png");
+  }
+  if(!sprite) {
+    sprite = malloc(sizeof(Sprite));
+    memset(sprite, 0, sizeof(Sprite));
+    sprite->rect.x = 0;
+    sprite->rect.y = 0;
+    sprite->rotation = 0.0;
+    sprite->scale = 1.0;
+    sprite->texture = spriteTexture;
+    SDL_QueryTexture(sprite->texture, NULL, NULL, &sprite->rect.w, &sprite->rect.h);
+    sprite->currentFrame = 0;
+    sprite->frameCount = 2;
+    sprite->rect.w = sprite->rect.w / sprite->frameCount;
+    sprite->frameDelay = 500;
+    sprite->startTime = SDL_GetTicks();
+    sprite->lastFrameTime = sprite->startTime;
+    sprite->blendMode = SDL_BLENDMODE_NONE;
+    sprite->flip = 0;
+    sprite->loop = 1;
   }
 
   createButton("<", 16, 540, backButton);
@@ -367,6 +393,8 @@ static void draw(void)
 
   // printf("drawButtons\n");
   drawButtons();
+
+  drawSprite(sprite);
 }
 
 static void backButton(void)
