@@ -444,12 +444,6 @@ static void doAnimal(void) {
   int x = animal->row;
   int y = animal->col;
 
-  if (animal->col <= food->col) {
-    animal->icon->flip = 0;
-  } else {
-    animal->icon->flip = 1;
-  }
-
   // check left
   if(x > 0 && grid[x-1][y] && grid[x-1][y]->color == animal->color) {
     running = 1;
@@ -471,6 +465,12 @@ static void doAnimal(void) {
     animal->icon = hogRunningSprite;
   } else {
     animal->icon = hogIdleSprite;
+  }
+
+  if (animal->x <= food->x) {
+    animal->icon->flip = 0;
+  } else {
+    animal->icon->flip = 1;
   }
 }
 
