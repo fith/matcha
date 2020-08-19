@@ -58,6 +58,7 @@ static void logic(void)
 static void draw(void)
 {
   drawText(FNT_HEAD, 127, 94, "MATCHA");
+  drawText(FNT_BODY, 250, 228, "Hog & Sandwich");
 
   drawDots();
 

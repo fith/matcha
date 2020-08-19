@@ -25,6 +25,7 @@ static void removeDot(int x, int y);
 static Dot* createDot(int row, int col);
 static void removeDeadDots(void);
 static void drawDot(Dot *dot);
+static void doAnimal(void);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -59,9 +60,13 @@ static SDL_Color *colors[] = {&colorRed,
                               &colorIndigo,
                               &colorViolet};
 
-static Sprite *hogSprite;
+static Dot *animal;
+static Dot *food;
+static Sprite *hogIdleSprite;
+static Sprite *hogRunningSprite;
 static Sprite *foodSprite;
-static SDL_Texture *spriteTexture;
+static SDL_Texture *runningTexture;
+static SDL_Texture *idleTexture;
 
 void initLevel1(void)
 {
@@ -89,28 +94,51 @@ void initLevel1(void)
     foodTexture = loadTexture("gfx/food-sandwich.png");
   }
 
-  if(spriteTexture == NULL) {
-    spriteTexture = loadTexture("gfx/animal-hedgehog-sheet.png");
+  if(idleTexture == NULL) {
+    idleTexture = loadTexture("gfx/animal-hedgehog-idle-2.png");
+  }
+  if(runningTexture == NULL) {
+    runningTexture = loadTexture("gfx/animal-hedgehog-running-4.png");
   }
   
-  if(!hogSprite) {
-    hogSprite = malloc(sizeof(Sprite));
-    memset(hogSprite, 0, sizeof(Sprite));
-    hogSprite->rect.x = 0;
-    hogSprite->rect.y = 0;
-    hogSprite->rotation = 0.0;
-    hogSprite->scale = 1.0;
-    hogSprite->texture = spriteTexture;
-    SDL_QueryTexture(hogSprite->texture, NULL, NULL, &hogSprite->rect.w, &hogSprite->rect.h);
-    hogSprite->currentFrame = 0;
-    hogSprite->frameCount = 2;
-    hogSprite->rect.w = hogSprite->rect.w / hogSprite->frameCount;
-    hogSprite->frameDelay = 500;
-    hogSprite->startTime = SDL_GetTicks();
-    hogSprite->lastFrameTime = hogSprite->startTime;
-    hogSprite->blendMode = SDL_BLENDMODE_NONE;
-    hogSprite->flip = 0;
-    hogSprite->loop = 1;
+  if(!hogIdleSprite) {
+    hogIdleSprite = malloc(sizeof(Sprite));
+    memset(hogIdleSprite, 0, sizeof(Sprite));
+    hogIdleSprite->rect.x = 0;
+    hogIdleSprite->rect.y = 0;
+    hogIdleSprite->rotation = 0.0;
+    hogIdleSprite->scale = 1.0;
+    hogIdleSprite->texture = idleTexture;
+    SDL_QueryTexture(hogIdleSprite->texture, NULL, NULL, &hogIdleSprite->rect.w, &hogIdleSprite->rect.h);
+    hogIdleSprite->currentFrame = 0;
+    hogIdleSprite->frameCount = 2;
+    hogIdleSprite->rect.w = hogIdleSprite->rect.w / hogIdleSprite->frameCount;
+    hogIdleSprite->frameDelay = 500;
+    hogIdleSprite->startTime = SDL_GetTicks();
+    hogIdleSprite->lastFrameTime = hogIdleSprite->startTime;
+    hogIdleSprite->blendMode = SDL_BLENDMODE_NONE;
+    hogIdleSprite->flip = 0;
+    hogIdleSprite->loop = 1;
+  }
+
+    if(!hogRunningSprite) {
+    hogRunningSprite = malloc(sizeof(Sprite));
+    memset(hogRunningSprite, 0, sizeof(Sprite));
+    hogRunningSprite->rect.x = 0;
+    hogRunningSprite->rect.y = 0;
+    hogRunningSprite->rotation = 0.0;
+    hogRunningSprite->scale = 1.0;
+    hogRunningSprite->texture = runningTexture;
+    SDL_QueryTexture(hogRunningSprite->texture, NULL, NULL, &hogRunningSprite->rect.w, &hogRunningSprite->rect.h);
+    hogRunningSprite->currentFrame = 0;
+    hogRunningSprite->frameCount = 4;
+    hogRunningSprite->rect.w = hogRunningSprite->rect.w / hogRunningSprite->frameCount;
+    hogRunningSprite->frameDelay = 80;
+    hogRunningSprite->startTime = SDL_GetTicks();
+    hogRunningSprite->lastFrameTime = hogRunningSprite->startTime;
+    hogRunningSprite->blendMode = SDL_BLENDMODE_NONE;
+    hogRunningSprite->flip = 0;
+    hogRunningSprite->loop = 1;
   }
 
   if(!foodSprite) {
@@ -199,31 +227,28 @@ static void doDrag(void) {
 
   if(app.mouseDown) {
     // button down
-    if (inGrid) {
-      if (grid[row][col] && !dragging) {
-        // pick it up
-        dragging = grid[row][col];
-        dragOffsetX = mouse.x - dragging->x;
-        dragOffsetY = mouse.y - dragging->y;
-      }
+    if (inGrid && (grid[row][col] && !dragging)) {
+      // pick it up
+      dragging = grid[row][col];
+      dragOffsetX = mouse.x - dragging->x;
+      dragOffsetY = mouse.y - dragging->y;
     }
   } else {
     // button is now up
     float x, y;
     if(dragging) {
-      if(grid[row][col]) {
-        if(inGrid) {
-          // hit on a swappable dot
-          if (isValidMove(dragging, grid[row][col])) {
-            swapDots(row, col, dragging->row, dragging->col);
-          }
+      if(!inGrid) {
+        // return home
+        gridToScreen(dragging->row, dragging->col, &x, &y);
+        animateMoveTo(dragging, x, y);
+      } else {
+        if(grid[row][col] && isValidMove(dragging, grid[row][col]) == 1) {
+          swapDots(row, col, dragging->row, dragging->col);
         } else {
+          // return home
           gridToScreen(dragging->row, dragging->col, &x, &y);
           animateMoveTo(dragging, x, y);
         }
-      } else {
-        gridToScreen(dragging->row, dragging->col, &x, &y);
-        animateMoveTo(dragging, x, y);
       }
       dragging = NULL;
     }
@@ -300,7 +325,6 @@ static int isValidMove(Dot *from, Dot *to) {
 static void initDots(void)
 {
   int x,y;
-  Dot *animal, *food;
 
   int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
   int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
@@ -327,7 +351,7 @@ static void initDots(void)
   animal->col = ay;
   gridToScreen(animal->row, animal->col, &animal->x, &animal->y);
   animal->texture = dotTexture;
-  animal->icon = hogSprite;
+  animal->icon = hogIdleSprite;
   animal->color = colors[rand() % MAX_COLORS];
   animal->animateMove = NULL;
   animal->type = DOT_ANIMAL;
@@ -392,40 +416,20 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 }
 
 static void logic(void)
-{
-  // printf("DoButtons\n");
-  doButtons();
-  
+{  
   checkMatches();
-
-  // printf("checkMatches\n");
   removeDeadDots();
-
-  // printf("doFalling\n");
   doFalling();
-
-  // printf("doDrag\n");
   doDrag();
-
-  // printf("doAnimateMove\n");
   doAnimateMove();
-
-  if (hogSprite->rect.x <= foodSprite->rect.x) {
-    hogSprite->flip = 0;
-  } else {
-    hogSprite->flip = 1;
-  }
+  doAnimal();
+  doButtons();
 }
 
 static void draw(void)
 {
-  // printf("drawGoals\n");
   drawGoals();
-  
-  // printf("drawDots\n");
   drawDots();
-
-  // printf("drawButtons\n");
   drawButtons();
 }
 
@@ -433,6 +437,41 @@ static void backButton(void)
 {
   deinitLevel1();
   initMenu();
+}
+
+static void doAnimal(void) {
+  int running = 0;
+  int x = animal->row;
+  int y = animal->col;
+
+  if (animal->col <= food->col) {
+    animal->icon->flip = 0;
+  } else {
+    animal->icon->flip = 1;
+  }
+
+  // check left
+  if(x > 0 && grid[x-1][y] && grid[x-1][y]->color == animal->color) {
+    running = 1;
+  }
+  // check right
+  if(x < (GRID_SIZE - 1) && grid[x+1][y] && grid[x+1][y]->color == animal->color) {
+    running = 1;
+  }
+  // check up
+  if(y > 0 && grid[x][y-1] && grid[x][y-1]->color == animal->color) {
+    running = 1;
+  }
+  // check down
+  if(y < (GRID_SIZE - 1) && grid[x][y+1] && grid[x][y+1]->color == animal->color) {
+    running = 1;
+  }
+
+  if (running) {
+    animal->icon = hogRunningSprite;
+  } else {
+    animal->icon = hogIdleSprite;
+  }
 }
 
 static void doAnimateMove(void) {
@@ -677,6 +716,9 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
 
 static void deinitLevel1(void) {
   // zero the grid
+  food = NULL;
+  animal = NULL;
+
   int x,y;
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
@@ -693,15 +735,19 @@ static void deinitLevel1(void) {
   SDL_DestroyTexture(dottedLineTexture);
   SDL_DestroyTexture(animalTexture);
   SDL_DestroyTexture(foodTexture);
-  SDL_DestroyTexture(spriteTexture);
+  SDL_DestroyTexture(runningTexture);
+  SDL_DestroyTexture(idleTexture);
   dotTexture = NULL;
   dottedLineTexture = NULL;
   animalTexture = NULL;
   foodTexture = NULL;
-  spriteTexture = NULL;
+  runningTexture = NULL;
+  idleTexture = NULL;
 
-  free(hogSprite);
-  hogSprite = NULL;
+  free(hogIdleSprite);
+  hogIdleSprite = NULL;
+  free(hogRunningSprite);
+  hogRunningSprite = NULL;
   free(foodSprite);
   foodSprite = NULL;
 
