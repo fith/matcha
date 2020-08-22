@@ -16,6 +16,9 @@ extern SDL_Texture* textTexture(int font, char *format, ...);
 // util.c
 extern float lerp(float v0, float v1, float t);
 
+// sound.c
+extern void playSound(int id, int channel);
+
 extern void initMenu(void);
 
 extern Stage stage;

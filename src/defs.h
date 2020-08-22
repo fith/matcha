@@ -45,6 +45,8 @@
 
 #define MATCH 3
 
+#define SCORE_DOT 10
+
 enum
 {
     FNT_HEAD,
@@ -77,9 +79,11 @@ enum
 
 enum
 {
-    SND_PLAYER_FIRE,
-    SND_ENEMY_FIRE,
-    SND_PLAYER_DIE,
-    SND_ENEMY_DIE,
+    SND_DOT_LIFT,
+    SND_DOT_SWAP,
+    SND_DOT_DROP,
+    SND_DOT_POP1,
+    SND_DOT_POP2,
+    SND_DOT_POP3,
     SND_MAX
 };

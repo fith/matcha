@@ -19,10 +19,12 @@ void initSounds(void)
 
 static void loadSounds(void)
 {
-    // sounds[SND_PLAYER_FIRE] = Mix_LoadWAV("snd/laser.wav");
-    // sounds[SND_ENEMY_FIRE] = Mix_LoadWAV("snd/enemy_laser.wav");
-    // sounds[SND_PLAYER_DIE] = Mix_LoadWAV("snd/player_die.wav");
-    // sounds[SND_ENEMY_DIE] = Mix_LoadWAV("snd/enemy_die.wav");
+    sounds[SND_DOT_LIFT] = Mix_LoadWAV("snd/lift.wav");
+    sounds[SND_DOT_SWAP] = Mix_LoadWAV("snd/swap.wav");
+    sounds[SND_DOT_DROP] = Mix_LoadWAV("snd/drop.wav");
+    sounds[SND_DOT_POP1] = Mix_LoadWAV("snd/pop1.wav");
+    sounds[SND_DOT_POP2] = Mix_LoadWAV("snd/pop2.wav");
+    sounds[SND_DOT_POP3] = Mix_LoadWAV("snd/pop3.wav");
 }
 
 void loadMusic(char *filename)

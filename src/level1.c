@@ -26,6 +26,7 @@ static Dot* createDot(int row, int col);
 static void removeDeadDots(void);
 static void drawDot(Dot *dot);
 static void doAnimal(void);
+static void drawScore(void);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -42,7 +43,7 @@ static int dragOffsetX, dragOffsetY;
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
 static SDL_Rect gridRect;
 
-#define MAX_COLORS 6
+#define MAX_COLORS 4
 static SDL_Color colorRed = {211, 44, 44}; // red
 static SDL_Color colorOrange = {211, 136, 44}; // orange
 static SDL_Color colorYellow = {229, 229, 26}; // yellow
@@ -68,12 +69,15 @@ static Sprite *foodSprite;
 static SDL_Texture *runningTexture;
 static SDL_Texture *idleTexture;
 
+int score;
+
 void initLevel1(void)
 {
   app.delegate.logic = logic;
   app.delegate.draw = draw;
 
   dragging = NULL;
+  score = 0;
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
@@ -191,7 +195,6 @@ static void doFalling(void) {
       if (!grid[x][y]) { // if this cell is empty
         if(grid[x][y-1]) { // check the above cell
           // move its contents down a space
-          printf("This animate\n");
           swapDots(x, y-1, x, y);
           // Dot *dot = grid[x][y-1];
           // float endX, endY;
@@ -211,7 +214,6 @@ static void doFalling(void) {
       Dot *dot = createDot(x, y);
       int endY = dot->y;
       dot->y -= TILE_SIZE + TILE_MARGIN;
-      printf("That animate\n");
       animateMoveTo(dot, dot->x, endY);
       grid[x][y] = dot;
     }
@@ -232,6 +234,7 @@ static void doDrag(void) {
       dragging = grid[row][col];
       dragOffsetX = mouse.x - dragging->x;
       dragOffsetY = mouse.y - dragging->y;
+      playSound(SND_DOT_LIFT, CH_ANY);
     }
   } else {
     // button is now up
@@ -251,6 +254,7 @@ static void doDrag(void) {
         }
       }
       dragging = NULL;
+      playSound(SND_DOT_DROP, CH_ANY);
     }
   }
 
@@ -294,6 +298,8 @@ static void swapDots(int row1, int col1, int row2, int col2) {
     grid[row2][col2]->row = row2;
     grid[row2][col2]->col = col2;
   }
+
+  playSound(SND_DOT_SWAP, CH_ANY);
 }
 
 static void animateMoveTo(Dot *dot, float endX, float endY) {
@@ -306,7 +312,7 @@ static void animateMoveTo(Dot *dot, float endX, float endY) {
   am->startY = dot->y;
   am->endX = endX;
   am->endY = endY;
-  am->duration = 100;
+  am->duration = 130 + (rand() % 70);
   am->startTime = ticks;
 
   dot->animateMove = am;
@@ -320,6 +326,10 @@ static int isValidMove(Dot *from, Dot *to) {
     return (abs(from->row - to->row) == 1) ? 1 : 0;
   }
   return 0;
+}
+
+static void drawScore(void) {
+  drawText(FNT_BODY, WINDOW_WIDTH - 120, 40, "%6d", score);
 }
 
 static void initDots(void)
@@ -431,6 +441,7 @@ static void draw(void)
   drawGoals();
   drawDots();
   drawButtons();
+  drawScore();
 }
 
 static void backButton(void)
@@ -616,7 +627,7 @@ static void checkMatchesRight(int x, int y) {
   }
   int next = x;
   int matches = 1; // current dot matches itself.
-  Dot* dots[(MATCH * 2)] = { NULL };
+  Dot *dots[(MATCH * 2)] = { NULL };
   dots[0] = grid[x][y];
   
   while (++next < GRID_SIZE) {
@@ -675,15 +686,32 @@ static void checkMatchesDown(int x, int y) {
 }
 
 static void removeDeadDots(void) {
+  int total = 0;
+
   for (int x = 0; x < GRID_SIZE; x++) {
     for (int y = 0; y < GRID_SIZE; y++) {
       if (grid[x][y]) {
         if (grid[x][y]->health == 0) {
+          total++;
           removeDot(x, y);
+          int snd = rand() % 3;
+          switch(snd) {
+            case 0: 
+              playSound(SND_DOT_POP1, CH_ANY);
+              break;
+            case 1:
+              playSound(SND_DOT_POP2, CH_ANY);
+              break;
+            case 2: 
+              playSound(SND_DOT_POP3, CH_ANY);
+              break;
+          }
         }
       }
     }
   }
+
+  score += SCORE_DOT * total;
 }
 
 static void removeDot(int x, int y) {
