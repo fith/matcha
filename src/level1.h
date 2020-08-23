@@ -11,6 +11,8 @@ extern void drawSprite(Sprite* sprite);
 
 // text.c
 extern void drawText(int font, int x, int y, char *format, ...);
+extern void drawTextRight(int font, int x, int y, char *format, ...);
+extern void drawTextCenter(int font, int x, int y, char *format, ...) ;
 extern SDL_Texture* textTexture(int font, char *format, ...);
 
 // util.c

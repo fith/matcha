@@ -27,6 +27,7 @@ static void removeDeadDots(void);
 static void drawDot(Dot *dot);
 static void doAnimal(void);
 static void drawScore(void);
+static void drawWin(void);
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -70,6 +71,7 @@ static SDL_Texture *runningTexture;
 static SDL_Texture *idleTexture;
 
 int score;
+int gameover;
 
 void initLevel1(void)
 {
@@ -78,6 +80,7 @@ void initLevel1(void)
 
   dragging = NULL;
   score = 0;
+  gameover = 0;
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
@@ -245,7 +248,7 @@ static void doDrag(void) {
         gridToScreen(dragging->row, dragging->col, &x, &y);
         animateMoveTo(dragging, x, y);
       } else {
-        if(grid[row][col] && isValidMove(dragging, grid[row][col]) == 1) {
+        if(grid[row][col] && grid[row][col] != dragging && isValidMove(dragging, grid[row][col]) == 1) {
           swapDots(row, col, dragging->row, dragging->col);
         } else {
           // return home
@@ -319,17 +322,59 @@ static void animateMoveTo(Dot *dot, float endX, float endY) {
 }
 
 static int isValidMove(Dot *from, Dot *to) {
-  if (from->row == to->row) {
-    return (abs(from->col - to->col) == 1) ? 1 : 0;
+  int frow, fcol;
+  int trow, tcol;
+  int dx, dy;
+
+  frow = from->row;
+  fcol = from->col;
+  trow = to->row;
+  tcol = to->col;
+
+  dx = abs(frow - trow);
+  dy = abs(fcol - tcol);
+  
+  // check that it's within range 1
+  if (dx + dy > 1) {
+    return 0;
   }
-  if (from->col == to->col) {
-    return (abs(from->row - to->row) == 1) ? 1 : 0;
+
+  // special rules for special dots
+  if (from == animal || from == food || to == animal || to == food) {
+    // if they match color, they can swap
+    if (from->color == to->color) {
+      return 1;
+    }
   }
+
+  // check if the move will result in a match.
+  if (from->color == to->color) {
+    //return 1;
+  }
+
   return 0;
 }
 
 static void drawScore(void) {
-  drawText(FNT_BODY, WINDOW_WIDTH - 120, 40, "%6d", score);
+  drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 0, "%6d", score);
+}
+
+static void drawWin(void) {
+  drawTextCenter(FNT_HEAD, WINDOW_WIDTH/2, 94, "MATCHA");
+  // drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hog & Sandwich");
+  drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hi-Score: %d", score);
+}
+
+static void checkWin(void) {
+  int dx, dy;
+  int win = 0;
+
+  dx = abs(animal->row - food->row);
+  dy = abs(animal->col - food->col);
+  
+  if (dx + dy <= 1) {
+    gameover = 1;
+  }
 }
 
 static void initDots(void)
@@ -426,22 +471,33 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 }
 
 static void logic(void)
-{  
-  checkMatches();
-  removeDeadDots();
-  doFalling();
-  doDrag();
+{ 
+  if(!gameover) {
+    checkMatches();
+    removeDeadDots();
+    doFalling();
+    doDrag();
+  } 
   doAnimateMove();
   doAnimal();
+  checkWin();
   doButtons();
 }
 
 static void draw(void)
 {
-  drawGoals();
-  drawDots();
+  if (!gameover) {
+    drawGoals();
+    drawDots();
+    drawScore();
+  }
   drawButtons();
-  drawScore();
+
+  if (gameover) {
+    drawDot(animal);
+    drawDot(food);
+    drawWin();
+  }
 }
 
 static void backButton(void)
@@ -472,7 +528,7 @@ static void doAnimal(void) {
     running = 1;
   }
 
-  if (running) {
+  if (running || gameover) {
     animal->icon = hogRunningSprite;
   } else {
     animal->icon = hogIdleSprite;
@@ -621,7 +677,7 @@ static void checkMatches() {
   }
 }
 
-static void checkMatchesRight(int x, int y) {
+static void checkMatchesRight(int *tgrid, int x, int y) {
   if (!grid[x][y]) {
     return;
   }

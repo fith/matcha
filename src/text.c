@@ -28,9 +28,9 @@ void initFonts(void)
   }
 }
 
-void drawText(int font, int x, int y, char *format, ...)
-{
+void drawText(int font, int x, int y, char *format, ...) {
   va_list args;
+
   va_start(args, format);
   vsprintf(drawTextBuffer, format, args);
   va_end(args);
@@ -38,6 +38,46 @@ void drawText(int font, int x, int y, char *format, ...)
   drawTextTexture = textTexture(font, "%s", drawTextBuffer);
   blit(drawTextTexture, x, y);
   SDL_DestroyTexture(drawTextTexture);
+}
+
+void drawTextRight(int font, int x, int y, char *format, ...) {
+  int w,h;
+  int dx, dy;
+  va_list args;
+  
+  va_start(args, format);
+  vsprintf(drawTextBuffer, format, args);
+  va_end(args);
+
+  if(TTF_SizeText(fonts[font].font, drawTextBuffer, &w, &h)) {
+    printf("TTF_OpenFont: %s\n", TTF_GetError());
+    return;
+  }
+
+  dx = x - w;
+  dy = y;
+  
+  drawText(font, dx, dy, drawTextBuffer);
+}
+
+void drawTextCenter(int font, int x, int y, char *format, ...) {
+  int w,h;
+  int dx, dy;
+  va_list args;
+  
+  va_start(args, format);
+  vsprintf(drawTextBuffer, format, args);
+  va_end(args);
+
+  if(TTF_SizeText(fonts[font].font, drawTextBuffer, &w, &h)) {
+    printf("TTF_OpenFont: %s\n", TTF_GetError());
+    return;
+  }
+
+  dx = x - (w/2);
+  dy = y;
+  
+  drawText(font, dx, dy, drawTextBuffer);
 }
 
 SDL_Texture* textTexture(int font, char *format, ...)
