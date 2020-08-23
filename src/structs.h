@@ -21,6 +21,7 @@ typedef struct {
   int mouseDown;
   int enableMusic;
   int enableFilm;
+  int wins;
 } App;
 
 struct Dot {

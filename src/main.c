@@ -34,6 +34,7 @@ int main()
   memset(&app, 0, sizeof(App));
   app.enableFilm = 1;
   app.enableMusic = 1;
+  app.wins = 0;
 
   atexit(cleanup);
 

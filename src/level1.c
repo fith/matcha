@@ -27,7 +27,10 @@ static void removeDeadDots(void);
 static void drawDot(Dot *dot);
 static void doAnimal(void);
 static void drawScore(void);
+static void drawTime(void);
 static void drawWin(void);
+static void doGameOver(void);
+static int getMaxColors(void);
 
 
 static SDL_Texture *dotTexture;
@@ -45,7 +48,7 @@ static int dragOffsetX, dragOffsetY;
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
 static SDL_Rect gridRect;
 
-#define MAX_COLORS 6
+#define MAX_COLORS 7
 static SDL_Color colorRed = {211, 44, 44}; // red
 static SDL_Color colorOrange = {211, 136, 44}; // orange
 static SDL_Color colorYellow = {229, 229, 26}; // yellow
@@ -76,6 +79,10 @@ int gameover;
 Dot* lastMoveFrom;
 Dot* lastMoveTo;
 
+Uint32 startTime;
+Uint32 currentTime;
+Uint32 gameOverTime;
+
 void initLevel1(void)
 {
   app.delegate.logic = logic;
@@ -86,6 +93,9 @@ void initLevel1(void)
   gameover = 0;
   lastMoveFrom = NULL;
   lastMoveTo = NULL;
+  startTime = SDL_GetTicks();
+  currentTime = startTime;
+  gameOverTime = 0;
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
@@ -361,10 +371,25 @@ static void drawScore(void) {
   drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 0, "%6d", score);
 }
 
+static void drawTime(void) {
+  Uint32 time = (SDL_GetTicks() - startTime) / 1000;
+  int seconds = time % 60;
+  int minutes = time / 60;
+  // float seconds = time / 1000.0;
+  if (minutes < 1) {
+    drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 48, "%6d", seconds);
+  } else {
+    drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 48, "%4d:%02d", minutes, seconds);
+  }
+}
+
 static void drawWin(void) {
+  Uint32 seconds = (gameOverTime - startTime) / 1000;
+  // int minutes = gameOverTime / 60;
+  Uint32 hiscore = (score / seconds) * score;
   drawTextCenter(FNT_HEAD, WINDOW_WIDTH/2, 94, "MATCHA");
   // drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hog & Sandwich");
-  drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hi-Score: %d", score);
+  drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Final Score: %d", hiscore);
 }
 
 static void checkWin(void) {
@@ -375,8 +400,18 @@ static void checkWin(void) {
   dy = abs(animal->col - food->col);
   
   if (dx + dy <= 1) {
-    gameover = 1;
+    doGameOver();
   }
+}
+
+static void doGameOver(void) {
+  if (gameover) {
+    return;
+  }
+
+  gameover = 1;
+  gameOverTime = SDL_GetTicks();
+  app.wins++;
 }
 
 static void initDots(void)
@@ -409,7 +444,8 @@ static void initDots(void)
   gridToScreen(animal->row, animal->col, &animal->x, &animal->y);
   animal->texture = dotTexture;
   animal->icon = hogIdleSprite;
-  animal->color = colors[rand() % MAX_COLORS];
+
+  animal->color = colors[rand() % getMaxColors()];
   animal->animateMove = NULL;
   animal->type = DOT_ANIMAL;
   animal->health = 1;
@@ -423,7 +459,7 @@ static void initDots(void)
   gridToScreen(food->row, food->col, &food->x, &food->y);
   food->texture = dotTexture;
   food->icon = foodSprite;
-  food->color = colors[rand() % MAX_COLORS];
+  food->color = colors[rand() % getMaxColors()];
   food->animateMove = NULL;
   food->type = DOT_FOOD;
   food->health = 1;
@@ -441,6 +477,12 @@ static void initDots(void)
   }
 }
 
+static int getMaxColors(void) {
+  int difficulty = (app.wins < 3) ? app.wins : 3;
+  int maxColors = MAX_COLORS - (3 - difficulty);
+  return maxColors;
+}
+
 static Dot* createDot(int row, int col) {
   Dot *d;
   d = malloc(sizeof(Dot));
@@ -450,7 +492,7 @@ static Dot* createDot(int row, int col) {
   gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = dotTexture;
   d->icon = NULL;
-  d->color = colors[rand() % MAX_COLORS];
+  d->color = colors[rand() % getMaxColors()];
   d->animateMove = NULL;
   d->health = 1;
   d->type = DOT_DOT;
@@ -492,6 +534,7 @@ static void draw(void)
     drawGoals();
     drawDots();
     drawScore();
+    drawTime();
   }
   drawButtons();
 
@@ -500,6 +543,10 @@ static void draw(void)
     drawDot(food);
     drawWin();
   }
+}
+
+static void updateTime() {
+  currentTime = SDL_GetTicks();
 }
 
 static void backButton(void)
