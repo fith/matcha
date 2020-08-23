@@ -8,7 +8,7 @@ void initSDL(void)
 {
   int renderFlags, windowFlags;
 
-  renderFlags = SDL_RENDERER_ACCELERATED;
+  renderFlags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
 
   windowFlags = 0;
 

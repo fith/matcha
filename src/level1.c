@@ -29,6 +29,7 @@ static void doAnimal(void);
 static void drawScore(void);
 static void drawWin(void);
 
+
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
 static SDL_Texture *animalTexture;
@@ -44,7 +45,7 @@ static int dragOffsetX, dragOffsetY;
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
 static SDL_Rect gridRect;
 
-#define MAX_COLORS 4
+#define MAX_COLORS 6
 static SDL_Color colorRed = {211, 44, 44}; // red
 static SDL_Color colorOrange = {211, 136, 44}; // orange
 static SDL_Color colorYellow = {229, 229, 26}; // yellow
@@ -72,6 +73,8 @@ static SDL_Texture *idleTexture;
 
 int score;
 int gameover;
+Dot* lastMoveFrom;
+Dot* lastMoveTo;
 
 void initLevel1(void)
 {
@@ -81,6 +84,8 @@ void initLevel1(void)
   dragging = NULL;
   score = 0;
   gameover = 0;
+  lastMoveFrom = NULL;
+  lastMoveTo = NULL;
 
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
@@ -249,6 +254,8 @@ static void doDrag(void) {
         animateMoveTo(dragging, x, y);
       } else {
         if(grid[row][col] && grid[row][col] != dragging && isValidMove(dragging, grid[row][col]) == 1) {
+          lastMoveFrom = dragging;
+          lastMoveTo = grid[row][col];
           swapDots(row, col, dragging->row, dragging->col);
         } else {
           // return home
@@ -345,14 +352,9 @@ static int isValidMove(Dot *from, Dot *to) {
     if (from->color == to->color) {
       return 1;
     }
-  }
+  } 
 
-  // check if the move will result in a match.
-  if (from->color == to->color) {
-    //return 1;
-  }
-
-  return 0;
+  return 1;
 }
 
 static void drawScore(void) {
@@ -677,7 +679,7 @@ static void checkMatches() {
   }
 }
 
-static void checkMatchesRight(int *tgrid, int x, int y) {
+static void checkMatchesRight(int x, int y) {
   if (!grid[x][y]) {
     return;
   }
@@ -766,6 +768,18 @@ static void removeDeadDots(void) {
       }
     }
   }
+
+  if (total == 0 && lastMoveFrom && lastMoveTo) {
+    if (lastMoveFrom->type == DOT_DOT && lastMoveTo->type == DOT_DOT) {
+      // they're both regular dots, move them back
+      swapDots(lastMoveFrom->row, lastMoveFrom->col, lastMoveTo->row, lastMoveTo->col);
+    } else if (lastMoveFrom->color != lastMoveTo->color) {
+      // at least one is a special dot, but they don't match colors.
+      swapDots(lastMoveFrom->row, lastMoveFrom->col, lastMoveTo->row, lastMoveTo->col);
+    }
+  }
+  lastMoveFrom = NULL;
+  lastMoveTo = NULL;
 
   score += SCORE_DOT * total;
 }
