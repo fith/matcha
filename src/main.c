@@ -26,7 +26,7 @@ static void capFrameRate(long *then, float *remainder)
   *then = SDL_GetTicks();
 }
 
-int main() 
+int main(int argc, char *argv[]) 
 {
   long then;
   float remainder;

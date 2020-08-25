@@ -4,8 +4,8 @@
 #include "math.h"
 #include "ctype.h"
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
+#include <SDL.h>
+#include <SDL_ttf.h>
 
 #include "defs.h"
 #include "structs.h"

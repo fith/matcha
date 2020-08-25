@@ -32,7 +32,6 @@ static void drawWin(void);
 static void doGameOver(void);
 static int getMaxColors(void);
 
-
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
 static SDL_Texture *animalTexture;
