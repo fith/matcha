@@ -72,14 +72,18 @@ void doInput(void) {
   }
 }
 
+float w, h;
 static void handleWindowEvent(SDL_Event* e) {
   switch(e->window.event)
         {
             //Get new dimensions and repaint on window size change
             case SDL_WINDOWEVENT_MAXIMIZED:
             case SDL_WINDOWEVENT_SIZE_CHANGED:
+            
+            // (original height / original width) x new width = new height
             app.w = e->window.data1;
             app.h = e->window.data2;
+            
             // SDL_RenderPresent( app.renderer );
             break;
 
