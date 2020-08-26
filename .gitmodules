@@ -10,3 +10,6 @@
 [submodule "ext/SDL_mixer"]
 	path = ext/SDL_mixer
 	url = https://github.com/SDL-mirror/SDL_mixer.git
+[submodule "cmake/ios-cmake"]
+	path = cmake/ios-cmake
+	url = https://github.com/leetal/ios-cmake
