@@ -1,5 +1,7 @@
 #include "input.h"
 
+static void handleWindowEvent(SDL_Event* e);
+
 void doKeyDown(SDL_KeyboardEvent *event) 
 {
   if (event->repeat == 0 && event->keysym.scancode < MAX_KEYBOARD_KEYS) {
@@ -60,10 +62,40 @@ void doInput(void) {
         doMouseDown(&event.button);
         break;
 
+      case SDL_WINDOWEVENT:
+        handleWindowEvent(&event);
+        break;
+
       default:
         break;
     }
   }
 }
 
+static void handleWindowEvent(SDL_Event* e) {
+  switch(e->window.event)
+        {
+            //Get new dimensions and repaint on window size change
+            case SDL_WINDOWEVENT_MAXIMIZED:
+            case SDL_WINDOWEVENT_SIZE_CHANGED:
+            app.w = e->window.data1;
+            app.h = e->window.data2;
+            // SDL_RenderPresent( app.renderer );
+            break;
 
+            //Repaint on exposure
+            case SDL_WINDOWEVENT_EXPOSED:
+            // SDL_RenderPresent( app.renderer );
+            break;
+
+            case SDL_WINDOWEVENT_FOCUS_LOST:
+            case SDL_WINDOWEVENT_MINIMIZED:
+            app.paused = 1;
+            break;
+
+            case SDL_WINDOWEVENT_FOCUS_GAINED:
+            case SDL_WINDOWEVENT_RESTORED:
+            app.paused = 0;
+            break;
+        }
+}

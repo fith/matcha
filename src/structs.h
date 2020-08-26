@@ -22,6 +22,8 @@ typedef struct {
   int enableMusic;
   int enableFilm;
   int wins;
+  int paused;
+  int w, h;
 } App;
 
 struct Dot {
@@ -62,6 +64,11 @@ struct Sprite {
   int blendMode;
   int flip;
   int loop;
+};
+
+struct Character {
+  Sprite* idle;
+  Sprite* active;
 };
 
 struct Button {

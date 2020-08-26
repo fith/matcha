@@ -54,7 +54,6 @@ void drawSprite(Sprite* sprite) {
       sprite->currentFrame = 0;
     }
     sprite->lastFrameTime = time;
-    printf("Changed Frame: %i\n", sprite->currentFrame);
   }
   
 

@@ -17,9 +17,9 @@ static void doDrag(void);
 static void doAnimateMove(void);
 static void animateMoveTo(Dot *dot, float endX, float endY);
 static int isValidMove(Dot *from, Dot *to);
-static void checkMatches(void);
-static void checkMatchesRight(int x, int y);
-static void checkMatchesDown(int x, int y);
+static int checkMatches(void);
+static int checkMatchesRight(int x, int y);
+static int checkMatchesDown(int x, int y);
 static void doFalling(void);
 static void removeDot(int x, int y);
 static Dot* createDot(int row, int col);
@@ -41,7 +41,7 @@ static Dot *dragging;
 static int dragOffsetX, dragOffsetY;
 
 // grid
-#define GRID_SIZE 7
+#define GRID_SIZE 4
 #define TILE_SIZE 64
 #define TILE_MARGIN 16
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
@@ -84,6 +84,8 @@ Uint32 gameOverTime;
 
 void initLevel1(void)
 {
+  srand(25);
+
   app.delegate.logic = logic;
   app.delegate.draw = draw;
 
@@ -367,7 +369,7 @@ static int isValidMove(Dot *from, Dot *to) {
 }
 
 static void drawScore(void) {
-  drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 0, "%6d", score);
+  drawTextRight(FNT_BODY, app.w - 16, 0, "%6d", score);
 }
 
 static void drawTime(void) {
@@ -376,19 +378,19 @@ static void drawTime(void) {
   int minutes = time / 60;
   // float seconds = time / 1000.0;
   if (minutes < 1) {
-    drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 48, "%6d", seconds);
+    drawTextRight(FNT_BODY, app.w - 16, 48, "%6d", seconds);
   } else {
-    drawTextRight(FNT_BODY, WINDOW_WIDTH - 16, 48, "%4d:%02d", minutes, seconds);
+    drawTextRight(FNT_BODY, app.w - 16, 48, "%4d:%02d", minutes, seconds);
   }
 }
 
 static void drawWin(void) {
-  Uint32 seconds = (gameOverTime - startTime) / 1000;
+  Uint32 seconds = 1 + (gameOverTime - startTime) / 1000;
   // int minutes = gameOverTime / 60;
   Uint32 hiscore = (score / seconds) * score;
-  drawTextCenter(FNT_HEAD, WINDOW_WIDTH/2, 94, "MATCHA");
-  // drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hog & Sandwich");
-  drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Final Score: %d", hiscore);
+  drawTextCenter(FNT_HEAD, app.w/2, 94, "MATCHA");
+  // drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
+  drawTextCenter(FNT_BODY, app.w/2, 228, "Final Score: %d", hiscore);
 }
 
 static void checkWin(void) {
@@ -417,8 +419,8 @@ static void initDots(void)
 {
   int x,y;
 
-  int startX = (WINDOW_WIDTH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
-  int startY = (WINDOW_HEIGHT / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int startX = (app.w / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int startY = (app.h / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
   int width = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
   int height = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
   gridRect = (SDL_Rect){ startX, startY, width, height};
@@ -471,14 +473,31 @@ static void initDots(void)
       if (!grid[x][y]) {
         grid[x][y] = createDot(x, y);
       }
-      
     }
+  }
+  
+  int matches = checkMatches() ;
+  printf("Matches: %d\n", matches);
+  while(matches > 0) {
+    for (int x = 0; x < GRID_SIZE; x++) {
+      for (int y = 0; y < GRID_SIZE; y++) {
+        if (grid[x][y]->health == 0) {
+          grid[x][y]->health = 1;
+          grid[x][y]->color = colors[rand() % getMaxColors()];
+        }
+      }
+    }
+    matches = checkMatches();
+    printf("Matches: %d\n", matches);
   }
 }
 
 static int getMaxColors(void) {
   int difficulty = (app.wins < 3) ? app.wins : 3;
   int maxColors = MAX_COLORS - (3 - difficulty);
+  if(maxColors - 1 >= GRID_SIZE) {
+    maxColors = GRID_SIZE;
+  }
   return maxColors;
 }
 
@@ -633,7 +652,6 @@ static void doButtons() {
     SDL_Rect rect = { b->x, b->y, b->w, b->h };
     if(SDL_PointInRect(&mouse, &rect) == SDL_TRUE) {
       b->isHover = 1;
-      printf("App clicked: %i\n", app.clicked);
       if(app.clicked == 1) {
         b->onClick();
         return;
@@ -715,19 +733,21 @@ static void drawButtons(void) {
   }
 }
 
-static void checkMatches() {
+static int checkMatches() {
+  int matches = 0;
   int x, y;
   for(x = 0; x < GRID_SIZE; x++) {
     for(y = 0; y < GRID_SIZE; y++) {
-      checkMatchesRight(x, y);
-      checkMatchesDown(x, y);
+      matches += checkMatchesRight(x, y);
+      matches += checkMatchesDown(x, y);
     }
   }
+  return matches;
 }
 
-static void checkMatchesRight(int x, int y) {
+static int checkMatchesRight(int x, int y) {
   if (!grid[x][y]) {
-    return;
+    return 0;
   }
   int next = x;
   int matches = 1; // current dot matches itself.
@@ -754,12 +774,15 @@ static void checkMatchesRight(int x, int y) {
         }
       }
     }
+    return 1;
   }
+
+  return 0;
 }
 
-static void checkMatchesDown(int x, int y) {
+static int checkMatchesDown(int x, int y) {
   if (!grid[x][y]) {
-    return;
+    return 0;
   }
   int next = y;
   int matches = 1; // current dot matches itself.
@@ -786,7 +809,9 @@ static void checkMatchesDown(int x, int y) {
         }
       }
     }
+    return 1;
   }
+  return 0;
 }
 
 static void removeDeadDots(void) {

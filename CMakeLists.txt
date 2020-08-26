@@ -7,9 +7,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 # https://github.com/aminosbh/sdl2-cmake-modules
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 find_package(SDL2 REQUIRED)
-find_package(SDL2_IMAGE REQUIRED)
-find_package(SDL2_TTF REQUIRED)
-find_package(SDL2_MIXER REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+find_package(SDL2_mixer REQUIRED)
 
 # set( SDL_STATIC ON CACHE BOOL "" FORCE )
 # set( SDL_SHARED OFF CACHE BOOL "" FORCE )

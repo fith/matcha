@@ -57,8 +57,8 @@ static void logic(void)
 
 static void draw(void)
 {
-  drawTextCenter(FNT_HEAD, WINDOW_WIDTH/2, 94, "MATCHA");
-  drawTextCenter(FNT_BODY, WINDOW_WIDTH/2, 228, "Hog & Sandwich");
+  drawTextCenter(FNT_HEAD, app.w/2, 94, "MATCHA");
+  drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
 
   drawDots();
 
