@@ -4,6 +4,7 @@ typedef struct Font Font;
 typedef struct Button Button;
 typedef struct AnimateMove AnimateMove;
 typedef struct Sprite Sprite;
+typedef struct Board Board;
 
 typedef struct {
   void (*logic)(void);
@@ -25,6 +26,11 @@ typedef struct {
   int paused;
   int w, h;
 } App;
+
+struct Board {
+  int w, h;
+  Dot *dots;
+};
 
 struct Dot {
   SDL_Texture *texture;
@@ -50,6 +56,31 @@ struct AnimateMove {
   float progress;
   AnimateMove *next;
 };
+
+// struct Transform {
+//   float x, y;
+//   float scale;
+//   float rotation;
+// };
+
+// struct Animation {
+//   Transform start;
+//   Transform end;
+//   double startTime;
+//   float duration;
+//   float progress;
+//   Animation *next;
+// }
+
+// struct SpriteSheet {
+//   SDL_Texture *texture;
+//   int currentFrame;
+//   int frameCount;
+//   int frameDelay;
+//   double startTime;
+//   double lastFrameTime;
+//   int loop;
+// }
 
 struct Sprite {
   SDL_Rect rect;
