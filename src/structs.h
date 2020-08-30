@@ -44,6 +44,7 @@ struct Dot {
   int health;
   AnimateMove *animateMove;
   Dot *goal;
+  int falls;
 };
 
 struct AnimateMove {

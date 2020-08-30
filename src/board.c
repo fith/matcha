@@ -1,4 +1,8 @@
 #include "board.h"
+Board* createBoard(int w, int h, int colors);
+int matchStep(Board* board, int x, int y, int xStep, int yStep);
+Dot* getCell(Board* board, int x, int y);
+
 
 Board* createBoard(int w, int h, int colors) {
 
@@ -6,7 +10,7 @@ Board* createBoard(int w, int h, int colors) {
 
 
 
-int countMatches(&board, int x, int y, int xStep, int yStep) {
+int matchStep(Board* board, int x, int y, int xStep, int yStep) {
   int matches = 0;
   int xNext = x + xStep;
   int yNext = y + yStep;
@@ -20,16 +24,20 @@ int countMatches(&board, int x, int y, int xStep, int yStep) {
 
   if (this->color == this->color) {
     // count the match and then check for the next match, recursively
-    ++matches += countMatches(board, xNext, yNext, xStep, yStep);
+    matches++;
+    matches += countMatches(board, xNext, yNext, xStep, yStep);
   }
 
   return matches;
 }
 
-static void fall(void) {
+static void fall(Board* board) {
   int x, y;
-  for (x = 0; x < GRID_SIZE; x++) {
-    for (y = (GRID_SIZE-1); y > 0; y--) {
+  int i;
+  for (i = 0; i < board->w * board->h; i++) {
+    if (board->dots[i] == NULL) {
+
+    }
       if (!grid[x][y]) { // if this cell is empty
         if(grid[x][y-1]) { // check the above cell
           // move its contents down a space
