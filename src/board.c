@@ -25,7 +25,7 @@ int matchStep(Board* board, int x, int y, int xStep, int yStep) {
   if (this->color == this->color) {
     // count the match and then check for the next match, recursively
     matches++;
-    matches += countMatches(board, xNext, yNext, xStep, yStep);
+    matches += matchStep(board, xNext, yNext, xStep, yStep);
   }
 
   return matches;
@@ -35,7 +35,7 @@ static void fall(Board* board) {
   int x, y;
   int i;
   for (i = 0; i < board->w * board->h; i++) {
-    if (board->dots[i] == NULL) {
+    if ((board->dots[i]) == NULL) {
 
     }
       if (!grid[x][y]) { // if this cell is empty
