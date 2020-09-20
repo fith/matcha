@@ -35,6 +35,7 @@ static UI *filmToggle;
 // UI Textures
 static SDL_Texture* checked;
 static SDL_Texture* unchecked;
+static SDL_Texture* backTexture;
 
 void initOptions(void)
 {
@@ -47,9 +48,23 @@ void initOptions(void)
   // UI - Textures
   checked = loadTexture("gfx/checked.png");
   unchecked = loadTexture("gfx/dot.png");
+  backTexture = textTexture(FNT_BUTT, "<");
   
   // UI Elements
-  createButton("<", 16, 540, clickBackButton); // Back
+  // createButton("<", 16, 540, clickBackButton); // Back
+
+
+  backButton = createUI(backTexture,
+                        backTexture,
+                        backTexture,
+                        (SDL_Color){255, 240, 220},
+                        (SDL_Color){211, 44, 44},
+                        (SDL_Color){255, 240, 220},
+                        16,
+                        540,
+                        clickBackButton,
+                        NULL); // Fullscreen
+
   fullscreenToggle = createUI(unchecked,
                               checked,
                               checked,
@@ -101,6 +116,7 @@ static void logic(void)
   doUI(fullscreenToggle);
   doUI(musicToggle);
   doUI(filmToggle);
+  doUI(backButton);
 }
 
 static void doButtons() {
@@ -196,6 +212,8 @@ static void draw(void) {
 
   drawUI(filmToggle);
   drawText(FNT_BUTT, 276, 456, "Enable Film Effect");
+
+  drawUI(backButton);
 }
 
 static void drawButtons(void) {
@@ -211,16 +229,22 @@ static void drawButtons(void) {
 }
 
 static void drawUI(UI *ui) {
+  SDL_Texture *tex = ui->texNormal;
+  SDL_Color col = ui->colNormal;
   if (ui->isHover) {
-    SDL_SetTextureColorMod(ui->texHover, ui->colHover.r, ui->colHover.g, ui->colHover.b);
-    blit(ui->texHover, ui->rect.x, ui->rect.y);
-  } else if (ui->isActive) {
-    SDL_SetTextureColorMod(ui->texActive, ui->colActive.r, ui->colActive.g, ui->colActive.b);
-    blit(ui->texActive, ui->rect.x, ui->rect.y);
-  } else {
-    SDL_SetTextureColorMod(ui->texNormal, ui->colNormal.r, ui->colNormal.g, ui->colNormal.b);
-    blit(ui->texNormal, ui->rect.x, ui->rect.y);
+    col = ui->colHover;
+    if (ui->texHover != NULL) {
+      tex = ui->texHover;
+    }
   }
+  if (ui->isActive) {
+    col = ui->colActive;
+    if (ui->texActive != NULL) {
+      tex = ui->texActive;
+    }
+  }
+  SDL_SetTextureColorMod(tex, col.r, col.g, col.b);
+  blit(tex, ui->rect.x, ui->rect.y);
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {
@@ -288,6 +312,10 @@ Button *b;
 
   SDL_DestroyTexture(checked);
   SDL_DestroyTexture(unchecked);
+  SDL_DestroyTexture(backTexture);
 
+  free(backButton);
   free(fullscreenToggle);
+  free(musicToggle);
+  free(filmToggle);
 }

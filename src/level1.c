@@ -41,7 +41,7 @@ static Dot *dragging;
 static int dragOffsetX, dragOffsetY;
 
 // grid
-#define GRID_SIZE 4
+#define GRID_SIZE 5
 #define TILE_SIZE 64
 #define TILE_MARGIN 16
 static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
