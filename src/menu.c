@@ -9,8 +9,9 @@ static void drawButtons(void);
 static void drawDots(void);
 // button
 static void createButton(char *str, int x, int y, void (*onClick)());
-void buttonOptions(void);
-void buttonStart(void);
+static void buttonOptions(void);
+static void buttonExit(void);
+static void buttonStart(void);
 
 static void deinitMenu(void);
 
@@ -48,11 +49,16 @@ void initMenu(void)
 
   createButton("START", 345, 476, buttonStart);
   createButton("?", 16, 540, buttonOptions);
+  createButton("X", 760, 8, buttonExit);
 }
 
 static void logic(void)
 {
   doButtons();
+}
+
+static void buttonExit() {
+  exit(0);
 }
 
 static void draw(void)
@@ -74,7 +80,7 @@ void doButtons() {
   for (b = stage.buttonsHead.next; b != NULL; b = b->next)
   {
     // check if button clicked
-    SDL_Rect rect = { b->x, b->y, b->w, b->h };
+    SDL_Rect rect = { b->rect.x, b->rect.y, b->rect.w, b->rect.h };
     if(SDL_PointInRect(&mouse, &rect) == SDL_TRUE) {
       b->isHover = 1;
       if(app.clicked) {
@@ -94,12 +100,12 @@ static void drawButtons(void) {
   for (b = stage.buttonsHead.next; b != NULL; b = b->next)
   {
     if(b->isHover == 1) {
-      blit(b->hover, b->x, b->y);
-      SDL_Rect rect = { b->x-8, b->y-4, b->w+16, b->h+8 };
+      blit(b->hover, b->rect.x, b->rect.y);
+      SDL_Rect rect = { b->rect.x-8, b->rect.y-4, b->rect.w+16, b->rect.h+8 };
       SDL_SetRenderDrawColor(app.renderer, 255, 240, 220, 255);
       SDL_RenderDrawRect(app.renderer, &rect);
     } else {
-      blit(b->normal, b->x, b->y);
+      blit(b->normal, b->rect.x, b->rect.y);
     }
   }
 }
@@ -129,9 +135,9 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
   button->hover = button->normal;
   button->isHover = 0;
   button->isClicked = 0;
-  button->x = x;
-  button->y = y;
-  SDL_QueryTexture(button->normal, NULL, NULL, &button->w, &button->h);
+  button->rect.x = x;
+  button->rect.y = y;
+  SDL_QueryTexture(button->normal, NULL, NULL, &button->rect.w, &button->rect.h);
   button->onClick = onClick;
   button->next = NULL;
 

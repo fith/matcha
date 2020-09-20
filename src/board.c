@@ -8,8 +8,6 @@ Board* createBoard(int w, int h, int colors) {
 
 }
 
-
-
 int matchStep(Board* board, int x, int y, int xStep, int yStep) {
   int matches = 0;
   int xNext = x + xStep;

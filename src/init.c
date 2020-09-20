@@ -10,7 +10,7 @@ void initSDL(void)
 
   renderFlags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
 
-  windowFlags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI;
+  windowFlags = SDL_WINDOW_RESIZABLE;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
     printf("Couldn't initialize SDL: %s\n", SDL_GetError());

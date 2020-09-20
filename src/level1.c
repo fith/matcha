@@ -649,7 +649,7 @@ static void doButtons() {
   for (b = stage.buttonsHead.next; b != NULL; b = b->next)
   {
     // check if button clicked
-    SDL_Rect rect = { b->x, b->y, b->w, b->h };
+    SDL_Rect rect = { b->rect.x, b->rect.y, b->rect.w, b->rect.h };
     if(SDL_PointInRect(&mouse, &rect) == SDL_TRUE) {
       b->isHover = 1;
       if(app.clicked == 1) {
@@ -723,12 +723,12 @@ static void drawButtons(void) {
   for (b = stage.buttonsHead.next; b != NULL; b = b->next)
   {
     if(b->isHover == 1) {
-      blit(b->hover, b->x, b->y);
-      SDL_Rect rect = { b->x-8, b->y-4, b->w+16, b->h+8 };
+      blit(b->hover, b->rect.x, b->rect.y);
+      SDL_Rect rect = { b->rect.x-8, b->rect.y-4, b->rect.w+16, b->rect.h+8 };
       SDL_SetRenderDrawColor(app.renderer, 255, 240, 220, 255);
       SDL_RenderDrawRect(app.renderer, &rect);
     } else {
-      blit(b->normal, b->x, b->y);
+      blit(b->normal, b->rect.x, b->rect.y);
     }
   }
 }
@@ -873,9 +873,9 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
   button->hover = button->normal;
   button->isHover = 0;
   button->isClicked = 0;
-  button->x = x;
-  button->y = y;
-  SDL_QueryTexture(button->normal, NULL, NULL, &button->w, &button->h);
+  SDL_Rect rect = {x, y, 0, 0};
+  SDL_QueryTexture(button->normal, NULL, NULL, &rect.w, &rect.h);
+  button->rect = rect;
   button->onClick = onClick;
   button->next = NULL;
 

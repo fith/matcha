@@ -4,6 +4,7 @@ static void loadSounds(void);
 void loadMusic(char *filename);
 void playMusic(int loop);
 void playSound(int id, int channel);
+void stopMusic();
 
 static Mix_Chunk* sounds[SND_MAX];
 static Mix_Music* music;
@@ -42,12 +43,14 @@ void loadMusic(char *filename)
     }   
 }
 
-void playMusic(int loop)
-{
+void stopMusic() {
+    Mix_HaltMusic();
+}
+
+void playMusic(int loop) {
     Mix_PlayMusic(music, (loop) ? -1 : 0);
 }
 
-void playSound(int id, int channel)
-{
+void playSound(int id, int channel) {
     Mix_PlayChannel(channel, sounds[id], 0);
 }

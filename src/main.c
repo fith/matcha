@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
   float remainder;
 
   memset(&app, 0, sizeof(App));
-  app.enableFilm = 1;
-  app.enableMusic = 1;
+  app.options.enableFilm = 1;
+  app.options.musicEnabled = 1;
   app.wins = 0;
   app.paused = 0;
   app.w = WINDOW_WIDTH;
@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
   then = SDL_GetTicks();
   remainder = 0;
 
-  if(app.enableMusic == 1) {
-    loadMusic("snd/humming.wav");
+  loadMusic("snd/humming.wav");
+  if(app.options.musicEnabled == 1) {  
     playMusic(1);
   } 
 
@@ -72,7 +72,7 @@ printf("Screen Width: %d\n", app.h);
     app.delegate.logic();
     app.delegate.draw();
 
-    if(app.enableFilm == 1) {
+    if(app.options.enableFilm == 1) {
       drawDust();
     }
 

@@ -2,6 +2,7 @@
 typedef struct Dot Dot;
 typedef struct Font Font;
 typedef struct Button Button;
+typedef struct UI UI;
 typedef struct AnimateMove AnimateMove;
 typedef struct Sprite Sprite;
 typedef struct Board Board;
@@ -12,16 +13,24 @@ typedef struct {
 } Delegate;
 
 typedef struct {
+  int musicEnabled;
+  float musicVolume;
+  int soundEnabled;
+  float soundVolume;
+  int fullscreen;
+  int enableFilm;
+} Options;
+
+typedef struct {
   SDL_Renderer *renderer;
   SDL_Window *window;
   Delegate delegate;
+  Options options;
   int keyboard[MAX_KEYBOARD_KEYS];
   SDL_MouseButtonEvent *mouseDownEvent;
   SDL_MouseButtonEvent *mouseUpEvent;
   int clicked;
   int mouseDown;
-  int enableMusic;
-  int enableFilm;
   int wins;
   int paused;
   int w, h;
@@ -108,10 +117,25 @@ struct Button {
   SDL_Texture *hover;
   int isHover;
   int isClicked;
-  int x, y, w, h;
-  SDL_Rect *rect;
+  SDL_Rect rect;
   void (*onClick)(void);
   Button *next;
+};
+
+struct UI {
+  SDL_Texture *texNormal;
+  SDL_Texture *texHover;
+  SDL_Texture *texActive;
+  SDL_Color colNormal;
+  SDL_Color colHover;
+  SDL_Color colActive;
+  int isHover;
+  int isClicked;
+  int isDragging;
+  int isActive;
+  SDL_Rect rect;
+  void (*onClick)(void);
+  void (*onDrag)(void);
 };
 
 typedef struct {
