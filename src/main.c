@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   SDL_GetWindowSize(app.window,
                     &app.w,
                     &app.h);
-printf("Screen Width: %d\n", app.h);
+
   while (1)
   {
     prepareScene();
