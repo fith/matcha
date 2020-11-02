@@ -63,8 +63,8 @@ static void buttonExit() {
 
 static void draw(void)
 {
-  drawTextCenter(FNT_HEAD, app.w/2, 94, "MATCHA");
-  drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
+  drawTextCenter(FNT_HEAD, app.screenW/2, 94, "MATCHA");
+  drawTextCenter(FNT_BODY, app.screenW/2, 228, "Hog & Sandwich");
 
   drawDots();
 

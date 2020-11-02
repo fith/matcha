@@ -1,36 +1,41 @@
 #include "level1.h"
 
+// Init
+static void initDots(void);
 static void logic(void);
 static void draw(void);
-static void createButton(char *str, int x, int y, void (*onClick)());
-static void backButton(void);
 static void deinitLevel1(void);
-static void drawButtons(void);
-static void doButtons(void);
-static void initDots(void);
-static void drawDots(void);
-static void drawGoals(void);
-static void gridToScreen(int row, int col, float *x, float *y);
-static void screenToGrid(float x, float y, int *row, int *col);
-static void swapDots(int row1, int col1, int row2, int col2);
-static void doDrag(void);
-static void doAnimateMove(void);
-static void animateMoveTo(Dot *dot, float endX, float endY);
+// Logic
 static int isValidMove(Dot *from, Dot *to);
 static int checkMatches(void);
 static int checkMatchesRight(int x, int y);
 static int checkMatchesDown(int x, int y);
 static void doFalling(void);
-static void removeDot(int x, int y);
-static Dot* createDot(int row, int col);
-static void removeDeadDots(void);
-static void drawDot(Dot *dot);
 static void doAnimal(void);
+static void doDrag(void);
+static void doAnimateMove(void);
+static void removeDeadDots(void);
+static void doButtons(void);
+static void doGameOver(void);
+// Drawing
+static void drawButtons(void);
+static void drawDots(void);
+static void drawDot(Dot *dot);
+static void drawGoals(void);
 static void drawScore(void);
 static void drawTime(void);
 static void drawWin(void);
-static void doGameOver(void);
+// Util
+static void createButton(char *str, int x, int y, void (*onClick)());
+static void backButton(void);
+static void gridToScreen(int row, int col, float *x, float *y);
+static void screenToGrid(float x, float y, int *row, int *col);
 static int getMaxColors(void);
+static void swapDots(int row1, int col1, int row2, int col2);
+static void animateMoveTo(Dot *dot, float endX, float endY);
+static void removeDot(int x, int y);
+static Dot* createDot(int row, int col);
+
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -264,7 +269,7 @@ static void doDrag(void) {
         gridToScreen(dragging->row, dragging->col, &x, &y);
         animateMoveTo(dragging, x, y);
       } else {
-        if(grid[row][col] && grid[row][col] != dragging && isValidMove(dragging, grid[row][col]) == 1) {
+        if(grid[row][col] && grid[row][col] != dragging && isValidMove(dragging, grid[row][col])) {
           lastMoveFrom = dragging;
           lastMoveTo = grid[row][col];
           swapDots(row, col, dragging->row, dragging->col);
@@ -358,18 +363,20 @@ static int isValidMove(Dot *from, Dot *to) {
   }
 
   // special rules for special dots
-  if (from == animal || from == food || to == animal || to == food) {
+  //if (from == animal || from == food || to == animal || to == food) {
     // if they match color, they can swap
-    if (from->color == to->color) {
-      return 1;
-    }
-  } 
+//    if (from->color == to->color) {
+//        return 1;
+//    } else {
+//        return 0;
+//    }
+ // }
 
-  return 1;
+//  return 1;
 }
 
 static void drawScore(void) {
-  drawTextRight(FNT_BODY, app.w - 16, 0, "%6d", score);
+  drawTextRight(FNT_BODY, app.screenW - 16, 0, "%6d", score);
 }
 
 static void drawTime(void) {
@@ -378,9 +385,9 @@ static void drawTime(void) {
   int minutes = time / 60;
   // float seconds = time / 1000.0;
   if (minutes < 1) {
-    drawTextRight(FNT_BODY, app.w - 16, 48, "%6d", seconds);
+    drawTextRight(FNT_BODY, app.screenW - 16, 48, "%6d", seconds);
   } else {
-    drawTextRight(FNT_BODY, app.w - 16, 48, "%4d:%02d", minutes, seconds);
+    drawTextRight(FNT_BODY, app.screenW - 16, 48, "%4d:%02d", minutes, seconds);
   }
 }
 
@@ -388,17 +395,14 @@ static void drawWin(void) {
   Uint32 seconds = 1 + (gameOverTime - startTime) / 1000;
   // int minutes = gameOverTime / 60;
   Uint32 hiscore = (score / seconds) * score;
-  drawTextCenter(FNT_HEAD, app.w/2, 94, "MATCHA");
+  drawTextCenter(FNT_HEAD, app.screenW/2, 94, "MATCHA");
   // drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
-  drawTextCenter(FNT_BODY, app.w/2, 228, "Final Score: %d", hiscore);
+  drawTextCenter(FNT_BODY, app.screenW/2, 228, "Final Score: %d", hiscore);
 }
 
 static void checkWin(void) {
-  int dx, dy;
-  int win = 0;
-
-  dx = abs(animal->row - food->row);
-  dy = abs(animal->col - food->col);
+  int dx = abs(animal->row - food->row);
+  int dy = abs(animal->col - food->col);
   
   if (dx + dy <= 1) {
     doGameOver();
@@ -419,8 +423,8 @@ static void initDots(void)
 {
   int x,y;
 
-  int startX = (app.w / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
-  int startY = (app.h / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int startX = (app.screenW / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
+  int startY = (app.screenH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
   int width = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
   int height = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
   gridRect = (SDL_Rect){ startX, startY, width, height};
@@ -535,13 +539,15 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 static void logic(void)
 { 
   if(!gameover) {
-    checkMatches();
-    removeDeadDots();
-    doFalling();
-    doDrag();
+      doDrag();
+      checkMatches();
+      removeDeadDots();
+      doFalling();
   } 
   doAnimateMove();
+  // animate the animal's sprite.
   doAnimal();
+
   checkWin();
   doButtons();
 }

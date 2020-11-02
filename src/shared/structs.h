@@ -33,7 +33,8 @@ typedef struct {
   int mouseDown;
   int wins;
   int paused;
-  int w, h;
+  int winW, winH;
+  int screenW, screenH;
 } App;
 
 struct Board {

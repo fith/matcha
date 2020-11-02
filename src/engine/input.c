@@ -81,8 +81,8 @@ static void handleWindowEvent(SDL_Event* e) {
             case SDL_WINDOWEVENT_SIZE_CHANGED:
             
             // (original height / original width) x new width = new height
-            app.w = e->window.data1;
-            app.h = e->window.data2;
+            app.winW = e->window.data1;
+            app.winH = e->window.data2;
             
             // SDL_RenderPresent( app.renderer );
             break;

@@ -36,8 +36,10 @@ int main(int argc, char *argv[])
   app.options.musicEnabled = 1;
   app.wins = 0;
   app.paused = 0;
-  app.w = WINDOW_WIDTH;
-  app.h = WINDOW_HEIGHT;
+  app.screenW = SCREEN_WIDTH;
+  app.screenH = SCREEN_HEIGHT;
+  app.winW = WINDOW_WIDTH;
+  app.winH = WINDOW_HEIGHT;
 
   atexit(cleanup);
 
@@ -60,8 +62,8 @@ int main(int argc, char *argv[])
   } 
 
   SDL_GetWindowSize(app.window,
-                    &app.w,
-                    &app.h);
+                    &app.screenW,
+                    &app.screenH);
 
   while (1)
   {
@@ -88,7 +90,7 @@ static void drawDust(void)
 {
   SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_ADD);
   SDL_SetTextureBlendMode(dustTexture, SDL_BLENDMODE_ADD);
-  if (dustTexture == NULL || !app.w || !app.h) {
+  if (dustTexture == NULL || !app.screenW || !app.screenH) {
     return;
   }
   static int offset = 0;
@@ -97,8 +99,8 @@ static void drawDust(void)
     SDL_Rect rect;
     for (i = 0; i < MAX_DUST; i++)
     {
-      rect.x = rand() % app.w;
-      rect.y = rand() % app.h;
+      rect.x = rand() % app.screenW;
+      rect.y = rand() % app.screenH;
       rect.w = rect.h = 1 + rand() % 8;
       blitFit(dustTexture, &rect);
     }

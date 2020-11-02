@@ -10,7 +10,7 @@ void initSDL(void)
 
   renderFlags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
 
-  windowFlags = 0;
+  windowFlags = SDL_WINDOW_RESIZABLE;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
     printf("Couldn't initialize SDL: %s\n", SDL_GetError());
@@ -26,10 +26,13 @@ void initSDL(void)
     exit(1);
   }
 
-  SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
-  app.renderer = SDL_CreateRenderer(app.window, -1, renderFlags);
-  SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+    app.renderer = SDL_CreateRenderer(app.window, -1, renderFlags);
+
+    SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+    SDL_RenderSetLogicalSize(app.renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
   if(!app.renderer) {
     printf("Failed to create renderer: %s\n", SDL_GetError());
