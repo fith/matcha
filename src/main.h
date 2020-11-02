@@ -1,4 +1,4 @@
-#include "common.h"
+#include "shared/common.h"
 
 // init.c
 extern void initSDL(void);

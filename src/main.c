@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
   initSDL();
 
-  dustTexture = loadTexture("gfx/dust.png");
+  dustTexture = loadTexture("resources/gfx/dust.png");
 
   initSounds();
 
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
   then = SDL_GetTicks();
   remainder = 0;
 
-  loadMusic("snd/humming.wav");
+  loadMusic("resources/snd/humming.wav");
   if(app.options.musicEnabled == 1) {  
     playMusic(1);
   } 
