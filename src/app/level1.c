@@ -72,8 +72,7 @@ Uint32 gameOverTime;
 
 void initLevel1(int l)
 {
-    int l = app.wins;
-    size_t numLevels = sizeof(levels)/sizeof(levels[0]);
+    printf("LEVELS: %i", numLevels);
 
     level = levels[l];
     srand(level.seed);

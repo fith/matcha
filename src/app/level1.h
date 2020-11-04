@@ -25,3 +25,4 @@ extern void initMenu(void);
 
 extern Stage stage;
 extern App app;
+extern const Level levels[];
