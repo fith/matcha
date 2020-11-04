@@ -20,7 +20,7 @@ endif()
 #find_package(SDL2_ttf REQUIRED)
 #find_package(SDL2_mixer REQUIRED)
 
-# set( SDL_STATIC ON CACHE BOOL "" FORCE )
+# set( SDL_extern ON CACHE BOOL "" FORCE )
 # set( SDL_SHARED OFF CACHE BOOL "" FORCE )
 
 # # add_subdirectory("ext/SDL/")
@@ -42,6 +42,8 @@ set(src_files
     src/engine/input.c
     src/app/level1.c
     src/main.c
+    src/data/colors.c
+    src/data/levels.c
     src/app/menu.c
     src/app/options.c
     src/engine/sound.c

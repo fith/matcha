@@ -1,3 +1,6 @@
+#ifndef STRUCTS_H
+#define STRUCTS_H
+
 // typedef struct Entity Entity;
 typedef struct Dot Dot;
 typedef struct Font Font;
@@ -6,6 +9,7 @@ typedef struct UI UI;
 typedef struct AnimateMove AnimateMove;
 typedef struct Sprite Sprite;
 typedef struct Board Board;
+typedef struct Level Level;
 
 typedef struct {
   void (*logic)(void);
@@ -36,6 +40,14 @@ typedef struct {
   int winW, winH;
   int screenW, screenH;
 } App;
+
+struct Level {
+    int w, h;
+    int seed;
+    int fox;
+    int numColors;
+    SDL_Color *colors[8];
+};
 
 struct Board {
   int w, h;
@@ -150,3 +162,5 @@ struct Font {
   TTF_Font *font;
   int r, g, b, a;
 };
+
+#endif

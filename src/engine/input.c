@@ -1,6 +1,6 @@
 #include "input.h"
 
-static void handleWindowEvent(SDL_Event* e);
+extern void handleWindowEvent(SDL_Event* e);
 
 void doKeyDown(SDL_KeyboardEvent *event) 
 {
@@ -73,7 +73,7 @@ void doInput(void) {
 }
 
 float w, h;
-static void handleWindowEvent(SDL_Event* e) {
+extern void handleWindowEvent(SDL_Event* e) {
   switch(e->window.event)
         {
             //Get new dimensions and repaint on window size change

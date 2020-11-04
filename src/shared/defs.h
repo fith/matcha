@@ -1,3 +1,6 @@
+#ifndef DEFS_H
+#define DEFS_H
+
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
@@ -6,6 +9,8 @@
 
 #define PLAYER_SPEED 4
 #define PLAYER_BULLET_SPEED 16
+
+
 
 #define MAX_KEYBOARD_KEYS 350
 #define MAX_MOUSE_BUTTONS 2
@@ -90,3 +95,6 @@ enum
     SND_DOT_POP3,
     SND_MAX
 };
+
+
+#endif

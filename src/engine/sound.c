@@ -1,13 +1,13 @@
 #include "sound.h"
 
-static void loadSounds(void);
+static  void loadSounds(void);
 void loadMusic(char *filename);
 void playMusic(int loop);
 void playSound(int id, int channel);
 void stopMusic();
 
-static Mix_Chunk* sounds[SND_MAX];
-static Mix_Music* music;
+static  Mix_Chunk* sounds[SND_MAX];
+static  Mix_Music* music;
 
 void initSounds(void)
 {

@@ -3,7 +3,7 @@
 static SDL_Texture *dustTexture;
 static void drawDust(void);
 
-static void capFrameRate(long *then, float *remainder) 
+static void capFrameRate(long *then, float *remainder)
 {
   long wait, frameTime;
 

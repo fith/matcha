@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kevin/Scratch/c/matcha
+CMAKE_SOURCE_DIR = /Users/kevin/Workspace/c/matcha
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kevin/Scratch/c/matcha/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/kevin/Workspace/c/matcha/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kevin/Scratch/c/matcha/cmake-build-debug/CMakeFiles /Users/kevin/Scratch/c/matcha/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kevin/Workspace/c/matcha/cmake-build-debug/CMakeFiles /Users/kevin/Workspace/c/matcha/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kevin/Scratch/c/matcha/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kevin/Workspace/c/matcha/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -223,6 +223,60 @@ src/app/options.s: src/app/options.c.s
 src/app/options.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/app/options.c.s
 .PHONY : src/app/options.c.s
+
+src/data/colors.o: src/data/colors.c.o
+
+.PHONY : src/data/colors.o
+
+# target to build an object file
+src/data/colors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/colors.c.o
+.PHONY : src/data/colors.c.o
+
+src/data/colors.i: src/data/colors.c.i
+
+.PHONY : src/data/colors.i
+
+# target to preprocess a source file
+src/data/colors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/colors.c.i
+.PHONY : src/data/colors.c.i
+
+src/data/colors.s: src/data/colors.c.s
+
+.PHONY : src/data/colors.s
+
+# target to generate assembly for a file
+src/data/colors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/colors.c.s
+.PHONY : src/data/colors.c.s
+
+src/data/levels.o: src/data/levels.c.o
+
+.PHONY : src/data/levels.o
+
+# target to build an object file
+src/data/levels.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/levels.c.o
+.PHONY : src/data/levels.c.o
+
+src/data/levels.i: src/data/levels.c.i
+
+.PHONY : src/data/levels.i
+
+# target to preprocess a source file
+src/data/levels.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/levels.c.i
+.PHONY : src/data/levels.c.i
+
+src/data/levels.s: src/data/levels.c.s
+
+.PHONY : src/data/levels.s
+
+# target to generate assembly for a file
+src/data/levels.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matcha.dir/build.make CMakeFiles/Matcha.dir/src/data/levels.c.s
+.PHONY : src/data/levels.c.s
 
 src/engine/draw.o: src/engine/draw.c.o
 
@@ -431,6 +485,12 @@ help:
 	@echo "... src/app/options.o"
 	@echo "... src/app/options.i"
 	@echo "... src/app/options.s"
+	@echo "... src/data/colors.o"
+	@echo "... src/data/colors.i"
+	@echo "... src/data/colors.s"
+	@echo "... src/data/levels.o"
+	@echo "... src/data/levels.i"
+	@echo "... src/data/levels.s"
 	@echo "... src/engine/draw.o"
 	@echo "... src/engine/draw.i"
 	@echo "... src/engine/draw.s"

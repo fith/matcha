@@ -15,8 +15,6 @@ static void buttonStart(void);
 
 static void deinitMenu(void);
 
-
-
 enum Transitions {
   NONE,
   OPTIONS
@@ -124,7 +122,7 @@ void buttonOptions(void) {
 
 void buttonStart(void) {
   deinitMenu();
-  initLevel1();
+  initLevel1(app.wins);
 }
 
 static void createButton(char *str, int x, int y, void (*onClick)()) {

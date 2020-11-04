@@ -11,7 +11,7 @@ extern void drawTextCenter(int font, int x, int y, char *format, ...);
 extern SDL_Texture* textTexture(int font, char *format, ...);
 
 extern void initOptions(void);
-extern void initLevel1(void);
+extern void initLevel1(int l);
 
 extern Stage stage;
 extern App app;

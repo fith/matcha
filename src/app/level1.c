@@ -4,7 +4,7 @@
 static void initDots(void);
 static void logic(void);
 static void draw(void);
-static void deinitLevel1(void);
+static void deinitLevel1();
 // Logic
 static int isValidMove(Dot *from, Dot *to);
 static int checkMatches(void);
@@ -28,14 +28,14 @@ static void drawWin(void);
 // Util
 static void createButton(char *str, int x, int y, void (*onClick)());
 static void backButton(void);
+static void nextButton(void);
 static void gridToScreen(int row, int col, float *x, float *y);
 static void screenToGrid(float x, float y, int *row, int *col);
-static int getMaxColors(void);
 static void swapDots(int row1, int col1, int row2, int col2);
 static void animateMoveTo(Dot *dot, float endX, float endY);
 static void removeDot(int x, int y);
 static Dot* createDot(int row, int col);
-
+static SDL_Color* randomLevelColor();
 
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
@@ -46,29 +46,12 @@ static Dot *dragging;
 static int dragOffsetX, dragOffsetY;
 
 // grid
-#define GRID_SIZE 5
 #define TILE_SIZE 64
 #define TILE_MARGIN 16
-static Dot* grid[GRID_SIZE][GRID_SIZE] = { NULL };
+static Dot* grid[8][8];
 static SDL_Rect gridRect;
 
-#define MAX_COLORS 7
-static SDL_Color colorRed = {211, 44, 44}; // red
-static SDL_Color colorOrange = {211, 136, 44}; // orange
-static SDL_Color colorYellow = {229, 229, 26}; // yellow
-static SDL_Color colorGreen = {51, 204, 51}; // green
-static SDL_Color colorBlue = {44, 210, 211}; // blue
-static SDL_Color colorIndigo = {44, 90, 211}; // indigo
-static SDL_Color colorViolet = {183, 44, 211}; // violet
-static SDL_Color colorWhite = {255, 240, 220}; // white
-static SDL_Color colorBlack = {26, 26, 26}; // white
-static SDL_Color *colors[] = {&colorRed,
-                              &colorOrange,
-                              &colorYellow,
-                              &colorGreen,
-                              &colorBlue,
-                              &colorIndigo,
-                              &colorViolet};
+static Level level;
 
 static Dot *animal;
 static Dot *food;
@@ -87,12 +70,16 @@ Uint32 startTime;
 Uint32 currentTime;
 Uint32 gameOverTime;
 
-void initLevel1(void)
+void initLevel1(int l)
 {
-  srand(25);
+    int l = app.wins;
+    size_t numLevels = sizeof(levels)/sizeof(levels[0]);
 
-  app.delegate.logic = logic;
-  app.delegate.draw = draw;
+    level = levels[l];
+    srand(level.seed);
+
+    app.delegate.logic = logic;
+    app.delegate.draw = draw;
 
   dragging = NULL;
   score = 0;
@@ -106,9 +93,14 @@ void initLevel1(void)
   memset(&stage, 0, sizeof(Stage));
   stage.buttonsTail = &stage.buttonsHead;
 
-  memset(grid, 0, sizeof(grid[0][0]) * GRID_SIZE * GRID_SIZE);
+//    Dot* (*A)[level.h] = ;
+//    grid = malloc(sizeof(Dot*[level.w][level.h]));
+//    for (int i = 0; i < level.w; i++) {
+//        grid[i] = malloc(level.h * sizeof(grid[0]));
+//    }
 
-  if(dotTexture == NULL) {
+
+    if(dotTexture == NULL) {
     dotTexture = loadTexture("resources/gfx/dot.png");
   }
   if(dottedLineTexture == NULL) {
@@ -196,16 +188,16 @@ void initLevel1(void)
 
 static void drawGoals(void)
 {
-  for (int x = 0; x < GRID_SIZE; x++) {
-    for (int y = 0; y < GRID_SIZE; y++) {
-      if (!grid[x][y]) {
+  for (int x = 0; x < level.w; x++) {
+    for (int y = 0; y < level.h; y++) {
+      if (grid[x][y] == NULL) {
         continue;
       }
       if (grid[x][y]->goal != NULL) {
-        drawLine(dottedLineTexture, 
-                  grid[x][y]->x + TILE_SIZE/2.0, 
-                  grid[x][y]->y + TILE_SIZE/2.0, 
-                  grid[x][y]->goal->x + TILE_SIZE/2.0, 
+        drawLine(dottedLineTexture,
+                  grid[x][y]->x + TILE_SIZE/2.0,
+                  grid[x][y]->y + TILE_SIZE/2.0,
+                  grid[x][y]->goal->x + TILE_SIZE/2.0,
                   grid[x][y]->goal->y + TILE_SIZE/2.0);
       }
     }
@@ -214,8 +206,8 @@ static void drawGoals(void)
 
 static void doFalling(void) {
   int x, y;
-  for (x = 0; x < GRID_SIZE; x++) {
-    for (y = (GRID_SIZE-1); y > 0; y--) {
+  for (x = 0; x < level.w; x++) {
+    for (y = (level.h-1); y > 0; y--) {
       if (!grid[x][y]) { // if this cell is empty
         if(grid[x][y-1]) { // check the above cell
           // move its contents down a space
@@ -233,7 +225,7 @@ static void doFalling(void) {
 
   // top row
   y = 0;
-  for (x = 0; x < GRID_SIZE; x++) {
+  for (x = 0; x < level.w; x++) {
     if (!grid[x][y]) {
       Dot *dot = createDot(x, y);
       int endY = dot->y;
@@ -356,7 +348,7 @@ static int isValidMove(Dot *from, Dot *to) {
 
   dx = abs(frow - trow);
   dy = abs(fcol - tcol);
-  
+
   // check that it's within range 1
   if (dx + dy > 1) {
     return 0;
@@ -372,7 +364,7 @@ static int isValidMove(Dot *from, Dot *to) {
 //    }
  // }
 
-//  return 1;
+  return 1;
 }
 
 static void drawScore(void) {
@@ -403,7 +395,7 @@ static void drawWin(void) {
 static void checkWin(void) {
   int dx = abs(animal->row - food->row);
   int dy = abs(animal->col - food->col);
-  
+
   if (dx + dy <= 1) {
     doGameOver();
   }
@@ -414,6 +406,7 @@ static void doGameOver(void) {
     return;
   }
 
+    createButton("Next", 600, 540, nextButton);
   gameover = 1;
   gameOverTime = SDL_GetTicks();
   app.wins++;
@@ -423,21 +416,21 @@ static void initDots(void)
 {
   int x,y;
 
-  int startX = (app.screenW / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
-  int startY = (app.screenH / 2) - (((GRID_SIZE * TILE_SIZE) + (TILE_MARGIN * GRID_SIZE)) / 2);
-  int width = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
-  int height = ((TILE_SIZE + TILE_MARGIN) * GRID_SIZE) + TILE_MARGIN;
+  int startX = (app.screenW / 2) - (((level.w * TILE_SIZE) + (TILE_MARGIN * level.w)) / 2);
+  int startY = (app.screenH / 2) - (((level.h * TILE_SIZE) + (TILE_MARGIN * level.h)) / 2);
+  int width = ((TILE_SIZE + TILE_MARGIN) * level.w) + TILE_MARGIN;
+  int height = ((TILE_SIZE + TILE_MARGIN) * level.h) + TILE_MARGIN;
   gridRect = (SDL_Rect){ startX, startY, width, height};
-    
+
   int ax, ay, fx, fy;
   float distance;
   float minDistance = 3.0;
   float maxDistance = 4.0;
   do {
-    ax = rand() % GRID_SIZE;
-    ay = rand() % GRID_SIZE;
-    fx = rand() % GRID_SIZE;
-    fy = rand() % GRID_SIZE;
+    ax = rand() % level.w;
+    ay = rand() % level.h;
+    fx = rand() % level.w;
+    fy = rand() % level.h;
     distance = sqrt(pow(fx - ax, 2) + pow(fy - ay, 2) * 1.0);
   } while (distance < minDistance || distance > maxDistance);
 
@@ -450,7 +443,7 @@ static void initDots(void)
   animal->texture = dotTexture;
   animal->icon = hogIdleSprite;
 
-  animal->color = colors[rand() % getMaxColors()];
+  animal->color = randomLevelColor();
   animal->animateMove = NULL;
   animal->type = DOT_ANIMAL;
   animal->health = 1;
@@ -464,7 +457,7 @@ static void initDots(void)
   gridToScreen(food->row, food->col, &food->x, &food->y);
   food->texture = dotTexture;
   food->icon = foodSprite;
-  food->color = colors[rand() % getMaxColors()];
+  food->color = randomLevelColor();
   food->animateMove = NULL;
   food->type = DOT_FOOD;
   food->health = 1;
@@ -472,37 +465,28 @@ static void initDots(void)
 
   animal->goal = food;
 
-  for(x = 0; x < GRID_SIZE; x++) {
-    for(y = 0; y < GRID_SIZE; y++) {
+  for(x = 0; x < level.w; x++) {
+    for(y = 0; y < level.h; y++) {
       if (!grid[x][y]) {
         grid[x][y] = createDot(x, y);
       }
     }
   }
-  
+
   int matches = checkMatches() ;
   printf("Matches: %d\n", matches);
   while(matches > 0) {
-    for (int x = 0; x < GRID_SIZE; x++) {
-      for (int y = 0; y < GRID_SIZE; y++) {
+    for (int x = 0; x < level.w; x++) {
+      for (int y = 0; y < level.h; y++) {
         if (grid[x][y]->health == 0) {
           grid[x][y]->health = 1;
-          grid[x][y]->color = colors[rand() % getMaxColors()];
+          grid[x][y]->color = randomLevelColor();
         }
       }
     }
     matches = checkMatches();
     printf("Matches: %d\n", matches);
   }
-}
-
-static int getMaxColors(void) {
-  int difficulty = (app.wins < 3) ? app.wins : 3;
-  int maxColors = MAX_COLORS - (3 - difficulty);
-  if(maxColors - 1 >= GRID_SIZE) {
-    maxColors = GRID_SIZE;
-  }
-  return maxColors;
 }
 
 static Dot* createDot(int row, int col) {
@@ -514,11 +498,15 @@ static Dot* createDot(int row, int col) {
   gridToScreen(d->row, d->col, &d->x, &d->y);
   d->texture = dotTexture;
   d->icon = NULL;
-  d->color = colors[rand() % getMaxColors()];
+  d->color = randomLevelColor();
   d->animateMove = NULL;
   d->health = 1;
   d->type = DOT_DOT;
   return d;
+}
+
+static SDL_Color* randomLevelColor() {
+    return level.colors[rand() % level.numColors];
 }
 
 static void gridToScreen(int row, int col, float *x, float *y) {
@@ -537,18 +525,20 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 }
 
 static void logic(void)
-{ 
+{
   if(!gameover) {
       doDrag();
       checkMatches();
       removeDeadDots();
       doFalling();
-  } 
+  }
   doAnimateMove();
   // animate the animal's sprite.
   doAnimal();
 
-  checkWin();
+  if (checkMatches() == 0) {
+    checkWin();
+  }
   doButtons();
 }
 
@@ -579,27 +569,42 @@ static void backButton(void)
   initMenu();
 }
 
+static void nextButton(void) {
+    deinitLevel1();
+    initLevel1(app.wins);
+}
+
 static void doAnimal(void) {
   int running = 0;
   int x = animal->row;
   int y = animal->col;
+  int flip = 0;
+  float rotation = 0.0;
 
-  // check left
-  if(x > 0 && grid[x-1][y] && grid[x-1][y]->color == animal->color) {
-    running = 1;
-  }
-  // check right
-  if(x < (GRID_SIZE - 1) && grid[x+1][y] && grid[x+1][y]->color == animal->color) {
-    running = 1;
-  }
   // check up
   if(y > 0 && grid[x][y-1] && grid[x][y-1]->color == animal->color) {
     running = 1;
+    flip = 0;
+    rotation = -90.0;
   }
   // check down
-  if(y < (GRID_SIZE - 1) && grid[x][y+1] && grid[x][y+1]->color == animal->color) {
+  if(y < (level.h - 1) && grid[x][y+1] && grid[x][y+1]->color == animal->color) {
     running = 1;
+    flip = 0;
+    rotation = 90.0;
   }
+    // check left
+    if(x > 0 && grid[x-1][y] && grid[x-1][y]->color == animal->color) {
+        running = 1;
+        flip = 1;
+        rotation = 0.0f;
+    }
+    // check right
+    if(x < (level.w - 1) && grid[x+1][y] && grid[x+1][y]->color == animal->color) {
+        running = 1;
+        flip = 0;
+        rotation = 0.0f;
+    }
 
   if (running || gameover) {
     animal->icon = hogRunningSprite;
@@ -607,19 +612,31 @@ static void doAnimal(void) {
     animal->icon = hogIdleSprite;
   }
 
-  if (animal->x <= food->x) {
-    animal->icon->flip = 0;
-  } else {
-    animal->icon->flip = 1;
+  if (gameover) {
+      if (animal->x <= food->x) {
+          flip = 0;
+      } else {
+          flip = 1;
+      }
+      rotation = 0.0;
+      if (animal->y < food->y) {
+          rotation = 90.0f;
+      }
+      if (animal->y < food->y) {
+          rotation = -90.0f;
+      }
   }
+
+    animal->icon->rotation = rotation;
+    animal->icon->flip = flip;
 }
 
 static void doAnimateMove(void) {
   double ticks = SDL_GetTicks();
   Dot *dot;
   AnimateMove *am;
-  for (int x = 0; x < GRID_SIZE; x++) {
-    for (int y = 0; y < GRID_SIZE; y++) {
+  for (int x = 0; x < level.w; x++) {
+    for (int y = 0; y < level.h; y++) {
       if (!grid[x][y]) {
         continue;
       }
@@ -640,7 +657,7 @@ static void doAnimateMove(void) {
         dot->animateMove = NULL;
         free(am);
       }
-      
+
     }
   }
 }
@@ -671,8 +688,8 @@ static void doButtons() {
 }
 
 static void drawDots(void) {
-  for (int x = 0; x < GRID_SIZE; x++) {
-    for (int y = 0; y < GRID_SIZE; y++) {
+  for (int x = 0; x < level.w; x++) {
+    for (int y = 0; y < level.h; y++) {
       if (grid[x][y]) {
         drawDot(grid[x][y]);
       }
@@ -690,7 +707,7 @@ static void drawDot(Dot *dot) {
   dst.x = dot->x;
   dst.y = dot->y;
   SDL_QueryTexture(dot->texture, NULL, NULL, &dst.w, &dst.h);
-  
+
   // change scale if dragging
   if (dot == dragging) {
     float scale = 1.1;
@@ -711,7 +728,7 @@ static void drawDot(Dot *dot) {
     //   SDL_SetTextureColorMod(dot->icon, colorWhite.r, colorWhite.g, colorWhite.b);
     // } else if (dot->type == DOT_ANIMAL) {
     //   SDL_SetTextureColorMod(dot->icon, colorBlack.r, colorBlack.g, colorBlack.b);
-    // }  
+    // }
     if (dot == dragging) {
       dot->icon->scale = 1.1;
     } else {
@@ -742,8 +759,8 @@ static void drawButtons(void) {
 static int checkMatches() {
   int matches = 0;
   int x, y;
-  for(x = 0; x < GRID_SIZE; x++) {
-    for(y = 0; y < GRID_SIZE; y++) {
+  for(x = 0; x < level.w; x++) {
+    for(y = 0; y < level.h; y++) {
       matches += checkMatchesRight(x, y);
       matches += checkMatchesDown(x, y);
     }
@@ -759,8 +776,8 @@ static int checkMatchesRight(int x, int y) {
   int matches = 1; // current dot matches itself.
   Dot *dots[(MATCH * 2)] = { NULL };
   dots[0] = grid[x][y];
-  
-  while (++next < GRID_SIZE) {
+
+  while (++next < level.w) {
     if (grid[next][y] == NULL) {
       break;
     }
@@ -794,8 +811,8 @@ static int checkMatchesDown(int x, int y) {
   int matches = 1; // current dot matches itself.
   Dot *dots[(MATCH * 2) - 1] = { NULL };
   dots[0] = grid[x][y];
-  
-  while (++next < GRID_SIZE) {
+
+  while (++next < level.h) {
     if (!grid[x][next]) {
       break;
     }
@@ -823,21 +840,21 @@ static int checkMatchesDown(int x, int y) {
 static void removeDeadDots(void) {
   int total = 0;
 
-  for (int x = 0; x < GRID_SIZE; x++) {
-    for (int y = 0; y < GRID_SIZE; y++) {
+  for (int x = 0; x < level.w; x++) {
+    for (int y = 0; y < level.h; y++) {
       if (grid[x][y]) {
         if (grid[x][y]->health == 0) {
           total++;
           removeDot(x, y);
           int snd = rand() % 3;
           switch(snd) {
-            case 0: 
+            case 0:
               playSound(SND_DOT_POP1, CH_ANY);
               break;
             case 1:
               playSound(SND_DOT_POP2, CH_ANY);
               break;
-            case 2: 
+            case 2:
               playSound(SND_DOT_POP3, CH_ANY);
               break;
           }
@@ -895,14 +912,18 @@ static void deinitLevel1(void) {
   animal = NULL;
 
   int x,y;
-  for(x = 0; x < GRID_SIZE; x++) {
-    for(y = 0; y < GRID_SIZE; y++) {
+  for(x = 0; x < level.w; x++) {
+    for(y = 0; y < level.h; y++) {
       if (grid[x][y]) {
         removeDot(x, y);
       }
       grid[x][y] = NULL;
     }
   }
+//    for (int i = 0; i < level.w; i++) {
+//        free(grid[i]);
+//    }
+//    free(grid);
 
   // state variables
   dragging = NULL;
