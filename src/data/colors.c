@@ -9,3 +9,13 @@ SDL_Color colorIndigo = {44, 90, 211}; // indigo
 SDL_Color colorViolet = {183, 44, 211}; // violet
 SDL_Color colorWhite = {255, 240, 220}; // white
 SDL_Color colorBlack = {26, 26, 26}; // white
+
+SDL_Color *dotColors[DOT_COLORS] = {
+        &colorRed,
+        &colorOrange,
+        &colorYellow,
+        &colorGreen,
+        &colorBlue,
+        &colorIndigo,
+        &colorViolet
+};

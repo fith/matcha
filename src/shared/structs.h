@@ -36,6 +36,8 @@ typedef struct {
   int clicked;
   int mouseDown;
   int wins;
+  int level;
+  int levelFarthest;
   int paused;
   int winW, winH;
   int screenW, screenH;
@@ -46,13 +48,13 @@ struct Level {
     int seed;
     int fox;
     int numColors;
-    SDL_Color *colors[8];
+    SDL_Color *colors[GAME_COLORS];
 };
 
-struct Board {
-  int w, h;
-  Dot *dots;
-};
+//struct Board {
+//  int w, h;
+//  Dot *dots;
+//};
 
 struct Dot {
   SDL_Texture *texture;
@@ -66,7 +68,7 @@ struct Dot {
   int health;
   AnimateMove *animateMove;
   Dot *goal;
-  int falls;
+//  int falls;
 };
 
 struct AnimateMove {
@@ -130,6 +132,7 @@ struct Button {
   SDL_Texture *hover;
   int isHover;
   int isClicked;
+  int outline;
   SDL_Rect rect;
   void (*onClick)(void);
   Button *next;

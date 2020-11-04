@@ -1,4 +1,5 @@
 #include "level1.h"
+#include <time.h>
 
 // Init
 static void initDots(void);
@@ -72,10 +73,37 @@ Uint32 gameOverTime;
 
 void initLevel1(int l)
 {
-    printf("LEVELS: %i", numLevels);
+    printf("LEVELS: %i", num_levels);
+    if (l < num_levels) {
+        level = levels[l];
+        srand(level.seed);
+    } else {
+        long seed = time(NULL);
+        srand(seed);
+        SDL_Color *c[GAME_COLORS];
+        int skip1 = rand() % DOT_COLORS;
+        int skip2 = rand() % DOT_COLORS;
+        while (skip2 == skip1) {
+            skip2 = rand() % DOT_COLORS;
+        }
+        int j = 0;
+        for (int i = 0; i < GAME_COLORS; i++) {
+            if(j == skip1 || j == skip2) {
+                j++;
+            }
+            c[i] = dotColors[j];
+            j++;
+        }
 
-    level = levels[l];
-    srand(level.seed);
+        level.w = 7;
+            level.w = rand() % 2 + 5;
+            level.h = rand() % 2 + 5;
+            level.seed = seed;
+            level.fox = 0;
+            level.numColors = GAME_COLORS;
+        memcpy(level.colors, c, sizeof c);
+
+    }
 
     app.delegate.logic = logic;
     app.delegate.draw = draw;
@@ -375,17 +403,17 @@ static void drawTime(void) {
   int seconds = time % 60;
   int minutes = time / 60;
   // float seconds = time / 1000.0;
-  if (minutes < 1) {
-    drawTextRight(FNT_BODY, app.screenW - 16, 48, "%6d", seconds);
-  } else {
+//  if (minutes < 1) {
+//    drawTextRight(FNT_BODY, app.screenW - 16, 48, "%6d", seconds);
+//  } else {
     drawTextRight(FNT_BODY, app.screenW - 16, 48, "%4d:%02d", minutes, seconds);
-  }
+//  }
 }
 
 static void drawWin(void) {
   Uint32 seconds = 1 + (gameOverTime - startTime) / 1000;
   // int minutes = gameOverTime / 60;
-  Uint32 hiscore = (score / seconds) * score;
+  Uint32 hiscore = (score * score) / seconds ;
   drawTextCenter(FNT_HEAD, app.screenW/2, 94, "MATCHA");
   // drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
   drawTextCenter(FNT_BODY, app.screenW/2, 228, "Final Score: %d", hiscore);
@@ -409,6 +437,13 @@ static void doGameOver(void) {
   gameover = 1;
   gameOverTime = SDL_GetTicks();
   app.wins++;
+  app.level++;
+    if (app.level > num_levels) {
+        app.level = num_levels;
+    }
+    if (app.level > app.levelFarthest) {
+        app.levelFarthest = app.level;
+    }
 }
 
 static void initDots(void)
@@ -570,7 +605,7 @@ static void backButton(void)
 
 static void nextButton(void) {
     deinitLevel1();
-    initLevel1(app.wins);
+    initLevel1(app.level);
 }
 
 static void doAnimal(void) {

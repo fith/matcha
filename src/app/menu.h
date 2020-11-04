@@ -15,3 +15,5 @@ extern void initLevel1(int l);
 
 extern Stage stage;
 extern App app;
+
+extern int num_levels;

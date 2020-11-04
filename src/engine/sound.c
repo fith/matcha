@@ -20,12 +20,12 @@ void initSounds(void)
 
 static void loadSounds(void)
 {
-    sounds[SND_DOT_LIFT] = Mix_LoadWAV("resources/snd/lift.wav");
-    sounds[SND_DOT_SWAP] = Mix_LoadWAV("resources/snd/swap.wav");
-    sounds[SND_DOT_DROP] = Mix_LoadWAV("resources/snd/drop.wav");
-    sounds[SND_DOT_POP1] = Mix_LoadWAV("resources/snd/pop1.wav");
-    sounds[SND_DOT_POP2] = Mix_LoadWAV("resources/snd/pop2.wav");
-    sounds[SND_DOT_POP3] = Mix_LoadWAV("resources/snd/pop3.wav");
+    sounds[SND_DOT_LIFT] = Mix_LoadWAV("resources/snd/lift.ogg");
+    sounds[SND_DOT_SWAP] = Mix_LoadWAV("resources/snd/swap.ogg");
+    sounds[SND_DOT_DROP] = Mix_LoadWAV("resources/snd/drop.ogg");
+    sounds[SND_DOT_POP1] = Mix_LoadWAV("resources/snd/pop1.ogg");
+    sounds[SND_DOT_POP2] = Mix_LoadWAV("resources/snd/pop2.ogg");
+    sounds[SND_DOT_POP3] = Mix_LoadWAV("resources/snd/pop3.ogg");
 }
 
 void loadMusic(char *filename)

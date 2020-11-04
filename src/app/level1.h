@@ -1,5 +1,7 @@
-#include "../shared/common.h"
+#ifndef LEVEL1_H
+#define LEVEL1_H
 
+#include "../shared/common.h"
 #include <tgmath.h>
 
 // draw.c
@@ -26,3 +28,6 @@ extern void initMenu(void);
 extern Stage stage;
 extern App app;
 extern const Level levels[];
+extern const int num_levels;
+
+#endif

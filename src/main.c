@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
   app.options.enableFilm = 1;
   app.options.musicEnabled = 1;
   app.wins = 0;
+  app.level = 0;
   app.paused = 0;
   app.screenW = SCREEN_WIDTH;
   app.screenH = SCREEN_HEIGHT;
@@ -56,7 +57,7 @@ int main(int argc, char *argv[])
   then = SDL_GetTicks();
   remainder = 0;
 
-  loadMusic("resources/snd/humming.wav");
+  loadMusic("resources/snd/humming.ogg");
   if(app.options.musicEnabled == 1) {  
     playMusic(1);
   } 
