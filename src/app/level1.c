@@ -96,8 +96,8 @@ void initLevel1(int l)
         }
 
         level.w = 7;
-            level.w = rand() % 2 + 5;
-            level.h = rand() % 2 + 5;
+            level.w = rand() % 2 + 6;
+            level.h = rand() % 2 + 6;
             level.seed = seed;
             level.fox = 0;
             level.numColors = GAME_COLORS;
