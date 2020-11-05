@@ -78,7 +78,7 @@ void initLevel1(int l)
         level = levels[l];
         srand(level.seed);
     } else {
-        long seed = time(NULL);
+        unsigned int seed = (unsigned int)time(NULL);
         srand(seed);
         SDL_Color *c[GAME_COLORS];
         int skip1 = rand() % DOT_COLORS;

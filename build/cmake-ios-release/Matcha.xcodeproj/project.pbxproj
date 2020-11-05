@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7FC6F78675984D0985BB5187 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0499E3443BE24759AF6C939A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				DDF07EBBBCA64A3BA8BFB653 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		E41B59C536A7412FAFE6A54C /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 96AFFB25C7CD476DA4FF2E41 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				488EA039B79C44EFAE9C5E18 /* CMake Rules */,
+			);
+			dependencies = (
+				F5B9605F78E8474E89A0C678 /* PBXTargetDependency */,
+				9908E1B632174983A22461CE /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		08EC29EBE68A4317B83384C6 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */ = {isa = PBXBuildFile; fileRef = 57773BD40B9B4ED3BC4D696E /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */; };
+		4305B4FE67B6441087764BE6 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */ = {isa = PBXBuildFile; fileRef = D0458FC15FD548539E8CCF73 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */; };
+		46C4AC75A15B418EAC5B7E45 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */ = {isa = PBXBuildFile; fileRef = 4B12B79D51954F46BE8AAB2F /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */; };
+		4FC3A36C48E14B87BF9447D8 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 616AA1DFF0BF4A90A3FF1F30 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */; };
+		555E65601AA846C08B6BFC49 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */ = {isa = PBXBuildFile; fileRef = EC27ECA5CCFD4CEE94CCCAEC /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */; };
+		69E21C50500F4593828490C7 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */ = {isa = PBXBuildFile; fileRef = D07939D76DBA43499B4EF7B4 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */; };
+		89D0B80736F9402FAB54DBD0 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */ = {isa = PBXBuildFile; fileRef = FB5CB71965F84B119D30665E /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */; };
+		9B38A27B10564DA29679D3BD /* /Users/kevin/Scratch/c/matcha/src/app/options.c */ = {isa = PBXBuildFile; fileRef = F5ABBB0C2C3140F183403DFA /* /Users/kevin/Scratch/c/matcha/src/app/options.c */; };
+		AF40DD76C97E40139BCA8990 /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */ = {isa = PBXBuildFile; fileRef = 9EC816C2E61049BD8EAEB35B /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */; };
+		BA98F401B08643D996D56C56 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */ = {isa = PBXBuildFile; fileRef = E06E487C204F4DD9BD2A8D2B /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */; };
+		C76A9BBFA3F24924B7C23052 /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C17F78908B2248F498CB7524 /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */; };
+		DC22598773AB497E9CFF6EE1 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */ = {isa = PBXBuildFile; fileRef = 9615840ABA354E5F9EE7FC60 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */; };
+		EFB4E4B850204996B3B7857A /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */ = {isa = PBXBuildFile; fileRef = 4D2E5976AE0442B89A8A76D0 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */; };
+		FC8794D9B3944D8C9FF9E8BA /* /Users/kevin/Scratch/c/matcha/src/main.c */ = {isa = PBXBuildFile; fileRef = 6135C4BA65114FFFBFFED864 /* /Users/kevin/Scratch/c/matcha/src/main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		12E6478D7F9F40AEB83CA644 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		4E1E1C9DFA1E404792451704 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		9F60A1EFE7B445408ACC17B8 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		ECA7A57D983E4F45AF9E8CF7 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		3B6322B8FBFF47A4AD41D4EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F2673F15B414D9B816E6063 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FC6F78675984D0985BB5187;
+			remoteInfo = ZERO_CHECK;
+		};
+		74FA5D95AFA744EEB7DCA192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F2673F15B414D9B816E6063 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FC6F78675984D0985BB5187;
+			remoteInfo = ZERO_CHECK;
+		};
+		CA58C3F9D04A4646A3C88B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F2673F15B414D9B816E6063 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B5B3D1AECE945D08C3B1D8F;
+			remoteInfo = Matcha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01AEBED4BBCB4340AC9FD54B /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0705C91BCC39455382E767D2 /* Matcha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Matcha; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B12B79D51954F46BE8AAB2F /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = util.c; path = src/engine/util.c; sourceTree = SOURCE_ROOT; };
+		4D2E5976AE0442B89A8A76D0 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = text.c; path = src/engine/text.c; sourceTree = SOURCE_ROOT; };
+		57773BD40B9B4ED3BC4D696E /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = src/engine/input.c; sourceTree = SOURCE_ROOT; };
+		6135C4BA65114FFFBFFED864 /* /Users/kevin/Scratch/c/matcha/src/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = src/main.c; sourceTree = SOURCE_ROOT; };
+		616AA1DFF0BF4A90A3FF1F30 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		9615840ABA354E5F9EE7FC60 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = menu.c; path = src/app/menu.c; sourceTree = SOURCE_ROOT; };
+		9EC816C2E61049BD8EAEB35B /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = sound.c; path = src/engine/sound.c; sourceTree = SOURCE_ROOT; };
+		C17F78908B2248F498CB7524 /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D0458FC15FD548539E8CCF73 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = src/engine/init.c; sourceTree = SOURCE_ROOT; };
+		D07939D76DBA43499B4EF7B4 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = levels.c; path = src/data/levels.c; sourceTree = SOURCE_ROOT; };
+		E06E487C204F4DD9BD2A8D2B /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = level1.c; path = src/app/level1.c; sourceTree = SOURCE_ROOT; };
+		EC27ECA5CCFD4CEE94CCCAEC /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = colors.c; path = src/data/colors.c; sourceTree = SOURCE_ROOT; };
+		F5ABBB0C2C3140F183403DFA /* /Users/kevin/Scratch/c/matcha/src/app/options.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = options.c; path = src/app/options.c; sourceTree = SOURCE_ROOT; };
+		FB5CB71965F84B119D30665E /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = draw.c; path = src/engine/draw.c; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0F74F68445A54250A4CCC97D /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		1BE9E174CC804BBF9D2C9C84 /* Matcha */ = {
+			isa = PBXGroup;
+			children = (
+				B3B7107FE31C4F839D2822D7 /* Source Files */,
+				3AB37E7F013443C9937F30DB /* Resources */,
+				C17F78908B2248F498CB7524 /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */,
+			);
+			name = Matcha;
+			sourceTree = "<group>";
+		};
+		3AB37E7F013443C9937F30DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				616AA1DFF0BF4A90A3FF1F30 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B1EA230AEB1F4FB19C53F6DD /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				0F74F68445A54250A4CCC97D /* CMake Rules */,
+				01AEBED4BBCB4340AC9FD54B /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		B380BBD618464994BAD28739 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0705C91BCC39455382E767D2 /* Matcha */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3B7107FE31C4F839D2822D7 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E06E487C204F4DD9BD2A8D2B /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */,
+				9615840ABA354E5F9EE7FC60 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */,
+				F5ABBB0C2C3140F183403DFA /* /Users/kevin/Scratch/c/matcha/src/app/options.c */,
+				EC27ECA5CCFD4CEE94CCCAEC /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */,
+				D07939D76DBA43499B4EF7B4 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */,
+				FB5CB71965F84B119D30665E /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */,
+				D0458FC15FD548539E8CCF73 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */,
+				57773BD40B9B4ED3BC4D696E /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */,
+				9EC816C2E61049BD8EAEB35B /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */,
+				4D2E5976AE0442B89A8A76D0 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */,
+				4B12B79D51954F46BE8AAB2F /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */,
+				6135C4BA65114FFFBFFED864 /* /Users/kevin/Scratch/c/matcha/src/main.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D2115DF3F2C244739BEAD3E0 = {
+			isa = PBXGroup;
+			children = (
+				1BE9E174CC804BBF9D2C9C84 /* Matcha */,
+				B1EA230AEB1F4FB19C53F6DD /* ALL_BUILD */,
+				B380BBD618464994BAD28739 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B5B3D1AECE945D08C3B1D8F /* Matcha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C040B02D9304A54AE7129BA /* Build configuration list for PBXNativeTarget "Matcha" */;
+			buildPhases = (
+				4ABC11E60F56453B928864E1 /* Sources */,
+				4C6E5676FF2B4F1AB8F62656 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43AEE0997F284C3EBF41EF64 /* PBXTargetDependency */,
+			);
+			name = Matcha;
+			productName = Matcha;
+			productReference = 0705C91BCC39455382E767D2 /* Matcha */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F2673F15B414D9B816E6063 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1220;
+			};
+			buildConfigurationList = 4DCFCDECAC5D43FDB269B7A6 /* Build configuration list for PBXProject "Matcha" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4E1E1C9DFA1E404792451704 /* Debug */,
+				ECA7A57D983E4F45AF9E8CF7 /* Release */,
+				12E6478D7F9F40AEB83CA644 /* MinSizeRel */,
+				9F60A1EFE7B445408ACC17B8 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = D2115DF3F2C244739BEAD3E0;
+			projectDirPath = ../../;
+			projectRoot = "";
+			targets = (
+				E41B59C536A7412FAFE6A54C /* ALL_BUILD */,
+				2B5B3D1AECE945D08C3B1D8F /* Matcha */,
+				7FC6F78675984D0985BB5187 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ADB605921FD4B2181FAB0BB = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		488EA039B79C44EFAE9C5E18 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		4C6E5676FF2B4F1AB8F62656 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/Matcha_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		DDF07EBBBCA64A3BA8BFB653 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		E8D91ABCB2F348E0AC680940 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ABC11E60F56453B928864E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA98F401B08643D996D56C56 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */,
+				DC22598773AB497E9CFF6EE1 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */,
+				9B38A27B10564DA29679D3BD /* /Users/kevin/Scratch/c/matcha/src/app/options.c */,
+				555E65601AA846C08B6BFC49 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */,
+				69E21C50500F4593828490C7 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */,
+				89D0B80736F9402FAB54DBD0 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */,
+				4305B4FE67B6441087764BE6 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */,
+				08EC29EBE68A4317B83384C6 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */,
+				AF40DD76C97E40139BCA8990 /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */,
+				EFB4E4B850204996B3B7857A /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */,
+				46C4AC75A15B418EAC5B7E45 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */,
+				FC8794D9B3944D8C9FF9E8BA /* /Users/kevin/Scratch/c/matcha/src/main.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43AEE0997F284C3EBF41EF64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FC6F78675984D0985BB5187 /* ZERO_CHECK */;
+			targetProxy = 3B6322B8FBFF47A4AD41D4EC /* PBXContainerItemProxy */;
+		};
+		9908E1B632174983A22461CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FC6F78675984D0985BB5187 /* ZERO_CHECK */;
+			targetProxy = 74FA5D95AFA744EEB7DCA192 /* PBXContainerItemProxy */;
+		};
+		F5B9605F78E8474E89A0C678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B5B3D1AECE945D08C3B1D8F /* Matcha */;
+			targetProxy = CA58C3F9D04A4646A3C88B65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C6EDA205A8A4E55B8E7CE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		4797BC4DD1F949009CB304B9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		4B820FBF1B224B6A8A730C5C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = MinSizeRel;
+		};
+		65AE9B1861054B738795902F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = Release;
+		};
+		73F5AEDCD0714D9C8A2F7CBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "   '-std=gnu11'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		8B1077770F834F118AE530FE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9FEEE6D8B67444719FE262DD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = RelWithDebInfo;
+		};
+		A7AF19BD06DA46BEAC82AB48 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		AC83956320AE4D44B3774E7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "    -DNDEBUG '-std=gnu11'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		B6CBEB21E4AA4E059D6BC27F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "       -DNDEBUG '-std=gnu11'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B8E437AA5E444E4681D51498 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		DA369FBDEB9C4948A6CECD44 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "    -DNDEBUG '-std=gnu11'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E5AC3F69F7374DEEB66B4517 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		F47AFFCD29EA468A8078409B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		FD7757EC8C934B6BAB006447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		FDA4E59AE20748CBA2C66CF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0499E3443BE24759AF6C939A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47AFFCD29EA468A8078409B /* Debug */,
+				3C6EDA205A8A4E55B8E7CE54 /* Release */,
+				A7AF19BD06DA46BEAC82AB48 /* MinSizeRel */,
+				8B1077770F834F118AE530FE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4DCFCDECAC5D43FDB269B7A6 /* Build configuration list for PBXProject "Matcha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDA4E59AE20748CBA2C66CF7 /* Debug */,
+				65AE9B1861054B738795902F /* Release */,
+				4B820FBF1B224B6A8A730C5C /* MinSizeRel */,
+				9FEEE6D8B67444719FE262DD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6C040B02D9304A54AE7129BA /* Build configuration list for PBXNativeTarget "Matcha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73F5AEDCD0714D9C8A2F7CBE /* Debug */,
+				AC83956320AE4D44B3774E7D /* Release */,
+				DA369FBDEB9C4948A6CECD44 /* MinSizeRel */,
+				B6CBEB21E4AA4E059D6BC27F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		96AFFB25C7CD476DA4FF2E41 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AC3F69F7374DEEB66B4517 /* Debug */,
+				FD7757EC8C934B6BAB006447 /* Release */,
+				B8E437AA5E444E4681D51498 /* MinSizeRel */,
+				4797BC4DD1F949009CB304B9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F2673F15B414D9B816E6063 /* Project object */;
+}

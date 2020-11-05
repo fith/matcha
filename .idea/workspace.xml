@@ -10,8 +10,21 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Default" GENERATION_DIR="build/cmake-build-debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Default" GENERATION_DIR="build/cmake-build-debug">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="PRODUCT_BUNDLE_IDENTIFIER" value="com.kevinmangan.matcha" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
       <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" TOOLCHAIN_NAME="Default" GENERATION_DIR="build/cmake-build-release" />
+      <configuration PROFILE_NAME="iOS Device Release" CONFIG_NAME="Release" GENERATION_OPTIONS="-G Xcode -DCMAKE_TOOLCHAIN_FILE=../../cmake/ios-cmake/ios.toolchain.cmake -DPLATFORM=OS64COMBINED -DPRODUCT_BUNDLE_IDENTIFIER=com.kevinmangan.matcha" GENERATION_DIR="build/cmake-ios-release" BUILD_OPTIONS="--config Release --target Matcha">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="PRODUCT_BUNDLE_IDENTIFIER" value="com.kevinmangan.matcha" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
     </configurations>
   </component>
   <component name="ChangeListManager">
@@ -40,10 +53,36 @@
             </ConanProfile>
           </value>
         </entry>
+        <entry>
+          <key>
+            <CMakeProfile>
+              <option name="name" value="iOS Device Release" />
+              <option name="targetDir" value="$PROJECT_DIR$/build/cmake-ios-release" />
+            </CMakeProfile>
+          </key>
+          <value>
+            <ConanProfile>
+              <option name="name" value="default" />
+            </ConanProfile>
+          </value>
+        </entry>
+        <entry>
+          <key>
+            <CMakeProfile>
+              <option name="name" value="Release" />
+              <option name="targetDir" value="$PROJECT_DIR$/build/cmake-build-release" />
+            </CMakeProfile>
+          </key>
+          <value>
+            <ConanProfile>
+              <option name="name" value="default" />
+            </ConanProfile>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="ProjectId" id="1jiiIc5myOW2ZwYsmuunoZkMqv8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -65,12 +104,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Matcha" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Matcha" TARGET_NAME="Matcha" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Matcha" RUN_TARGET_NAME="Matcha">
+      <envs>
+        <env name="PRODUCT_BUNDLE_IDENTIFIER" value="com.kevinmangan.matcha" />
+      </envs>
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -80,14 +117,20 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="WindowStateProjectService">
-    <state x="765" y="373" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604517985375">
+    <state x="765" y="373" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604544019793">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state x="424" y="241" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1113@0.23.1920.1113" timestamp="1604464490398" />
     <state x="765" y="373" key="#com.intellij.execution.impl.EditConfigurationsDialog/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604517985375" />
+    <state x="765" y="373" key="#com.intellij.execution.impl.EditConfigurationsDialog/75.25.3125.1775@75.25.3125.1775" timestamp="1604544019793" />
     <state x="1319" y="718" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604530211392">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
@@ -100,7 +143,11 @@
       <screen x="74" y="25" width="3126" height="1775" />
     </state>
     <state width="458" height="466" key="DebuggerActiveHint/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527217021" />
-    <state width="2060" height="642" key="GridCell.Tab.0.bottom" timestamp="1604532021420">
+    <state x="608" y="541" width="815" height="839" key="EnvironmentVariablesDialog" timestamp="1604544067323">
+      <screen x="75" y="25" width="3125" height="1775" />
+    </state>
+    <state x="608" y="541" width="815" height="839" key="EnvironmentVariablesDialog/75.25.3125.1775@75.25.3125.1775" timestamp="1604544067323" />
+    <state width="1521" height="526" key="GridCell.Tab.0.bottom" timestamp="1604556543918">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.0.1920.1200" timestamp="1604481497299" />
@@ -109,7 +156,8 @@
     <state width="1831" height="525" key="GridCell.Tab.0.bottom/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844419" />
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987648" />
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021420" />
-    <state width="2060" height="642" key="GridCell.Tab.0.center" timestamp="1604532021419">
+    <state width="1521" height="526" key="GridCell.Tab.0.bottom/75.25.3125.1775@75.25.3125.1775" timestamp="1604556543918" />
+    <state width="1521" height="526" key="GridCell.Tab.0.center" timestamp="1604556543917">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.center/0.23.1920.1113@0.0.1920.1200" timestamp="1604481497296" />
@@ -118,7 +166,8 @@
     <state width="1831" height="525" key="GridCell.Tab.0.center/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844418" />
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
-    <state width="2060" height="642" key="GridCell.Tab.0.left" timestamp="1604532021419">
+    <state width="1521" height="526" key="GridCell.Tab.0.center/75.25.3125.1775@75.25.3125.1775" timestamp="1604556543917" />
+    <state width="1521" height="526" key="GridCell.Tab.0.left" timestamp="1604556543917">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1604481497280" />
@@ -127,7 +176,8 @@
     <state width="1831" height="525" key="GridCell.Tab.0.left/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844418" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
-    <state width="2060" height="642" key="GridCell.Tab.0.right" timestamp="1604532021419">
+    <state width="1521" height="526" key="GridCell.Tab.0.left/75.25.3125.1775@75.25.3125.1775" timestamp="1604556543917" />
+    <state width="1521" height="526" key="GridCell.Tab.0.right" timestamp="1604556543918">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.right/0.23.1920.1113@0.0.1920.1200" timestamp="1604481497297" />
@@ -136,6 +186,7 @@
     <state width="1831" height="525" key="GridCell.Tab.0.right/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844419" />
     <state width="2060" height="642" key="GridCell.Tab.0.right/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987648" />
     <state width="2060" height="642" key="GridCell.Tab.0.right/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
+    <state width="1521" height="526" key="GridCell.Tab.0.right/75.25.3125.1775@75.25.3125.1775" timestamp="1604556543918" />
     <state width="2060" height="642" key="GridCell.Tab.1.bottom" timestamp="1604532021421">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
@@ -172,21 +223,22 @@
     <state width="1831" height="642" key="GridCell.Tab.1.right/74.25.3126.1775@74.25.3126.1775" timestamp="1604295772879" />
     <state width="2060" height="642" key="GridCell.Tab.1.right/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604528088408" />
     <state width="2060" height="642" key="GridCell.Tab.1.right/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021421" />
-    <state x="968" y="466" key="SettingsEditor" timestamp="1604541696408">
+    <state x="311" y="284" key="SettingsEditor" timestamp="1604544247971">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state x="968" y="466" key="SettingsEditor/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604517969743" />
-    <state x="968" y="466" key="SettingsEditor/75.25.3125.1775@75.25.3125.1775" timestamp="1604541696408" />
+    <state x="311" y="284" key="SettingsEditor/75.25.3125.1775@75.25.3125.1775" timestamp="1604544247971" />
     <state x="72" y="46" width="1747" height="1067" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604477162185">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state x="72" y="46" width="1747" height="1067" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1113@0.23.1920.1113" timestamp="1604477162185" />
-    <state x="1722" y="405" width="935" height="874" key="find.popup" timestamp="1604530706326">
+    <state x="1722" y="405" width="935" height="874" key="find.popup" timestamp="1604554713756">
       <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state x="1012" y="261" width="574" height="548" key="find.popup/0.23.1920.1113@0.23.1920.1113" timestamp="1604514782119" />
     <state x="1721" y="405" width="597" height="810" key="find.popup/74.25.3126.1775@74.25.3126.1775" timestamp="1604296842704" />
     <state x="1722" y="405" width="935" height="874" key="find.popup/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604530706326" />
+    <state x="1722" y="405" width="935" height="874" key="find.popup/75.25.3125.1775@75.25.3125.1775" timestamp="1604554713756" />
     <state x="690" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1604482226664">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>

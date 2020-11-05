@@ -61,8 +61,8 @@ freetype/2.9.1@bincrafters/stable: Already installed!
 sdl2_image/2.0.5@bincrafters/stable: Already installed!
 sdl2_mixer/2.0.4@bincrafters/stable: Already installed!
 sdl2_ttf/2.0.15@bincrafters/stable: Already installed!
-conanfile.py (Matcha/0.1): Generator txt created conanbuildinfo.txt
 conanfile.py (Matcha/0.1): Generator cmake created conanbuildinfo.cmake
+conanfile.py (Matcha/0.1): Generator txt created conanbuildinfo.txt
 conanfile.py (Matcha/0.1): Generator gcc created conanbuildinfo.gcc
 conanfile.py (Matcha/0.1): Generated conaninfo.txt
 conanfile.py (Matcha/0.1): Generated graphinfo
