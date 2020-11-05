@@ -76,7 +76,25 @@ void initLevel1(int l)
     printf("LEVELS: %i", num_levels);
     if (l < num_levels) {
         level = levels[l];
+
+        SDL_Color *c[GAME_COLORS];
+        int skip1 = rand() % DOT_COLORS;
+        int skip2 = rand() % DOT_COLORS;
+        while (skip2 == skip1) {
+            skip2 = rand() % DOT_COLORS;
+        }
+        int j = 0;
+        for (int i = 0; i < level.numColors; i++) {
+            while(j == skip1 || j == skip2) {
+                j++;
+            }
+            c[i] = dotColors[j];
+            j++;
+        }
+        memcpy(level.colors, c, sizeof c);
+
         srand(level.seed);
+
     } else {
         unsigned int seed = (unsigned int)time(NULL);
         srand(seed);
@@ -88,7 +106,7 @@ void initLevel1(int l)
         }
         int j = 0;
         for (int i = 0; i < GAME_COLORS; i++) {
-            if(j == skip1 || j == skip2) {
+            while(j == skip1 || j == skip2) {
                 j++;
             }
             c[i] = dotColors[j];
@@ -433,7 +451,7 @@ static void doGameOver(void) {
     return;
   }
 
-    createButton("Next", 600, 540, nextButton);
+    createButton("Next", 688, 540, nextButton);
   gameover = 1;
   gameOverTime = SDL_GetTicks();
   app.wins++;
@@ -654,10 +672,12 @@ static void doAnimal(void) {
       }
       rotation = 0.0;
       if (animal->y < food->y) {
-          rotation = 90.0f;
+          rotation = -90.0f;
+          flip = 0;
       }
       if (animal->y < food->y) {
-          rotation = -90.0f;
+          rotation = 90.0f;
+          flip = 0;
       }
   }
 

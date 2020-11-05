@@ -11,8 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Matcha.dir/src/engine/text.c.o"
   "CMakeFiles/Matcha.dir/src/engine/util.c.o"
   "CMakeFiles/Matcha.dir/src/main.c.o"
-  "Matcha"
-  "Matcha.pdb"
+  "bin/Matcha"
+  "bin/Matcha.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

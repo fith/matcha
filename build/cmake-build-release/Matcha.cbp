@@ -5,155 +5,190 @@
 		<Option title="Matcha"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\build\;CMake Files\build\cmake-build-release\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/kevin/Scratch/c/matcha/build/cmake-build-release"/>
+				<Option working_dir="/Users/kevin/Workspace/c/matcha/build/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/kevin/Scratch/c/matcha/build/cmake-build-release"/>
+				<Option working_dir="/Users/kevin/Workspace/c/matcha/build/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/kevin/Scratch/c/matcha/build/cmake-build-release"/>
+				<Option working_dir="/Users/kevin/Workspace/c/matcha/build/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matcha">
-				<Option output="/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Matcha" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kevin/Scratch/c/matcha/build/cmake-build-release"/>
+				<Option output="/Users/kevin/Workspace/c/matcha/build/cmake-build-release/bin/Matcha" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kevin/Workspace/c/matcha/build/cmake-build-release/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include"/>
+					<Add directory="/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2"/>
+					<Add directory="/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include"/>
+					<Add directory="/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include"/>
+					<Add directory="/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include"/>
+					<Add directory="/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 Matcha"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 Matcha"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Matcha/fast">
-				<Option output="/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Matcha" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kevin/Scratch/c/matcha/build/cmake-build-release"/>
+				<Option output="/Users/kevin/Workspace/c/matcha/build/cmake-build-release/bin/Matcha" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kevin/Workspace/c/matcha/build/cmake-build-release/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include"/>
+					<Add directory="/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2"/>
+					<Add directory="/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include"/>
+					<Add directory="/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2"/>
+					<Add directory="/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include"/>
+					<Add directory="/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include"/>
+					<Add directory="/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include"/>
+					<Add directory="/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 Matcha/fast"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/kevin/Scratch/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 Matcha/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kevin/Workspace/c/matcha/build/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/level1.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/level1.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/level1.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/level1.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/menu.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/menu.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/menu.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/menu.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/options.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/options.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/app/options.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/app/options.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/data/colors.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/data/colors.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/data/colors.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/data/colors.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/data/levels.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/data/levels.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/data/levels.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/data/levels.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/draw.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/draw.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/draw.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/draw.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/init.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/init.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/init.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/init.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/input.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/input.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/input.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/input.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/sound.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/sound.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/sound.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/sound.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/text.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/text.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/text.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/text.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/util.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/util.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/engine/util.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/util.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/main.c">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/main.c">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/src/main.h">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/main.h">
 			<Option target="Matcha"/>
 		</Unit>
-		<Unit filename="/Users/kevin/Scratch/c/matcha/CMakeLists.txt">
+		<Unit filename="/Users/kevin/Workspace/c/matcha/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/kevin/Workspace/c/matcha/build/cmake-build-release/conanbuildinfo.cmake">
+			<Option virtualFolder="CMake Files\build\cmake-build-release\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -9,7 +9,7 @@ const int num_levels = 15;
 
 const Level levels[] = {
         // Tutorial
-        {.w = 4, .h = 1, .seed = 2, .fox = 0, .numColors = 2, .colors = { &colorRed, &colorGreen } },
+        {.w = 4, .h = 1, .seed = 2, .fox = 0, .numColors = 2, .colors = NULL },
         {.w = 1, .h = 5, .seed = 3, .fox = 0, .numColors = 2, .colors = { &colorGreen, &colorYellow } },
         {.w = 4, .h = 4, .seed = 45, .fox = 0, .numColors = 3, .colors = { &colorOrange, &colorYellow, &colorGreen } },
         {.w = 4, .h = 4, .seed = 822, .fox = 0, .numColors = 3, .colors = { &colorRed, &colorYellow, &colorGreen } },
