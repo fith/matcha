@@ -1,0 +1,9 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/kevin/Scratch/c/matcha
+CMake Warning at CMakeLists.txt:11 (message):
+  The file conanbuildinfo.cmake doesn't exist, you have to run conan install
+  first
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/kevin/Scratch/c/matcha/build/cmake-build-release
