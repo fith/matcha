@@ -1,4 +1,4 @@
-conan install /Users/kevin/Workspace/c/matcha -if=/Users/kevin/Workspace/c/matcha/build/cmake-build-debug -pr=default
+conan install /Users/kevin/Scratch/c/matcha -if=/Users/kevin/Scratch/c/matcha/build/cmake-build-debug -pr=default
 Configuration:
 [settings]
 arch=x86_64
@@ -6,13 +6,15 @@ arch_build=x86_64
 build_type=Release
 compiler=apple-clang
 compiler.libcxx=libc++
-compiler.version=11.0
+compiler.version=12.0
 os=Macos
 os_build=Macos
 [options]
 [build_requires]
 [env]
 
+zlib/1.2.11 is locked by another concurrent conan process, wait...
+If not the case, quit, and do 'conan remove --locks'
 WARN: libpng/1.6.37@bincrafters/stable: requirement zlib/1.2.11@conan/stable overridden by Matcha/0.1 to zlib/1.2.11 
 WARN: sdl2_image/2.0.5@bincrafters/stable: requirement sdl2/2.0.10@bincrafters/stable overridden by Matcha/0.1 to sdl2/2.0.12@bincrafters/stable 
 WARN: sdl2_image/2.0.5@bincrafters/stable: requirement libpng/1.6.37 overridden by Matcha/0.1 to libpng/1.6.37@bincrafters/stable 
@@ -34,44 +36,58 @@ Requirements
     vorbis/1.3.6 from 'conan-center' - Cache
     zlib/1.2.11 from 'conan-center' - Cache
 Packages
-    bzip2/1.0.8:32bef4803d4b079e983ecb27f105881e778bc5a7 - Cache
-    freetype/2.9.1@bincrafters/stable:9fbc622fdb9d2462147cf446a56b1688bf016d05 - Cache
-    libiconv/1.16:f74366f76f700cc6e991285892ad7a23c30e6d47 - Cache
-    libpng/1.6.37@bincrafters/stable:eb50d18a5a5d59bd0c332464a4c348ab65e353bf - Cache
-    ogg/1.3.4:f74366f76f700cc6e991285892ad7a23c30e6d47 - Cache
-    sdl2/2.0.12@bincrafters/stable:116150348d24360f383034e4bb1f7d2ca5996cc0 - Cache
-    sdl2_image/2.0.5@bincrafters/stable:93b6dc4496956c035717b8a73ec73386cc341191 - Cache
-    sdl2_mixer/2.0.4@bincrafters/stable:677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f - Cache
-    sdl2_ttf/2.0.15@bincrafters/stable:e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2 - Cache
-    vorbis/1.3.6:853d5de4ab49af74d80696ea461b3783627bc470 - Cache
-    zlib/1.2.11:f74366f76f700cc6e991285892ad7a23c30e6d47 - Cache
+    bzip2/1.0.8:75fe66fbfe61230e9fcbb361f13b6b3baa483e0a - Cache
+    freetype/2.9.1@bincrafters/stable:42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6 - Cache
+    libiconv/1.16:647afeb69d3b0a2d3d316e80b24d38c714cc6900 - Cache
+    libpng/1.6.37@bincrafters/stable:88955cec2844f731470e07bd44ce5a3a24ec88b7 - Cache
+    ogg/1.3.4:647afeb69d3b0a2d3d316e80b24d38c714cc6900 - Cache
+    sdl2/2.0.12@bincrafters/stable:41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830 - Cache
+    sdl2_image/2.0.5@bincrafters/stable:930c6ce00db535b9fd2bfaa5e146285e2436dc63 - Cache
+    sdl2_mixer/2.0.4@bincrafters/stable:7e2fef6e2171b578d5cb2b41b0762f150fb66b7c - Cache
+    sdl2_ttf/2.0.15@bincrafters/stable:4210c4876e57d10e20ba8f92d97748a50ed728a8 - Cache
+    vorbis/1.3.6:f3d27e66931814996d5618e827338786b77d4b6b - Cache
+    zlib/1.2.11:647afeb69d3b0a2d3d316e80b24d38c714cc6900 - Cache
 
 Installing (downloading, building) binaries...
 bzip2/1.0.8: Already installed!
 libiconv/1.16: Already installed!
-libiconv/1.16: Appending PATH environment var: /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/bin
+libiconv/1.16: Appending PATH environment var: /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin
 ogg/1.3.4: Already installed!
 zlib/1.2.11: Already installed!
 libpng/1.6.37@bincrafters/stable: Already installed!
 sdl2/2.0.12@bincrafters/stable: Already installed!
-sdl2/2.0.12@bincrafters/stable: Creating SDL2_CONFIG environment variable: /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/bin/sdl2-config
-sdl2/2.0.12@bincrafters/stable: Creating SDL_CONFIG environment variable: /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/bin/sdl2-config
+sdl2/2.0.12@bincrafters/stable: Creating SDL2_CONFIG environment variable: /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin/sdl2-config
+sdl2/2.0.12@bincrafters/stable: Creating SDL_CONFIG environment variable: /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin/sdl2-config
 vorbis/1.3.6: Already installed!
 freetype/2.9.1@bincrafters/stable: Already installed!
 sdl2_image/2.0.5@bincrafters/stable: Already installed!
 sdl2_mixer/2.0.4@bincrafters/stable: Already installed!
 sdl2_ttf/2.0.15@bincrafters/stable: Already installed!
-conanfile.py (Matcha/0.1): Generator gcc created conanbuildinfo.gcc
-conanfile.py (Matcha/0.1): Generator txt created conanbuildinfo.txt
 conanfile.py (Matcha/0.1): Generator cmake created conanbuildinfo.cmake
+conanfile.py (Matcha/0.1): Generator txt created conanbuildinfo.txt
+conanfile.py (Matcha/0.1): Generator gcc created conanbuildinfo.gcc
 conanfile.py (Matcha/0.1): Generated conaninfo.txt
 conanfile.py (Matcha/0.1): Generated graphinfo
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/kevin/Workspace/c/matcha
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/kevin/Scratch/c/matcha
+-- The C compiler identification is AppleClang 12.0.0.12000032
+-- The CXX compiler identification is AppleClang 12.0.0.12000032
+-- Check for working C compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+-- Check for working CXX compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Conan: Adjusting output directories
 -- Conan: Using cmake global configuration
 -- Conan: Adjusting default RPATHs Conan policies
 -- Conan: Adjusting language standard
--- Current conanbuildinfo.cmake directory: /Users/kevin/Workspace/c/matcha/build/cmake-build-debug
+-- Current conanbuildinfo.cmake directory: /Users/kevin/Scratch/c/matcha/build/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/kevin/Workspace/c/matcha/build/cmake-build-debug
+-- Build files have been written to: /Users/kevin/Scratch/c/matcha/build/cmake-build-debug
