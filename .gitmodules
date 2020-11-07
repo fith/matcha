@@ -1,3 +1,6 @@
 [submodule "cmake/ios-cmake"]
 	path = cmake/ios-cmake
 	url = https://github.com/leetal/ios-cmake.git
+[submodule "src/lib/stb"]
+	path = src/lib/stb
+	url = https://github.com/nothings/stb.git

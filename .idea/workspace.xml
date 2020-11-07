@@ -47,7 +47,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9106697-eb8e-40c2-b257-b16f3b72257d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/stb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" afterDir="false" />
@@ -101,26 +102,22 @@
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/CMakeError.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Matcha.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Progress/3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Progress/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/Progress/count.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/Matcha.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/Matcha.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-build-release/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/conan.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/conan.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.gcc" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.gcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/conanbuildinfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-build-release/conaninfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-build-release/conaninfo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
@@ -145,9 +142,9 @@
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/CompilerIdC.xctest.dSYM/Contents/Info.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/CompilerIdC.xctest.dSYM/Contents/Resources/DWARF/CompilerIdC" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/CompilerIdC.xctest/CompilerIdC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/6355543467907443ef5ed3cfe075ecdf-desc.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/6355543467907443ef5ed3cfe075ecdf-manifest.xcbuild" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/BuildDescriptionCacheIndex-8cbc23dc55210899b6a6f1b1bf2882e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/ba13a1eb4b16de086b18c3d3aff5d68a-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/ba13a1eb4b16de086b18c3d3aff5d68a-manifest.xcbuild" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdC/XCBuildData/build.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/CompilerIdCXX.build/Debug-iphoneos/CompilerIdCXX.build/CompilerIdCXX-all-non-framework-target-headers.hmap" beforeDir="false" />
@@ -167,21 +164,20 @@
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/CompilerIdCXX.xctest.dSYM/Contents/Info.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/CompilerIdCXX.xctest.dSYM/Contents/Resources/DWARF/CompilerIdCXX" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/CompilerIdCXX.xctest/CompilerIdCXX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/6439bcd4ed7005caa5917a96b5881cdd-desc.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/6439bcd4ed7005caa5917a96b5881cdd-manifest.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/11d64234e886514aca8d2a9f4cc3bf99-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/11d64234e886514aca8d2a9f4cc3bf99-manifest.xcbuild" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/BuildDescriptionCacheIndex-5aec8bd189b2dff85bd9196d6c71e9ac" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/3.17.3/CompilerIdCXX/XCBuildData/build.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/CMakeOutput.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/conan.lock" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/conan.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.gcc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.gcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/conanbuildinfo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/conaninfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/conaninfo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/level1.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/level1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/levels.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/levels.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/conan.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/conan.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.gcc" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.gcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/conanbuildinfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake-ios-release/conaninfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake-ios-release/conaninfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/common.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +232,7 @@
       </map>
     </option>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -270,6 +266,11 @@
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -310,41 +311,41 @@
     </state>
     <state x="327" y="347" key="EnvironmentVariablesDialog/0.23.1920.1113@0.23.1920.1113" timestamp="1604559352653" />
     <state x="608" y="541" width="815" height="839" key="EnvironmentVariablesDialog/75.25.3125.1775@75.25.3125.1775" timestamp="1604544067323" />
-    <state width="1521" height="526" key="GridCell.Tab.0.bottom" timestamp="1604604313471">
-      <screen x="75" y="25" width="3125" height="1775" />
+    <state width="1501" height="308" key="GridCell.Tab.0.bottom" timestamp="1604740404472">
+      <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="1501" height="308" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134058" />
-    <state width="1501" height="308" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.23.1920.1113" timestamp="1604563351331" />
+    <state width="1501" height="308" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.23.1920.1113" timestamp="1604740404472" />
     <state width="1831" height="642" key="GridCell.Tab.0.bottom/72.25.3128.1775@72.25.3128.1775" timestamp="1604296211141" />
     <state width="1831" height="525" key="GridCell.Tab.0.bottom/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844419" />
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987648" />
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021420" />
     <state width="1521" height="526" key="GridCell.Tab.0.bottom/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="1521" height="526" key="GridCell.Tab.0.center" timestamp="1604604313471">
-      <screen x="75" y="25" width="3125" height="1775" />
+    <state width="1501" height="308" key="GridCell.Tab.0.center" timestamp="1604740404472">
+      <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="1501" height="308" key="GridCell.Tab.0.center/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134034" />
-    <state width="1501" height="308" key="GridCell.Tab.0.center/0.23.1920.1113@0.23.1920.1113" timestamp="1604563351330" />
+    <state width="1501" height="308" key="GridCell.Tab.0.center/0.23.1920.1113@0.23.1920.1113" timestamp="1604740404472" />
     <state width="1831" height="642" key="GridCell.Tab.0.center/72.25.3128.1775@72.25.3128.1775" timestamp="1604296211140" />
     <state width="1831" height="525" key="GridCell.Tab.0.center/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844418" />
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
     <state width="1521" height="526" key="GridCell.Tab.0.center/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="1521" height="526" key="GridCell.Tab.0.left" timestamp="1604604313471">
-      <screen x="75" y="25" width="3125" height="1775" />
+    <state width="1501" height="308" key="GridCell.Tab.0.left" timestamp="1604740404471">
+      <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1604481497280" />
-    <state width="1501" height="308" key="GridCell.Tab.0.left/0.23.1920.1113@0.23.1920.1113" timestamp="1604563351329" />
+    <state width="1501" height="308" key="GridCell.Tab.0.left/0.23.1920.1113@0.23.1920.1113" timestamp="1604740404471" />
     <state width="1831" height="642" key="GridCell.Tab.0.left/72.25.3128.1775@72.25.3128.1775" timestamp="1604296211140" />
     <state width="1831" height="525" key="GridCell.Tab.0.left/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844418" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
     <state width="1521" height="526" key="GridCell.Tab.0.left/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="1521" height="526" key="GridCell.Tab.0.right" timestamp="1604604313471">
-      <screen x="75" y="25" width="3125" height="1775" />
+    <state width="1501" height="308" key="GridCell.Tab.0.right" timestamp="1604740404472">
+      <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="1501" height="308" key="GridCell.Tab.0.right/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134057" />
-    <state width="1501" height="308" key="GridCell.Tab.0.right/0.23.1920.1113@0.23.1920.1113" timestamp="1604563351331" />
+    <state width="1501" height="308" key="GridCell.Tab.0.right/0.23.1920.1113@0.23.1920.1113" timestamp="1604740404472" />
     <state width="1831" height="642" key="GridCell.Tab.0.right/72.25.3128.1775@72.25.3128.1775" timestamp="1604296211141" />
     <state width="1831" height="525" key="GridCell.Tab.0.right/74.25.3126.1775@74.25.3126.1775" timestamp="1604296844419" />
     <state width="2060" height="642" key="GridCell.Tab.0.right/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987648" />

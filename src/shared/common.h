@@ -7,7 +7,7 @@
 #include "math.h"
 #include "ctype.h"
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "SDL_ttf.h"
 
 #include "defs.h"
