@@ -55,6 +55,7 @@ set(src_files
 # )
 add_executable(${PROJECT_NAME} ${src_files})
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
 
 # Link SDL2::Main, SDL2::Image and SDL2::GFX to our project
 

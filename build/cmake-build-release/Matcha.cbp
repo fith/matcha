@@ -178,6 +178,15 @@
 		<Unit filename="/Users/kevin/Workspace/c/matcha/src/engine/util.h">
 			<Option target="Matcha"/>
 		</Unit>
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/lib/stb/stb_rect_pack.h">
+			<Option target="Matcha"/>
+		</Unit>
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/lib/stb/stb_truetype.h">
+			<Option target="Matcha"/>
+		</Unit>
+		<Unit filename="/Users/kevin/Workspace/c/matcha/src/lib/stbttf.h">
+			<Option target="Matcha"/>
+		</Unit>
 		<Unit filename="/Users/kevin/Workspace/c/matcha/src/main.c">
 			<Option target="Matcha"/>
 		</Unit>

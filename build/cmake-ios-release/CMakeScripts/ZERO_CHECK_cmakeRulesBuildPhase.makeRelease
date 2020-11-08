@@ -2,9 +2,9 @@
 # Custom rules for ZERO_CHECK
 .SUFFIXES: 
 all: \
-	/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/ZERO_CHECK
+	/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/ZERO_CHECK
 
 
-/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/ZERO_CHECK: 
+/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/ZERO_CHECK: 
 	echo ""
-	make -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/ReRunCMake.make
+	make -f /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeScripts/ReRunCMake.make

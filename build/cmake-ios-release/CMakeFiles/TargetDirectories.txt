@@ -1,0 +1,3 @@
+/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir
+/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/ALL_BUILD.dir
+/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/ZERO_CHECK.dir

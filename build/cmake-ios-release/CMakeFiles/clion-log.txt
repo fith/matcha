@@ -67,10 +67,48 @@ conanfile.py (Matcha/0.1): Generator cmake created conanbuildinfo.cmake
 conanfile.py (Matcha/0.1): Generated conaninfo.txt
 conanfile.py (Matcha/0.1): Generated graphinfo
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G Xcode -DCMAKE_TOOLCHAIN_FILE=../../cmake/ios-cmake/ios.toolchain.cmake -DPLATFORM=OS64COMBINED -DPRODUCT_BUNDLE_IDENTIFIER=com.kevinmangan.matcha /Users/kevin/Workspace/c/matcha
-CMake Error at /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeDetermineSystem.cmake:99 (message):
-  Could not find toolchain file: ../../cmake/ios-cmake/ios.toolchain.cmake
-Call Stack (most recent call first):
-  CMakeLists.txt:3 (project)
-
-
--- Configuring incomplete, errors occurred!
+-- Using the default min-version since DEPLOYMENT_TARGET not provided!
+-- Disabling bitcode support by default on simulators. ENABLE_BITCODE not provided for override!
+-- Enabling ARC support by default. ENABLE_ARC not provided!
+-- Hiding symbols visibility by default. ENABLE_VISIBILITY not provided!
+-- Using NON-strict compiler checks by default. ENABLE_STRICT_TRY_COMPILE not provided!
+-- Using C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+-- Using CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+-- Using libtool: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool
+-- Will combine built (static) artifacts into FAT lib...
+-- Not setting any manual command-line buildflags, since Xcode is selected as generator.
+-- Configuring iphoneos build for platform: OS64COMBINED, architecture(s): arm64;x86_64
+-- Using SDK: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.6.sdk
+-- Autoconf target triple: aarch64-x86_64-apple-ios
+-- Using minimum deployment version: 9.0 (SDK version: 13.6)
+-- Merging integrated CMake 3.14+ iOS,tvOS,watchOS,macOS toolchain(s) with this toolchain!
+-- Using Xcode version: 11.6
+-- Using a data_ptr size of: 8
+-- Using install_name_tool: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool
+-- Disabling bitcode support.
+-- Enabling ARC support.
+-- Hiding symbols (-fvisibility=hidden).
+-- Using libtool: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool
+-- Will combine built (static) artifacts into FAT lib...
+-- The C compiler identification is AppleClang 11.0.3.11030032
+-- The CXX compiler identification is AppleClang 11.0.3.11030032
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Conan: Adjusting output directories
+-- Conan: Using cmake global configuration
+-- Conan: Adjusting default RPATHs Conan policies
+-- Conan: Adjusting language standard
+-- Current conanbuildinfo.cmake directory: /Users/kevin/Workspace/c/matcha/build/cmake-ios-release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/kevin/Workspace/c/matcha/build/cmake-ios-release

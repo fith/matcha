@@ -162,7 +162,7 @@ typedef struct {
 struct Font {
   int index;
   int size;
-  TTF_Font *font;
+    STBTTF_Font *font;
   int r, g, b, a;
 };
 

@@ -4,12 +4,12 @@
 
 #include <SDL2/SDL.h>
 
-#include "stb_rect_pack.h"
-#include "stb_truetype.h"
+#include "stb/stb_rect_pack.h"
+#include "stb/stb_truetype.h"
 
 /* STBTTF: A quick and dirty SDL2 text renderer based on stb_truetype and stdb_rect_pack.
  * Benoit Favre 2019
- *git a
+ *
  * This header-only addon to the stb_truetype library allows to draw text with SDL2 from
  * TTF fonts with a similar API to SDL_TTF without the bloat.
  * The renderer is however limited by the integral positioning of SDL blit functions.

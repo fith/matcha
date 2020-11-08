@@ -8,7 +8,8 @@
 #include "ctype.h"
 
 #include <SDL2/SDL.h>
-#include "SDL_ttf.h"
+#include "../lib/stb/stb_truetype.h"
+#include "../lib/stbttf.h"
 
 #include "defs.h"
 
