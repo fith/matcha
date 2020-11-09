@@ -60,6 +60,7 @@ struct Level {
 
 struct Dot {
   SDL_Texture *texture;
+  int flip;
   Sprite *icon;
   SDL_Color *color;
   float x;
@@ -113,6 +114,7 @@ struct Sprite {
   SDL_Rect rect;
   float rotation;
   float scale;
+  SDL_Color *color;
   SDL_Texture *texture;
   int currentFrame;
   int frameCount;

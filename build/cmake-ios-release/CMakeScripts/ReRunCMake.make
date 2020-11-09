@@ -31,12 +31,12 @@ TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Applications/CLion.app/Cont
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/UnixPaths.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/iOS-Initialize.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/iOS.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/CMakeLists.txt))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeSystem.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/conanbuildinfo.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Scratch/c/matcha/cmake/ios-cmake/ios.toolchain.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/CMakeLists.txt))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/3.17.3/CMakeSystem.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/conanbuildinfo.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/kevin/Workspace/c/matcha/cmake/ios-cmake/ios.toolchain.cmake))
 
-/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/cmake.check_cache: $(TARGETS)
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -H/Users/kevin/Scratch/c/matcha -B/Users/kevin/Scratch/c/matcha/build/cmake-ios-release
+/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/cmake.check_cache: $(TARGETS)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -H/Users/kevin/Workspace/c/matcha -B/Users/kevin/Workspace/c/matcha/build/cmake-ios-release

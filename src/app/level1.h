@@ -7,6 +7,7 @@
 // draw.c
 extern void blit(SDL_Texture *texture, int x, int y);
 extern void blitFit(SDL_Texture *texture, SDL_Rect *dst);
+extern void blitFitRot(SDL_Texture *texture, SDL_Rect *dst, float rotation);
 extern SDL_Texture *loadTexture(char *filename);
 extern void drawLine(SDL_Texture *texture, int x1, int y1, int x2, int y2);
 extern void drawSprite(Sprite* sprite);

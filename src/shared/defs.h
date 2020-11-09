@@ -10,7 +10,7 @@
 #define PLAYER_SPEED 4
 #define PLAYER_BULLET_SPEED 16
 #define MAX_COLORS 10
-#define DOT_COLORS 7
+#define DOT_COLORS 9
 #define GAME_COLORS 5
 
 

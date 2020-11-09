@@ -85,7 +85,8 @@ void drawSprite(Sprite* sprite) {
 
   // render cope
   SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
-  SDL_SetTextureBlendMode(sprite->texture, SDL_BLENDMODE_ADD);
+  SDL_SetTextureColorMod(sprite->texture, sprite->color->r, sprite->color->g, sprite->color->b);
+  SDL_SetTextureBlendMode(sprite->texture, sprite->blendMode);
   SDL_RenderCopyEx(app.renderer,
                     sprite->texture,
                     &srcRect,
@@ -109,6 +110,34 @@ void blit(SDL_Texture *texture, int x, int y)
 void blitFit(SDL_Texture *texture, SDL_Rect *dst)
 {
   SDL_RenderCopy(app.renderer, texture, NULL, dst);
+}
+
+void blitFitRot(SDL_Texture *texture, SDL_Rect *dst, int flip)
+{
+    SDL_Point center;
+    SDL_Rect srcRect;
+
+    srcRect.x = 0;
+    srcRect.y = 0;
+    SDL_QueryTexture(texture, NULL, NULL, &srcRect.w, &srcRect.h);
+
+    center.x = dst->w/2.0;
+    center.y = dst->h/2.0;
+
+    int flipModes[] =  {
+            SDL_FLIP_NONE,
+            SDL_FLIP_HORIZONTAL,
+            SDL_FLIP_VERTICAL,
+            SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL
+    };
+
+    SDL_RenderCopyEx(app.renderer,
+                     texture,
+                     &srcRect,
+                     dst,
+                     0,
+                     &center,
+                     flipModes[flip]);
 }
 
 void blitRect(SDL_Texture *texture, SDL_Rect *src, int x, int y)
@@ -149,6 +178,7 @@ void drawLine(SDL_Texture *texture, int x1, int y1, int x2, int y2) {
   center.x = srcRect.h/2.0;
   center.y = srcRect.h/2.0;
   SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+  SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
   SDL_RenderCopyEx(app.renderer,
                     texture,
                     &srcRect,

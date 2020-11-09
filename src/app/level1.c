@@ -67,6 +67,9 @@ int gameover;
 Dot* lastMoveFrom;
 Dot* lastMoveTo;
 
+int animalColor;
+int foodColor;
+
 Uint32 startTime;
 Uint32 currentTime;
 Uint32 gameOverTime;
@@ -78,14 +81,14 @@ void initLevel1(int l)
         level = levels[l];
 
         SDL_Color *c[GAME_COLORS];
-        int skip1 = rand() % DOT_COLORS;
-        int skip2 = rand() % DOT_COLORS;
-        while (skip2 == skip1) {
-            skip2 = rand() % DOT_COLORS;
+        animalColor = rand() % DOT_COLORS;
+        foodColor = rand() % DOT_COLORS;
+        while (foodColor == animalColor) {
+            foodColor = rand() % DOT_COLORS;
         }
         int j = 0;
         for (int i = 0; i < level.numColors; i++) {
-            while(j == skip1 || j == skip2) {
+            while(j == animalColor || j == foodColor) {
                 j++;
             }
             c[i] = dotColors[j];
@@ -181,9 +184,10 @@ void initLevel1(int l)
     hogIdleSprite->frameDelay = 500;
     hogIdleSprite->startTime = SDL_GetTicks();
     hogIdleSprite->lastFrameTime = hogIdleSprite->startTime;
-    hogIdleSprite->blendMode = SDL_BLENDMODE_NONE;
+    hogIdleSprite->blendMode = SDL_BLENDMODE_BLEND;
     hogIdleSprite->flip = 0;
     hogIdleSprite->loop = 1;
+    hogIdleSprite->color = &colorWhite;
   }
 
     if(!hogRunningSprite) {
@@ -201,9 +205,10 @@ void initLevel1(int l)
     hogRunningSprite->frameDelay = 80;
     hogRunningSprite->startTime = SDL_GetTicks();
     hogRunningSprite->lastFrameTime = hogRunningSprite->startTime;
-    hogRunningSprite->blendMode = SDL_BLENDMODE_NONE;
+    hogRunningSprite->blendMode = SDL_BLENDMODE_BLEND;
     hogRunningSprite->flip = 0;
     hogRunningSprite->loop = 1;
+    hogRunningSprite->color = &colorWhite;
   }
 
   if(!foodSprite) {
@@ -221,9 +226,10 @@ void initLevel1(int l)
     foodSprite->frameDelay = 500;
     foodSprite->startTime = SDL_GetTicks();
     foodSprite->lastFrameTime = foodSprite->startTime;
-    foodSprite->blendMode = SDL_BLENDMODE_NONE;
+    foodSprite->blendMode = SDL_BLENDMODE_BLEND;
     foodSprite->flip = 0;
     foodSprite->loop = 1;
+    foodSprite->color = &colorWhite;
   }
 
   createButton("<", 16, 540, backButton);
@@ -554,6 +560,7 @@ static Dot* createDot(int row, int col) {
   d->animateMove = NULL;
   d->health = 1;
   d->type = DOT_DOT;
+  d->flip = rand() % 4;
   return d;
 }
 
@@ -764,7 +771,7 @@ static void drawDot(Dot *dot) {
 
   // change scale if dragging
   if (dot == dragging) {
-    float scale = 1.1;
+    float scale = 1.2;
     // calculate new x and y
     dst.x = (dst.x + dst.w/2) - (dst.w/2 * scale);
     dst.y = (dst.y + dst.h/2) - (dst.h/2 * scale);
@@ -774,7 +781,7 @@ static void drawDot(Dot *dot) {
 
   // color and draw texture
   SDL_SetTextureColorMod(dot->texture, dot->color->r, dot->color->g, dot->color->b);
-  blitFit(dot->texture, &dst);
+  blitFitRot(dot->texture, &dst, dot->flip);
 
   // draw icon if needed
   if (dot->icon) {
@@ -783,14 +790,13 @@ static void drawDot(Dot *dot) {
     // } else if (dot->type == DOT_ANIMAL) {
     //   SDL_SetTextureColorMod(dot->icon, colorBlack.r, colorBlack.g, colorBlack.b);
     // }
-    if (dot == dragging) {
-      dot->icon->scale = 1.1;
-    } else {
-      dot->icon->scale = 1.0;
-    }
     dot->icon->rect.x = dot->x;
     dot->icon->rect.y = dot->y;
+    if (dot == dragging) {
+        dot->icon->scale = 1.2;
+    }
     drawSprite(dot->icon);
+    dot->icon->scale = 1.0;
     // blitFit(dot->icon, &dst);
   }
 }

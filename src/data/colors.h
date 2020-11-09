@@ -12,6 +12,8 @@ extern SDL_Color colorIndigo;
 extern SDL_Color colorViolet;
 extern SDL_Color colorWhite;
 extern SDL_Color colorBlack;
+extern SDL_Color colorPeach;
+extern SDL_Color colorGrey;
 
 extern SDL_Color *dotColors[DOT_COLORS];
 
