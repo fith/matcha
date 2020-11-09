@@ -4,8 +4,6 @@
 
 #include "SDL_mixer.h"
 
-#include "SDL_ttf.h"
-
 extern SDL_Surface *loadSurface(char *filename);
 
 extern App app;

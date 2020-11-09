@@ -13,26 +13,6 @@
    "False"
   ],
   [
-   "freetype:fPIC",
-   "True"
-  ],
-  [
-   "freetype:shared",
-   "False"
-  ],
-  [
-   "freetype:with_bzip2",
-   "True"
-  ],
-  [
-   "freetype:with_png",
-   "True"
-  ],
-  [
-   "freetype:with_zlib",
-   "True"
-  ],
-  [
    "libiconv:fPIC",
    "True"
   ],
@@ -203,14 +183,6 @@
   [
    "sdl2_mixer:wav",
    "True"
-  ],
-  [
-   "sdl2_ttf:fPIC",
-   "True"
-  ],
-  [
-   "sdl2_ttf:shared",
-   "False"
   ],
   [
    "vorbis:fPIC",

@@ -50,16 +50,30 @@ set(src_files
     src/engine/text.c
     src/engine/util.c
 )
+
+#set(header_files
+#        ${CMAKE_CURRENT_SOURCE_DIR}/src/lib/stbttf.h
+#        ${CMAKE_CURRENT_SOURCE_DIR}/src/lib/stb/stb_truetype.h
+#        ${CMAKE_CURRENT_SOURCE_DIR}/src/lib/stb/stb_rect_pack.h
+#        )
 # file(GLOB src_files
 #     "src/*.c"
 # )
+#add_library(stbttf INTERFACE)
+#target_sources(stbttf INTERFACE ${header_files})
+#target_include_directories(stbttf INTERFACE
+#        "${PROJECT_SOURCE_DIR}/src/lib"
+#        )
+
 add_executable(${PROJECT_NAME} ${src_files})
+#target_link_libraries(${PROJECT_NAME} stbttf)
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
-target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+
+add_compile_options(-all_load)
 
 # Link SDL2::Main, SDL2::Image and SDL2::GFX to our project
 
-#target_link_libraries(Matcha ${SDL2_LIBRARIES})
+#target_link_libraries(Matcha ${SDL2_LIBRARIstbttfES})
 #target_link_libraries(Matcha
 #  SDL2::Main
 #  SDL2::Image

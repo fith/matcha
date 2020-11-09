@@ -9,7 +9,6 @@ class MatchaConan(ConanFile):
                 "libpng/1.6.37@bincrafters/stable",
                 "sdl2/2.0.12@bincrafters/stable",
                 "sdl2_image/2.0.5@bincrafters/stable",
-                "sdl2_ttf/2.0.15@bincrafters/stable",
                 "sdl2_mixer/2.0.4@bincrafters/stable"] # comma-separated list of requirements
     generators = "cmake", "gcc", "txt"
     build_policy = "missing"

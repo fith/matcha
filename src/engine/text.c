@@ -1,5 +1,10 @@
 #include "text.h"
 
+#define STB_RECT_PACK_IMPLEMENTATION
+#define STB_TRUETYPE_IMPLEMENTATION
+#define STBTTF_IMPLEMENTATION
+#include "../lib/stbttf.h"
+
 static SDL_Texture *drawTextTexture;
 static SDL_Surface *drawTextSurface;
 static char drawTextBuffer[MAX_LINE_LENGTH];
@@ -8,9 +13,9 @@ SDL_Texture* textTexture(int font, char *format, ...);
 void getTextSize(int font, int *w, int *h, char *format, ...);
 
 Font fonts[MAX_FONTS] = {
-  {FNT_HEAD, 128, NULL, 255, 240, 220, 255}, 
-  {FNT_BODY, 36, NULL, 255, 240, 220, 255}, 
-  {FNT_BUTT, 36, NULL, 255, 240, 220, 255}
+  {FNT_HEAD, 192, NULL, 255, 240, 220, 250},
+  {FNT_BODY, 36, NULL, 255, 240, 220, 250},
+  {FNT_BUTT, 36, NULL, 255, 240, 220, 250}
 };
 
 void initFonts(void)
@@ -21,7 +26,7 @@ void initFonts(void)
       STBTTF_CloseFont(fonts[i].font);
       fonts[i].font = NULL;
     }
-      fonts[i].font = STBTTF_OpenFont(app.renderer, "resources/fnt/abraxeousblack.ttf", (float)fonts[i].size);
+    fonts[i].font = STBTTF_OpenFont(app.renderer, "resources/fnt/abraxeousblack.ttf", (float)fonts[i].size);
     if(!fonts[i].font) {
       printf("STBTTF_OpenFont failed.");
       // handle error
@@ -36,7 +41,8 @@ void drawText(int font, int x, int y, char *format, ...) {
   vsprintf(drawTextBuffer, format, args);
   va_end(args);
 
-    STBTTF_RenderText(app.renderer, fonts[font].font, x, y, drawTextBuffer);
+  SDL_SetRenderDrawColor(app.renderer, fonts[font].r, fonts[font].g, fonts[font].b, fonts[font].a);
+  STBTTF_RenderText(app.renderer, fonts[font].font, x, y+fonts[font].font->baseline, drawTextBuffer);
 }
 
 void getTextSize(int font, int *w, int *h, char *format, ...) {
@@ -87,12 +93,6 @@ SDL_Texture* textTexture(int font, char *format, ...)
 {
   SDL_Texture* texture = NULL;
   int w, h;
-  SDL_Color color = {
-    fonts[font].r, 
-    fonts[font].g, 
-    fonts[font].b, 
-    fonts[font].a
-  };
 
   if (font < 0 || font > MAX_FONTS-1) {
     printf("Font out of range: %i\n", font);
@@ -110,22 +110,27 @@ SDL_Texture* textTexture(int font, char *format, ...)
 
     getTextSize(font, &w, &h, drawTextBuffer);
 
+    printf("Drawing: \"%s\" (%i x %i)\n", drawTextBuffer, w, h);
+
+
     texture = SDL_CreateTexture(app.renderer, SDL_PIXELFORMAT_RGBA8888,
                                                SDL_TEXTUREACCESS_TARGET, w, h);
+    SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
 
+    // Set the target
     SDL_SetRenderTarget(app.renderer, texture);
-    SDL_RenderClear(app.renderer);
-    drawText(font, 0, 0, drawTextBuffer);
+    // Clear the render texture
+    SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_NONE);
+    SDL_SetRenderDrawColor(app.renderer, 0, 0, 0, 0);
+    SDL_RenderFillRect(app.renderer, NULL);
+    //    SDL_RenderClear(app.renderer);
+    // Set the color
+    SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderDrawColor(app.renderer, fonts[font].r, fonts[font].g, fonts[font].b, fonts[font].a);
+    // Render the texture
+    STBTTF_RenderText(app.renderer, fonts[font].font, 0, h, drawTextBuffer);
     //Detach the texture
     SDL_SetRenderTarget(app.renderer, NULL);
-//  if(!(drawTextSurface = TTF_RenderText_Blended(fonts[font].font, drawTextBuffer, color))) {
-//      //handle error here, perhaps print TTF_GetError at least
-//      printf("Failed to render text (font: %i): %s", font, TTF_GetError());
-//      exit(1);
-//  } else {
-//      //perhaps we can reuse it, but I assume not for simplicity.
-//      texture = SDL_CreateTextureFromSurface(app.renderer, drawTextSurface);
-//      SDL_FreeSurface(drawTextSurface);
-//  }
+
   return texture;
 }

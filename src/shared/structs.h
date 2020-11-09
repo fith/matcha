@@ -1,6 +1,8 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+#include "../lib/stb/stb_truetype.h"
+
 // typedef struct Entity Entity;
 typedef struct Dot Dot;
 typedef struct Font Font;
@@ -159,11 +161,6 @@ typedef struct {
   AnimateMove animateMoveHead, *animateMoveTail;
 } Stage;
 
-struct Font {
-  int index;
-  int size;
-    STBTTF_Font *font;
-  int r, g, b, a;
-};
+
 
 #endif

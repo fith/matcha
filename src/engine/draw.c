@@ -85,6 +85,7 @@ void drawSprite(Sprite* sprite) {
 
   // render cope
   SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_BLEND);
+  SDL_SetTextureBlendMode(sprite->texture, SDL_BLENDMODE_ADD);
   SDL_RenderCopyEx(app.renderer,
                     sprite->texture,
                     &srcRect,

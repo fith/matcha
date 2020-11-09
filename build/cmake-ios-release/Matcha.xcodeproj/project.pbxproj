@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		23CB7A01B1DE4614B8E4ADCF /* ZERO_CHECK */ = {
+		5575F0D6C77849E98A392A3F /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AFD06886D3E841AEAE8E1A2D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 93F9DF7EC0B946C888BB0A3B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				BE87858C9F8E44D2B2CA61E4 /* CMake Rules */,
+				DC955AF411264D82B5B74AD2 /* CMake Rules */,
 			);
 			dependencies = (
 			);
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		878FC5BB2E014ED9B7F34434 /* ALL_BUILD */ = {
+		D4D3F14BB8D447DB80900B86 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = BCDD4F908EAE4FEBABDB6363 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = FC4FC7AEE3784FAF9F9978A6 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				49ED45EE8DED4460B1006877 /* CMake Rules */,
+				A1E8EE943EC7493BB51CE775 /* CMake Rules */,
 			);
 			dependencies = (
-				4FD3A5A59EF540B39D5D0E9E /* PBXTargetDependency */,
-				4E5261FDD9A2465983D0BDE6 /* PBXTargetDependency */,
+				FF4EED44A4AE43DAB22F1E79 /* PBXTargetDependency */,
+				AA0518C2E80448C287FF4C9A /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -34,289 +34,220 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0A37859D08324264935520B2 /* /Users/kevin/Workspace/c/matcha/src/engine/sound.c */ = {isa = PBXBuildFile; fileRef = 3EBE89089B7D44C6B96C2964 /* /Users/kevin/Workspace/c/matcha/src/engine/sound.c */; };
-		293D499460844DEF9E169D7C /* /Users/kevin/Workspace/c/matcha/src/engine/util.c */ = {isa = PBXBuildFile; fileRef = BDCF5E5BCE554389BB92EF1B /* /Users/kevin/Workspace/c/matcha/src/engine/util.c */; };
-		2A1FEEFF0B474FF3832775AB /* /Users/kevin/Workspace/c/matcha/src/app/level1.c */ = {isa = PBXBuildFile; fileRef = 1CDA577CC5CE4F10B60CD6F4 /* /Users/kevin/Workspace/c/matcha/src/app/level1.c */; };
-		2D377B6AB61F41AB92167713 /* /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 4577D7ABD02042AC97DC8692 /* /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */; };
-		30D27F5297C042438BAAED75 /* /Users/kevin/Workspace/c/matcha/src/engine/input.c */ = {isa = PBXBuildFile; fileRef = 6D83CECD84C742D3B73C3CBE /* /Users/kevin/Workspace/c/matcha/src/engine/input.c */; };
-		5AD5A23253A04319A0BDB851 /* /Users/kevin/Workspace/c/matcha/src/data/colors.c */ = {isa = PBXBuildFile; fileRef = E890AAFFE4AF494DA10C122E /* /Users/kevin/Workspace/c/matcha/src/data/colors.c */; };
-		79CF9ADF32C2435281F21D10 /* /Users/kevin/Workspace/c/matcha/src/engine/text.c */ = {isa = PBXBuildFile; fileRef = 4134ED7EF7F346649C61FC8C /* /Users/kevin/Workspace/c/matcha/src/engine/text.c */; };
-		7D84FE0FDAB74610826ACD77 /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_rect_pack.h */ = {isa = PBXBuildFile; fileRef = B08A11A2BF0A4081BB3B65B4 /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_rect_pack.h */; };
-		93105C82CC0A40DEAC7B61A5 /* /Users/kevin/Workspace/c/matcha/src/main.c */ = {isa = PBXBuildFile; fileRef = EDBCB6B2796140148C7026C2 /* /Users/kevin/Workspace/c/matcha/src/main.c */; };
-		A9E7BB58C67346B682F4ED4C /* /Users/kevin/Workspace/c/matcha/src/app/menu.c */ = {isa = PBXBuildFile; fileRef = FF570839E6C34920B3B3A1FD /* /Users/kevin/Workspace/c/matcha/src/app/menu.c */; };
-		BB2D8FD0B454426996632223 /* /Users/kevin/Workspace/c/matcha/src/engine/init.c */ = {isa = PBXBuildFile; fileRef = 1BC15C0681B04FBF8CF877C6 /* /Users/kevin/Workspace/c/matcha/src/engine/init.c */; };
-		CC40B5CCF63B449EA010024A /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4A46B697DB8C453F853B0505 /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */; };
-		D457D1F65B8948BDA75D6EFC /* /Users/kevin/Workspace/c/matcha/src/engine/draw.c */ = {isa = PBXBuildFile; fileRef = 71A2D53814FC45EDA0293A16 /* /Users/kevin/Workspace/c/matcha/src/engine/draw.c */; };
-		DB083298A47E4551BE54D7AC /* /Users/kevin/Workspace/c/matcha/src/data/levels.c */ = {isa = PBXBuildFile; fileRef = EB1D2DEEE1A847D681685A39 /* /Users/kevin/Workspace/c/matcha/src/data/levels.c */; };
-		DCD3A827D4444DA191160423 /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_truetype.h */ = {isa = PBXBuildFile; fileRef = 0937877315E14DF8A611B4FC /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_truetype.h */; };
-		F3159A2E7B8B421DBA152805 /* /Users/kevin/Workspace/c/matcha/src/app/options.c */ = {isa = PBXBuildFile; fileRef = B858F69B8E914AF29FB62BB4 /* /Users/kevin/Workspace/c/matcha/src/app/options.c */; };
-		F7B03543AE0B4EBDB51B1D75 /* /Users/kevin/Workspace/c/matcha/src/lib/stbttf.h */ = {isa = PBXBuildFile; fileRef = B33B138DAC0C43FBBC597C40 /* /Users/kevin/Workspace/c/matcha/src/lib/stbttf.h */; };
+		0048D14E5262423EB966FC92 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */ = {isa = PBXBuildFile; fileRef = 311BEE0815764B91AA7C7385 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */; };
+		0D3D6A4B1913400B97E526C4 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */ = {isa = PBXBuildFile; fileRef = F2A154A2D4B14EAFB7DB31C4 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */; };
+		12B329C22D0645F883D1C910 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */ = {isa = PBXBuildFile; fileRef = FCE7636268AF453A877918E4 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */; };
+		1C6ABED0509449D1B87DD139 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */ = {isa = PBXBuildFile; fileRef = FBAB427D3BA14A97BA594715 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */; };
+		366542B97BC44889B17B54A8 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = B0B4FEC1CA944C5CA4F569F8 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */; };
+		43333EC6CC8C4EAFB45B122C /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */ = {isa = PBXBuildFile; fileRef = EA8260A65C954FF7AD9E7E85 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */; };
+		79E805ECCF92495281ED0CC6 /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = EA20DC10867C416EB818C62D /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */; };
+		7F8EA579AF5C4CD582E146D0 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */ = {isa = PBXBuildFile; fileRef = 37447A102D7B4237BC3BE6F6 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */; };
+		84D88C1E7BD94D2F9C3C964D /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */ = {isa = PBXBuildFile; fileRef = 8E90131904BD4A3DA4A1CAA4 /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */; };
+		9B81DE70092A46E6851830E0 /* /Users/kevin/Scratch/c/matcha/src/main.c */ = {isa = PBXBuildFile; fileRef = 65E5B3A69C9740F3A9FC28CF /* /Users/kevin/Scratch/c/matcha/src/main.c */; };
+		A6174A899ECF4DB1A41813D2 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */ = {isa = PBXBuildFile; fileRef = B54FD1B1620949B7A5638CF0 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */; };
+		C9FF42BDC0394BD1836DC05B /* /Users/kevin/Scratch/c/matcha/src/app/options.c */ = {isa = PBXBuildFile; fileRef = BB1BC58EB86C4CA09E024218 /* /Users/kevin/Scratch/c/matcha/src/app/options.c */; };
+		DA22D120FEAA49F3B2EAA4B7 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */ = {isa = PBXBuildFile; fileRef = 141B274BCF304ACDAE50BC59 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */; };
+		EC431AB622414AB8B21C0593 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */ = {isa = PBXBuildFile; fileRef = B803454EAABF4D8AB654AB15 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		0F7922DD180F40E6AED0BA37 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		45F56B86B3B64784B206B8A3 /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		6D5EB6E04E6D44A9A4977C5F /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		CDE8A534000242F0AAFCEB0E /* Debug */ = {
+		133A1D5A187A4DD29E3738F0 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
+		29BA931F86F44D38A990F821 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		3FFB00B20D7446908E9C28EE /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		CF116CD2756C40E881452880 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		8C8872B0B75343A381B26F74 /* PBXContainerItemProxy */ = {
+		651744CD95164F848A2544D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C6B3804C859646F6AA3099F6 /* Project object */;
+			containerPortal = B2E0A6183E2C48D290A3120F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 23CB7A01B1DE4614B8E4ADCF;
+			remoteGlobalIDString = 5575F0D6C77849E98A392A3F;
 			remoteInfo = ZERO_CHECK;
 		};
-		E168AEAD2095489F990A6DD0 /* PBXContainerItemProxy */ = {
+		AF0179EEA28C425A97CF4406 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C6B3804C859646F6AA3099F6 /* Project object */;
+			containerPortal = B2E0A6183E2C48D290A3120F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 13F5A9D45C8B43EDA33E4041;
+			remoteGlobalIDString = 5575F0D6C77849E98A392A3F;
+			remoteInfo = ZERO_CHECK;
+		};
+		B54C1314310B4377905BB177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E0A6183E2C48D290A3120F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D549CF5E31B64EE4B2AA4D7B;
 			remoteInfo = Matcha;
-		};
-		E531428502494A1280EC7722 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C6B3804C859646F6AA3099F6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 23CB7A01B1DE4614B8E4ADCF;
-			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0937877315E14DF8A611B4FC /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_truetype.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_truetype.h; path = src/lib/stb/stb_truetype.h; sourceTree = SOURCE_ROOT; };
-		1BC15C0681B04FBF8CF877C6 /* /Users/kevin/Workspace/c/matcha/src/engine/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = src/engine/init.c; sourceTree = SOURCE_ROOT; };
-		1CDA577CC5CE4F10B60CD6F4 /* /Users/kevin/Workspace/c/matcha/src/app/level1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = level1.c; path = src/app/level1.c; sourceTree = SOURCE_ROOT; };
-		3642DADB563E433EAECB95E6 /* Matcha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Matcha; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EBE89089B7D44C6B96C2964 /* /Users/kevin/Workspace/c/matcha/src/engine/sound.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = sound.c; path = src/engine/sound.c; sourceTree = SOURCE_ROOT; };
-		4134ED7EF7F346649C61FC8C /* /Users/kevin/Workspace/c/matcha/src/engine/text.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = text.c; path = src/engine/text.c; sourceTree = SOURCE_ROOT; };
-		4577D7ABD02042AC97DC8692 /* /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
-		4A46B697DB8C453F853B0505 /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		6D83CECD84C742D3B73C3CBE /* /Users/kevin/Workspace/c/matcha/src/engine/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = src/engine/input.c; sourceTree = SOURCE_ROOT; };
-		70A6BC69C7634BB1A444FB03 /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		71A2D53814FC45EDA0293A16 /* /Users/kevin/Workspace/c/matcha/src/engine/draw.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = draw.c; path = src/engine/draw.c; sourceTree = SOURCE_ROOT; };
-		B08A11A2BF0A4081BB3B65B4 /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_rect_pack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_rect_pack.h; path = src/lib/stb/stb_rect_pack.h; sourceTree = SOURCE_ROOT; };
-		B33B138DAC0C43FBBC597C40 /* /Users/kevin/Workspace/c/matcha/src/lib/stbttf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stbttf.h; path = src/lib/stbttf.h; sourceTree = SOURCE_ROOT; };
-		B858F69B8E914AF29FB62BB4 /* /Users/kevin/Workspace/c/matcha/src/app/options.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = options.c; path = src/app/options.c; sourceTree = SOURCE_ROOT; };
-		BDCF5E5BCE554389BB92EF1B /* /Users/kevin/Workspace/c/matcha/src/engine/util.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = util.c; path = src/engine/util.c; sourceTree = SOURCE_ROOT; };
-		E890AAFFE4AF494DA10C122E /* /Users/kevin/Workspace/c/matcha/src/data/colors.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = colors.c; path = src/data/colors.c; sourceTree = SOURCE_ROOT; };
-		EB1D2DEEE1A847D681685A39 /* /Users/kevin/Workspace/c/matcha/src/data/levels.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = levels.c; path = src/data/levels.c; sourceTree = SOURCE_ROOT; };
-		EDBCB6B2796140148C7026C2 /* /Users/kevin/Workspace/c/matcha/src/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = src/main.c; sourceTree = SOURCE_ROOT; };
-		FF570839E6C34920B3B3A1FD /* /Users/kevin/Workspace/c/matcha/src/app/menu.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = menu.c; path = src/app/menu.c; sourceTree = SOURCE_ROOT; };
+		0D94F7E0CDEB4C94A5FD324F /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		141B274BCF304ACDAE50BC59 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = src/engine/input.c; sourceTree = SOURCE_ROOT; };
+		311BEE0815764B91AA7C7385 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = text.c; path = src/engine/text.c; sourceTree = SOURCE_ROOT; };
+		37447A102D7B4237BC3BE6F6 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = util.c; path = src/engine/util.c; sourceTree = SOURCE_ROOT; };
+		65E5B3A69C9740F3A9FC28CF /* /Users/kevin/Scratch/c/matcha/src/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = src/main.c; sourceTree = SOURCE_ROOT; };
+		69FF1A0E9D144E96A2DD81CB /* Matcha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Matcha; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E90131904BD4A3DA4A1CAA4 /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = sound.c; path = src/engine/sound.c; sourceTree = SOURCE_ROOT; };
+		B0B4FEC1CA944C5CA4F569F8 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		B54FD1B1620949B7A5638CF0 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = src/engine/init.c; sourceTree = SOURCE_ROOT; };
+		B803454EAABF4D8AB654AB15 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = level1.c; path = src/app/level1.c; sourceTree = SOURCE_ROOT; };
+		BB1BC58EB86C4CA09E024218 /* /Users/kevin/Scratch/c/matcha/src/app/options.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = options.c; path = src/app/options.c; sourceTree = SOURCE_ROOT; };
+		EA20DC10867C416EB818C62D /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		EA8260A65C954FF7AD9E7E85 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = menu.c; path = src/app/menu.c; sourceTree = SOURCE_ROOT; };
+		F2A154A2D4B14EAFB7DB31C4 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = draw.c; path = src/engine/draw.c; sourceTree = SOURCE_ROOT; };
+		FBAB427D3BA14A97BA594715 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = levels.c; path = src/data/levels.c; sourceTree = SOURCE_ROOT; };
+		FCE7636268AF453A877918E4 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = colors.c; path = src/data/colors.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		581AFD03554649B3984E4C41 /* Matcha */ = {
+		659924000F9F461281AE2284 /* Matcha */ = {
 			isa = PBXGroup;
 			children = (
-				E52C78622D9A42B592EDE70F /* Source Files */,
-				58CD2A83EFE9467D8D2EF87D /* Header Files */,
-				A66B273170614270A17AEB0D /* Resources */,
-				4A46B697DB8C453F853B0505 /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */,
+				81DB25CFDD864B13B050BBED /* Source Files */,
+				DAA84A9818724B1A968E7E61 /* Resources */,
+				EA20DC10867C416EB818C62D /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */,
 			);
 			name = Matcha;
 			sourceTree = "<group>";
 		};
-		58CD2A83EFE9467D8D2EF87D /* Header Files */ = {
+		81DB25CFDD864B13B050BBED /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				B08A11A2BF0A4081BB3B65B4 /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_rect_pack.h */,
-				0937877315E14DF8A611B4FC /* /Users/kevin/Workspace/c/matcha/src/lib/stb/stb_truetype.h */,
-				B33B138DAC0C43FBBC597C40 /* /Users/kevin/Workspace/c/matcha/src/lib/stbttf.h */,
+				B803454EAABF4D8AB654AB15 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */,
+				EA8260A65C954FF7AD9E7E85 /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */,
+				BB1BC58EB86C4CA09E024218 /* /Users/kevin/Scratch/c/matcha/src/app/options.c */,
+				FCE7636268AF453A877918E4 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */,
+				FBAB427D3BA14A97BA594715 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */,
+				F2A154A2D4B14EAFB7DB31C4 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */,
+				B54FD1B1620949B7A5638CF0 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */,
+				141B274BCF304ACDAE50BC59 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */,
+				8E90131904BD4A3DA4A1CAA4 /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */,
+				311BEE0815764B91AA7C7385 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */,
+				37447A102D7B4237BC3BE6F6 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */,
+				65E5B3A69C9740F3A9FC28CF /* /Users/kevin/Scratch/c/matcha/src/main.c */,
 			);
-			name = "Header Files";
+			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		5D1F6E573D804241AD0A45CA /* Products */ = {
+		AC355F9C130E4AB3AC157E78 = {
 			isa = PBXGroup;
 			children = (
-				3642DADB563E433EAECB95E6 /* Matcha */,
+				659924000F9F461281AE2284 /* Matcha */,
+				E146A29862D7459F8AFE83F8 /* ALL_BUILD */,
+				B76C74C866F44241ADC27F5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B76C74C866F44241ADC27F5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69FF1A0E9D144E96A2DD81CB /* Matcha */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		644FE957EFB34023A7CDEA2F = {
-			isa = PBXGroup;
-			children = (
-				581AFD03554649B3984E4C41 /* Matcha */,
-				7B96066B8E0A4D818147AAEA /* ALL_BUILD */,
-				5D1F6E573D804241AD0A45CA /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		7B96066B8E0A4D818147AAEA /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				B05CAA7BC6FC4DD0812F6919 /* CMake Rules */,
-				70A6BC69C7634BB1A444FB03 /* /Users/kevin/Workspace/c/matcha/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		A66B273170614270A17AEB0D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4577D7ABD02042AC97DC8692 /* /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		B05CAA7BC6FC4DD0812F6919 /* CMake Rules */ = {
+		BF1CB8B0D73A47D083FD3EC6 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		E52C78622D9A42B592EDE70F /* Source Files */ = {
+		DAA84A9818724B1A968E7E61 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1CDA577CC5CE4F10B60CD6F4 /* /Users/kevin/Workspace/c/matcha/src/app/level1.c */,
-				FF570839E6C34920B3B3A1FD /* /Users/kevin/Workspace/c/matcha/src/app/menu.c */,
-				B858F69B8E914AF29FB62BB4 /* /Users/kevin/Workspace/c/matcha/src/app/options.c */,
-				E890AAFFE4AF494DA10C122E /* /Users/kevin/Workspace/c/matcha/src/data/colors.c */,
-				EB1D2DEEE1A847D681685A39 /* /Users/kevin/Workspace/c/matcha/src/data/levels.c */,
-				71A2D53814FC45EDA0293A16 /* /Users/kevin/Workspace/c/matcha/src/engine/draw.c */,
-				1BC15C0681B04FBF8CF877C6 /* /Users/kevin/Workspace/c/matcha/src/engine/init.c */,
-				6D83CECD84C742D3B73C3CBE /* /Users/kevin/Workspace/c/matcha/src/engine/input.c */,
-				3EBE89089B7D44C6B96C2964 /* /Users/kevin/Workspace/c/matcha/src/engine/sound.c */,
-				4134ED7EF7F346649C61FC8C /* /Users/kevin/Workspace/c/matcha/src/engine/text.c */,
-				BDCF5E5BCE554389BB92EF1B /* /Users/kevin/Workspace/c/matcha/src/engine/util.c */,
-				EDBCB6B2796140148C7026C2 /* /Users/kevin/Workspace/c/matcha/src/main.c */,
+				B0B4FEC1CA944C5CA4F569F8 /* /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist */,
 			);
-			name = "Source Files";
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E146A29862D7459F8AFE83F8 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				BF1CB8B0D73A47D083FD3EC6 /* CMake Rules */,
+				0D94F7E0CDEB4C94A5FD324F /* /Users/kevin/Scratch/c/matcha/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13F5A9D45C8B43EDA33E4041 /* Matcha */ = {
+		D549CF5E31B64EE4B2AA4D7B /* Matcha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BB8F10EDA2C43E3BA25FA28 /* Build configuration list for PBXNativeTarget "Matcha" */;
+			buildConfigurationList = 4302116967B1467F9F0787EA /* Build configuration list for PBXNativeTarget "Matcha" */;
 			buildPhases = (
-				FC06DB9567A842B6A36314F0 /* Sources */,
-				DD5E160399614F978830D188 /* CMake PostBuild Rules */,
+				1EF5DF4B88DE4F14A92603B6 /* Sources */,
+				2CDC939B05AB42D29281DED0 /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DB59FE5606CB4AC9BCC03198 /* PBXTargetDependency */,
+				685CB275E75F49E2973B7B84 /* PBXTargetDependency */,
 			);
 			name = Matcha;
 			productName = Matcha;
-			productReference = 3642DADB563E433EAECB95E6 /* Matcha */;
+			productReference = 69FF1A0E9D144E96A2DD81CB /* Matcha */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C6B3804C859646F6AA3099F6 /* Project object */ = {
+		B2E0A6183E2C48D290A3120F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1220;
 			};
-			buildConfigurationList = D432B1D265044D12A021890C /* Build configuration list for PBXProject "Matcha" */;
+			buildConfigurationList = D2F2225E0DC8439BA72BADEE /* Build configuration list for PBXProject "Matcha" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				CDE8A534000242F0AAFCEB0E /* Debug */,
-				6D5EB6E04E6D44A9A4977C5F /* Release */,
-				45F56B86B3B64784B206B8A3 /* MinSizeRel */,
-				0F7922DD180F40E6AED0BA37 /* RelWithDebInfo */,
+				133A1D5A187A4DD29E3738F0 /* Debug */,
+				29BA931F86F44D38A990F821 /* Release */,
+				3FFB00B20D7446908E9C28EE /* MinSizeRel */,
+				CF116CD2756C40E881452880 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 644FE957EFB34023A7CDEA2F;
+			mainGroup = AC355F9C130E4AB3AC157E78;
 			projectDirPath = ../../;
 			projectRoot = "";
 			targets = (
-				878FC5BB2E014ED9B7F34434 /* ALL_BUILD */,
-				13F5A9D45C8B43EDA33E4041 /* Matcha */,
-				23CB7A01B1DE4614B8E4ADCF /* ZERO_CHECK */,
+				D4D3F14BB8D447DB80900B86 /* ALL_BUILD */,
+				D549CF5E31B64EE4B2AA4D7B /* Matcha */,
+				5575F0D6C77849E98A392A3F /* ZERO_CHECK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49ED45EE8DED4460B1006877 /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/kevin/Workspace/c/matcha/build/cmake-ios-release -f /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
-			showEnvVarsInLog = 0;
-		};
-		6A2C315B362A47D193019255 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		950A036F6E164DD3A2B0D2D0 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		BE87858C9F8E44D2B2CA61E4 /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/kevin/Workspace/c/matcha/build/cmake-ios-release -f /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
-			showEnvVarsInLog = 0;
-		};
-		DD5E160399614F978830D188 /* CMake PostBuild Rules */ = {
+		2CDC939B05AB42D29281DED0 /* CMake PostBuild Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,93 +255,105 @@ exit 0";
 			name = "CMake PostBuild Rules";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make -C /Users/kevin/Workspace/c/matcha/build/cmake-ios-release -f /Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeScripts/Matcha_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/Matcha_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		872B9D428CFC4B348F3703B7 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		A1E8EE943EC7493BB51CE775 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		D75AEE9EF4354897A3C9B900 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		DC955AF411264D82B5B74AD2 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/kevin/Scratch/c/matcha/build/cmake-ios-release -f /Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC06DB9567A842B6A36314F0 /* Sources */ = {
+		1EF5DF4B88DE4F14A92603B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1FEEFF0B474FF3832775AB /* /Users/kevin/Workspace/c/matcha/src/app/level1.c */,
-				A9E7BB58C67346B682F4ED4C /* /Users/kevin/Workspace/c/matcha/src/app/menu.c */,
-				F3159A2E7B8B421DBA152805 /* /Users/kevin/Workspace/c/matcha/src/app/options.c */,
-				5AD5A23253A04319A0BDB851 /* /Users/kevin/Workspace/c/matcha/src/data/colors.c */,
-				DB083298A47E4551BE54D7AC /* /Users/kevin/Workspace/c/matcha/src/data/levels.c */,
-				D457D1F65B8948BDA75D6EFC /* /Users/kevin/Workspace/c/matcha/src/engine/draw.c */,
-				BB2D8FD0B454426996632223 /* /Users/kevin/Workspace/c/matcha/src/engine/init.c */,
-				30D27F5297C042438BAAED75 /* /Users/kevin/Workspace/c/matcha/src/engine/input.c */,
-				0A37859D08324264935520B2 /* /Users/kevin/Workspace/c/matcha/src/engine/sound.c */,
-				79CF9ADF32C2435281F21D10 /* /Users/kevin/Workspace/c/matcha/src/engine/text.c */,
-				293D499460844DEF9E169D7C /* /Users/kevin/Workspace/c/matcha/src/engine/util.c */,
-				93105C82CC0A40DEAC7B61A5 /* /Users/kevin/Workspace/c/matcha/src/main.c */,
+				EC431AB622414AB8B21C0593 /* /Users/kevin/Scratch/c/matcha/src/app/level1.c */,
+				43333EC6CC8C4EAFB45B122C /* /Users/kevin/Scratch/c/matcha/src/app/menu.c */,
+				C9FF42BDC0394BD1836DC05B /* /Users/kevin/Scratch/c/matcha/src/app/options.c */,
+				12B329C22D0645F883D1C910 /* /Users/kevin/Scratch/c/matcha/src/data/colors.c */,
+				1C6ABED0509449D1B87DD139 /* /Users/kevin/Scratch/c/matcha/src/data/levels.c */,
+				0D3D6A4B1913400B97E526C4 /* /Users/kevin/Scratch/c/matcha/src/engine/draw.c */,
+				A6174A899ECF4DB1A41813D2 /* /Users/kevin/Scratch/c/matcha/src/engine/init.c */,
+				DA22D120FEAA49F3B2EAA4B7 /* /Users/kevin/Scratch/c/matcha/src/engine/input.c */,
+				84D88C1E7BD94D2F9C3C964D /* /Users/kevin/Scratch/c/matcha/src/engine/sound.c */,
+				0048D14E5262423EB966FC92 /* /Users/kevin/Scratch/c/matcha/src/engine/text.c */,
+				7F8EA579AF5C4CD582E146D0 /* /Users/kevin/Scratch/c/matcha/src/engine/util.c */,
+				9B81DE70092A46E6851830E0 /* /Users/kevin/Scratch/c/matcha/src/main.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4E5261FDD9A2465983D0BDE6 /* PBXTargetDependency */ = {
+		685CB275E75F49E2973B7B84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 23CB7A01B1DE4614B8E4ADCF /* ZERO_CHECK */;
-			targetProxy = 8C8872B0B75343A381B26F74 /* PBXContainerItemProxy */;
+			target = 5575F0D6C77849E98A392A3F /* ZERO_CHECK */;
+			targetProxy = AF0179EEA28C425A97CF4406 /* PBXContainerItemProxy */;
 		};
-		4FD3A5A59EF540B39D5D0E9E /* PBXTargetDependency */ = {
+		AA0518C2E80448C287FF4C9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13F5A9D45C8B43EDA33E4041 /* Matcha */;
-			targetProxy = E168AEAD2095489F990A6DD0 /* PBXContainerItemProxy */;
+			target = D549CF5E31B64EE4B2AA4D7B /* Matcha */;
+			targetProxy = B54C1314310B4377905BB177 /* PBXContainerItemProxy */;
 		};
-		DB59FE5606CB4AC9BCC03198 /* PBXTargetDependency */ = {
+		FF4EED44A4AE43DAB22F1E79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 23CB7A01B1DE4614B8E4ADCF /* ZERO_CHECK */;
-			targetProxy = E531428502494A1280EC7722 /* PBXContainerItemProxy */;
+			target = 5575F0D6C77849E98A392A3F /* ZERO_CHECK */;
+			targetProxy = 651744CD95164F848A2544D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		09631A1038D64725BDD6A2F0 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		1AD9C210BBD84DA18F0E5162 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		1BC60114B0A2448183092020 /* Debug */ = {
+		04308C217D69454C8EF72B5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -424,131 +367,18 @@ exit 0";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
 				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		1D6DB4376D394838A55064C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		301EC16A14D4416DBF646B1A /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "arm64 x86_64";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				DEVELOPMENT_TEAM = 123456789A;
-				ENABLE_BITCODE = NO;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/build";
-			};
-			name = MinSizeRel;
-		};
-		7631C3BBAFC6416E9A44803E /* Debug */ = {
+		09CD79B037214252A0483495 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (arm64,x86_64);
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/bin";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include,/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include);
-				INFOPLIST_FILE = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
-				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = "       '-std=gnu11'  ";
-				OTHER_LDFLAGS = "     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lSDL2_image -lSDL2_ttf -lsdl2_mixer -lSDL2main -lSDL2 -lfreetype -lvorbisenc -lvorbisfile -lvorbis -lbz2 -lpng16 -liconv -lcharset -logg -lz -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Matcha;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		98652D1806DA49C990CFA086 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "arm64 x86_64";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				DEVELOPMENT_TEAM = 123456789A;
-				ENABLE_BITCODE = NO;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/build";
-			};
-			name = RelWithDebInfo;
-		};
-		9A98DD3257F7484492B31AE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "arm64 x86_64";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				DEVELOPMENT_TEAM = 123456789A;
-				ENABLE_BITCODE = NO;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/build";
-			};
-			name = Release;
-		};
-		AA5F043F41B3439E835A8AFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "arm64 x86_64";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				DEVELOPMENT_TEAM = 123456789A;
-				ENABLE_BITCODE = NO;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/build";
-			};
-			name = Debug;
-		};
-		AF1007D1EF494B5AA36F8F54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (arm64,x86_64);
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/bin";
+				CONFIGURATION_BUILD_DIR = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/bin";
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -556,23 +386,23 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include,/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include);
-				INFOPLIST_FILE = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include);
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib";
+				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "       -DNDEBUG  '-std=gnu11'  ";
-				OTHER_LDFLAGS = "     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lSDL2_image -lSDL2_ttf -lsdl2_mixer -lSDL2main -lSDL2 -lfreetype -lvorbisenc -lvorbisfile -lvorbis -lbz2 -lpng16 -liconv -lcharset -logg -lz -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
+				OTHER_LDFLAGS = "     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lbz2 -lSDL2_image -lsdl2_mixer -lpng16 -lSDL2main -lSDL2 -lvorbisenc -lvorbisfile -lvorbis -lz -liconv -lcharset -logg -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = Matcha;
 				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		B9D3B11A8E98466F94C271BC /* Release */ = {
+		1A4427F54D154D31880DFF2C /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -586,82 +416,13 @@ exit 0";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
 				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		BC28C3131B19466294AC1CBF /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (arm64,x86_64);
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/bin";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include,/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include);
-				INFOPLIST_FILE = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
-				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = "          -DNDEBUG '-std=gnu11'  ";
-				OTHER_LDFLAGS = "   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lSDL2_image -lSDL2_ttf -lsdl2_mixer -lSDL2main -lSDL2 -lfreetype -lvorbisenc -lvorbisfile -lvorbis -lbz2 -lpng16 -liconv -lcharset -logg -lz -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Matcha;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		C26E9549615E4F7F905A83D1 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = MinSizeRel;
 		};
-		E0FE9EAC985C4CA494E681B4 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		E613078CA9E14460832F096E /* MinSizeRel */ = {
+		2C8DDCEF51BC448791688791 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -675,18 +436,240 @@ exit 0";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		3F5C54D60779498BA3387575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		66E347B844D54BC88CAC6E79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = Debug;
+		};
+		677A85AC19474E3299E7FFD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/bin";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include);
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "       '-std=gnu11'  ";
+				OTHER_LDFLAGS = "     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lbz2 -lSDL2_image -lsdl2_mixer -lpng16 -lSDL2main -lSDL2 -lvorbisenc -lvorbisfile -lvorbis -lz -liconv -lcharset -logg -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		8873ECBA4F8A46A682AB27D8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = MinSizeRel;
+		};
+		C8BB965AD23148CEAD3168E7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C90A4E065CD14B3F964435AA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		CE7BF7F2B7BC43939E385A07 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = MinSizeRel;
 		};
-		EF04293FF3084E99932A00AB /* MinSizeRel */ = {
+		DCF8C8359B3B4E298595393A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = Release;
+		};
+		DE85B4EBB9CA48EE9D901E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		EB0865F226C74FF0A1D74D97 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "arm64 x86_64";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = 123456789A;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/build";
+			};
+			name = RelWithDebInfo;
+		};
+		F9E9EDF5794C4EF9BE649A80 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (arm64,x86_64);
 				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/bin";
+				CONFIGURATION_BUILD_DIR = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/bin";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include);
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "          -DNDEBUG '-std=gnu11'  ";
+				OTHER_LDFLAGS = "   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lbz2 -lSDL2_image -lsdl2_mixer -lpng16 -lSDL2main -lSDL2 -lvorbisenc -lvorbisfile -lvorbis -lz -liconv -lcharset -logg -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Matcha;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FA91444DD98B4F18AB0EFF82 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (arm64,x86_64);
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/bin";
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -694,17 +677,17 @@ exit 0";
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include,/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include,/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/include/freetype2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include,/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include);
-				INFOPLIST_FILE = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
+				HEADER_SEARCH_PATHS = (/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include,/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include,/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2,/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include,/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2,/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include,/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include,/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include);
+				INFOPLIST_FILE = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/CMakeFiles/Matcha.dir/Info.plist";
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/e6ad2b38a86a9ecfd0a7149f2bf928a1a31aa7f2/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/9fbc622fdb9d2462147cf446a56b1688bf016d05/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib";
+				LIBRARY_SEARCH_PATHS = " /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "       -DNDEBUG '-std=gnu11'  ";
-				OTHER_LDFLAGS = "   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lSDL2_image -lSDL2_ttf -lsdl2_mixer -lSDL2main -lSDL2 -lfreetype -lvorbisenc -lvorbisfile -lvorbis -lbz2 -lpng16 -liconv -lcharset -logg -lz -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
+				OTHER_LDFLAGS = "   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lbz2 -lSDL2_image -lsdl2_mixer -lpng16 -lSDL2main -lSDL2 -lvorbisenc -lvorbisfile -lvorbis -lz -liconv -lcharset -logg -framework Cocoa -framework Carbon -framework IOKit -framework CoreVideo -framework CoreAudio -framework AudioToolbox -framework ForceFeedback";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = Matcha;
 				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release";
+				SYMROOT = "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
@@ -713,51 +696,51 @@ exit 0";
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BB8F10EDA2C43E3BA25FA28 /* Build configuration list for PBXNativeTarget "Matcha" */ = {
+		4302116967B1467F9F0787EA /* Build configuration list for PBXNativeTarget "Matcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7631C3BBAFC6416E9A44803E /* Debug */,
-				AF1007D1EF494B5AA36F8F54 /* Release */,
-				EF04293FF3084E99932A00AB /* MinSizeRel */,
-				BC28C3131B19466294AC1CBF /* RelWithDebInfo */,
+				677A85AC19474E3299E7FFD0 /* Debug */,
+				09CD79B037214252A0483495 /* Release */,
+				FA91444DD98B4F18AB0EFF82 /* MinSizeRel */,
+				F9E9EDF5794C4EF9BE649A80 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		AFD06886D3E841AEAE8E1A2D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		93F9DF7EC0B946C888BB0A3B /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1AD9C210BBD84DA18F0E5162 /* Debug */,
-				1D6DB4376D394838A55064C2 /* Release */,
-				E613078CA9E14460832F096E /* MinSizeRel */,
-				09631A1038D64725BDD6A2F0 /* RelWithDebInfo */,
+				DE85B4EBB9CA48EE9D901E83 /* Debug */,
+				2C8DDCEF51BC448791688791 /* Release */,
+				CE7BF7F2B7BC43939E385A07 /* MinSizeRel */,
+				C8BB965AD23148CEAD3168E7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		BCDD4F908EAE4FEBABDB6363 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		D2F2225E0DC8439BA72BADEE /* Build configuration list for PBXProject "Matcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1BC60114B0A2448183092020 /* Debug */,
-				B9D3B11A8E98466F94C271BC /* Release */,
-				C26E9549615E4F7F905A83D1 /* MinSizeRel */,
-				E0FE9EAC985C4CA494E681B4 /* RelWithDebInfo */,
+				66E347B844D54BC88CAC6E79 /* Debug */,
+				DCF8C8359B3B4E298595393A /* Release */,
+				8873ECBA4F8A46A682AB27D8 /* MinSizeRel */,
+				EB0865F226C74FF0A1D74D97 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D432B1D265044D12A021890C /* Build configuration list for PBXProject "Matcha" */ = {
+		FC4FC7AEE3784FAF9F9978A6 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA5F043F41B3439E835A8AFE /* Debug */,
-				9A98DD3257F7484492B31AE7 /* Release */,
-				301EC16A14D4416DBF646B1A /* MinSizeRel */,
-				98652D1806DA49C990CFA086 /* RelWithDebInfo */,
+				3F5C54D60779498BA3387575 /* Debug */,
+				04308C217D69454C8EF72B5E /* Release */,
+				1A4427F54D154D31880DFF2C /* MinSizeRel */,
+				C90A4E065CD14B3F964435AA /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C6B3804C859646F6AA3099F6 /* Project object */;
+	rootObject = B2E0A6183E2C48D290A3120F /* Project object */;
 }

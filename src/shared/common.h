@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef _COMMON_H
+#define _COMMON_H
 
 #include "stdlib.h"
 #include "stdio.h"
@@ -7,16 +7,12 @@
 #include "math.h"
 #include "ctype.h"
 
-#include <SDL2/SDL.h>
-#include "../lib/stb/stb_truetype.h"
-#include "../lib/stbttf.h"
+#include "SDL.h"
 
 #include "defs.h"
-
-#include "../data/colors.h"
-
 #include "structs.h"
 
+#include "../data/colors.h"
 #include "../data/levels.h"
 
 #endif

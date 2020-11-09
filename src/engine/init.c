@@ -53,11 +53,6 @@ void initSDL(void)
   SDL_SetCursor(cursor);
   SDL_ShowCursor(1);
 
-  if(TTF_Init()==-1) {
-      printf("TTF_Init: %s\n", TTF_GetError());
-      exit(2);
-  }
-
   // open 44.1KHz, signed 16bit, system byte order,
   //      stereo audio, using 1024 byte chunks
   if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) == -1)
@@ -82,6 +77,5 @@ void cleanup(void)
   }
   SDL_DestroyRenderer(app.renderer);
   SDL_DestroyWindow(app.window);
-  TTF_Quit();
   SDL_Quit();
 }

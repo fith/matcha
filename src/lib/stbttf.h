@@ -9,7 +9,7 @@
 
 /* STBTTF: A quick and dirty SDL2 text renderer based on stb_truetype and stdb_rect_pack.
  * Benoit Favre 2019
- *
+ *git a
  * This header-only addon to the stb_truetype library allows to draw text with SDL2 from
  * TTF fonts with a similar API to SDL_TTF without the bloat.
  * The renderer is however limited by the integral positioning of SDL blit functions.
@@ -134,6 +134,7 @@ void STBTTF_RenderText(SDL_Renderer* renderer, STBTTF_Font* font, float x, float
 	SDL_GetRenderDrawColor(renderer, &r, &g, &b, &a);
 	SDL_SetTextureColorMod(font->atlas, r, g, b);
 	SDL_SetTextureAlphaMod(font->atlas, a);
+
 	for(int i = 0; text[i]; i++) {
 		if (text[i] >= 32 && text[i] < 128) {
 			//if(i > 0) x += stbtt_GetCodepointKernAdvance(font->info, text[i - 1], text[i]) * font->scale;

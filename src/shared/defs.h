@@ -1,5 +1,5 @@
-#ifndef DEFS_H
-#define DEFS_H
+#ifndef _DEFS_H
+#define _DEFS_H
 
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
