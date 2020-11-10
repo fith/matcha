@@ -1,3 +1,0 @@
-/Users/kevin/Scratch/c/matcha/build/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/kevin/Scratch/c/matcha/build/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/kevin/Scratch/c/matcha/build/cmake-build-debug/CMakeFiles/Matcha.dir
