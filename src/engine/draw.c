@@ -112,7 +112,7 @@ void blitFit(SDL_Texture *texture, SDL_Rect *dst)
   SDL_RenderCopy(app.renderer, texture, NULL, dst);
 }
 
-void blitFitRot(SDL_Texture *texture, SDL_Rect *dst, int flip)
+void blitFitRot(SDL_Texture *texture, SDL_Rect *dst, int flip, float rotation)
 {
     SDL_Point center;
     SDL_Rect srcRect;
@@ -128,14 +128,14 @@ void blitFitRot(SDL_Texture *texture, SDL_Rect *dst, int flip)
             SDL_FLIP_NONE,
             SDL_FLIP_HORIZONTAL,
             SDL_FLIP_VERTICAL,
-            SDL_FLIP_VERTICAL | SDL_FLIP_HORIZONTAL
+            SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL
     };
 
     SDL_RenderCopyEx(app.renderer,
                      texture,
                      &srcRect,
                      dst,
-                     0,
+                     rotation,
                      &center,
                      flipModes[flip]);
 }

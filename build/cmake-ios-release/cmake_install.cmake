@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kevin/Workspace/c/matcha
+# Install script for directory: /Users/kevin/Scratch/c/matcha
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kevin/Workspace/c/matcha/build/cmake-ios-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kevin/Scratch/c/matcha/build/cmake-ios-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -2,6 +2,7 @@
 #include <time.h>
 
 // Init
+void initLevel1(int l);
 static void initDots(void);
 static void logic(void);
 static void draw(void);
@@ -381,7 +382,7 @@ static void animateMoveTo(Dot *dot, float endX, float endY) {
   am->startY = dot->y;
   am->endX = endX;
   am->endY = endY;
-  am->duration = 130 + (rand() % 70);
+  am->duration = 180 + (rand() % 40);
   am->startTime = ticks;
 
   dot->animateMove = am;
@@ -492,59 +493,41 @@ static void initDots(void)
     distance = sqrt(pow(fx - ax, 2) + pow(fy - ay, 2) * 1.0);
   } while (distance < minDistance || distance > maxDistance);
 
-  // Food
-  animal = malloc(sizeof(Dot));
-  memset(animal, 0, sizeof(Dot));
-  animal->row = ax;
-  animal->col = ay;
-  gridToScreen(animal->row, animal->col, &animal->x, &animal->y);
-  animal->texture = dotTexture;
-  animal->icon = hogIdleSprite;
+  // set all the color dots
+    for(x = 0; x < level.w; x++) {
+        for(y = 0; y < level.h; y++) {
+            grid[x][y] = createDot(x, y);
+        }
+    }
 
-  animal->color = randomLevelColor();
-  animal->animateMove = NULL;
+    // check matches so the game doesn't start with falling dots.
+    int matches = checkMatches() ;
+    printf("Matches: %d\n", matches);
+    while(matches > 0) {
+        for (int x = 0; x < level.w; x++) {
+            for (int y = 0; y < level.h; y++) {
+                if (grid[x][y]->health == 0) {
+                    grid[x][y]->health = 1;
+                    grid[x][y]->color = randomLevelColor();
+                }
+            }
+        }
+        matches = checkMatches();
+        printf("Matches: %d\n", matches);
+    }
+
+  // Hog
+  animal = grid[ax][ay];
+  animal->icon = hogIdleSprite;
   animal->type = DOT_ANIMAL;
-  animal->health = 1;
-  grid[animal->row][animal->col] = animal;
 
   // Animal
-  food = malloc(sizeof(Dot));
-  memset(food, 0, sizeof(Dot));
-  food->row = fx;
-  food->col = fy;
-  gridToScreen(food->row, food->col, &food->x, &food->y);
-  food->texture = dotTexture;
+  food = grid[fx][fy];
   food->icon = foodSprite;
-  food->color = randomLevelColor();
-  food->animateMove = NULL;
   food->type = DOT_FOOD;
-  food->health = 1;
-  grid[food->row][food->col] = food;
 
+  // Set Goal, this draws the line between them.
   animal->goal = food;
-
-  for(x = 0; x < level.w; x++) {
-    for(y = 0; y < level.h; y++) {
-      if (!grid[x][y]) {
-        grid[x][y] = createDot(x, y);
-      }
-    }
-  }
-
-  int matches = checkMatches() ;
-  printf("Matches: %d\n", matches);
-  while(matches > 0) {
-    for (int x = 0; x < level.w; x++) {
-      for (int y = 0; y < level.h; y++) {
-        if (grid[x][y]->health == 0) {
-          grid[x][y]->health = 1;
-          grid[x][y]->color = randomLevelColor();
-        }
-      }
-    }
-    matches = checkMatches();
-    printf("Matches: %d\n", matches);
-  }
 }
 
 static Dot* createDot(int row, int col) {
@@ -560,7 +543,8 @@ static Dot* createDot(int row, int col) {
   d->animateMove = NULL;
   d->health = 1;
   d->type = DOT_DOT;
-  d->flip = rand() % 4;
+  d->flip = rand() % 4 - 1;
+  d->rotation = rand() % 360;
   return d;
 }
 
@@ -781,7 +765,7 @@ static void drawDot(Dot *dot) {
 
   // color and draw texture
   SDL_SetTextureColorMod(dot->texture, dot->color->r, dot->color->g, dot->color->b);
-  blitFitRot(dot->texture, &dst, dot->flip);
+  blitFitRot(dot->texture, &dst, dot->flip, dot->rotation);
 
   // draw icon if needed
   if (dot->icon) {

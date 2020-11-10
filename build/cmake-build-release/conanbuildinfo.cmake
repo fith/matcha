@@ -38,13 +38,13 @@ endmacro()
 #################
 ###  BZIP2
 #################
-set(CONAN_BZIP2_ROOT "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7")
-set(CONAN_INCLUDE_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include")
-set(CONAN_LIB_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib")
-set(CONAN_BIN_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/bin")
+set(CONAN_BZIP2_ROOT "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a")
+set(CONAN_INCLUDE_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include")
+set(CONAN_LIB_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib")
+set(CONAN_BIN_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin")
 set(CONAN_RES_DIRS_BZIP2 )
 set(CONAN_SRC_DIRS_BZIP2 )
-set(CONAN_BUILD_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/")
+set(CONAN_BUILD_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/")
 set(CONAN_FRAMEWORK_DIRS_BZIP2 )
 set(CONAN_LIBS_BZIP2 bz2)
 set(CONAN_PKG_LIBS_BZIP2 bz2)
@@ -76,14 +76,14 @@ set(CONAN_LIBS_BZIP2 ${CONAN_PKG_LIBS_BZIP2} ${CONAN_SYSTEM_LIBS_BZIP2} ${CONAN_
 #################
 ###  SDL2_IMAGE
 #################
-set(CONAN_SDL2_IMAGE_ROOT "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191")
-set(CONAN_INCLUDE_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib")
+set(CONAN_SDL2_IMAGE_ROOT "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63")
+set(CONAN_INCLUDE_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include"
+			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2")
+set(CONAN_LIB_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib")
 set(CONAN_BIN_DIRS_SDL2_IMAGE )
 set(CONAN_RES_DIRS_SDL2_IMAGE )
 set(CONAN_SRC_DIRS_SDL2_IMAGE )
-set(CONAN_BUILD_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/")
+set(CONAN_BUILD_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/")
 set(CONAN_FRAMEWORK_DIRS_SDL2_IMAGE )
 set(CONAN_LIBS_SDL2_IMAGE SDL2_image)
 set(CONAN_PKG_LIBS_SDL2_IMAGE SDL2_image)
@@ -115,14 +115,14 @@ set(CONAN_LIBS_SDL2_IMAGE ${CONAN_PKG_LIBS_SDL2_IMAGE} ${CONAN_SYSTEM_LIBS_SDL2_
 #################
 ###  SDL2_MIXER
 #################
-set(CONAN_SDL2_MIXER_ROOT "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f")
-set(CONAN_INCLUDE_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib")
+set(CONAN_SDL2_MIXER_ROOT "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c")
+set(CONAN_INCLUDE_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include"
+			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2")
+set(CONAN_LIB_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib")
 set(CONAN_BIN_DIRS_SDL2_MIXER )
 set(CONAN_RES_DIRS_SDL2_MIXER )
 set(CONAN_SRC_DIRS_SDL2_MIXER )
-set(CONAN_BUILD_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/")
+set(CONAN_BUILD_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/")
 set(CONAN_FRAMEWORK_DIRS_SDL2_MIXER )
 set(CONAN_LIBS_SDL2_MIXER sdl2_mixer)
 set(CONAN_PKG_LIBS_SDL2_MIXER sdl2_mixer)
@@ -154,13 +154,13 @@ set(CONAN_LIBS_SDL2_MIXER ${CONAN_PKG_LIBS_SDL2_MIXER} ${CONAN_SYSTEM_LIBS_SDL2_
 #################
 ###  LIBPNG
 #################
-set(CONAN_LIBPNG_ROOT "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf")
-set(CONAN_INCLUDE_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include")
-set(CONAN_LIB_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib")
-set(CONAN_BIN_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/bin")
+set(CONAN_LIBPNG_ROOT "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7")
+set(CONAN_INCLUDE_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include")
+set(CONAN_LIB_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib")
+set(CONAN_BIN_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin")
 set(CONAN_RES_DIRS_LIBPNG )
 set(CONAN_SRC_DIRS_LIBPNG )
-set(CONAN_BUILD_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/")
+set(CONAN_BUILD_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/")
 set(CONAN_FRAMEWORK_DIRS_LIBPNG )
 set(CONAN_LIBS_LIBPNG png16)
 set(CONAN_PKG_LIBS_LIBPNG png16)
@@ -192,14 +192,14 @@ set(CONAN_LIBS_LIBPNG ${CONAN_PKG_LIBS_LIBPNG} ${CONAN_SYSTEM_LIBS_LIBPNG} ${CON
 #################
 ###  SDL2
 #################
-set(CONAN_SDL2_ROOT "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0")
-set(CONAN_INCLUDE_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib")
-set(CONAN_BIN_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/bin")
+set(CONAN_SDL2_ROOT "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830")
+set(CONAN_INCLUDE_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2")
+set(CONAN_LIB_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib")
+set(CONAN_BIN_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin")
 set(CONAN_RES_DIRS_SDL2 )
 set(CONAN_SRC_DIRS_SDL2 )
-set(CONAN_BUILD_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/")
+set(CONAN_BUILD_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/")
 set(CONAN_FRAMEWORK_DIRS_SDL2 )
 set(CONAN_LIBS_SDL2 SDL2main SDL2)
 set(CONAN_PKG_LIBS_SDL2 SDL2main SDL2)
@@ -231,13 +231,13 @@ set(CONAN_LIBS_SDL2 ${CONAN_PKG_LIBS_SDL2} ${CONAN_SYSTEM_LIBS_SDL2} ${CONAN_FRA
 #################
 ###  VORBIS
 #################
-set(CONAN_VORBIS_ROOT "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470")
-set(CONAN_INCLUDE_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include")
-set(CONAN_LIB_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib")
+set(CONAN_VORBIS_ROOT "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b")
+set(CONAN_INCLUDE_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include")
+set(CONAN_LIB_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib")
 set(CONAN_BIN_DIRS_VORBIS )
 set(CONAN_RES_DIRS_VORBIS )
 set(CONAN_SRC_DIRS_VORBIS )
-set(CONAN_BUILD_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/")
+set(CONAN_BUILD_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/")
 set(CONAN_FRAMEWORK_DIRS_VORBIS )
 set(CONAN_LIBS_VORBIS vorbisenc vorbisfile vorbis)
 set(CONAN_PKG_LIBS_VORBIS vorbisenc vorbisfile vorbis)
@@ -269,13 +269,13 @@ set(CONAN_LIBS_VORBIS ${CONAN_PKG_LIBS_VORBIS} ${CONAN_SYSTEM_LIBS_VORBIS} ${CON
 #################
 ###  ZLIB
 #################
-set(CONAN_ZLIB_ROOT "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47")
-set(CONAN_INCLUDE_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include")
-set(CONAN_LIB_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib")
+set(CONAN_ZLIB_ROOT "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
+set(CONAN_INCLUDE_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
+set(CONAN_LIB_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
 set(CONAN_BIN_DIRS_ZLIB )
 set(CONAN_RES_DIRS_ZLIB )
 set(CONAN_SRC_DIRS_ZLIB )
-set(CONAN_BUILD_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/")
+set(CONAN_BUILD_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
 set(CONAN_FRAMEWORK_DIRS_ZLIB )
 set(CONAN_LIBS_ZLIB z)
 set(CONAN_PKG_LIBS_ZLIB z)
@@ -307,13 +307,13 @@ set(CONAN_LIBS_ZLIB ${CONAN_PKG_LIBS_ZLIB} ${CONAN_SYSTEM_LIBS_ZLIB} ${CONAN_FRA
 #################
 ###  LIBICONV
 #################
-set(CONAN_LIBICONV_ROOT "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47")
-set(CONAN_INCLUDE_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include")
-set(CONAN_LIB_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib")
-set(CONAN_BIN_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/bin")
+set(CONAN_LIBICONV_ROOT "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
+set(CONAN_INCLUDE_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
+set(CONAN_LIB_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
+set(CONAN_BIN_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin")
 set(CONAN_RES_DIRS_LIBICONV )
 set(CONAN_SRC_DIRS_LIBICONV )
-set(CONAN_BUILD_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/")
+set(CONAN_BUILD_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
 set(CONAN_FRAMEWORK_DIRS_LIBICONV )
 set(CONAN_LIBS_LIBICONV iconv charset)
 set(CONAN_PKG_LIBS_LIBICONV iconv charset)
@@ -345,13 +345,13 @@ set(CONAN_LIBS_LIBICONV ${CONAN_PKG_LIBS_LIBICONV} ${CONAN_SYSTEM_LIBS_LIBICONV}
 #################
 ###  OGG
 #################
-set(CONAN_OGG_ROOT "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47")
-set(CONAN_INCLUDE_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include")
-set(CONAN_LIB_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib")
+set(CONAN_OGG_ROOT "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
+set(CONAN_INCLUDE_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
+set(CONAN_LIB_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
 set(CONAN_BIN_DIRS_OGG )
 set(CONAN_RES_DIRS_OGG )
 set(CONAN_SRC_DIRS_OGG )
-set(CONAN_BUILD_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/")
+set(CONAN_BUILD_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
 set(CONAN_FRAMEWORK_DIRS_OGG )
 set(CONAN_LIBS_OGG ogg)
 set(CONAN_PKG_LIBS_OGG ogg)
@@ -389,7 +389,7 @@ set(CONAN_SETTINGS_ARCH "x86_64")
 set(CONAN_SETTINGS_BUILD_TYPE "Release")
 set(CONAN_SETTINGS_COMPILER "apple-clang")
 set(CONAN_SETTINGS_COMPILER_LIBCXX "libc++")
-set(CONAN_SETTINGS_COMPILER_VERSION "11.0")
+set(CONAN_SETTINGS_COMPILER_VERSION "12.0")
 set(CONAN_SETTINGS_OS "Macos")
 
 set(CONAN_DEPENDENCIES bzip2 sdl2_image sdl2_mixer libpng sdl2 vorbis zlib libiconv ogg)
@@ -400,31 +400,31 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/include"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/include/SDL2"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/include/SDL2"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/include"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/include/SDL2"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/include"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/lib"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/lib"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/lib"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/lib"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/lib"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/lib"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib" ${CONAN_LIB_DIRS})
-set(CONAN_BIN_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/bin"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/bin"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/bin"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/bin" ${CONAN_BIN_DIRS})
+set(CONAN_INCLUDE_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include"
+			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include"
+			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2"
+			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include"
+			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2"
+			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2"
+			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include"
+			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include"
+			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include"
+			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib"
+			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib"
+			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib"
+			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib"
+			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib"
+			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib"
+			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib"
+			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib" ${CONAN_LIB_DIRS})
+set(CONAN_BIN_DIRS "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin"
+			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin"
+			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS  ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
 set(CONAN_LIBS bz2 SDL2_image sdl2_mixer png16 SDL2main SDL2 vorbisenc vorbisfile vorbis z iconv charset ogg ${CONAN_LIBS})
@@ -434,15 +434,15 @@ set(CONAN_FRAMEWORKS Cocoa Carbon IOKit CoreVideo CoreAudio AudioToolbox ForceFe
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
 set(CONAN_DEFINES  ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/32bef4803d4b079e983ecb27f105881e778bc5a7/"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/93b6dc4496956c035717b8a73ec73386cc341191/"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/677b42a2350052a6fb17a28f0a5e1a3bd0c8fd6f/"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/eb50d18a5a5d59bd0c332464a4c348ab65e353bf/"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/116150348d24360f383034e4bb1f7d2ca5996cc0/"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/853d5de4ab49af74d80696ea461b3783627bc470/"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/" ${CONAN_CMAKE_MODULE_PATH})
+set(CONAN_CMAKE_MODULE_PATH "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/"
+			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/"
+			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/"
+			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/"
+			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/"
+			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/"
+			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/"
+			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/"
+			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
