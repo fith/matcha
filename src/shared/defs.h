@@ -70,6 +70,14 @@ enum DotTypes {
     DOT_FOOD
 };
 
+enum PieceTypes {
+    P_NONE,
+    P_HEDGEHOG,
+    P_SANDWICH,
+    P_FOX,
+    P_SQUIRREL
+};
+
 enum DotColors {
     COL_RED,
     COL_ORANGE,

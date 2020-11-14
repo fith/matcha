@@ -5,6 +5,7 @@
 
 // typedef struct Entity Entity;
 typedef struct Dot Dot;
+typedef struct Piece Piece;
 typedef struct Font Font;
 typedef struct Button Button;
 typedef struct UI UI;
@@ -53,10 +54,24 @@ struct Level {
     SDL_Color *colors[GAME_COLORS];
 };
 
-//struct Board {
-//  int w, h;
-//  Dot *dots;
-//};
+struct Board {
+  int w, h;
+  int ncolors;
+  int npieces;
+  int colors[];
+  Piece *pieces[];
+};
+
+struct Piece {
+    int color;
+    int type;
+    int goalType;
+    int moving;
+};
+
+struct Match {
+    Piece *pieces[];
+};
 
 struct Dot {
   SDL_Texture *texture;
