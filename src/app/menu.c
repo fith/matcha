@@ -39,12 +39,12 @@ void initMenu(void)
 
   transition = NONE;
 
-  createButton("START", 345, 476, 1, buttonStart);
-  createButton("?", 16, 540, 1, buttonOptions);
-  createButton("X", 760, 8, 1, buttonExit);
+  createButton("START", 360, 476, 1, buttonStart);
+  createButton("?", 16, 550, 1, buttonOptions);
+  createButton("X", 764, 8, 1, buttonExit);
 
-    createButton("-", 312, 385, 0, levelDown);
-    createButton("+", 468, 387, 0, levelUp);
+    createButton("-", 312, 392, 0, levelDown);
+    createButton("+", 470, 394, 0, levelUp);
 }
 
 static void logic(void)
@@ -72,16 +72,16 @@ static void levelDown() {
 
 static void draw(void)
 {
-  drawTextCenter(FNT_HEAD, app.screenW/2, 94, "MATCHA");
+  drawTextCenter(FNT_HEAD, app.screenW/2, 72, "MATCHA");
   drawTextCenter(FNT_BODY, app.screenW/2, 228, "Hog & Sandwich");
 
   drawDots();
 
   int l = app.level;
   if (l < num_levels) {
-      drawTextCenter(FNT_BODY, 400, 389, "%i", l);
+      drawTextCenter(FNT_BODY, 400, 396, "%i", l);
   } else {
-      drawTextCenter(FNT_BODY, 400, 389, "!");
+      drawTextCenter(FNT_BODY, 400, 396, "!");
   }
 
   drawButtons();

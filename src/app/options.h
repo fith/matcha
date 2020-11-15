@@ -9,7 +9,8 @@ extern SDL_Texture *loadTexture(char *filename);
 
 // text.c
 extern void drawText(int font, int x, int y, char *format, ...);
-SDL_Texture* textTexture(int font, char *format, ...);
+extern void drawTextCenter(int font, int x, int y, char *format, ...);
+extern SDL_Texture* textTexture(int font, char *format, ...);
 
 // sound.c 
 extern void stopMusic(void);

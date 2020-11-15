@@ -61,7 +61,7 @@ void initOptions(void)
                         (SDL_Color){211, 44, 44},
                         (SDL_Color){255, 240, 220},
                         16,
-                        540,
+                        550,
                         clickBackButton,
                         NULL); // Fullscreen
 
@@ -200,7 +200,7 @@ static void toggleFilm(void) {
 }
 
 static void draw(void) {
-  drawText(FNT_HEAD, 127, 94, "OPTIONS");
+    drawTextCenter(FNT_HEAD, app.screenW/2, 72, "OPTIONS");
 
   drawButtons();
 

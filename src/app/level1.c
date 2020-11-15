@@ -233,7 +233,7 @@ void initLevel1(int l)
     foodSprite->color = &colorWhite;
   }
 
-  createButton("<", 16, 540, backButton);
+  createButton("<", 16, 550, backButton);
 
   initDots();
 }
@@ -439,7 +439,7 @@ static void drawWin(void) {
   Uint32 seconds = 1 + (gameOverTime - startTime) / 1000;
   // int minutes = gameOverTime / 60;
   Uint32 hiscore = (score * score) / seconds ;
-  drawTextCenter(FNT_HEAD, app.screenW/2, 94, "MATCHA");
+    drawTextCenter(FNT_HEAD, app.screenW/2, 72, "MATCHA");
   // drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
   drawTextCenter(FNT_BODY, app.screenW/2, 228, "Final Score: %d", hiscore);
 }

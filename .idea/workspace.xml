@@ -32,13 +32,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f9106697-eb8e-40c2-b257-b16f3b72257d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conan.lock" beforeDir="false" afterPath="$PROJECT_DIR$/conan.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conanbuildinfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/conanbuildinfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conanbuildinfo.gcc" beforeDir="false" afterPath="$PROJECT_DIR$/conanbuildinfo.gcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conanbuildinfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/conanbuildinfo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conanfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/conanfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conaninfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/conaninfo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/graph_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/level1.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/level1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/options.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/options.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/options.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/options.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +92,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-Visual Studio" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/lib/stb" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jiiIc5myOW2ZwYsmuunoZkMqv8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -182,10 +179,10 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="853" y="356" width="819" height="835" key="FileChooserDialogImpl/0.0.2560.1409@0.0.2560.1409" timestamp="1605423919912" />
-    <state width="2517" height="400" key="GridCell.Tab.0.bottom" timestamp="1605426625937">
+    <state width="2517" height="396" key="GridCell.Tab.0.bottom" timestamp="1605427640390">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1409@0.0.2560.1409" timestamp="1605426625937" />
+    <state width="2517" height="396" key="GridCell.Tab.0.bottom/0.0.2560.1409@0.0.2560.1409" timestamp="1605427640390" />
     <state width="1501" height="308" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134058" />
     <state width="1127" height="308" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.23.1920.1113" timestamp="1604911474728" />
     <state width="1521" height="526" key="GridCell.Tab.0.bottom/72.25.3128.1775@72.25.3128.1775" timestamp="1604872520920" />
@@ -193,10 +190,10 @@
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987648" />
     <state width="2060" height="642" key="GridCell.Tab.0.bottom/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021420" />
     <state width="1521" height="526" key="GridCell.Tab.0.bottom/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="2517" height="400" key="GridCell.Tab.0.center" timestamp="1605426625937">
+    <state width="2517" height="396" key="GridCell.Tab.0.center" timestamp="1605427640390">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.center/0.0.2560.1409@0.0.2560.1409" timestamp="1605426625937" />
+    <state width="2517" height="396" key="GridCell.Tab.0.center/0.0.2560.1409@0.0.2560.1409" timestamp="1605427640390" />
     <state width="1501" height="308" key="GridCell.Tab.0.center/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134034" />
     <state width="1127" height="308" key="GridCell.Tab.0.center/0.23.1920.1113@0.23.1920.1113" timestamp="1604911474727" />
     <state width="1521" height="526" key="GridCell.Tab.0.center/72.25.3128.1775@72.25.3128.1775" timestamp="1604872520920" />
@@ -204,21 +201,21 @@
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.center/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
     <state width="1521" height="526" key="GridCell.Tab.0.center/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="2517" height="400" key="GridCell.Tab.0.left" timestamp="1605426625937">
+    <state width="2517" height="396" key="GridCell.Tab.0.left" timestamp="1605427640390">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1501" height="271" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1604481497280" />
-    <state width="2517" height="400" key="GridCell.Tab.0.left/0.0.2560.1409@0.0.2560.1409" timestamp="1605426625937" />
+    <state width="2517" height="396" key="GridCell.Tab.0.left/0.0.2560.1409@0.0.2560.1409" timestamp="1605427640390" />
     <state width="1127" height="308" key="GridCell.Tab.0.left/0.23.1920.1113@0.23.1920.1113" timestamp="1604911474727" />
     <state width="1521" height="526" key="GridCell.Tab.0.left/72.25.3128.1775@72.25.3128.1775" timestamp="1604872520919" />
     <state width="1458" height="526" key="GridCell.Tab.0.left/74.25.3126.1775@74.25.3126.1775" timestamp="1604972667860" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/74.25.3126.1775@74.25.3126.1775" timestamp="1604527987647" />
     <state width="2060" height="642" key="GridCell.Tab.0.left/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604532021419" />
     <state width="1521" height="526" key="GridCell.Tab.0.left/75.25.3125.1775@75.25.3125.1775" timestamp="1604604313471" />
-    <state width="2517" height="400" key="GridCell.Tab.0.right" timestamp="1605426625937">
+    <state width="2517" height="396" key="GridCell.Tab.0.right" timestamp="1605427640390">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.2560.1409@0.0.2560.1409" timestamp="1605426625937" />
+    <state width="2517" height="396" key="GridCell.Tab.0.right/0.0.2560.1409@0.0.2560.1409" timestamp="1605427640390" />
     <state width="1501" height="308" key="GridCell.Tab.0.right/0.23.1920.1113@0.0.1920.1200" timestamp="1604562134057" />
     <state width="1127" height="308" key="GridCell.Tab.0.right/0.23.1920.1113@0.23.1920.1113" timestamp="1604911474728" />
     <state width="1521" height="526" key="GridCell.Tab.0.right/72.25.3128.1775@72.25.3128.1775" timestamp="1604872520920" />
