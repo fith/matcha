@@ -3,132 +3,58 @@
   "nodes": {
    "0": {
     "ref": "Matcha/0.1",
-    "options": "bzip2:build_executable=True\nbzip2:fPIC=True\nbzip2:shared=False\nfreetype:fPIC=True\nfreetype:shared=False\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nlibiconv:fPIC=True\nlibiconv:shared=False\nlibpng:api_prefix=None\nlibpng:fPIC=True\nlibpng:shared=False\nogg:fPIC=True\nogg:shared=False\nsdl2:fPIC=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nsdl2_image:bmp=False\nsdl2_image:fPIC=True\nsdl2_image:gif=False\nsdl2_image:imageio=False\nsdl2_image:jpg=False\nsdl2_image:lbm=False\nsdl2_image:pcx=False\nsdl2_image:png=True\nsdl2_image:pnm=False\nsdl2_image:shared=False\nsdl2_image:svg=False\nsdl2_image:tga=False\nsdl2_image:tif=False\nsdl2_image:webp=False\nsdl2_image:xcf=False\nsdl2_image:xpm=False\nsdl2_image:xv=False\nsdl2_mixer:cmd=False\nsdl2_mixer:fPIC=False\nsdl2_mixer:flac=False\nsdl2_mixer:fluidsynth=False\nsdl2_mixer:mad=False\nsdl2_mixer:mikmod=False\nsdl2_mixer:modplug=False\nsdl2_mixer:mpg123=False\nsdl2_mixer:nativemidi=False\nsdl2_mixer:ogg=True\nsdl2_mixer:opus=False\nsdl2_mixer:shared=False\nsdl2_mixer:wav=True\nsdl2_ttf:fPIC=True\nsdl2_ttf:shared=False\nvorbis:fPIC=True\nvorbis:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False",
+    "options": "libiconv:shared=False\nogg:shared=False\nsdl2:directx=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nsdl2_mixer:cmd=False\nsdl2_mixer:flac=False\nsdl2_mixer:fluidsynth=False\nsdl2_mixer:mad=False\nsdl2_mixer:mikmod=False\nsdl2_mixer:modplug=False\nsdl2_mixer:mpg123=False\nsdl2_mixer:nativemidi=False\nsdl2_mixer:ogg=True\nsdl2_mixer:opus=False\nsdl2_mixer:shared=False\nsdl2_mixer:wav=True\nvorbis:shared=False",
     "requires": [
      "1",
-     "2",
-     "3",
-     "4",
-     "6",
-     "7",
-     "9"
+     "3"
     ],
     "path": "conanfile.py",
     "context": "host"
    },
    "1": {
-    "ref": "zlib/1.2.11",
-    "options": "fPIC=True\nminizip=False\nshared=False",
-    "package_id": "647afeb69d3b0a2d3d316e80b24d38c714cc6900",
-    "prev": "0",
-    "modified": true,
-    "context": "host"
-   },
-   "2": {
-    "ref": "bzip2/1.0.8",
-    "options": "build_executable=True\nfPIC=True\nshared=False",
-    "package_id": "75fe66fbfe61230e9fcbb361f13b6b3baa483e0a",
-    "prev": "0",
-    "modified": true,
-    "context": "host"
-   },
-   "3": {
-    "ref": "libpng/1.6.37@bincrafters/stable",
-    "options": "api_prefix=None\nfPIC=True\nshared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False",
-    "package_id": "88955cec2844f731470e07bd44ce5a3a24ec88b7",
-    "prev": "0",
-    "modified": true,
-    "requires": [
-     "1"
-    ],
-    "context": "host"
-   },
-   "4": {
     "ref": "sdl2/2.0.12@bincrafters/stable",
-    "options": "fPIC=True\niconv=True\nopengl=True\nopengles=True\nsdl2main=True\nshared=False\nlibiconv:fPIC=True\nlibiconv:shared=False",
-    "package_id": "41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830",
+    "options": "directx=True\niconv=True\nopengl=True\nopengles=True\nsdl2main=True\nshared=False\nlibiconv:shared=False",
+    "package_id": "8e5eca78c5da130b45db683b45b8215189d8004c",
     "prev": "0",
-    "modified": true,
     "requires": [
-     "5"
-    ],
-    "context": "host"
-   },
-   "5": {
-    "ref": "libiconv/1.16",
-    "options": "fPIC=True\nshared=False",
-    "package_id": "647afeb69d3b0a2d3d316e80b24d38c714cc6900",
-    "prev": "0",
-    "modified": true,
-    "context": "host"
-   },
-   "6": {
-    "ref": "sdl2_image/2.0.5@bincrafters/stable",
-    "options": "bmp=False\nfPIC=True\ngif=False\nimageio=False\njpg=False\nlbm=False\npcx=False\npng=True\npnm=False\nshared=False\nsvg=False\ntga=False\ntif=False\nwebp=False\nxcf=False\nxpm=False\nxv=False\nlibiconv:fPIC=True\nlibiconv:shared=False\nlibpng:api_prefix=None\nlibpng:fPIC=True\nlibpng:shared=False\nsdl2:fPIC=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False",
-    "package_id": "930c6ce00db535b9fd2bfaa5e146285e2436dc63",
-    "prev": "0",
-    "modified": true,
-    "requires": [
-     "4",
-     "3",
-     "1"
-    ],
-    "context": "host"
-   },
-   "7": {
-    "ref": "sdl2_ttf/2.0.15@bincrafters/stable",
-    "options": "fPIC=True\nshared=False\nbzip2:build_executable=True\nbzip2:fPIC=True\nbzip2:shared=False\nfreetype:fPIC=True\nfreetype:shared=False\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nlibiconv:fPIC=True\nlibiconv:shared=False\nlibpng:api_prefix=None\nlibpng:fPIC=True\nlibpng:shared=False\nsdl2:fPIC=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False",
-    "package_id": "4210c4876e57d10e20ba8f92d97748a50ed728a8",
-    "prev": "0",
-    "modified": true,
-    "requires": [
-     "8",
-     "4"
-    ],
-    "context": "host"
-   },
-   "8": {
-    "ref": "freetype/2.9.1@bincrafters/stable",
-    "options": "fPIC=True\nshared=False\nwith_bzip2=True\nwith_png=True\nwith_zlib=True\nbzip2:build_executable=True\nbzip2:fPIC=True\nbzip2:shared=False\nlibpng:api_prefix=None\nlibpng:fPIC=True\nlibpng:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False",
-    "package_id": "42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6",
-    "prev": "0",
-    "modified": true,
-    "requires": [
-     "3",
-     "1",
      "2"
     ],
     "context": "host"
    },
-   "9": {
+   "2": {
+    "ref": "libiconv/1.16",
+    "options": "shared=False",
+    "package_id": "3fb49604f9c2f729b85ba3115852006824e72cab",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
     "ref": "sdl2_mixer/2.0.4@bincrafters/stable",
-    "options": "cmd=False\nfPIC=False\nflac=False\nfluidsynth=False\nmad=False\nmikmod=False\nmodplug=False\nmpg123=False\nnativemidi=False\nogg=True\nopus=False\nshared=False\nwav=True\nlibiconv:fPIC=True\nlibiconv:shared=False\nogg:fPIC=True\nogg:shared=False\nsdl2:fPIC=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nvorbis:fPIC=True\nvorbis:shared=False",
-    "package_id": "7e2fef6e2171b578d5cb2b41b0762f150fb66b7c",
+    "options": "cmd=False\nflac=False\nfluidsynth=False\nmad=False\nmikmod=False\nmodplug=False\nmpg123=False\nnativemidi=False\nogg=True\nopus=False\nshared=False\nwav=True\nlibiconv:shared=False\nogg:shared=False\nsdl2:directx=True\nsdl2:iconv=True\nsdl2:opengl=True\nsdl2:opengles=True\nsdl2:sdl2main=True\nsdl2:shared=False\nvorbis:shared=False",
+    "package_id": "0e074b830d0cda724e2e1f52b1808f42174c7aa1",
     "prev": "0",
     "modified": true,
     "requires": [
+     "1",
      "4",
-     "10",
-     "11"
+     "5"
     ],
     "context": "host"
    },
-   "10": {
+   "4": {
     "ref": "ogg/1.3.4",
-    "options": "fPIC=True\nshared=False",
-    "package_id": "647afeb69d3b0a2d3d316e80b24d38c714cc6900",
+    "options": "shared=False",
+    "package_id": "3fb49604f9c2f729b85ba3115852006824e72cab",
     "prev": "0",
-    "modified": true,
     "context": "host"
    },
-   "11": {
+   "5": {
     "ref": "vorbis/1.3.6",
-    "options": "fPIC=True\nshared=False\nogg:fPIC=True\nogg:shared=False",
-    "package_id": "f3d27e66931814996d5618e827338786b77d4b6b",
+    "options": "shared=False\nogg:shared=False",
+    "package_id": "becff00909fb3d957c6b4ca60fa64d4e6a32a540",
     "prev": "0",
-    "modified": true,
     "requires": [
-     "10"
+     "4"
     ],
     "context": "host"
    }
@@ -136,5 +62,5 @@
   "revisions_enabled": false
  },
  "version": "0.4",
- "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=apple-clang\ncompiler.libcxx=libc++\ncompiler.version=12.0\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\n"
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=Visual Studio\ncompiler.runtime=MD\ncompiler.version=16\nos=Windows\nos_build=Windows\n[options]\n[build_requires]\n[env]\n"
 }

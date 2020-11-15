@@ -10,26 +10,9 @@ class MatchaConan(ConanFile):
     build_policy = "missing"
 
     def configure(self):
-        # self.options["sdl2_image"].bmp = False
-        # self.options["sdl2_image"].gif = False
-        # self.options["sdl2_image"].lbm = False
-        # self.options["sdl2_image"].pcx = False
-        # self.options["sdl2_image"].pnm = False
-        # self.options["sdl2_image"].svg = False
-        # self.options["sdl2_image"].tga = False
-        # self.options["sdl2_image"].xcf = False
-        # self.options["sdl2_image"].xpm = False
-        # self.options["sdl2_image"].xv = False
-        # self.options["sdl2_image"].jpg = False
-        # self.options["sdl2_image"].tif = False
-        # self.options["sdl2_image"].png = True
-        # self.options["sdl2_image"].webp = False
-        # self.options["sdl2_image"].imageio = False
-
         self.options["sdl2_mixer"].shared = False
-        self.options["sdl2_mixer"].fPIC = False
         self.options["sdl2_mixer"].cmd = False
-        self.options["sdl2_mixer"].wav = True
+        self.options["sdl2_mixer"].wav = False
         self.options["sdl2_mixer"].flac = False
         self.options["sdl2_mixer"].mpg123 = False
         self.options["sdl2_mixer"].mad = False

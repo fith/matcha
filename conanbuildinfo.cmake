@@ -36,94 +36,16 @@ endmacro()
 
 
 #################
-###  SDL2_IMAGE
-#################
-set(CONAN_SDL2_IMAGE_ROOT "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63")
-set(CONAN_INCLUDE_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib")
-set(CONAN_BIN_DIRS_SDL2_IMAGE )
-set(CONAN_RES_DIRS_SDL2_IMAGE )
-set(CONAN_SRC_DIRS_SDL2_IMAGE )
-set(CONAN_BUILD_DIRS_SDL2_IMAGE "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/")
-set(CONAN_FRAMEWORK_DIRS_SDL2_IMAGE )
-set(CONAN_LIBS_SDL2_IMAGE SDL2_image)
-set(CONAN_PKG_LIBS_SDL2_IMAGE SDL2_image)
-set(CONAN_SYSTEM_LIBS_SDL2_IMAGE )
-set(CONAN_FRAMEWORKS_SDL2_IMAGE )
-set(CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE "")  # Will be filled later
-set(CONAN_DEFINES_SDL2_IMAGE )
-set(CONAN_BUILD_MODULES_PATHS_SDL2_IMAGE )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE )
-
-set(CONAN_C_FLAGS_SDL2_IMAGE "")
-set(CONAN_CXX_FLAGS_SDL2_IMAGE "")
-set(CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE "")
-set(CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_SDL2_IMAGE_LIST "")
-set(CONAN_CXX_FLAGS_SDL2_IMAGE_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE "${CONAN_FRAMEWORKS_SDL2_IMAGE}" "_SDL2_IMAGE" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_SDL2_IMAGE ${CONAN_PKG_LIBS_SDL2_IMAGE} ${CONAN_SYSTEM_LIBS_SDL2_IMAGE} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE})
-
-
-#################
-###  SDL2_TTF
-#################
-set(CONAN_SDL2_TTF_ROOT "/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8")
-set(CONAN_INCLUDE_DIRS_SDL2_TTF "/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include"
-			"/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2_TTF "/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/lib")
-set(CONAN_BIN_DIRS_SDL2_TTF )
-set(CONAN_RES_DIRS_SDL2_TTF )
-set(CONAN_SRC_DIRS_SDL2_TTF )
-set(CONAN_BUILD_DIRS_SDL2_TTF "/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/")
-set(CONAN_FRAMEWORK_DIRS_SDL2_TTF )
-set(CONAN_LIBS_SDL2_TTF SDL2_ttf)
-set(CONAN_PKG_LIBS_SDL2_TTF SDL2_ttf)
-set(CONAN_SYSTEM_LIBS_SDL2_TTF )
-set(CONAN_FRAMEWORKS_SDL2_TTF )
-set(CONAN_FRAMEWORKS_FOUND_SDL2_TTF "")  # Will be filled later
-set(CONAN_DEFINES_SDL2_TTF )
-set(CONAN_BUILD_MODULES_PATHS_SDL2_TTF )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_SDL2_TTF )
-
-set(CONAN_C_FLAGS_SDL2_TTF "")
-set(CONAN_CXX_FLAGS_SDL2_TTF "")
-set(CONAN_SHARED_LINKER_FLAGS_SDL2_TTF "")
-set(CONAN_EXE_LINKER_FLAGS_SDL2_TTF "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_SDL2_TTF_LIST "")
-set(CONAN_CXX_FLAGS_SDL2_TTF_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_SDL2_TTF_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_SDL2_TTF "${CONAN_FRAMEWORKS_SDL2_TTF}" "_SDL2_TTF" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_SDL2_TTF ${CONAN_PKG_LIBS_SDL2_TTF} ${CONAN_SYSTEM_LIBS_SDL2_TTF} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF})
-
-
-#################
 ###  SDL2_MIXER
 #################
-set(CONAN_SDL2_MIXER_ROOT "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c")
-set(CONAN_INCLUDE_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib")
+set(CONAN_SDL2_MIXER_ROOT "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1")
+set(CONAN_INCLUDE_DIRS_SDL2_MIXER "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include"
+			"C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include/SDL2")
+set(CONAN_LIB_DIRS_SDL2_MIXER "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/lib")
 set(CONAN_BIN_DIRS_SDL2_MIXER )
 set(CONAN_RES_DIRS_SDL2_MIXER )
 set(CONAN_SRC_DIRS_SDL2_MIXER )
-set(CONAN_BUILD_DIRS_SDL2_MIXER "/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/")
+set(CONAN_BUILD_DIRS_SDL2_MIXER "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/")
 set(CONAN_FRAMEWORK_DIRS_SDL2_MIXER )
 set(CONAN_LIBS_SDL2_MIXER sdl2_mixer)
 set(CONAN_PKG_LIBS_SDL2_MIXER sdl2_mixer)
@@ -155,19 +77,19 @@ set(CONAN_LIBS_SDL2_MIXER ${CONAN_PKG_LIBS_SDL2_MIXER} ${CONAN_SYSTEM_LIBS_SDL2_
 #################
 ###  SDL2
 #################
-set(CONAN_SDL2_ROOT "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830")
-set(CONAN_INCLUDE_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2")
-set(CONAN_LIB_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib")
-set(CONAN_BIN_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin")
+set(CONAN_SDL2_ROOT "C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c")
+set(CONAN_INCLUDE_DIRS_SDL2 "C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include"
+			"C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include/SDL2")
+set(CONAN_LIB_DIRS_SDL2 "C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/lib")
+set(CONAN_BIN_DIRS_SDL2 )
 set(CONAN_RES_DIRS_SDL2 )
 set(CONAN_SRC_DIRS_SDL2 )
-set(CONAN_BUILD_DIRS_SDL2 "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/")
+set(CONAN_BUILD_DIRS_SDL2 "C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/")
 set(CONAN_FRAMEWORK_DIRS_SDL2 )
 set(CONAN_LIBS_SDL2 SDL2main SDL2)
 set(CONAN_PKG_LIBS_SDL2 SDL2main SDL2)
-set(CONAN_SYSTEM_LIBS_SDL2 )
-set(CONAN_FRAMEWORKS_SDL2 Cocoa Carbon IOKit CoreVideo CoreAudio AudioToolbox ForceFeedback)
+set(CONAN_SYSTEM_LIBS_SDL2 user32 gdi32 winmm imm32 ole32 oleaut32 version uuid advapi32 setupapi shell32)
+set(CONAN_FRAMEWORKS_SDL2 )
 set(CONAN_FRAMEWORKS_FOUND_SDL2 "")  # Will be filled later
 set(CONAN_DEFINES_SDL2 )
 set(CONAN_BUILD_MODULES_PATHS_SDL2 )
@@ -192,54 +114,15 @@ set(CONAN_LIBS_SDL2 ${CONAN_PKG_LIBS_SDL2} ${CONAN_SYSTEM_LIBS_SDL2} ${CONAN_FRA
 
 
 #################
-###  FREETYPE
-#################
-set(CONAN_FREETYPE_ROOT "/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6")
-set(CONAN_INCLUDE_DIRS_FREETYPE "/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include/freetype2")
-set(CONAN_LIB_DIRS_FREETYPE "/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/lib")
-set(CONAN_BIN_DIRS_FREETYPE "/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin")
-set(CONAN_RES_DIRS_FREETYPE )
-set(CONAN_SRC_DIRS_FREETYPE )
-set(CONAN_BUILD_DIRS_FREETYPE "/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/")
-set(CONAN_FRAMEWORK_DIRS_FREETYPE )
-set(CONAN_LIBS_FREETYPE freetype)
-set(CONAN_PKG_LIBS_FREETYPE freetype)
-set(CONAN_SYSTEM_LIBS_FREETYPE )
-set(CONAN_FRAMEWORKS_FREETYPE )
-set(CONAN_FRAMEWORKS_FOUND_FREETYPE "")  # Will be filled later
-set(CONAN_DEFINES_FREETYPE )
-set(CONAN_BUILD_MODULES_PATHS_FREETYPE )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_FREETYPE )
-
-set(CONAN_C_FLAGS_FREETYPE "")
-set(CONAN_CXX_FLAGS_FREETYPE "")
-set(CONAN_SHARED_LINKER_FLAGS_FREETYPE "")
-set(CONAN_EXE_LINKER_FLAGS_FREETYPE "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_FREETYPE_LIST "")
-set(CONAN_CXX_FLAGS_FREETYPE_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_FREETYPE_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_FREETYPE_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_FREETYPE "${CONAN_FRAMEWORKS_FREETYPE}" "_FREETYPE" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_FREETYPE ${CONAN_PKG_LIBS_FREETYPE} ${CONAN_SYSTEM_LIBS_FREETYPE} ${CONAN_FRAMEWORKS_FOUND_FREETYPE})
-
-
-#################
 ###  VORBIS
 #################
-set(CONAN_VORBIS_ROOT "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b")
-set(CONAN_INCLUDE_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include")
-set(CONAN_LIB_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib")
+set(CONAN_VORBIS_ROOT "C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540")
+set(CONAN_INCLUDE_DIRS_VORBIS "C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/include")
+set(CONAN_LIB_DIRS_VORBIS "C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/lib")
 set(CONAN_BIN_DIRS_VORBIS )
 set(CONAN_RES_DIRS_VORBIS )
 set(CONAN_SRC_DIRS_VORBIS )
-set(CONAN_BUILD_DIRS_VORBIS "/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/")
+set(CONAN_BUILD_DIRS_VORBIS "C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/")
 set(CONAN_FRAMEWORK_DIRS_VORBIS )
 set(CONAN_LIBS_VORBIS vorbisenc vorbisfile vorbis)
 set(CONAN_PKG_LIBS_VORBIS vorbisenc vorbisfile vorbis)
@@ -269,91 +152,15 @@ set(CONAN_LIBS_VORBIS ${CONAN_PKG_LIBS_VORBIS} ${CONAN_SYSTEM_LIBS_VORBIS} ${CON
 
 
 #################
-###  BZIP2
-#################
-set(CONAN_BZIP2_ROOT "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a")
-set(CONAN_INCLUDE_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include")
-set(CONAN_LIB_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib")
-set(CONAN_BIN_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin")
-set(CONAN_RES_DIRS_BZIP2 )
-set(CONAN_SRC_DIRS_BZIP2 )
-set(CONAN_BUILD_DIRS_BZIP2 "/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/")
-set(CONAN_FRAMEWORK_DIRS_BZIP2 )
-set(CONAN_LIBS_BZIP2 bz2)
-set(CONAN_PKG_LIBS_BZIP2 bz2)
-set(CONAN_SYSTEM_LIBS_BZIP2 )
-set(CONAN_FRAMEWORKS_BZIP2 )
-set(CONAN_FRAMEWORKS_FOUND_BZIP2 "")  # Will be filled later
-set(CONAN_DEFINES_BZIP2 )
-set(CONAN_BUILD_MODULES_PATHS_BZIP2 )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_BZIP2 )
-
-set(CONAN_C_FLAGS_BZIP2 "")
-set(CONAN_CXX_FLAGS_BZIP2 "")
-set(CONAN_SHARED_LINKER_FLAGS_BZIP2 "")
-set(CONAN_EXE_LINKER_FLAGS_BZIP2 "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_BZIP2_LIST "")
-set(CONAN_CXX_FLAGS_BZIP2_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_BZIP2_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_BZIP2_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_BZIP2 "${CONAN_FRAMEWORKS_BZIP2}" "_BZIP2" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_BZIP2 ${CONAN_PKG_LIBS_BZIP2} ${CONAN_SYSTEM_LIBS_BZIP2} ${CONAN_FRAMEWORKS_FOUND_BZIP2})
-
-
-#################
-###  LIBPNG
-#################
-set(CONAN_LIBPNG_ROOT "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7")
-set(CONAN_INCLUDE_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include")
-set(CONAN_LIB_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib")
-set(CONAN_BIN_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin")
-set(CONAN_RES_DIRS_LIBPNG )
-set(CONAN_SRC_DIRS_LIBPNG )
-set(CONAN_BUILD_DIRS_LIBPNG "/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/")
-set(CONAN_FRAMEWORK_DIRS_LIBPNG )
-set(CONAN_LIBS_LIBPNG png16)
-set(CONAN_PKG_LIBS_LIBPNG png16)
-set(CONAN_SYSTEM_LIBS_LIBPNG )
-set(CONAN_FRAMEWORKS_LIBPNG )
-set(CONAN_FRAMEWORKS_FOUND_LIBPNG "")  # Will be filled later
-set(CONAN_DEFINES_LIBPNG )
-set(CONAN_BUILD_MODULES_PATHS_LIBPNG )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_LIBPNG )
-
-set(CONAN_C_FLAGS_LIBPNG "")
-set(CONAN_CXX_FLAGS_LIBPNG "")
-set(CONAN_SHARED_LINKER_FLAGS_LIBPNG "")
-set(CONAN_EXE_LINKER_FLAGS_LIBPNG "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_LIBPNG_LIST "")
-set(CONAN_CXX_FLAGS_LIBPNG_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_LIBPNG_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_LIBPNG_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_LIBPNG "${CONAN_FRAMEWORKS_LIBPNG}" "_LIBPNG" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_LIBPNG ${CONAN_PKG_LIBS_LIBPNG} ${CONAN_SYSTEM_LIBS_LIBPNG} ${CONAN_FRAMEWORKS_FOUND_LIBPNG})
-
-
-#################
 ###  LIBICONV
 #################
-set(CONAN_LIBICONV_ROOT "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
-set(CONAN_INCLUDE_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
-set(CONAN_LIB_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
-set(CONAN_BIN_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin")
+set(CONAN_LIBICONV_ROOT "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab")
+set(CONAN_INCLUDE_DIRS_LIBICONV "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include")
+set(CONAN_LIB_DIRS_LIBICONV "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib")
+set(CONAN_BIN_DIRS_LIBICONV "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/bin")
 set(CONAN_RES_DIRS_LIBICONV )
 set(CONAN_SRC_DIRS_LIBICONV )
-set(CONAN_BUILD_DIRS_LIBICONV "/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
+set(CONAN_BUILD_DIRS_LIBICONV "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/")
 set(CONAN_FRAMEWORK_DIRS_LIBICONV )
 set(CONAN_LIBS_LIBICONV iconv charset)
 set(CONAN_PKG_LIBS_LIBICONV iconv charset)
@@ -385,13 +192,13 @@ set(CONAN_LIBS_LIBICONV ${CONAN_PKG_LIBS_LIBICONV} ${CONAN_SYSTEM_LIBS_LIBICONV}
 #################
 ###  OGG
 #################
-set(CONAN_OGG_ROOT "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
-set(CONAN_INCLUDE_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
-set(CONAN_LIB_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
+set(CONAN_OGG_ROOT "C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab")
+set(CONAN_INCLUDE_DIRS_OGG "C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include")
+set(CONAN_LIB_DIRS_OGG "C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib")
 set(CONAN_BIN_DIRS_OGG )
 set(CONAN_RES_DIRS_OGG )
 set(CONAN_SRC_DIRS_OGG )
-set(CONAN_BUILD_DIRS_OGG "/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
+set(CONAN_BUILD_DIRS_OGG "C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/")
 set(CONAN_FRAMEWORK_DIRS_OGG )
 set(CONAN_LIBS_OGG ogg)
 set(CONAN_PKG_LIBS_OGG ogg)
@@ -420,44 +227,6 @@ conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_OGG "${CONAN_FRAMEWORKS_OGG}"
 set(CONAN_LIBS_OGG ${CONAN_PKG_LIBS_OGG} ${CONAN_SYSTEM_LIBS_OGG} ${CONAN_FRAMEWORKS_FOUND_OGG})
 
 
-#################
-###  ZLIB
-#################
-set(CONAN_ZLIB_ROOT "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900")
-set(CONAN_INCLUDE_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include")
-set(CONAN_LIB_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib")
-set(CONAN_BIN_DIRS_ZLIB )
-set(CONAN_RES_DIRS_ZLIB )
-set(CONAN_SRC_DIRS_ZLIB )
-set(CONAN_BUILD_DIRS_ZLIB "/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/")
-set(CONAN_FRAMEWORK_DIRS_ZLIB )
-set(CONAN_LIBS_ZLIB z)
-set(CONAN_PKG_LIBS_ZLIB z)
-set(CONAN_SYSTEM_LIBS_ZLIB )
-set(CONAN_FRAMEWORKS_ZLIB )
-set(CONAN_FRAMEWORKS_FOUND_ZLIB "")  # Will be filled later
-set(CONAN_DEFINES_ZLIB )
-set(CONAN_BUILD_MODULES_PATHS_ZLIB )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_ZLIB )
-
-set(CONAN_C_FLAGS_ZLIB "")
-set(CONAN_CXX_FLAGS_ZLIB "")
-set(CONAN_SHARED_LINKER_FLAGS_ZLIB "")
-set(CONAN_EXE_LINKER_FLAGS_ZLIB "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_ZLIB_LIST "")
-set(CONAN_CXX_FLAGS_ZLIB_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_ZLIB_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_ZLIB_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_ZLIB "${CONAN_FRAMEWORKS_ZLIB}" "_ZLIB" "")
-# Append to aggregated values variable
-set(CONAN_LIBS_ZLIB ${CONAN_PKG_LIBS_ZLIB} ${CONAN_SYSTEM_LIBS_ZLIB} ${CONAN_FRAMEWORKS_FOUND_ZLIB})
-
-
 ### Definition of global aggregated variables ###
 
 set(CONAN_PACKAGE_NAME Matcha)
@@ -465,12 +234,12 @@ set(CONAN_PACKAGE_VERSION 0.1)
 
 set(CONAN_SETTINGS_ARCH "x86_64")
 set(CONAN_SETTINGS_BUILD_TYPE "Release")
-set(CONAN_SETTINGS_COMPILER "apple-clang")
-set(CONAN_SETTINGS_COMPILER_LIBCXX "libc++")
-set(CONAN_SETTINGS_COMPILER_VERSION "12.0")
-set(CONAN_SETTINGS_OS "Macos")
+set(CONAN_SETTINGS_COMPILER "Visual Studio")
+set(CONAN_SETTINGS_COMPILER_RUNTIME "MD")
+set(CONAN_SETTINGS_COMPILER_VERSION "16")
+set(CONAN_SETTINGS_OS "Windows")
 
-set(CONAN_DEPENDENCIES sdl2_image sdl2_ttf sdl2_mixer sdl2 freetype vorbis bzip2 libpng libiconv ogg zlib)
+set(CONAN_DEPENDENCIES sdl2_mixer sdl2 vorbis libiconv ogg)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -478,58 +247,33 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include"
-			"/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2"
-			"/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include"
-			"/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include/SDL2"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include/freetype2"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include"
-			"/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib"
-			"/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/lib"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/lib"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib"
-			"/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib" ${CONAN_LIB_DIRS})
-set(CONAN_BIN_DIRS "/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin"
-			"/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin" ${CONAN_BIN_DIRS})
+set(CONAN_INCLUDE_DIRS "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include"
+			"C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include/SDL2"
+			"C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include"
+			"C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include/SDL2"
+			"C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/include"
+			"C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include"
+			"C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/lib"
+			"C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/lib"
+			"C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/lib"
+			"C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib"
+			"C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib" ${CONAN_LIB_DIRS})
+set(CONAN_BIN_DIRS "C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS  ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
-set(CONAN_LIBS SDL2_image SDL2_ttf sdl2_mixer SDL2main SDL2 freetype vorbisenc vorbisfile vorbis bz2 png16 iconv charset ogg z ${CONAN_LIBS})
-set(CONAN_PKG_LIBS SDL2_image SDL2_ttf sdl2_mixer SDL2main SDL2 freetype vorbisenc vorbisfile vorbis bz2 png16 iconv charset ogg z ${CONAN_PKG_LIBS})
-set(CONAN_SYSTEM_LIBS  ${CONAN_SYSTEM_LIBS})
-set(CONAN_FRAMEWORKS Cocoa Carbon IOKit CoreVideo CoreAudio AudioToolbox ForceFeedback ${CONAN_FRAMEWORKS})
+set(CONAN_LIBS sdl2_mixer SDL2main SDL2 vorbisenc vorbisfile vorbis iconv charset ogg ${CONAN_LIBS})
+set(CONAN_PKG_LIBS sdl2_mixer SDL2main SDL2 vorbisenc vorbisfile vorbis iconv charset ogg ${CONAN_PKG_LIBS})
+set(CONAN_SYSTEM_LIBS user32 gdi32 winmm imm32 ole32 oleaut32 version uuid advapi32 setupapi shell32 ${CONAN_SYSTEM_LIBS})
+set(CONAN_FRAMEWORKS  ${CONAN_FRAMEWORKS})
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
 set(CONAN_DEFINES  ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/"
-			"/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/"
-			"/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/"
-			"/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/"
-			"/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/"
-			"/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/"
-			"/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/"
-			"/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/"
-			"/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/"
-			"/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/"
-			"/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/" ${CONAN_CMAKE_MODULE_PATH})
+set(CONAN_CMAKE_MODULE_PATH "C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/"
+			"C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/"
+			"C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/"
+			"C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/"
+			"C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
@@ -551,146 +295,6 @@ macro(conan_define_targets)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CONAN_CMD_CXX_FLAGS}")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CONAN_CMD_C_FLAGS}")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${CONAN_CMD_SHARED_LINKER_FLAGS}")
-
-
-    set(_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES "${CONAN_SYSTEM_LIBS_SDL2_IMAGE} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE} CONAN_PKG::sdl2 CONAN_PKG::libpng CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_IMAGE}" "${CONAN_LIB_DIRS_SDL2_IMAGE}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_IMAGE "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES}"
-                                  "" sdl2_image)
-    set(_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_SDL2_IMAGE_DEBUG} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE_DEBUG} CONAN_PKG::sdl2 CONAN_PKG::libpng CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_IMAGE_DEBUG}" "${CONAN_LIB_DIRS_SDL2_IMAGE_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_IMAGE_DEBUG "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_DEBUG}"
-                                  "debug" sdl2_image)
-    set(_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_SDL2_IMAGE_RELEASE} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE_RELEASE} CONAN_PKG::sdl2 CONAN_PKG::libpng CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_IMAGE_RELEASE}" "${CONAN_LIB_DIRS_SDL2_IMAGE_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_IMAGE_RELEASE "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELEASE}"
-                                  "release" sdl2_image)
-    set(_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_SDL2_IMAGE_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE_RELWITHDEBINFO} CONAN_PKG::sdl2 CONAN_PKG::libpng CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_IMAGE_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_SDL2_IMAGE_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_IMAGE_RELWITHDEBINFO "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" sdl2_image)
-    set(_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_SDL2_IMAGE_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_SDL2_IMAGE_MINSIZEREL} CONAN_PKG::sdl2 CONAN_PKG::libpng CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_IMAGE_MINSIZEREL}" "${CONAN_LIB_DIRS_SDL2_IMAGE_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_IMAGE_MINSIZEREL "${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" sdl2_image)
-
-    add_library(CONAN_PKG::sdl2_image INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::sdl2_image PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_SDL2_IMAGE} ${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_SDL2_IMAGE_RELEASE} ${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_SDL2_IMAGE_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_SDL2_IMAGE_MINSIZEREL} ${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_SDL2_IMAGE_DEBUG} ${_CONAN_PKG_LIBS_SDL2_IMAGE_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_IMAGE_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_IMAGE_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::sdl2_image PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_SDL2_IMAGE}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_SDL2_IMAGE_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_SDL2_IMAGE_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_SDL2_IMAGE_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_SDL2_IMAGE_DEBUG}>)
-    set_property(TARGET CONAN_PKG::sdl2_image PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_SDL2_IMAGE_DEBUG}>)
-    set_property(TARGET CONAN_PKG::sdl2_image PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_SDL2_IMAGE_LIST} ${CONAN_CXX_FLAGS_SDL2_IMAGE_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_SDL2_IMAGE_RELEASE_LIST} ${CONAN_CXX_FLAGS_SDL2_IMAGE_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_SDL2_IMAGE_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_SDL2_IMAGE_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_SDL2_IMAGE_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_SDL2_IMAGE_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_SDL2_IMAGE_DEBUG_LIST}  ${CONAN_CXX_FLAGS_SDL2_IMAGE_DEBUG_LIST}>)
-
-
-    set(_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES "${CONAN_SYSTEM_LIBS_SDL2_TTF} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF} CONAN_PKG::freetype CONAN_PKG::sdl2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_TTF}" "${CONAN_LIB_DIRS_SDL2_TTF}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_TTF "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES}"
-                                  "" sdl2_ttf)
-    set(_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_SDL2_TTF_DEBUG} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF_DEBUG} CONAN_PKG::freetype CONAN_PKG::sdl2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_TTF_DEBUG}" "${CONAN_LIB_DIRS_SDL2_TTF_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_TTF_DEBUG "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_DEBUG}"
-                                  "debug" sdl2_ttf)
-    set(_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_SDL2_TTF_RELEASE} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF_RELEASE} CONAN_PKG::freetype CONAN_PKG::sdl2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_TTF_RELEASE}" "${CONAN_LIB_DIRS_SDL2_TTF_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_TTF_RELEASE "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELEASE}"
-                                  "release" sdl2_ttf)
-    set(_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_SDL2_TTF_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF_RELWITHDEBINFO} CONAN_PKG::freetype CONAN_PKG::sdl2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_TTF_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_SDL2_TTF_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_TTF_RELWITHDEBINFO "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" sdl2_ttf)
-    set(_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_SDL2_TTF_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_SDL2_TTF_MINSIZEREL} CONAN_PKG::freetype CONAN_PKG::sdl2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_SDL2_TTF_MINSIZEREL}" "${CONAN_LIB_DIRS_SDL2_TTF_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_SDL2_TTF_MINSIZEREL "${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" sdl2_ttf)
-
-    add_library(CONAN_PKG::sdl2_ttf INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::sdl2_ttf PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_SDL2_TTF} ${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_TTF_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_SDL2_TTF_RELEASE} ${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_TTF_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_SDL2_TTF_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_TTF_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_SDL2_TTF_MINSIZEREL} ${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_TTF_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_SDL2_TTF_DEBUG} ${_CONAN_PKG_LIBS_SDL2_TTF_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_SDL2_TTF_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_SDL2_TTF_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::sdl2_ttf PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_SDL2_TTF}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_SDL2_TTF_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_SDL2_TTF_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_SDL2_TTF_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_SDL2_TTF_DEBUG}>)
-    set_property(TARGET CONAN_PKG::sdl2_ttf PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_SDL2_TTF}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_SDL2_TTF_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_SDL2_TTF_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_SDL2_TTF_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_SDL2_TTF_DEBUG}>)
-    set_property(TARGET CONAN_PKG::sdl2_ttf PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_SDL2_TTF_LIST} ${CONAN_CXX_FLAGS_SDL2_TTF_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_SDL2_TTF_RELEASE_LIST} ${CONAN_CXX_FLAGS_SDL2_TTF_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_SDL2_TTF_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_SDL2_TTF_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_SDL2_TTF_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_SDL2_TTF_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_SDL2_TTF_DEBUG_LIST}  ${CONAN_CXX_FLAGS_SDL2_TTF_DEBUG_LIST}>)
 
 
     set(_CONAN_PKG_LIBS_SDL2_MIXER_DEPENDENCIES "${CONAN_SYSTEM_LIBS_SDL2_MIXER} ${CONAN_FRAMEWORKS_FOUND_SDL2_MIXER} CONAN_PKG::sdl2 CONAN_PKG::ogg CONAN_PKG::vorbis")
@@ -833,76 +437,6 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_SDL2_DEBUG_LIST}  ${CONAN_CXX_FLAGS_SDL2_DEBUG_LIST}>)
 
 
-    set(_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES "${CONAN_SYSTEM_LIBS_FREETYPE} ${CONAN_FRAMEWORKS_FOUND_FREETYPE} CONAN_PKG::libpng CONAN_PKG::zlib CONAN_PKG::bzip2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_FREETYPE}" "${CONAN_LIB_DIRS_FREETYPE}"
-                                  CONAN_PACKAGE_TARGETS_FREETYPE "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES}"
-                                  "" freetype)
-    set(_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_FREETYPE_DEBUG} ${CONAN_FRAMEWORKS_FOUND_FREETYPE_DEBUG} CONAN_PKG::libpng CONAN_PKG::zlib CONAN_PKG::bzip2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_FREETYPE_DEBUG}" "${CONAN_LIB_DIRS_FREETYPE_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_FREETYPE_DEBUG "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_DEBUG}"
-                                  "debug" freetype)
-    set(_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_FREETYPE_RELEASE} ${CONAN_FRAMEWORKS_FOUND_FREETYPE_RELEASE} CONAN_PKG::libpng CONAN_PKG::zlib CONAN_PKG::bzip2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_FREETYPE_RELEASE}" "${CONAN_LIB_DIRS_FREETYPE_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_FREETYPE_RELEASE "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELEASE}"
-                                  "release" freetype)
-    set(_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_FREETYPE_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_FREETYPE_RELWITHDEBINFO} CONAN_PKG::libpng CONAN_PKG::zlib CONAN_PKG::bzip2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_FREETYPE_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_FREETYPE_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_FREETYPE_RELWITHDEBINFO "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" freetype)
-    set(_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_FREETYPE_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_FREETYPE_MINSIZEREL} CONAN_PKG::libpng CONAN_PKG::zlib CONAN_PKG::bzip2")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_FREETYPE_MINSIZEREL}" "${CONAN_LIB_DIRS_FREETYPE_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_FREETYPE_MINSIZEREL "${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" freetype)
-
-    add_library(CONAN_PKG::freetype INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::freetype PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_FREETYPE} ${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_FREETYPE_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_FREETYPE_RELEASE} ${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_FREETYPE_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_FREETYPE_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_FREETYPE_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_FREETYPE_MINSIZEREL} ${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_FREETYPE_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_FREETYPE_DEBUG} ${_CONAN_PKG_LIBS_FREETYPE_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_FREETYPE_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_FREETYPE_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::freetype PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_FREETYPE}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_FREETYPE_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_FREETYPE_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_FREETYPE_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_FREETYPE_DEBUG}>)
-    set_property(TARGET CONAN_PKG::freetype PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_FREETYPE}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_FREETYPE_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_FREETYPE_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_FREETYPE_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_FREETYPE_DEBUG}>)
-    set_property(TARGET CONAN_PKG::freetype PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_FREETYPE_LIST} ${CONAN_CXX_FLAGS_FREETYPE_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_FREETYPE_RELEASE_LIST} ${CONAN_CXX_FLAGS_FREETYPE_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_FREETYPE_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_FREETYPE_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_FREETYPE_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_FREETYPE_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_FREETYPE_DEBUG_LIST}  ${CONAN_CXX_FLAGS_FREETYPE_DEBUG_LIST}>)
-
-
     set(_CONAN_PKG_LIBS_VORBIS_DEPENDENCIES "${CONAN_SYSTEM_LIBS_VORBIS} ${CONAN_FRAMEWORKS_FOUND_VORBIS} CONAN_PKG::ogg")
     string(REPLACE " " ";" _CONAN_PKG_LIBS_VORBIS_DEPENDENCIES "${_CONAN_PKG_LIBS_VORBIS_DEPENDENCIES}")
     conan_package_library_targets("${CONAN_PKG_LIBS_VORBIS}" "${CONAN_LIB_DIRS_VORBIS}"
@@ -971,146 +505,6 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_VORBIS_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_VORBIS_RELWITHDEBINFO_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_VORBIS_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_VORBIS_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_VORBIS_DEBUG_LIST}  ${CONAN_CXX_FLAGS_VORBIS_DEBUG_LIST}>)
-
-
-    set(_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES "${CONAN_SYSTEM_LIBS_BZIP2} ${CONAN_FRAMEWORKS_FOUND_BZIP2} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_BZIP2_DEPENDENCIES "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_BZIP2}" "${CONAN_LIB_DIRS_BZIP2}"
-                                  CONAN_PACKAGE_TARGETS_BZIP2 "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES}"
-                                  "" bzip2)
-    set(_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_BZIP2_DEBUG} ${CONAN_FRAMEWORKS_FOUND_BZIP2_DEBUG} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_BZIP2_DEBUG}" "${CONAN_LIB_DIRS_BZIP2_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_BZIP2_DEBUG "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_DEBUG}"
-                                  "debug" bzip2)
-    set(_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_BZIP2_RELEASE} ${CONAN_FRAMEWORKS_FOUND_BZIP2_RELEASE} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_BZIP2_RELEASE}" "${CONAN_LIB_DIRS_BZIP2_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_BZIP2_RELEASE "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELEASE}"
-                                  "release" bzip2)
-    set(_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_BZIP2_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_BZIP2_RELWITHDEBINFO} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_BZIP2_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_BZIP2_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_BZIP2_RELWITHDEBINFO "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" bzip2)
-    set(_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_BZIP2_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_BZIP2_MINSIZEREL} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_BZIP2_MINSIZEREL}" "${CONAN_LIB_DIRS_BZIP2_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_BZIP2_MINSIZEREL "${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" bzip2)
-
-    add_library(CONAN_PKG::bzip2 INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::bzip2 PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_BZIP2} ${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_BZIP2_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_BZIP2_RELEASE} ${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_BZIP2_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_BZIP2_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_BZIP2_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_BZIP2_MINSIZEREL} ${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_BZIP2_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_BZIP2_DEBUG} ${_CONAN_PKG_LIBS_BZIP2_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_BZIP2_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_BZIP2_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::bzip2 PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_BZIP2}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_BZIP2_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_BZIP2_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_BZIP2_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_BZIP2_DEBUG}>)
-    set_property(TARGET CONAN_PKG::bzip2 PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_BZIP2}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_BZIP2_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_BZIP2_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_BZIP2_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_BZIP2_DEBUG}>)
-    set_property(TARGET CONAN_PKG::bzip2 PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_BZIP2_LIST} ${CONAN_CXX_FLAGS_BZIP2_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_BZIP2_RELEASE_LIST} ${CONAN_CXX_FLAGS_BZIP2_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_BZIP2_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_BZIP2_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_BZIP2_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_BZIP2_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_BZIP2_DEBUG_LIST}  ${CONAN_CXX_FLAGS_BZIP2_DEBUG_LIST}>)
-
-
-    set(_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES "${CONAN_SYSTEM_LIBS_LIBPNG} ${CONAN_FRAMEWORKS_FOUND_LIBPNG} CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_LIBPNG}" "${CONAN_LIB_DIRS_LIBPNG}"
-                                  CONAN_PACKAGE_TARGETS_LIBPNG "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES}"
-                                  "" libpng)
-    set(_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_LIBPNG_DEBUG} ${CONAN_FRAMEWORKS_FOUND_LIBPNG_DEBUG} CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_LIBPNG_DEBUG}" "${CONAN_LIB_DIRS_LIBPNG_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_LIBPNG_DEBUG "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_DEBUG}"
-                                  "debug" libpng)
-    set(_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_LIBPNG_RELEASE} ${CONAN_FRAMEWORKS_FOUND_LIBPNG_RELEASE} CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_LIBPNG_RELEASE}" "${CONAN_LIB_DIRS_LIBPNG_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_LIBPNG_RELEASE "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELEASE}"
-                                  "release" libpng)
-    set(_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_LIBPNG_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_LIBPNG_RELWITHDEBINFO} CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_LIBPNG_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_LIBPNG_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_LIBPNG_RELWITHDEBINFO "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" libpng)
-    set(_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_LIBPNG_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_LIBPNG_MINSIZEREL} CONAN_PKG::zlib")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_LIBPNG_MINSIZEREL}" "${CONAN_LIB_DIRS_LIBPNG_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_LIBPNG_MINSIZEREL "${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" libpng)
-
-    add_library(CONAN_PKG::libpng INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::libpng PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_LIBPNG} ${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LIBPNG_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_LIBPNG_RELEASE} ${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LIBPNG_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_LIBPNG_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LIBPNG_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_LIBPNG_MINSIZEREL} ${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LIBPNG_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_LIBPNG_DEBUG} ${_CONAN_PKG_LIBS_LIBPNG_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LIBPNG_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LIBPNG_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::libpng PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_LIBPNG}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_LIBPNG_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_LIBPNG_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_LIBPNG_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_LIBPNG_DEBUG}>)
-    set_property(TARGET CONAN_PKG::libpng PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_LIBPNG}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_LIBPNG_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_LIBPNG_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_LIBPNG_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_LIBPNG_DEBUG}>)
-    set_property(TARGET CONAN_PKG::libpng PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_LIBPNG_LIST} ${CONAN_CXX_FLAGS_LIBPNG_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_LIBPNG_RELEASE_LIST} ${CONAN_CXX_FLAGS_LIBPNG_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_LIBPNG_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_LIBPNG_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_LIBPNG_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_LIBPNG_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_LIBPNG_DEBUG_LIST}  ${CONAN_CXX_FLAGS_LIBPNG_DEBUG_LIST}>)
 
 
     set(_CONAN_PKG_LIBS_LIBICONV_DEPENDENCIES "${CONAN_SYSTEM_LIBS_LIBICONV} ${CONAN_FRAMEWORKS_FOUND_LIBICONV} ")
@@ -1252,77 +646,7 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_OGG_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_OGG_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_OGG_DEBUG_LIST}  ${CONAN_CXX_FLAGS_OGG_DEBUG_LIST}>)
 
-
-    set(_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES "${CONAN_SYSTEM_LIBS_ZLIB} ${CONAN_FRAMEWORKS_FOUND_ZLIB} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_ZLIB_DEPENDENCIES "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_ZLIB}" "${CONAN_LIB_DIRS_ZLIB}"
-                                  CONAN_PACKAGE_TARGETS_ZLIB "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES}"
-                                  "" zlib)
-    set(_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_ZLIB_DEBUG} ${CONAN_FRAMEWORKS_FOUND_ZLIB_DEBUG} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_DEBUG}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_ZLIB_DEBUG}" "${CONAN_LIB_DIRS_ZLIB_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_ZLIB_DEBUG "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_DEBUG}"
-                                  "debug" zlib)
-    set(_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_ZLIB_RELEASE} ${CONAN_FRAMEWORKS_FOUND_ZLIB_RELEASE} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELEASE}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_ZLIB_RELEASE}" "${CONAN_LIB_DIRS_ZLIB_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_ZLIB_RELEASE "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELEASE}"
-                                  "release" zlib)
-    set(_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_ZLIB_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_ZLIB_RELWITHDEBINFO} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELWITHDEBINFO}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_ZLIB_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_ZLIB_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_ZLIB_RELWITHDEBINFO "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELWITHDEBINFO}"
-                                  "relwithdebinfo" zlib)
-    set(_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_ZLIB_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_ZLIB_MINSIZEREL} ")
-    string(REPLACE " " ";" _CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_MINSIZEREL}")
-    conan_package_library_targets("${CONAN_PKG_LIBS_ZLIB_MINSIZEREL}" "${CONAN_LIB_DIRS_ZLIB_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_ZLIB_MINSIZEREL "${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_MINSIZEREL}"
-                                  "minsizerel" zlib)
-
-    add_library(CONAN_PKG::zlib INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_ZLIB} ${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_ZLIB_LIST}>
-
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_ZLIB_RELEASE} ${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELEASE}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELEASE_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_ZLIB_RELEASE_LIST}>>
-
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_ZLIB_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_RELWITHDEBINFO}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_RELWITHDEBINFO_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_ZLIB_RELWITHDEBINFO_LIST}>>
-
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_ZLIB_MINSIZEREL} ${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_MINSIZEREL}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_MINSIZEREL_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_ZLIB_MINSIZEREL_LIST}>>
-
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_ZLIB_DEBUG} ${_CONAN_PKG_LIBS_ZLIB_DEPENDENCIES_DEBUG}
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_ZLIB_DEBUG_LIST}>
-                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_ZLIB_DEBUG_LIST}>>)
-    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_ZLIB}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_ZLIB_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_ZLIB_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_ZLIB_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_ZLIB_DEBUG}>)
-    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_ZLIB}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_ZLIB_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_ZLIB_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_ZLIB_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_ZLIB_DEBUG}>)
-    set_property(TARGET CONAN_PKG::zlib PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_ZLIB_LIST} ${CONAN_CXX_FLAGS_ZLIB_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_ZLIB_RELEASE_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_ZLIB_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_ZLIB_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_ZLIB_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_ZLIB_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_ZLIB_DEBUG_LIST}  ${CONAN_CXX_FLAGS_ZLIB_DEBUG_LIST}>)
-
-    set(CONAN_TARGETS CONAN_PKG::sdl2_image CONAN_PKG::sdl2_ttf CONAN_PKG::sdl2_mixer CONAN_PKG::sdl2 CONAN_PKG::freetype CONAN_PKG::vorbis CONAN_PKG::bzip2 CONAN_PKG::libpng CONAN_PKG::libiconv CONAN_PKG::ogg CONAN_PKG::zlib)
+    set(CONAN_TARGETS CONAN_PKG::sdl2_mixer CONAN_PKG::sdl2 CONAN_PKG::vorbis CONAN_PKG::libiconv CONAN_PKG::ogg)
 
 endmacro()
 

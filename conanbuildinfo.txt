@@ -1,76 +1,55 @@
 [includedirs]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include/SDL2
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include/freetype2
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include/SDL2
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include/SDL2
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/include
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
 
 [libdirs]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/lib
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/lib
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/lib
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/lib
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/lib
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
 
 [bindirs]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/bin
 
 [resdirs]
 
 
 [builddirs]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
 
 [libs]
-SDL2_image
-SDL2_ttf
 sdl2_mixer
 SDL2main
 SDL2
-freetype
 vorbisenc
 vorbisfile
 vorbis
-bz2
-png16
 iconv
 charset
 ogg
-z
 
 [system_libs]
-
+user32
+gdi32
+winmm
+imm32
+ole32
+oleaut32
+version
+uuid
+advapi32
+setupapi
+shell32
 
 [defines]
 
@@ -94,142 +73,18 @@ z
 
 
 [frameworks]
-Cocoa
-Carbon
-IOKit
-CoreVideo
-CoreAudio
-AudioToolbox
-ForceFeedback
+
 
 [frameworkdirs]
 
 
 
-[includedirs_sdl2_image]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/include/SDL2
-
-[libdirs_sdl2_image]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/lib
-
-[bindirs_sdl2_image]
-
-
-[resdirs_sdl2_image]
-
-
-[builddirs_sdl2_image]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63/
-
-[libs_sdl2_image]
-SDL2_image
-
-[system_libs_sdl2_image]
-
-
-[defines_sdl2_image]
-
-
-[cppflags_sdl2_image]
-
-
-[cxxflags_sdl2_image]
-
-
-[cflags_sdl2_image]
-
-
-[sharedlinkflags_sdl2_image]
-
-
-[exelinkflags_sdl2_image]
-
-
-[sysroot_sdl2_image]
-
-
-[frameworks_sdl2_image]
-
-
-[frameworkdirs_sdl2_image]
-
-
-[rootpath_sdl2_image]
-/Users/kevin/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/930c6ce00db535b9fd2bfaa5e146285e2436dc63
-
-[name_sdl2_image]
-sdl2_image
-
-[version_sdl2_image]
-2.0.5
-
-
-[includedirs_sdl2_ttf]
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/include/SDL2
-
-[libdirs_sdl2_ttf]
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/lib
-
-[bindirs_sdl2_ttf]
-
-
-[resdirs_sdl2_ttf]
-
-
-[builddirs_sdl2_ttf]
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8/
-
-[libs_sdl2_ttf]
-SDL2_ttf
-
-[system_libs_sdl2_ttf]
-
-
-[defines_sdl2_ttf]
-
-
-[cppflags_sdl2_ttf]
-
-
-[cxxflags_sdl2_ttf]
-
-
-[cflags_sdl2_ttf]
-
-
-[sharedlinkflags_sdl2_ttf]
-
-
-[exelinkflags_sdl2_ttf]
-
-
-[sysroot_sdl2_ttf]
-
-
-[frameworks_sdl2_ttf]
-
-
-[frameworkdirs_sdl2_ttf]
-
-
-[rootpath_sdl2_ttf]
-/Users/kevin/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/4210c4876e57d10e20ba8f92d97748a50ed728a8
-
-[name_sdl2_ttf]
-sdl2_ttf
-
-[version_sdl2_ttf]
-2.0.15
-
-
 [includedirs_sdl2_mixer]
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/include/SDL2
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/include/SDL2
 
 [libdirs_sdl2_mixer]
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/lib
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/lib
 
 [bindirs_sdl2_mixer]
 
@@ -238,7 +93,7 @@ sdl2_ttf
 
 
 [builddirs_sdl2_mixer]
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c/
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1/
 
 [libs_sdl2_mixer]
 sdl2_mixer
@@ -274,7 +129,7 @@ sdl2_mixer
 
 
 [rootpath_sdl2_mixer]
-/Users/kevin/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/7e2fef6e2171b578d5cb2b41b0762f150fb66b7c
+C:/Users/fithm/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/0e074b830d0cda724e2e1f52b1808f42174c7aa1
 
 [name_sdl2_mixer]
 sdl2_mixer
@@ -284,27 +139,37 @@ sdl2_mixer
 
 
 [includedirs_sdl2]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/include/SDL2
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/include/SDL2
 
 [libdirs_sdl2]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/lib
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/lib
 
 [bindirs_sdl2]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin
+
 
 [resdirs_sdl2]
 
 
 [builddirs_sdl2]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c/
 
 [libs_sdl2]
 SDL2main
 SDL2
 
 [system_libs_sdl2]
-
+user32
+gdi32
+winmm
+imm32
+ole32
+oleaut32
+version
+uuid
+advapi32
+setupapi
+shell32
 
 [defines_sdl2]
 
@@ -328,19 +193,13 @@ SDL2
 
 
 [frameworks_sdl2]
-Cocoa
-Carbon
-IOKit
-CoreVideo
-CoreAudio
-AudioToolbox
-ForceFeedback
+
 
 [frameworkdirs_sdl2]
 
 
 [rootpath_sdl2]
-/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830
+C:/Users/fithm/.conan/data/sdl2/2.0.12/bincrafters/stable/package/8e5eca78c5da130b45db683b45b8215189d8004c
 
 [name_sdl2]
 sdl2
@@ -349,70 +208,11 @@ sdl2
 2.0.12
 
 
-[includedirs_freetype]
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/include/freetype2
-
-[libdirs_freetype]
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/lib
-
-[bindirs_freetype]
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin
-
-[resdirs_freetype]
-
-
-[builddirs_freetype]
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/
-
-[libs_freetype]
-freetype
-
-[system_libs_freetype]
-
-
-[defines_freetype]
-
-
-[cppflags_freetype]
-
-
-[cxxflags_freetype]
-
-
-[cflags_freetype]
-
-
-[sharedlinkflags_freetype]
-
-
-[exelinkflags_freetype]
-
-
-[sysroot_freetype]
-
-
-[frameworks_freetype]
-
-
-[frameworkdirs_freetype]
-
-
-[rootpath_freetype]
-/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6
-
-[name_freetype]
-freetype
-
-[version_freetype]
-2.9.1
-
-
 [includedirs_vorbis]
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/include
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/include
 
 [libdirs_vorbis]
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/lib
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/lib
 
 [bindirs_vorbis]
 
@@ -421,7 +221,7 @@ freetype
 
 
 [builddirs_vorbis]
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b/
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540/
 
 [libs_vorbis]
 vorbisenc
@@ -459,7 +259,7 @@ vorbis
 
 
 [rootpath_vorbis]
-/Users/kevin/.conan/data/vorbis/1.3.6/_/_/package/f3d27e66931814996d5618e827338786b77d4b6b
+C:/Users/fithm/.conan/data/vorbis/1.3.6/_/_/package/becff00909fb3d957c6b4ca60fa64d4e6a32a540
 
 [name_vorbis]
 vorbis
@@ -468,136 +268,20 @@ vorbis
 1.3.6
 
 
-[includedirs_bzip2]
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/include
-
-[libdirs_bzip2]
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/lib
-
-[bindirs_bzip2]
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/bin
-
-[resdirs_bzip2]
-
-
-[builddirs_bzip2]
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a/
-
-[libs_bzip2]
-bz2
-
-[system_libs_bzip2]
-
-
-[defines_bzip2]
-
-
-[cppflags_bzip2]
-
-
-[cxxflags_bzip2]
-
-
-[cflags_bzip2]
-
-
-[sharedlinkflags_bzip2]
-
-
-[exelinkflags_bzip2]
-
-
-[sysroot_bzip2]
-
-
-[frameworks_bzip2]
-
-
-[frameworkdirs_bzip2]
-
-
-[rootpath_bzip2]
-/Users/kevin/.conan/data/bzip2/1.0.8/_/_/package/75fe66fbfe61230e9fcbb361f13b6b3baa483e0a
-
-[name_bzip2]
-bzip2
-
-[version_bzip2]
-1.0.8
-
-
-[includedirs_libpng]
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/include
-
-[libdirs_libpng]
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/lib
-
-[bindirs_libpng]
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/bin
-
-[resdirs_libpng]
-
-
-[builddirs_libpng]
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7/
-
-[libs_libpng]
-png16
-
-[system_libs_libpng]
-
-
-[defines_libpng]
-
-
-[cppflags_libpng]
-
-
-[cxxflags_libpng]
-
-
-[cflags_libpng]
-
-
-[sharedlinkflags_libpng]
-
-
-[exelinkflags_libpng]
-
-
-[sysroot_libpng]
-
-
-[frameworks_libpng]
-
-
-[frameworkdirs_libpng]
-
-
-[rootpath_libpng]
-/Users/kevin/.conan/data/libpng/1.6.37/bincrafters/stable/package/88955cec2844f731470e07bd44ce5a3a24ec88b7
-
-[name_libpng]
-libpng
-
-[version_libpng]
-1.6.37
-
-
 [includedirs_libiconv]
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
 
 [libdirs_libiconv]
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
 
 [bindirs_libiconv]
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/bin
 
 [resdirs_libiconv]
 
 
 [builddirs_libiconv]
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
 
 [libs_libiconv]
 iconv
@@ -634,7 +318,7 @@ charset
 
 
 [rootpath_libiconv]
-/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900
+C:/Users/fithm/.conan/data/libiconv/1.16/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab
 
 [name_libiconv]
 libiconv
@@ -644,10 +328,10 @@ libiconv
 
 
 [includedirs_ogg]
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/include
 
 [libdirs_ogg]
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/lib
 
 [bindirs_ogg]
 
@@ -656,7 +340,7 @@ libiconv
 
 
 [builddirs_ogg]
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab/
 
 [libs_ogg]
 ogg
@@ -692,7 +376,7 @@ ogg
 
 
 [rootpath_ogg]
-/Users/kevin/.conan/data/ogg/1.3.4/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900
+C:/Users/fithm/.conan/data/ogg/1.3.4/_/_/package/3fb49604f9c2f729b85ba3115852006824e72cab
 
 [name_ogg]
 ogg
@@ -701,88 +385,16 @@ ogg
 1.3.4
 
 
-[includedirs_zlib]
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/include
-
-[libdirs_zlib]
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/lib
-
-[bindirs_zlib]
-
-
-[resdirs_zlib]
-
-
-[builddirs_zlib]
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/
-
-[libs_zlib]
-z
-
-[system_libs_zlib]
-
-
-[defines_zlib]
-
-
-[cppflags_zlib]
-
-
-[cxxflags_zlib]
-
-
-[cflags_zlib]
-
-
-[sharedlinkflags_zlib]
-
-
-[exelinkflags_zlib]
-
-
-[sysroot_zlib]
-
-
-[frameworks_zlib]
-
-
-[frameworkdirs_zlib]
-
-
-[rootpath_zlib]
-/Users/kevin/.conan/data/zlib/1.2.11/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900
-
-[name_zlib]
-zlib
-
-[version_zlib]
-1.2.11
-
-
-[USER_bzip2]
-[USER_freetype]
 [USER_libiconv]
-[USER_libpng]
 [USER_ogg]
 [USER_sdl2]
-[USER_sdl2_image]
 [USER_sdl2_mixer]
-[USER_sdl2_ttf]
 [USER_vorbis]
-[USER_zlib]
-[ENV_sdl2_image]
-[ENV_sdl2_ttf]
 [ENV_sdl2_mixer]
 [ENV_sdl2]
-SDL2_CONFIG=/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin/sdl2-config
-SDL_CONFIG=/Users/kevin/.conan/data/sdl2/2.0.12/bincrafters/stable/package/41d6cd3f96ee391e86d6d7e1fe5108aeec2fa830/bin/sdl2-config
-[ENV_freetype]
-FT2_CONFIG=/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin/freetype-config
-PATH=["/Users/kevin/.conan/data/freetype/2.9.1/bincrafters/stable/package/42b58dfbaf06fc41aabbe10ba829e1cc77d0ecd6/bin"]
+SDL2_CONFIG=C:\Users\fithm\.conan\data\sdl2\2.0.12\bincrafters\stable\package\8e5eca78c5da130b45db683b45b8215189d8004c\bin\sdl2-config
+SDL_CONFIG=C:\Users\fithm\.conan\data\sdl2\2.0.12\bincrafters\stable\package\8e5eca78c5da130b45db683b45b8215189d8004c\bin\sdl2-config
 [ENV_vorbis]
-[ENV_bzip2]
-[ENV_libpng]
 [ENV_libiconv]
-PATH=["/Users/kevin/.conan/data/libiconv/1.16/_/_/package/647afeb69d3b0a2d3d316e80b24d38c714cc6900/bin"]
+PATH=["C:\Users\fithm\.conan\data\libiconv\1.16\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\bin"]
 [ENV_ogg]
-[ENV_zlib]
