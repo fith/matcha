@@ -1,8 +1,4 @@
 .DS_Store
 .vscode
-build/*
-build\*
-build
-.idea/workspace.xml
-.idea\workspace.xml
-.idea
+build/
+.idea/
