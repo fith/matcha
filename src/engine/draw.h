@@ -1,5 +1,6 @@
 #include "../shared/common.h"
 
-#include "SDL_image.h"
+// Configure stb image and remove some features we don't use to reduce binary size.
+//#define STB_IMAGE_STATIC
 
 extern App app;

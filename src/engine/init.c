@@ -39,8 +39,6 @@ void initSDL(void)
     exit(1);
   }
 
-  IMG_Init(IMG_INIT_PNG);
-
   icon = loadSurface("resources/gfx/icon.png");
   SDL_SetWindowIcon(app.window, icon);
 

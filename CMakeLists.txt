@@ -25,6 +25,7 @@ set(src_files
     src/app/level1.c
     src/app/menu.c
     src/app/options.c
+#    src/app/board.c
     # data
     src/data/colors.c
     src/data/levels.c

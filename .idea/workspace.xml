@@ -47,9 +47,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9106697-eb8e-40c2-b257-b16f3b72257d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lib/SDL_stbimage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/board.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/board.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/defs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conanfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/conanfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/draw.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/draw.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/draw.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/init.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/init.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/text.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/text.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/structs.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/structs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +141,16 @@
     <configuration name="Matcha" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Matcha" TARGET_NAME="Matcha" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Matcha" RUN_TARGET_NAME="Matcha">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -264,13 +280,13 @@
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state x="72" y="46" width="1747" height="1067" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1113@0.23.1920.1113" timestamp="1604477162185" />
-    <state x="1588" y="486" width="597" height="810" key="find.popup" timestamp="1604968619292">
-      <screen x="74" y="25" width="3126" height="1775" />
+    <state x="1722" y="405" width="935" height="874" key="find.popup" timestamp="1605413446711">
+      <screen x="75" y="25" width="3125" height="1775" />
     </state>
     <state x="1012" y="261" width="574" height="548" key="find.popup/0.23.1920.1113@0.23.1920.1113" timestamp="1604909961490" />
     <state x="1588" y="486" width="597" height="810" key="find.popup/74.25.3126.1775@74.25.3126.1775" timestamp="1604968619292" />
     <state x="1722" y="405" width="935" height="874" key="find.popup/746.1825.1024.743/75.25.3125.1775@75.25.3125.1775" timestamp="1604530706326" />
-    <state x="1722" y="405" width="935" height="874" key="find.popup/75.25.3125.1775@75.25.3125.1775" timestamp="1604554713756" />
+    <state x="1722" y="405" width="935" height="874" key="find.popup/75.25.3125.1775@75.25.3125.1775" timestamp="1605413446711" />
     <state x="1197" y="422" width="1091" height="1079" key="search.everywhere.popup" timestamp="1604966676902">
       <screen x="74" y="25" width="3126" height="1775" />
     </state>

@@ -1,5 +1,8 @@
 #include "draw.h"
 
+#define SDL_STBIMAGE_IMPLEMENTATION
+#include "../lib/SDL_stbimage.h"
+
 void prepareScene(void) 
 {
   int flicker = (rand() % 2) - 2;
@@ -19,7 +22,7 @@ SDL_Texture *loadTexture(char *filename)
   SDL_Texture *texture;
   
   SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
-  texture = IMG_LoadTexture(app.renderer, filename);
+  texture = STBIMG_LoadTexture(app.renderer, filename);
 
   if(!texture) {
     printf("Failed to load texture: %s\n", filename);
@@ -33,7 +36,7 @@ SDL_Surface *loadSurface(char *filename)
   SDL_Surface *surface;
   
   SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
-  surface = IMG_Load(filename);
+  surface = STBIMG_Load(filename);
 
   if(!surface) {
     printf("Failed to load texture: %s\n", filename);

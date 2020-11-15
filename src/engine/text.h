@@ -4,7 +4,6 @@
 #include "../shared/common.h"
 
 // Engine
-
 #define STB_RECT_PACK_IMPLEMENTATION
 #define STB_TRUETYPE_IMPLEMENTATION
 #define STBTTF_IMPLEMENTATION

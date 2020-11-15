@@ -58,7 +58,7 @@ struct Board {
   int w, h;
   int ncolors;
   int npieces;
-  int colors[];
+  int colors[MAX_COLORS];
   Piece *pieces[];
 };
 
@@ -70,6 +70,7 @@ struct Piece {
 };
 
 struct Match {
+    int filler;
     Piece *pieces[];
 };
 
