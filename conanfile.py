@@ -4,11 +4,7 @@ class MatchaConan(ConanFile):
     name = "Matcha"
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
-    requires = ["zlib/1.2.11",
-                "bzip2/1.0.8",
-                # "libpng/1.6.37@bincrafters/stable",
-                "sdl2/2.0.12@bincrafters/stable",
-                # "sdl2_image/2.0.5@bincrafters/stable",
+    requires = ["sdl2/2.0.12@bincrafters/stable",
                 "sdl2_mixer/2.0.4@bincrafters/stable"] # comma-separated list of requirements
     generators = "cmake", "gcc", "txt"
     build_policy = "missing"
