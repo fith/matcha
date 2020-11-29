@@ -261,7 +261,7 @@ static void doFalling(void) {
   for (x = 0; x < level.w; x++) {
     for (y = (level.h-1); y > 0; y--) {
       if (!grid[x][y]) { // if this cell is empty
-        if(grid[x][y-1]) { // check the above cell
+        if(grid[x][y-1] && grid[x][y-1]) { // check the above cell
           // move its contents down a space
           swapDots(x, y-1, x, y);
           // Dot *dot = grid[x][y-1];
@@ -825,6 +825,9 @@ static int checkMatchesRight(int x, int y) {
     if (grid[next][y] == NULL) {
       break;
     }
+    if (grid[next][y]->animateMove != NULL) {
+      break;
+    }
     if (grid[next][y]->color == grid[x][y]->color) {
       dots[matches] = grid[next][y];
       matches++;
@@ -858,6 +861,9 @@ static int checkMatchesDown(int x, int y) {
 
   while (++next < level.h) {
     if (!grid[x][next]) {
+      break;
+    }
+    if (grid[x][next]->animateMove != NULL) {
       break;
     }
     if (grid[x][next]->color == grid[x][y]->color) {

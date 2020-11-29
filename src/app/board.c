@@ -5,7 +5,7 @@ Piece* getCell(Board* board, int x, int y);
 static Piece* pieceFactory(int color, int type);
 void swapCells(Board *board, int x1, int y1, int x2, int y2);
 // checks if a single move will be valid before it happens
-int isValidMode(Board *board, x1, y1, x2, y2);
+int isValidMove(Board *board, x1, y1, x2, y2);
 // checks if any valid moves exists (moves yet to be made)
 int anyValidMove(Board *board);
 // checks if any color matches exist now
@@ -31,7 +31,7 @@ Board* createBoard(int w, int h, int ncolors) {
     return &board;
 }
 
-int isValidMode(Board *board, x1, y1, x2, y2) {
+int isValidMove(Board *board, x1, y1, x2, y2) {
     int valid = 0;
     // test swap
     swapCells(board, x1, y1, x2, y2);
