@@ -10,6 +10,9 @@ typedef struct Font Font;
 typedef struct Button Button;
 typedef struct UI UI;
 typedef struct AnimateMove AnimateMove;
+typedef struct Tween Tween;
+typedef struct Transform Tranfsorm;
+typedef struct Point Point;
 typedef struct Sprite Sprite;
 typedef struct Board Board;
 typedef struct Level Level;
@@ -70,7 +73,8 @@ struct Piece {
 };
 
 struct Match {
-    int filler;
+    int max;
+    int count;
     Piece *pieces[];
 };
 
@@ -87,8 +91,30 @@ struct Dot {
   int type;
   int health;
   AnimateMove *animateMove;
+  int canMatch;
   Dot *goal;
 //  int falls;
+};
+
+typedef struct Transform {
+    float x;
+    float y;
+    float rotation;
+    float scale;
+} Transform;
+
+typedef struct Point {
+  float x;
+  float y;
+} Point;
+
+struct Tween {
+  Transform start;
+  Transform end;
+  double startTime;
+  double duration;
+  double progress;
+  Tween *next;
 };
 
 struct AnimateMove {

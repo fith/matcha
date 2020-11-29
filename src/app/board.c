@@ -1,22 +1,23 @@
 #include "board.h"
 Board* createBoard(int w, int h, int colors);
-int matchStep(Board* board, int x, int y, int xStep, int yStep);
+//int matchStep(Board* board, int x, int y, int xStep, int yStep);
 Piece* getCell(Board* board, int x, int y);
 static Piece* pieceFactory(int color, int type);
 void swapCells(Board *board, int x1, int y1, int x2, int y2);
 // checks if a single move will be valid before it happens
-int isValidMove(Board *board, x1, y1, x2, y2);
+int isValidMove(Board *board, int x1, int y1, int x2, int y2);
 // checks if any valid moves exists (moves yet to be made)
 int anyValidMove(Board *board);
 // checks if any color matches exist now
 int checkAnyMatches(Board *board, int numMatches);
 int checkSingleMatches(Board *board, int x, int y, int numMatches);
 int checkSingleSpecialMatches(Board *board, int x, int y);
+void destroyBoard(Board *board);
 
 Board* createBoard(int w, int h, int ncolors) {
     int size = w * h;
     int color;
-    int type;
+    Piece *p;
     struct Board *board = malloc( sizeof(*board) + sizeof(Piece* [size]) );
 
     if (ncolors > MAX_COLORS) {
@@ -24,14 +25,14 @@ Board* createBoard(int w, int h, int ncolors) {
     }
 
     for (int i = 0; i < size; i++) {
-        color = rand() % ncolors;
-        board->pieces[i] = pieceFactory(color, P_NONE);
+      color = rand() % ncolors;
+      board->pieces[i] = pieceFactory(color, P_NONE);
     }
 
-    return &board;
+    return board;
 }
 
-int isValidMove(Board *board, x1, y1, x2, y2) {
+int isValidMove(Board *board, int x1, int y1, int x2, int y2) {
     int valid = 0;
     // test swap
     swapCells(board, x1, y1, x2, y2);
@@ -155,6 +156,8 @@ int checkSingleMatches(Board *board, int x, int y, int numMatches) {
             return 1;
         }
     }
+
+    return consecutive;
 }
 
 void swapCells(Board *board, int x1, int y1, int x2, int y2) {
@@ -202,38 +205,40 @@ int checkAnyMatches(Board *board, int numMatches) {
             }
         }
     }
+
+    return consecutive;
 }
 
 static Piece* pieceFactory(int color, int type) {
-    Piece p = {
-        .color = color,
-        .type = type
-    };
-    return &p;
+    Piece* p = malloc(sizeof(Piece));
+    memset(p, 0, sizeof(Piece));
+    p->color = color;
+    p->type = type;
+    return p;
 }
 
-int matchStep(Board* board, int x, int y, int xStep, int yStep) {
-  int matches = 0;
-  int xNext = x + xStep;
-  int yNext = y + yStep;
-  Dot* this = getCell(board, x, y);
-  Dot* that = getCell(board, xNext, yNext);
+//int matchStep(Board* board, int x, int y, int xStep, int yStep) {
+//  int matches = 0;
+//  int xNext = x + xStep;
+//  int yNext = y + yStep;
+//  Dot* this = getCell(board, x, y);
+//  Dot* that = getCell(board, xNext, yNext);
+//
+//  // check bounds
+//  if (xNext >= board->w || xNext < 0 || yNext >= board->h || yNext < 0) {
+//    return matches;
+//  }
+//
+//  if (this->color == that->color) {
+//    // count the match and then check for the next match, recursively
+//    matches++;
+//    matches += matchStep(board, xNext, yNext, xStep, yStep);
+//  }
+//
+//  return matches;
+//}
 
-  // check bounds
-  if (xNext >= board->w || xNext < 0 || yNext >= board->h || yNext < 0) {
-    return matches;
-  }
-
-  if (this->color == that->color) {
-    // count the match and then check for the next match, recursively
-    matches++;
-    matches += matchStep(board, xNext, yNext, xStep, yStep);
-  }
-
-  return matches;
-}
-
-void destroyBoard(Board &board) {
+void destroyBoard(Board *board) {
 
 }
 

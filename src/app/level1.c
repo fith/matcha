@@ -45,6 +45,7 @@ static SDL_Texture *animalTexture;
 static SDL_Texture *foodTexture;
 
 static Dot *dragging;
+static Dot *lastDragged;
 static int dragOffsetX, dragOffsetY;
 
 // grid
@@ -131,6 +132,7 @@ void initLevel1(int l)
     app.delegate.draw = draw;
 
   dragging = NULL;
+  lastDragged = NULL;
   score = 0;
   gameover = 0;
   lastMoveFrom = NULL;
@@ -300,6 +302,7 @@ static void doDrag(void) {
     if (inGrid && (grid[row][col] && !dragging)) {
       // pick it up
       dragging = grid[row][col];
+      lastDragged = dragging;
       dragOffsetX = mouse.x - dragging->x;
       dragOffsetY = mouse.y - dragging->y;
       playSound(SND_DOT_LIFT, CH_ANY);
@@ -373,19 +376,29 @@ static void swapDots(int row1, int col1, int row2, int col2) {
 }
 
 static void animateMoveTo(Dot *dot, float endX, float endY) {
-  AnimateMove *am;
+  AnimateMove *am, *next;
   double ticks = SDL_GetTicks();
 
   am = malloc(sizeof(AnimateMove));
   memset(am, 0, sizeof(AnimateMove));
+
   am->startX = dot->x;
   am->startY = dot->y;
   am->endX = endX;
   am->endY = endY;
-  am->duration = 180 + (rand() % 40);
+  am->duration = 120 + (rand() % 20);
   am->startTime = ticks;
+  am->next = NULL;
 
-  dot->animateMove = am;
+  if (dot->animateMove) {
+    next = dot->animateMove;
+    while (next->next) {
+      next = next->next;
+    }
+    next->next = am;
+  } else {
+    dot->animateMove = am;
+  }
 }
 
 static int isValidMove(Dot *from, Dot *to) {
@@ -569,17 +582,18 @@ static void screenToGrid(float x, float y, int *row, int *col) {
 
 static void logic(void)
 {
+  int matches = 0;
   if(!gameover) {
-      doDrag();
-      checkMatches();
-      removeDeadDots();
-      doFalling();
+    doDrag();
+    matches = checkMatches();
+    removeDeadDots();
+    doFalling();
   }
   doAnimateMove();
   // animate the animal's sprite.
   doAnimal();
 
-  if (checkMatches() == 0) {
+  if (matches == 0) {
     checkWin();
   }
   doButtons();
@@ -689,7 +703,7 @@ static void doAnimateMove(void) {
         continue;
       }
       dot = grid[x][y];
-      am = grid[x][y]->animateMove;
+      am = dot->animateMove;
       double elapsed = ticks - am->startTime;
       am->progress = elapsed / am->duration;
 
@@ -699,10 +713,15 @@ static void doAnimateMove(void) {
       if (elapsed > am->duration) {
         dot->x = am->endX;
         dot->y = am->endY;
-        dot->animateMove = NULL;
+        dot->animateMove = am->next;
+        if (dot->animateMove) {
+          dot->animateMove->startTime = ticks;
+          dot->animateMove->startX = dot->x;
+          dot->animateMove->startY = dot->y;
+        dot->animateMove->progress = 0;
+        }
         free(am);
       }
-
     }
   }
 }
@@ -821,17 +840,19 @@ static int checkMatchesRight(int x, int y) {
   Dot *dots[(MATCH * 2)] = { NULL };
   dots[0] = grid[x][y];
 
+
   while (++next < level.w) {
     if (grid[next][y] == NULL) {
       break;
     }
-    if (grid[next][y]->animateMove != NULL) {
+    if (grid[next][y] != lastDragged && grid[next][y]->animateMove) {
       break;
     }
     if (grid[next][y]->color == grid[x][y]->color) {
       dots[matches] = grid[next][y];
       matches++;
     } else {
+//      printf("\t(%i, %i) color does not match (%i, %i)", x, next, x, y);
       break;
     }
   }
@@ -859,17 +880,21 @@ static int checkMatchesDown(int x, int y) {
   Dot *dots[(MATCH * 2) - 1] = { NULL };
   dots[0] = grid[x][y];
 
+
   while (++next < level.h) {
     if (!grid[x][next]) {
+//      printf("\t(%i, %i) is NULL", x, next);
       break;
     }
-    if (grid[x][next]->animateMove != NULL) {
+    if (grid[x][next] != lastDragged && grid[x][next]->animateMove) {
       break;
     }
     if (grid[x][next]->color == grid[x][y]->color) {
       dots[matches] = grid[x][next];
+//      printf("\t(%i, %i) matches (%i, %i)", x, next, x, y);
       matches++;
     } else {
+//      printf("\t(%i, %i) color does not match (%i, %i)", x, next, x, y);
       break;
     }
   }
@@ -977,6 +1002,7 @@ static void deinitLevel1(void) {
 
   // state variables
   dragging = NULL;
+  lastDragged = NULL;
   SDL_DestroyTexture(dotTexture);
   SDL_DestroyTexture(dottedLineTexture);
   SDL_DestroyTexture(animalTexture);
