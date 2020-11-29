@@ -155,7 +155,7 @@ void buttonStart(void) {
   if (l > app.levelFarthest) {
       l = app.levelFarthest;
   }
-  initLevel1(app.level);
+  initLevel(app.level);
 }
 
 static void createButton(char *str, int x, int y, int outline, void (*onClick)()) {
