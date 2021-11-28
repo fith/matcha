@@ -9,7 +9,7 @@
 #define MAX_DUST 20
 
 // game settings
-#define DOT_COLORS 9
+#define DOT_COLORS 8
 #define GAME_COLORS 5
 #define MATCH 3
 #define SCORE_DOT 10

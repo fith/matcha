@@ -49,7 +49,7 @@ struct Level {
     int seed;
     int fox;
     int numColors;
-    SDL_Color *colors[GAME_COLORS];
+    SDL_Color *colors[DOT_COLORS];
 };
 
 struct Dot {

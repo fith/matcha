@@ -2,85 +2,61 @@
 #include <time.h>
 
 // Init
-void initLevel(int l);
-
+static void deinitLevel();
+static void draw(void);
 static void initDots(void);
-
+void initLevel(int l);
 static void logic(void);
 
-static void draw(void);
-
-static void deinitLevel();
-
 // Logic
-static int isValidMove(Dot *from, Dot *to);
-
 static int checkMatches(void);
-
-static int checkMatchesRight(int x, int y);
-
 static int checkMatchesDown(int x, int y);
-
-static void doFalling(void);
-
+static int checkMatchesRight(int x, int y);
 static void doAnimal(void);
-
-static void doDrag(void);
-
 static void doAnimateMove(void);
-
-static void removeDeadDots(void);
-
 static void doButtons(void);
-
+static void doDrag(void);
+static void doFalling(void);
 static void doGameOver(void);
+static int isValidMove(Dot *from, Dot *to);
+static void removeDeadDots(void);
 
 // Drawing
 static void drawButtons(void);
-
-static void drawDots(void);
-
 static void drawDot(Dot *dot);
-
+static void drawDots(void);
 static void drawGoals(void);
-
 static void drawScore(void);
-
 static void drawTime(void);
-
 static void drawWin(void);
 
 // Util
-static void createButton(char *str, int x, int y, void (*onClick)());
-
-static void backButton(void);
-
-static void nextButton(void);
-
-static void gridToScreen(int row, int col, float *x, float *y);
-
-static void screenToGrid(float x, float y, int *row, int *col);
-
-static void swapDots(int row1, int col1, int row2, int col2);
-
 static void animateMoveTo(Dot *dot, float endX, float endY);
-
-static void removeDot(int x, int y);
-
+static void backButton(void);
+static void createButton(char *str, int x, int y, void (*onClick)());
 static Dot *createDot(int row, int col);
-
+static void gridToScreen(int row, int col, float *x, float *y);
+static void nextButton(void);
+static void removeDot(int x, int y);
+static void screenToGrid(float x, float y, int *row, int *col);
+void shuffleColors(SDL_Color *arr[], size_t n);
+static void swapDots(int row1, int col1, int row2, int col2);
 static SDL_Color *randomLevelColor();
 
-void shuffleColors(SDL_Color *arr[], size_t n);
-
+// graphics
 static SDL_Texture *dotTexture;
 static SDL_Texture *dottedLineTexture;
 static SDL_Texture *animalTexture;
 static SDL_Texture *foodTexture;
+static SDL_Texture *runningTexture;
+static SDL_Texture *idleTexture;
 
+// input, mouse state
 static Dot *dragging;
 static Dot *lastDragged;
 static int dragOffsetX, dragOffsetY;
+Dot *lastMoveFrom;
+Dot *lastMoveTo;
 
 // grid
 #define TILE_SIZE 64
@@ -88,23 +64,18 @@ static int dragOffsetX, dragOffsetY;
 static Dot *grid[8][8];
 static SDL_Rect gridRect;
 
+// level state
 static Level level;
-
+int score;
+int gameover;
+Uint32 startTime;
+Uint32 gameOverTime;
 static Dot *animal;
 static Dot *food;
 static Sprite *hogIdleSprite;
 static Sprite *hogRunningSprite;
 static Sprite *foodSprite;
-static SDL_Texture *runningTexture;
-static SDL_Texture *idleTexture;
 
-int score;
-int gameover;
-Dot *lastMoveFrom;
-Dot *lastMoveTo;
-
-Uint32 startTime;
-Uint32 gameOverTime;
 
 void initLevel(int l) {
     printf("LEVELS: %i", num_levels);
@@ -121,10 +92,8 @@ void initLevel(int l) {
     }
 
     // randomize the colors
-    SDL_Color *shuffledColors[DOT_COLORS];
-    memcpy(&shuffledColors, &dotColors, sizeof(SDL_Color *) * DOT_COLORS);
-    shuffleColors(shuffledColors, DOT_COLORS);
-    memcpy(level.colors, shuffledColors, (sizeof(SDL_Color *) * GAME_COLORS));
+    memcpy(&level.colors, &dotColors, sizeof(SDL_Color *) * DOT_COLORS);
+    shuffleColors(level.colors, DOT_COLORS);
 
     // reset random seed
     srand(level.seed);
@@ -560,7 +529,7 @@ static Dot *createDot(int row, int col) {
 }
 
 static SDL_Color *randomLevelColor() {
-    return level.colors[rand() % level.numColors];
+    return level.colors[rand() / (RAND_MAX / level.numColors + 1)];
 }
 
 static void gridToScreen(int row, int col, float *x, float *y) {
