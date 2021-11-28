@@ -7,6 +7,7 @@
 #define STB_RECT_PACK_IMPLEMENTATION
 #define STB_TRUETYPE_IMPLEMENTATION
 #define STBTTF_IMPLEMENTATION
+
 #include "../lib/stbttf.h"
 
 struct Font {
@@ -20,6 +21,7 @@ struct Font {
 // App
 
 extern void blit(SDL_Texture *texture, int x, int y);
+
 extern App app;
 
 #endif

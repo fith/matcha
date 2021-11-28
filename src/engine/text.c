@@ -3,46 +3,47 @@
 #define STB_RECT_PACK_IMPLEMENTATION
 #define STB_TRUETYPE_IMPLEMENTATION
 #define STBTTF_IMPLEMENTATION
+
 #include "../lib/stbttf.h"
 
 static SDL_Texture *drawTextTexture;
 static SDL_Surface *drawTextSurface;
 static char drawTextBuffer[MAX_LINE_LENGTH];
 
-SDL_Texture* textTexture(int font, char *format, ...);
+SDL_Texture *textTexture(int font, char *format, ...);
+
 void getTextSize(int font, int *w, int *h, char *format, ...);
 
 Font fonts[MAX_FONTS] = {
-  {FNT_HEAD, 192, NULL, 255, 240, 220, 250},
-  {FNT_BODY, 36, NULL, 255, 240, 220, 250},
-  {FNT_BUTT, 36, NULL, 255, 240, 220, 250}
+        {FNT_HEAD, 192, NULL, 255, 240, 220, 250},
+        {FNT_BODY, 36,  NULL, 255, 240, 220, 250},
+        {FNT_BUTT, 36,  NULL, 255, 240, 220, 250}
 };
 
-void initFonts(void)
-{
-  int i;
-  for (i = 0; i < MAX_FONTS; i++) {
-    if(fonts[i].font != NULL) {
-      STBTTF_CloseFont(fonts[i].font);
-      fonts[i].font = NULL;
+void initFonts(void) {
+    int i;
+    for (i = 0; i < MAX_FONTS; i++) {
+        if (fonts[i].font != NULL) {
+            STBTTF_CloseFont(fonts[i].font);
+            fonts[i].font = NULL;
+        }
+        fonts[i].font = STBTTF_OpenFont(app.renderer, "resources/fnt/abraxeousblack.ttf", (float) fonts[i].size);
+        if (!fonts[i].font) {
+            printf("STBTTF_OpenFont failed.");
+            // handle error
+        }
     }
-    fonts[i].font = STBTTF_OpenFont(app.renderer, "resources/fnt/abraxeousblack.ttf", (float)fonts[i].size);
-    if(!fonts[i].font) {
-      printf("STBTTF_OpenFont failed.");
-      // handle error
-    }
-  }
 }
 
 void drawText(int font, int x, int y, char *format, ...) {
-  va_list args;
+    va_list args;
 
-  va_start(args, format);
-  vsprintf(drawTextBuffer, format, args);
-  va_end(args);
+    va_start(args, format);
+    vsprintf(drawTextBuffer, format, args);
+    va_end(args);
 
-  SDL_SetRenderDrawColor(app.renderer, fonts[font].r, fonts[font].g, fonts[font].b, fonts[font].a);
-  STBTTF_RenderText(app.renderer, fonts[font].font, x, y+fonts[font].font->baseline, drawTextBuffer);
+    SDL_SetRenderDrawColor(app.renderer, fonts[font].r, fonts[font].g, fonts[font].b, fonts[font].a);
+    STBTTF_RenderText(app.renderer, fonts[font].font, x, y + fonts[font].font->baseline, drawTextBuffer);
 }
 
 void getTextSize(int font, int *w, int *h, char *format, ...) {
@@ -51,7 +52,7 @@ void getTextSize(int font, int *w, int *h, char *format, ...) {
     vsprintf(drawTextBuffer, format, args);
     va_end(args);
 
-    *w = (int)STBTTF_MeasureText(fonts[font].font, drawTextBuffer);
+    *w = (int) STBTTF_MeasureText(fonts[font].font, drawTextBuffer);
     *h = fonts[font].font->baseline;
 }
 
@@ -66,47 +67,46 @@ void drawTextRight(int font, int x, int y, char *format, ...) {
 
     getTextSize(font, &w, &h, drawTextBuffer);
 
-  dx = x - w;
-  dy = y;
-  
-  drawText(font, dx, dy, drawTextBuffer);
+    dx = x - w;
+    dy = y;
+
+    drawText(font, dx, dy, drawTextBuffer);
 }
 
 void drawTextCenter(int font, int x, int y, char *format, ...) {
     int dx, dy;
     va_list args;
-    int w,h;
-  
-  va_start(args, format);
-  vsprintf(drawTextBuffer, format, args);
-  va_end(args);
+    int w, h;
+
+    va_start(args, format);
+    vsprintf(drawTextBuffer, format, args);
+    va_end(args);
 
     getTextSize(font, &w, &h, drawTextBuffer);
 
-  dx = x - (w/2);
-  dy = y;
-  
-  drawText(font, dx, dy, drawTextBuffer);
+    dx = x - (w / 2);
+    dy = y;
+
+    drawText(font, dx, dy, drawTextBuffer);
 }
 
-SDL_Texture* textTexture(int font, char *format, ...)
-{
-  SDL_Texture* texture = NULL;
-  int w, h;
+SDL_Texture *textTexture(int font, char *format, ...) {
+    SDL_Texture *texture = NULL;
+    int w, h;
 
-  if (font < 0 || font > MAX_FONTS-1) {
-    printf("Font out of range: %i\n", font);
-  }
+    if (font < 0 || font > MAX_FONTS - 1) {
+        printf("Font out of range: %i\n", font);
+    }
 
-    if(!fonts[font].font) {
+    if (!fonts[font].font) {
         printf("Failed to find font: %i", font);
         return NULL;
     }
 
-  va_list args;
-  va_start(args, format);
-  vsprintf(drawTextBuffer, format, args);
-  va_end(args);
+    va_list args;
+    va_start(args, format);
+    vsprintf(drawTextBuffer, format, args);
+    va_end(args);
 
     getTextSize(font, &w, &h, drawTextBuffer);
 
@@ -114,7 +114,7 @@ SDL_Texture* textTexture(int font, char *format, ...)
 
 
     texture = SDL_CreateTexture(app.renderer, SDL_PIXELFORMAT_RGBA8888,
-                                               SDL_TEXTUREACCESS_TARGET, w, h);
+                                SDL_TEXTUREACCESS_TARGET, w, h);
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
 
     // Set the target
@@ -132,5 +132,5 @@ SDL_Texture* textTexture(int font, char *format, ...)
     //Detach the texture
     SDL_SetRenderTarget(app.renderer, NULL);
 
-  return texture;
+    return texture;
 }

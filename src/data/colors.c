@@ -9,9 +9,9 @@ SDL_Color colorIndigo = {105, 88, 159}; // indigo
 SDL_Color colorViolet = {68, 18, 58}; // violet *
 SDL_Color colorWhite = {232, 227, 214}; // white
 SDL_Color colorBlack = {26, 26, 26}; // white
-SDL_Color colorPeach = { 251, 180, 146};
-SDL_Color colorGrey = { 68, 18, 58};
-SDL_Color colorPink = { 255, 146, 198};
+SDL_Color colorPeach = {251, 180, 146};
+SDL_Color colorGrey = {68, 18, 58};
+SDL_Color colorPink = {255, 146, 198};
 
 SDL_Color *dotColors[DOT_COLORS] = {
         &colorRed,

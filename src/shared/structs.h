@@ -3,50 +3,45 @@
 
 #include "../lib/stb/stb_truetype.h"
 
-// typedef struct Entity Entity;
 typedef struct Dot Dot;
-typedef struct Piece Piece;
 typedef struct Font Font;
 typedef struct Button Button;
 typedef struct UI UI;
 typedef struct AnimateMove AnimateMove;
-typedef struct Tween Tween;
-typedef struct Transform Tranfsorm;
 typedef struct Point Point;
 typedef struct Sprite Sprite;
-typedef struct Board Board;
 typedef struct Level Level;
 
 typedef struct {
-  void (*logic)(void);
-  void (*draw)(void);
+    void (*logic)(void);
+    void (*draw)(void);
 } Delegate;
 
 typedef struct {
-  int musicEnabled;
-  float musicVolume;
-  int soundEnabled;
-  float soundVolume;
-  int fullscreen;
-  int enableFilm;
+    int musicEnabled;
+    float musicVolume;
+    int soundEnabled;
+    float soundVolume;
+    int fullscreen;
+    int enableFilm;
 } Options;
 
 typedef struct {
-  SDL_Renderer *renderer;
-  SDL_Window *window;
-  Delegate delegate;
-  Options options;
-  int keyboard[MAX_KEYBOARD_KEYS];
-  SDL_MouseButtonEvent *mouseDownEvent;
-  SDL_MouseButtonEvent *mouseUpEvent;
-  int clicked;
-  int mouseDown;
-  int wins;
-  int level;
-  int levelFarthest;
-  int paused;
-  int winW, winH;
-  int screenW, screenH;
+    SDL_Renderer *renderer;
+    SDL_Window *window;
+    Delegate delegate;
+    Options options;
+    int keyboard[MAX_KEYBOARD_KEYS];
+    SDL_MouseButtonEvent *mouseDownEvent;
+    SDL_MouseButtonEvent *mouseUpEvent;
+    int clicked;
+    int mouseDown;
+    int wins;
+    int level;
+    int levelFarthest;
+    int paused;
+    int winW, winH;
+    int screenW, screenH;
 } App;
 
 struct Level {
@@ -57,155 +52,87 @@ struct Level {
     SDL_Color *colors[GAME_COLORS];
 };
 
-struct Board {
-  int w, h;
-  int ncolors;
-  int npieces;
-  int colors[MAX_COLORS];
-  Piece *pieces[];
-};
-
-struct Piece {
-    int color;
-    int type;
-    int goalType;
-    int moving;
-};
-
-struct Match {
-    int max;
-    int count;
-    Piece *pieces[];
-};
-
 struct Dot {
-  SDL_Texture *texture;
-  float rotation;
-  int flip;
-  Sprite *icon;
-  SDL_Color *color;
-  float x;
-  float y;
-  int row;
-  int col;
-  int type;
-  int health;
-  AnimateMove *animateMove;
-  int canMatch;
-  Dot *goal;
+    SDL_Texture *texture;
+    float rotation;
+    int flip;
+    Sprite *icon;
+    SDL_Color *color;
+    float x;
+    float y;
+    int row;
+    int col;
+    int type;
+    int health;
+    AnimateMove *animateMove;
+    int canMatch;
+    Dot *goal;
 //  int falls;
 };
 
-typedef struct Transform {
+typedef struct Point {
     float x;
     float y;
-    float rotation;
-    float scale;
-} Transform;
-
-typedef struct Point {
-  float x;
-  float y;
 } Point;
 
-struct Tween {
-  Transform start;
-  Transform end;
-  double startTime;
-  double duration;
-  double progress;
-  Tween *next;
-};
-
 struct AnimateMove {
-  float startX;
-  float startY;
-  float endX;
-  float endY;
-  double startTime;
-  float duration;
-  float progress;
-  AnimateMove *next;
+    float startX;
+    float startY;
+    float endX;
+    float endY;
+    double startTime;
+    float duration;
+    float progress;
+    AnimateMove *next;
 };
-
-// struct Transform {
-//   float x, y;
-//   float scale;
-//   float rotation;
-// };
-
-// struct Animation {
-//   Transform start;
-//   Transform end;
-//   double startTime;
-//   float duration;
-//   float progress;
-//   Animation *next;
-// }
-
-// struct SpriteSheet {
-//   SDL_Texture *texture;
-//   int currentFrame;
-//   int frameCount;
-//   int frameDelay;
-//   double startTime;
-//   double lastFrameTime;
-//   int loop;
-// }
 
 struct Sprite {
-  SDL_Rect rect;
-  float rotation;
-  float scale;
-  SDL_Color *color;
-  SDL_Texture *texture;
-  int currentFrame;
-  int frameCount;
-  int frameDelay;
-  double startTime;
-  double lastFrameTime;
-  int blendMode;
-  int flip;
-  int loop;
-};
-
-struct Character {
-  Sprite* idle;
-  Sprite* active;
+    SDL_Rect rect;
+    float rotation;
+    float scale;
+    SDL_Color *color;
+    SDL_Texture *texture;
+    int currentFrame;
+    int frameCount;
+    int frameDelay;
+    double startTime;
+    double lastFrameTime;
+    int blendMode;
+    int flip;
+    int loop;
 };
 
 struct Button {
-  SDL_Texture *normal;
-  SDL_Texture *hover;
-  int isHover;
-  int isClicked;
-  int outline;
-  SDL_Rect rect;
-  void (*onClick)(void);
-  Button *next;
+    SDL_Texture *normal;
+    SDL_Texture *hover;
+    int isHover;
+    int isClicked;
+    int outline;
+    SDL_Rect rect;
+    void (*onClick)(void);
+    Button *next;
 };
 
 struct UI {
-  SDL_Texture *texNormal;
-  SDL_Texture *texHover;
-  SDL_Texture *texActive;
-  SDL_Color colNormal;
-  SDL_Color colHover;
-  SDL_Color colActive;
-  int isHover;
-  int isClicked;
-  int isDragging;
-  int isActive;
-  SDL_Rect rect;
-  void (*onClick)(void);
-  void (*onDrag)(void);
+    SDL_Texture *texNormal;
+    SDL_Texture *texHover;
+    SDL_Texture *texActive;
+    SDL_Color colNormal;
+    SDL_Color colHover;
+    SDL_Color colActive;
+    int isHover;
+    int isClicked;
+    int isDragging;
+    int isActive;
+    SDL_Rect rect;
+    void (*onClick)(void);
+    void (*onDrag)(void);
 };
 
 typedef struct {
-  Button buttonsHead, *buttonsTail;
-  AnimateMove animateMoveHead, *animateMoveTail;
+    Button buttonsHead, *buttonsTail;
+    AnimateMove animateMoveHead, *animateMoveTail;
 } Stage;
-
 
 
 #endif

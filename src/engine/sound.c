@@ -1,25 +1,27 @@
 #include "sound.h"
 
-static  void loadSounds(void);
+static void loadSounds(void);
+
 void loadMusic(char *filename);
+
 void playMusic(int loop);
+
 void playSound(int id, int channel);
+
 void stopMusic();
 
-static  Mix_Chunk* sounds[SND_MAX];
-static  Mix_Music* music;
+static Mix_Chunk *sounds[SND_MAX];
+static Mix_Music *music;
 
-void initSounds(void)
-{
-    memset(sounds, 0, sizeof(Mix_Chunk*) * SND_MAX);
+void initSounds(void) {
+    memset(sounds, 0, sizeof(Mix_Chunk *) * SND_MAX);
 
     music = NULL;
 
     loadSounds();
 }
 
-static void loadSounds(void)
-{
+static void loadSounds(void) {
     sounds[SND_DOT_LIFT] = Mix_LoadWAV("resources/snd/lift.ogg");
     sounds[SND_DOT_SWAP] = Mix_LoadWAV("resources/snd/swap.ogg");
     sounds[SND_DOT_DROP] = Mix_LoadWAV("resources/snd/drop.ogg");
@@ -28,19 +30,17 @@ static void loadSounds(void)
     sounds[SND_DOT_POP3] = Mix_LoadWAV("resources/snd/pop3.ogg");
 }
 
-void loadMusic(char *filename)
-{
-    if (music != NULL)
-    {
+void loadMusic(char *filename) {
+    if (music != NULL) {
         Mix_HaltMusic();
         Mix_FreeMusic(music);
         music = NULL;
     }
 
     music = Mix_LoadMUS(filename);
-    if(!music) {
+    if (!music) {
         printf("Mix_LoadMUS(\"%s\"): %s\n", filename, Mix_GetError());
-    }   
+    }
 }
 
 void stopMusic() {
