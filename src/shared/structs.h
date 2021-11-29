@@ -47,8 +47,9 @@ typedef struct {
 struct Level {
     int w, h;
     int seed;
-    int fox;
     int numColors;
+    int level;
+    int par;
     SDL_Color *colors[DOT_COLORS];
 };
 

@@ -3,6 +3,9 @@
 static SDL_Texture *dustTexture;
 
 static void drawDust(void);
+static void initDust(void);
+unsigned int dustRandom[512];
+unsigned int dustI = 0;
 
 static void capFrameRate(long *then, float *remainder) {
     long wait, frameTime;
@@ -38,6 +41,7 @@ int main(int argc, char *argv[]) {
 
     dustTexture = loadTexture("resources/gfx/dust.png");
 
+    initDust();
     initSounds();
     initFonts();
     initMenu();
@@ -72,6 +76,13 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+static void initDust(void) {
+    srand(1);
+    for (int i = 0; i < 512; i++) {
+        dustRandom[i] = rand();
+    }
+}
+
 static void drawDust(void) {
     SDL_SetRenderDrawBlendMode(app.renderer, SDL_BLENDMODE_ADD);
     SDL_SetTextureBlendMode(dustTexture, SDL_BLENDMODE_ADD);
@@ -83,10 +94,13 @@ static void drawDust(void) {
         int i;
         SDL_Rect rect;
         for (i = 0; i < MAX_DUST; i++) {
-            rect.x = rand() % app.screenW;
-            rect.y = rand() % app.screenH;
-            rect.w = rect.h = 1 + rand() % 8;
+            rect.x = dustRandom[dustI++] / (RAND_MAX / (app.screenW) + 1);
+            rect.y = dustRandom[dustI++] / (RAND_MAX / (app.screenH) + 1);
+            rect.w = rect.h = 1 + dustRandom[dustI++] / (RAND_MAX / (8 - 1) + 1);
             blitFit(dustTexture, &rect);
+            if(dustI > 511) {
+                dustI = 0;
+            }
         }
         offset = 0;
     }

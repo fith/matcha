@@ -26,22 +26,29 @@ static void drawButtons(void);
 static void drawDot(Dot *dot);
 static void drawDots(void);
 static void drawGoals(void);
+static void drawLevel(void);
 static void drawScore(void);
 static void drawTime(void);
 static void drawWin(void);
 
+// button callbacks
+static void nextButton(void);
+static void restartButton(void);
+static void backButton(void);
+
 // Util
 static void animateMoveTo(Dot *dot, float endX, float endY);
-static void backButton(void);
-static void createButton(char *str, int x, int y, void (*onClick)());
+static Button* createButton(char *str, int x, int y, void (*onClick)());
 static Dot *createDot(int row, int col);
 static void gridToScreen(int row, int col, float *x, float *y);
-static void nextButton(void);
 static void removeDot(int x, int y);
 static void screenToGrid(float x, float y, int *row, int *col);
 void shuffleColors(SDL_Color *arr[], size_t n);
 static void swapDots(int row1, int col1, int row2, int col2);
 static SDL_Color *randomLevelColor();
+static void initRandom(int seed);
+static int getRandom(int min, int max);
+static void removeButton(Button* remove);
 
 // graphics
 static SDL_Texture *dotTexture;
@@ -57,6 +64,7 @@ static Dot *lastDragged;
 static int dragOffsetX, dragOffsetY;
 Dot *lastMoveFrom;
 Dot *lastMoveTo;
+Button* restart;
 
 // grid
 #define TILE_SIZE 64
@@ -75,28 +83,34 @@ static Dot *food;
 static Sprite *hogIdleSprite;
 static Sprite *hogRunningSprite;
 static Sprite *foodSprite;
+#define NUM_RANDOMS 1024
+static unsigned int randoms[NUM_RANDOMS];
+static unsigned int randomI = 0;
 
+//unsigned int seed;
 
 void initLevel(int l) {
-    printf("LEVELS: %i", num_levels);
+//    printf("LEVELS: %i", num_levels);
+//    seed = time(NULL);
 
     if (l < num_levels) {
         level = levels[l];
+        initRandom(level.seed);
     } else {
-        level.seed = (unsigned int) time(NULL);
-        level.w = 7;
-        level.w = rand() % 2 + 6;
-        level.h = rand() % 2 + 6;
-        level.fox = 0;
+        int min = 5;
+        int max = 7;
+        level.seed = l;
+        initRandom(level.seed);
+        level.w = getRandom(min, max);
+        level.h = getRandom(min, max);
         level.numColors = GAME_COLORS;
+        level.par = -1;
     }
+    level.level = app.level;
 
     // randomize the colors
     memcpy(&level.colors, &dotColors, sizeof(SDL_Color *) * DOT_COLORS);
     shuffleColors(level.colors, DOT_COLORS);
-
-    // reset random seed
-    srand(level.seed);
 
     // set scene delegates
     app.delegate.logic = logic;
@@ -200,6 +214,7 @@ void initLevel(int l) {
     }
 
     createButton("<", 16, 550, backButton);
+    restart = createButton("restart", 16, 30, restartButton);
 
     initDots();
 }
@@ -207,9 +222,8 @@ void initLevel(int l) {
 void shuffleColors(SDL_Color *arr[], size_t n) {
     if (n > 1) {
         size_t i;
-        srand(time(NULL));
         for (i = 0; i < n - 1; i++) {
-            size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+            size_t j = getRandom(i, n);
             SDL_Color *t = arr[j];
             arr[j] = arr[i];
             arr[i] = t;
@@ -290,6 +304,7 @@ static void doDrag(void) {
                     lastMoveFrom = dragging;
                     lastMoveTo = grid[row][col];
                     swapDots(row, col, dragging->row, dragging->col);
+                    score++;
                 } else {
                     // return home
                     gridToScreen(dragging->row, dragging->col, &x, &y);
@@ -356,7 +371,7 @@ static void animateMoveTo(Dot *dot, float endX, float endY) {
     am->startY = dot->y;
     am->endX = endX;
     am->endY = endY;
-    am->duration = 120 + (rand() % 20);
+    am->duration = 120 + rand() % 20;
     am->startTime = ticks;
     am->next = NULL;
 
@@ -403,7 +418,15 @@ static int isValidMove(Dot *from, Dot *to) {
 }
 
 static void drawScore(void) {
-    drawTextRight(FNT_BODY, app.screenW - 16, 0, "%6d", score);
+    drawTextRight(FNT_BODY, app.screenW - 16, 0, "%6d moves", score);
+    if (level.par > 0) {
+        drawTextRight(FNT_BODY, app.screenW - 16, 30, "%6d par", level.par);
+    }
+    drawText(FNT_BODY, 16, 0, "level %d", level.level);
+}
+
+static void drawLevel(void) {
+
 }
 
 static void drawTime(void) {
@@ -424,7 +447,10 @@ static void drawWin(void) {
     Uint32 hiscore = (score * score) / seconds;
     drawTextCenter(FNT_HEAD, app.screenW / 2, 72, "MATCHA");
     // drawTextCenter(FNT_BODY, app.w/2, 228, "Hog & Sandwich");
-    drawTextCenter(FNT_BODY, app.screenW / 2, 228, "Final Score: %d", hiscore);
+    drawTextCenter(FNT_BODY, app.screenW / 2, 228, "moves: %d", score);
+    if (level.par > 0) {
+        drawTextCenter(FNT_BODY, app.screenW / 2, 258, "par: %d", level.par);
+    }
 }
 
 static void checkWin(void) {
@@ -440,15 +466,12 @@ static void doGameOver(void) {
     if (gameover) {
         return;
     }
-
+    removeButton(restart);
     createButton("Next", 688, 540, nextButton);
     gameover = 1;
     gameOverTime = SDL_GetTicks();
     app.wins++;
     app.level++;
-    if (app.level > num_levels) {
-        app.level = num_levels;
-    }
     if (app.level > app.levelFarthest) {
         app.levelFarthest = app.level;
     }
@@ -468,10 +491,10 @@ static void initDots(void) {
     float minDistance = 3.0;
     float maxDistance = 4.0;
     do {
-        ax = rand() % level.w;
-        ay = rand() % level.h;
-        fx = rand() % level.w;
-        fy = rand() % level.h;
+        ax = getRandom(0, level.w);
+        ay = getRandom(0, level.h);
+        fx = getRandom(0, level.w);
+        fy = getRandom(0, level.h);
         distance = sqrt(pow(fx - ax, 2) + pow(fy - ay, 2) * 1.0);
     } while (distance < minDistance || distance > maxDistance);
 
@@ -529,7 +552,7 @@ static Dot *createDot(int row, int col) {
 }
 
 static SDL_Color *randomLevelColor() {
-    return level.colors[rand() / (RAND_MAX / level.numColors + 1)];
+    return level.colors[getRandom(0, level.numColors)];
 }
 
 static void gridToScreen(int row, int col, float *x, float *y) {
@@ -570,8 +593,9 @@ static void draw(void) {
         drawGoals();
         drawDots();
         drawScore();
-        drawTime();
+//        drawTime();
     }
+    drawLevel();
     drawButtons();
 
     if (gameover) {
@@ -589,6 +613,10 @@ static void backButton(void) {
 static void nextButton(void) {
     deinitLevel();
     initLevel(app.level);
+}
+static void restartButton(void) {
+    deinitLevel();
+    initLevel(level.level);
 }
 
 static void doAnimal(void) {
@@ -897,7 +925,7 @@ static void removeDeadDots(void) {
     lastMoveFrom = NULL;
     lastMoveTo = NULL;
 
-    score += SCORE_DOT * total;
+//    score += SCORE_DOT * total;
 }
 
 static void removeDot(int x, int y) {
@@ -910,7 +938,7 @@ static void removeDot(int x, int y) {
     free(dot);
 }
 
-static void createButton(char *str, int x, int y, void (*onClick)()) {
+static Button* createButton(char *str, int x, int y, void (*onClick)()) {
     Button *button = malloc(sizeof(Button));
     memset(button, 0, sizeof(Button));
 
@@ -926,6 +954,30 @@ static void createButton(char *str, int x, int y, void (*onClick)()) {
 
     stage.buttonsTail->next = button;
     stage.buttonsTail = button;
+
+    return button;
+}
+
+static void removeButton(Button* remove) {
+    Button *b, *prev;
+    for (b = stage.buttonsHead.next; b != NULL; b = b->next) {
+        if (b == remove) {
+            prev->next = remove->next;
+            if (stage.buttonsTail == remove) {
+                stage.buttonsTail = prev;
+            }
+        }
+        prev = b;
+    }
+    if (remove->normal != NULL) {
+        SDL_DestroyTexture(remove->normal);
+        remove->normal = NULL;
+    }
+    if (remove->hover != NULL) {
+        SDL_DestroyTexture(remove->hover);
+        remove->hover = NULL;
+    }
+    free(remove);
 }
 
 static void deinitLevel(void) {
@@ -983,3 +1035,18 @@ static void deinitLevel(void) {
     }
 }
 
+static void initRandom(int seed) {
+    srand(seed);
+    for (int i = 0; i < NUM_RANDOMS; i++) {
+        randoms[i] = rand();
+    }
+    randomI = 0;
+    printf("Last random = %i\n", randoms[NUM_RANDOMS-1]);
+}
+
+static int getRandom(int min, int max) {
+    if (randomI >= NUM_RANDOMS) {
+        randomI = 0;
+    }
+    return min + randoms[randomI++] / (RAND_MAX / (max - min) + 1);
+}

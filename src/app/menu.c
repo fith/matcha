@@ -1,7 +1,7 @@
 #include "menu.h"
 
+// delegate
 static void logic(void);
-
 static void draw(void);
 
 // logic
@@ -9,22 +9,15 @@ static void doButtons(void);
 
 // draw
 static void drawButtons(void);
-
 static void drawDots(void);
 
 // button
 static void createButton(char *str, int x, int y, int outline, void (*onClick)());
-
 static void buttonOptions(void);
-
 static void buttonExit(void);
-
 static void buttonStart(void);
-
 static void levelDown(void);
-
 static void levelUp(void);
-
 static void deinitMenu(void);
 
 enum Transitions {
@@ -66,9 +59,9 @@ static void buttonExit() {
 
 static void levelUp() {
     app.level++;
-    if (app.level > num_levels) {
-        app.level = num_levels + 1; // allow one extra to trigger infinity play
-    }
+//    if (app.level > num_levels) {
+//        app.level = num_levels + 1; // allow one extra to trigger infinity play
+//    }
 }
 
 static void levelDown() {
@@ -85,12 +78,7 @@ static void draw(void) {
     drawDots();
 
     int l = app.level;
-    if (l < num_levels) {
-        drawTextCenter(FNT_BODY, 400, 396, "%i", l);
-    } else {
-        drawTextCenter(FNT_BODY, 400, 396, "!");
-    }
-
+    drawTextCenter(FNT_BODY, 400, 396, "%i", l);
     drawButtons();
 }
 
@@ -155,10 +143,6 @@ void buttonOptions(void) {
 
 void buttonStart(void) {
     deinitMenu();
-    int l = app.level;
-    if (l > app.levelFarthest) {
-        l = app.levelFarthest;
-    }
     initLevel(app.level);
 }
 
